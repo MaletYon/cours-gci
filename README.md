@@ -35,7 +35,7 @@ Quand un système d'information s'arrête, la question décisive n'est pas techn
 
 ## NDAP SUKULU, la salle de classe compagnon
 
-*Ndap sukulu* signifie « la salle de classe » en bassa, et *Malet Yon* « ton enseignant ». NDAP SUKULU est l'environnement compagnon du cours. C'est l'environnement d'évaluation du cours : une fiche de 20 questions tirées d'une banque de 100 par chapitre, et dix laboratoires pratiques, minutés et en nombre de tentatives limité. Le code de cours est **MSN-2S3-MSI03**. La présentation complète figure au début du livre.
+*Ndap sukulu* signifie « la salle de classe » en bassa, et *Malet Yon* « ton enseignant ». NDAP SUKULU est l'environnement d'évaluation du cours : une fiche de 20 questions tirées d'une banque de 100 par chapitre, et dix laboratoires pratiques, minutés et en nombre de tentatives limité. Le code de cours est **MSN-2S3-MSI03**. La présentation complète figure au début du livre.
 
 | Utilisation | Où |
 |---|---|
