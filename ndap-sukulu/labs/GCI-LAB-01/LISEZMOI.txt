@@ -1,0 +1,32 @@
+GCI-LAB-01, arbitrer le portefeuille de l'ANPP (opération MEFOU)
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  portefeuille_ANPP.xlsx                     paramètres, projets, coût total
+  PV_comite_strategique_2026-09-14.txt       règles d'arbitrage du comité
+  MANIFESTE_SHA256.txt                       empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Ouvrir le classeur de travail dans LibreOffice Calc (double-clic sur
+   ~/travail/portefeuille_ANPP.xlsx). Lire les règles du comité dans le
+   procès-verbal.
+
+3. Partie A, évaluation financière : calculer le facteur d'annuité, la VAN
+   des projets, le délai de récupération et le coût total de possession
+   demandés. Ajoutez vos colonnes de calcul dans le classeur de travail.
+
+4. Partie B, arbitrage : calculer les scores pondérés, classer les projets,
+   puis appliquer les règles du comité pour constituer le portefeuille.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, en millions FCFA et avec un point ou une virgule décimale,
+   puis enregistrez. Quand vous avez terminé, cliquez sur Terminer et
+   corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

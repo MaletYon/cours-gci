@@ -1,0 +1,31 @@
+BANQUE SANAGA - Direction de l'audit interne
+Méthode de réévaluation des capacités (mars 2027)
+
+1. Échantillon. Pour BAI06, 20 changements tirés au hasard sur six mois ;
+   pour DSS02, 30 tickets tirés au hasard sur six mois.
+
+2. Activité réalisée. Une activité est réalisée si une pièce la prouve pour
+   au moins 80 % des cas de l'échantillon (16 sur 20, 24 sur 30). Une
+   déclaration orale ou une procédure jamais appliquée ne prouve rien.
+
+3. Taux de réalisation d'un niveau = activités réalisées du niveau / toutes
+   les activités du niveau.
+
+4. Note du niveau (échelle ISO/IEC 33000) :
+     F  complètement   plus de 85 %
+     L  largement      plus de 50 % et jusqu'à 85 %
+     P  partiellement  plus de 15 % et jusqu'à 50 %
+     N  pas            15 % ou moins
+
+5. Capacité. Un niveau n est atteint s'il est noté au moins L et si tous les
+   niveaux inférieurs évalués sont notés F. La capacité est le plus haut
+   niveau atteint.
+
+6. Maturité d'un domaine. Elle est égale à la plus faible capacité des
+   objectifs qui le composent. Le domaine « changements et exploitation »
+   comprend BAI06, DSS02 et les objectifs de l'onglet Autres_objectifs.
+
+L'auditrice interne,
+Mme EKAMBI
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)

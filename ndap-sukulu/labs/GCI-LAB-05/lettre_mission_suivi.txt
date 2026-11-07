@@ -1,0 +1,28 @@
+CHAMBRE DES COMPTES DE LA COUR SUPRÊME - Yaoundé
+Mission de suivi des recommandations - Agence nationale des paiements publics
+
+Objet : tests de suivi des contrôles généraux informatiques au 31 décembre 2026
+
+Le magistrat vérificateur, M. NJOYA, demande les tests suivants sur le système
+de paiement de l'agence :
+
+1. Accès. Rapprocher la liste des comptes actifs au 31 décembre 2026 de la
+   liste du personnel transmise par les ressources humaines. Relever les
+   comptes des agents partis, l'usage éventuel d'un compte après le départ de
+   son titulaire, et les comptes sans titulaire identifié (champ matricule
+   vide).
+
+2. Séparation des tâches. Sur l'échantillon de 25 comptes nominatifs tiré
+   par l'équipe (echantillon_droits.csv), relever les comptes qui cumulent
+   les droits de saisie et de validation d'un paiement.
+
+3. Changements. Rapprocher le journal des déploiements du second semestre
+   2026 du registre des changements autorisés. Un déploiement est non
+   autorisé s'il ne porte aucune référence, ou une référence absente du
+   registre. Un déploiement autorisé est irrégulier s'il est antérieur à la
+   date d'autorisation.
+
+Les fichiers ont été extraits du système de production le 2 janvier 2027 ;
+le manifeste joint donne leur empreinte SHA-256.
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)

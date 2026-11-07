@@ -1,0 +1,34 @@
+BANQUE SANAGA - Procédure de gestion des changements (version 2, 2026)
+
+1. Grille d'évaluation du risque. Chaque critère est noté de 1 (favorable) à
+   3 (défavorable). Le score est la somme des six notes (de 6 à 18).
+
+   Critère                 1                          2                               3
+   Criticité du service    Soutien                    Important                       Critique (paiements, système central)
+   Utilisateurs touchés    Moins de 50                50 à 500                        Plus de 500 ou clients
+   Complexité              Un composant               Plusieurs composants            Plusieurs systèmes, données converties
+   Réversibilité           Retour arrière testé       Retour arrière prévu non testé  Retour arrière impossible
+   Couverture des tests    Plus de 95 %               80 à 95 %                       Moins de 80 %
+   Expérience              Changement déjà réalisé    Changement analogue             Première fois
+
+2. Autorité compétente selon le score :
+   6 à 9    risque faible   R1  responsable de l'équipe concernée
+   10 à 13  risque moyen    R2  responsable des changements, après avis du RSSI
+   14 à 18  risque élevé    R3  comité des changements
+                            R4  comité des changements, puis décision formelle du
+                                comité de pilotage avec acceptation écrite du
+                                risque, si la note de réversibilité vaut 3
+
+3. Calendrier. Aucun changement normal n'est mis en production pendant les
+   périodes de gel : clôture de fin d'année, du 15 décembre au 10 janvier ;
+   clôtures trimestrielles, les trois derniers jours ouvrés de mars, juin et
+   septembre.
+
+4. Critères « go / no-go » d'un changement à risque élevé, tous exigés :
+   a. autorisation de l'autorité compétente ;
+   b. plan de retour arrière testé, avec la preuve du test ;
+   c. hors période de gel ;
+   d. communication aux services métier touchés.
+   Un seul critère non rempli entraîne la décision « no-go ».
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)

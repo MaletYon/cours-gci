@@ -1,0 +1,34 @@
+GCI-LAB-05, tester les contrôles généraux de l'ANPP (opération MEFOU)
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  comptes_actifs_paiement_2026-12-31.csv   comptes actifs du système de paiement
+  personnel_RH_2026-12-31.csv              personnel et départs (ressources humaines)
+  echantillon_droits.csv                   échantillon de 25 comptes
+  registre_changements_S2_2026.csv         changements autorisés
+  journal_deploiements_S2_2026.csv         déploiements réellement effectués
+  lettre_mission_suivi.txt                 tests demandés par la Chambre des comptes
+  MANIFESTE_SHA256.txt                     empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Lire la lettre de mission. Les fichiers CSV utilisent le point-virgule comme
+   séparateur : ouvrez-les dans LibreOffice Calc (séparateur « ; »), ou
+   travaillez dans le terminal (grep, cut, sort, join, awk).
+
+3. Partie A : tests des accès et de la séparation des tâches.
+
+4. Partie B : rapprochement des déploiements et des changements autorisés,
+   puis qualification des constats.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

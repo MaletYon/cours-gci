@@ -1,0 +1,31 @@
+GCI-LAB-02, fixer les capacités cibles de la BANQUE SANAGA (opération SANAGA)
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  facteurs_conception_SANAGA.xlsx   poids des facteurs et notes des objectifs
+  PV_comite_SI_2026-05-12.txt       méthode de calcul et seuils
+  PV_comite_SI_2026-06-09.txt       révision des poids après la lettre de la COBAC
+  MANIFESTE_SHA256.txt              empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Ouvrir le classeur de travail dans LibreOffice Calc et lire le procès-verbal
+   du 12 mai, qui fixe la méthode.
+
+3. Partie A : calculer, avec les poids du 12 mai, le score et la capacité cible
+   des huit objectifs. Ajoutez vos colonnes de calcul dans le classeur.
+
+4. Partie B : appliquer les décisions du 9 juin (nouveaux poids, puis plafond
+   des objectifs au niveau 4).
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

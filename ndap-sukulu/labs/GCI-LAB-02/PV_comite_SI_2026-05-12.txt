@@ -1,0 +1,23 @@
+BANQUE SANAGA - Douala
+Comité stratégique des systèmes d'information
+Extrait du procès-verbal de la séance du 12 mai 2026
+
+Point 2. Capacités cibles des objectifs de second rang
+
+Le comité a fixé, lors de sa séance d'avril, les capacités cibles de ses huit
+objectifs prioritaires. Il applique aujourd'hui la même méthode à huit
+objectifs de second rang (classeur facteurs_conception_SANAGA.xlsx).
+
+1. Le score d'importance d'un objectif est S = (somme des poids x notes) / 3
+   x 100, arrondi à une décimale.
+2. La capacité cible découle du score : 75 et plus, niveau 4 ; de 50 à moins
+   de 75, niveau 3 ; de 25 à moins de 50, niveau 2 ; moins de 25, niveau 1.
+3. Les poids retenus sont ceux de la colonne « séance du 12 mai 2026 ».
+
+La méthode est une convention interne d'apprentissage ; elle ne reproduit pas
+les coefficients officiels de COBIT 2019.
+
+Le président du comité,
+M. NGANDO
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)

@@ -1,0 +1,27 @@
+GCI-LAB-09, construire la matrice RACI de NOUN PAY (opération NOUN)
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  RACI_mise_a_jour_modele_NOUN.xlsx   matrice proposée et table de correspondance
+  decision_CA_NOUN_2027-02-20.txt     décision du conseil d'administration
+  MANIFESTE_SHA256.txt                empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Partie A : contrôler la matrice proposée au regard des cinq règles et de la
+   décision du conseil, puis la corriger dans votre classeur de travail.
+
+3. Partie B : rattacher les activités aux objectifs COBIT et aux articles de
+   l'ISO/IEC 20000-1 à l'aide de l'onglet Correspondance.
+
+4. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

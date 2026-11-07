@@ -1,0 +1,29 @@
+NOUN PAY SA - Bafoussam
+Conseil d'administration - Extrait du procès-verbal du 20 février 2027
+
+Point 4. Gouvernance du modèle de notation de crédit
+
+Le conseil, saisi des demandes de l'Autorité de protection des données et
+des investisseurs, décide :
+
+1. Le modèle de notation est un système à risque élevé.
+
+2. La directrice générale répond (A) de l'évaluation de l'impact de chaque
+   version sur les clients et de l'autorisation de sa mise en production.
+   Le directeur technique répond (A) de la préparation, des tests et du
+   déploiement.
+
+3. Le délégué à la protection des données rend (R) un avis écrit avant toute
+   mise en production ; le responsable des risques et de la conformité en
+   répond (A).
+
+4. La matrice RACI du processus respecte les règles du cours de référence :
+   un seul A par activité, au moins un R, le A au bon niveau, peu de C, des
+   noms de fonctions et non de personnes.
+
+5. Chaque activité du processus est rattachée à un objectif COBIT et, en vue
+   d'une éventuelle certification, à un article de l'ISO/IEC 20000-1.
+
+Le président du conseil
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)

@@ -1,0 +1,14 @@
+element;type;relation;element_cible
+SRV-MOBILE;service métier;dépend de;APP-MOBILE
+APP-MOBILE;application;dépend de;API-PASSERELLE
+API-PASSERELLE;composant;dépend de;MOD-VIREMENTS
+SRV-AGENCES;service métier;dépend de;APP-GUICHET
+APP-GUICHET;application;dépend de;MOD-VIREMENTS
+SRV-SWIFT;service métier;dépend de;MOD-VIREMENTS
+SRV-GAB;service métier;dépend de;APP-MONETIQUE
+APP-MONETIQUE;application;dépend de;MOD-CARTES
+MOD-CARTES;composant;dépend de;BDD-CENTRALE
+MOD-VIREMENTS;composant;dépend de;BDD-CENTRALE
+SRV-RH;service métier;dépend de;APP-RH
+APP-RH;application;dépend de;SRV-ANNUAIRE
+API-PASSERELLE;composant;hébergé sur;SRV-API-01

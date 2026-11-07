@@ -1,0 +1,28 @@
+GCI-LAB-06, prioriser et analyser les tickets de KRIBILOG (opération KRIBI)
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  tickets_juillet_2026.csv            extraction de l'outil de tickets, juillet 2026
+  convention_priorites_KRIBILOG.txt   matrice de priorité et délais cibles
+  MANIFESTE_SHA256.txt                empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Ouvrir le fichier CSV dans LibreOffice Calc (séparateur « ; »). Calculez la
+   durée de résolution de chaque ticket en heures : (résolution - ouverture) x 24.
+
+3. Partie A : priorités et indicateurs. Attention au point 3 de la convention.
+
+4. Partie B : respect des délais cibles et identification d'un problème.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

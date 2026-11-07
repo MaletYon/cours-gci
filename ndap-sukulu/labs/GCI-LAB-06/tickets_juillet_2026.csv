@@ -1,0 +1,23 @@
+ticket;type;ouverture;resolution;element_configuration;impact;urgence;resolu_niveau_1;rouvert;description
+T01;incident;2026-07-01 06:00;2026-07-01 09:30;CI-SUIVI-32;Élevé;Élevée;non;oui;Conteneurs absents du suivi, navire à quai
+T02;incident;2026-07-02 15:00;2026-07-03 11:00;CI-IMPR-B2;Moyen;Moyenne;oui;non;Imprimante des bons de sortie hors service
+T03;incident;2026-07-04 00:00;2026-07-04 09:30;CI-SUIVI-32;Élevé;Moyenne;non;non;Positions figées sur le terminal Est
+T04;incident;2026-07-05 04:00;2026-07-06 10:00;CI-PORTAIL;Faible;Faible;oui;non;Logo mal affiché sur le portail client
+T05;incident;2026-07-06 13:00;2026-07-06 19:00;CI-SUIVI-32;Élevé;Élevée;non;oui;Perte de la position de 40 conteneurs
+T06;incident;2026-07-07 17:00;2026-07-07 22:00;CI-RESEAU-KRI;Moyen;Élevée;non;non;Lien réseau du parc à conteneurs coupé
+T07;incident;2026-07-09 02:00;2026-07-11 04:00;CI-MESSAGERIE;Faible;Moyenne;oui;non;Messagerie lente pour un bureau
+T08;incident;2026-07-10 11:00;2026-07-13 19:00;CI-PORTAIL;Moyen;Faible;non;non;Export des factures en erreur
+T09;incident;2026-07-11 15:00;2026-07-12 13:00;CI-SUIVI-32;Élevé;Faible;non;oui;Historique des mouvements incomplet
+T10;incident;2026-07-13 00:00;2026-07-14 02:00;CI-PASSERELLE-GPS;Faible;Élevée;non;non;Balise d'un camion muette
+T11;incident;2026-07-14 04:00;2026-07-14 16:00;CI-IMPR-B2;Moyen;Moyenne;oui;non;Bourrage répété de l'imprimante
+T12;incident;2026-07-15 13:00;2026-07-15 20:30;CI-SUIVI-32;Élevé;Moyenne;non;oui;Conteneurs dupliqués dans le suivi
+T13;incident;2026-07-16 22:00;2026-07-17 00:00;CI-POSTE-0412;Moyen;Moyenne;oui;non;Poste de l'agent de quai bloqué
+T14;incident;2026-07-18 02:00;2026-07-22 06:00;CI-PORTAIL;Faible;Faible;non;non;Faute d'orthographe dans un menu
+T15;incident;2026-07-19 11:00;2026-07-19 13:30;CI-SUIVI-32;Élevé;Élevée;non;oui;Suivi indisponible après changement de réseau
+T16;incident;2026-07-20 15:00;2026-07-20 19:00;CI-RESEAU-KRI;Moyen;Élevée;non;non;Wi-Fi du quai Nord coupé
+T17;incident;2026-07-22 00:00;2026-07-22 01:00;CI-POSTE-0388;Faible;Moyenne;oui;non;Écran débranché
+T18;incident;2026-07-23 09:00;2026-07-24 15:00;CI-MESSAGERIE;Moyen;Moyenne;non;non;Messages bloqués vers l'armateur
+T19;incident;2026-07-24 13:00;2026-07-24 19:00;CI-SUIVI-32;Élevé;Moyenne;non;non;Position d'un conteneur frigorifique perdue
+T20;incident;2026-07-25 22:00;2026-07-26 01:00;CI-POSTE-0412;Faible;Faible;oui;non;Clavier défectueux
+T21;demande;2026-07-27 02:00;2026-07-27 02:30;CI-PORTAIL;Faible;Moyenne;oui;non;Réinitialisation de mot de passe
+T22;demande;2026-07-28 11:00;2026-07-29 13:00;CI-SUIVI-32;Faible;Faible;oui;non;Ouverture d'un accès pour un nouvel agent

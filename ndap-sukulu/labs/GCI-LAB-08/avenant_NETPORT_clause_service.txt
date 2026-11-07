@@ -1,0 +1,20 @@
+KRIBILOG SA - NETPORT SERVICES
+Avenant n° 2 au contrat d'infogérance - Article 4 (engagements de service)
+
+4.1 Service. Suivi des conteneurs, mesuré de bout en bout par l'outil de
+    supervision de KRIBILOG, 24 heures sur 24, 7 jours sur 7.
+
+4.2 Disponibilité mensuelle = (temps convenu - temps d'indisponibilité) /
+    temps convenu x 100. Le temps convenu est le nombre d'heures du mois.
+
+4.3 Une maintenance programmée n'est pas comptée comme indisponibilité si
+    elle a lieu le dimanche entre 2 h et 6 h ET si elle a été annoncée au
+    client au moins cinq jours à l'avance. Toute autre interruption compte.
+
+4.4 Engagement : 99,5 %. Redevance mensuelle : 25 millions FCFA.
+
+4.5 Pénalité : 4 % de la redevance par tranche complète de 0,1 point de
+    disponibilité en dessous de l'engagement, plafonnée à 30 % de la
+    redevance.
+
+(Document fictif établi pour le cours MSN-2S3-MSI03. Noms, dates et montants fictifs.)
