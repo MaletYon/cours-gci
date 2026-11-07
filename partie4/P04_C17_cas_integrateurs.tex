@@ -1,0 +1,592 @@
+% ============================================================================
+% Fichier  : partie4/P04_C17_cas_integrateurs.tex
+% Titre    : Études de Cas Intégrateurs
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Chapitre-cas. Chaque cas suit le plan : brief initial, investigation
+% guidée, révélations progressives, synthèse et rapport. Le chapitre se
+% termine par une grille d'erreurs et une simulation d'examen.
+% Laboratoire associé : GCI-LAB-10 (diagnostic et feuille de route chiffrée).
+% Tous les cas sont fictifs (noms, dates, montants) ; les mécanismes sont
+% exacts.
+% ============================================================================
+
+\chapter{Études de Cas Intégrateurs}
+\label{chap:cas-integrateurs}
+\chaptermark{Études de cas intégrateurs}
+
+\epigraph{%
+    « On ne comprend vraiment un référentiel que le jour où il faut
+    l'appliquer à une organisation qui ne lui ressemble pas. »%
+}{Principe de l'apprentissage par les cas}
+
+\niveauChapitre{Expert}{%
+    Maîtrise des Chapitres~\ref{chap:cobit-capacite}
+    (capacité et feuille de route), \ref{chap:audit} (audit et constats) et
+    \ref{chap:processus} (processus, RACI, indicateurs).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Mobiliser l'ensemble du cours sur les quatre cas fil rouge.
+    \item Produire un diagnostic de gouvernance complet.
+    \item Bâtir une feuille de route COBIT--ITIL chiffrée.
+    \item Présenter et défendre ses recommandations.
+    \item Se préparer à l'examen (grille d'erreurs, simulation).
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Mode d'emploi du chapitre}
+% ============================================================================
+
+Ce chapitre ne présente aucune notion nouvelle. Il reprend les quatre
+organisations du cours, un an après les événements qui les ont fait
+connaître, et pose à chaque fois la même question~: \emph{la gouvernance
+des SI a-t-elle réellement progressé, et que faut-il faire maintenant~?}
+
+Chaque cas suit quatre temps. Le \textbf{brief} donne la situation et la
+demande. L'\textbf{investigation guidée} propose les questions à se poser,
+avec le chapitre qui permet d'y répondre. Les \textbf{révélations} apportent,
+par étapes, des faits nouveaux qui obligent à réviser le premier
+jugement. La \textbf{synthèse} donne une réponse de référence, à comparer
+avec la vôtre. Travaillez chaque cas \emph{avant} de lire sa synthèse.
+
+La section~\ref{sec:c17-methode} fixe la méthode commune. Les
+sections~\ref{sec:c17-sanaga} à~\ref{sec:c17-noun} traitent les quatre
+cas. Les sections~\ref{sec:c17-erreurs} et~\ref{sec:c17-examen}
+proposent une grille d'erreurs et une simulation d'examen. Le laboratoire
+GCI-LAB-10 de NDAP SUKULU reprend la démarche sur les quatre dossiers.
+
+\separateur
+
+% ============================================================================
+\section{La Méthode du Diagnostic Intégré}
+\label{sec:c17-methode}
+% ============================================================================
+
+\subsection{Six volets}
+
+Un diagnostic de gouvernance des SI couvre six volets. Chacun mobilise une
+partie du cours.
+
+\begin{tableaucours}{L{3.0cm}L{5.2cm}L{4.0cm}}{%
+    \tableauHeader{Volet} &
+    \tableauHeader{Questions} &
+    \tableauHeader{Chapitres}
+}
+1. Organes et décisions & Qui décide de quoi~? Les organes fonctionnent-ils~?
+& \ref{chap:gouv-entreprise}, \ref{chap:alignement} \\
+2. Valeur et portefeuille & Les investissements sont-ils arbitrés et leurs
+bénéfices suivis~? & \ref{chap:alignement} \\
+3. Système COBIT & Objectifs prioritaires, capacité constatée et cible,
+écarts & \ref{chap:cobit-objectifs} à~\ref{chap:cobit-capacite} \\
+4. Conformité & Obligations légales et réglementaires, preuves &
+\ref{chap:normes}, \ref{chap:droit} \\
+5. Services & Pratiques ITIL, niveaux de service, indicateurs &
+\ref{chap:itil-svs} à~\ref{chap:processus} \\
+6. Fournisseurs et continuité & Contrats, supervision, plans testés &
+\ref{chap:itil-niveaux} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~17.1. Les six volets du diagnostic
+intégré}\end{center}
+
+\subsection{Le livrable}
+
+\begin{boxprocedure}
+\textbf{Le rapport de diagnostic.} Le rapport remis à l'organe de
+gouvernance comporte~:
+\begin{itemize}
+    \item une synthèse d'une page, avec trois messages et trois décisions
+          demandées~;
+    \item le périmètre, les sources et la méthode (entretiens, pièces,
+          tests)~;
+    \item pour chaque volet, les constats en cinq éléments
+          (Chapitre~\ref{chap:audit}), chacun avec son niveau de
+          confiance~;
+    \item le tableau des écarts de capacité (Chapitre~\ref{chap:cobit-capacite})~;
+    \item la feuille de route chiffrée, avec ses propriétaires et ses
+          échéances~;
+    \item les risques de la feuille de route elle-même.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Cas 1 : la BANQUE SANAGA, un An Après}
+\label{sec:c17-sanaga}
+% ============================================================================
+
+\subsection{Brief initial}
+
+\begin{boxscenario}{Opération SANAGA. Mars 2027}
+Un an après la panne, la COBAC annonce une mission de contrôle sur place
+consacrée au risque informatique. Le président du conseil
+d'administration vous demande, comme consultant indépendant, un
+diagnostic préalable~: « Avons-nous fait ce que nous avions annoncé à la
+COBAC, et sommes-nous prêts~? »
+
+\medskip
+\textbf{Pièces remises.} Le rapport circonstancié à la COBAC (avril~2026),
+la feuille de route à dix-huit mois (Chapitre~\ref{chap:cobit-capacite}),
+les procès-verbaux du comité stratégique des SI, le registre des
+changements de l'année, le contrat renégocié avec DIGICORE AFRIQUE, le
+compte rendu de l'agence pilote de la nouvelle bascule.
+\end{boxscenario}
+
+\subsection{Investigation guidée}
+
+\begin{enumerate}
+    \item Le comité stratégique des SI fonctionne-t-il selon les critères du
+          Chapitre~\ref{chap:gouv-entreprise}~? Reçoit-il une information
+          indépendante de celle du directeur général~?
+    \item Où en est chaque ligne de la feuille de route~? Quelles capacités
+          ont été réévaluées, et par qui (Chapitre~\ref{chap:cobit-capacite})~?
+    \item Le registre des changements montre-t-il une gestion conforme à la
+          grille de risque (Chapitre~\ref{chap:itil-changements})~?
+    \item Le contrat de DIGICORE AFRIQUE contient-il les clauses essentielles
+          (Chapitre~\ref{chap:itil-niveaux}), et sont-elles appliquées~?
+    \item Les obligations légales et réglementaires sont-elles tenues et
+          prouvées (Chapitre~\ref{chap:droit})~?
+\end{enumerate}
+
+\subsection{Révélations progressives}
+
+\begin{boxscenario}{Opération SANAGA. Première révélation}
+Le comité stratégique des SI s'est réuni quatre fois, comme prévu. Mais
+ses procès-verbaux montrent qu'il n'a examiné que des présentations du
+directeur général~; la DSI et l'audit interne n'ont jamais été entendus
+séparément. Le pouvoir d'accès direct prévu par la charte n'a pas été
+exercé.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération SANAGA. Deuxième révélation}
+Le registre compte 412~changements dans l'année, dont 91 qualifiés
+d'urgents (22~\%). La procédure des changements urgents a bien été
+rédigée, mais 64 de ces 91~changements n'ont pas fait l'objet de la revue
+a posteriori prévue.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération SANAGA. Troisième révélation}
+Le contrat renégocié avec DIGICORE AFRIQUE contient désormais des
+engagements de service, des pénalités et un droit d'audit. Les pénalités
+dues pour deux manquements en 2026 (évaluées à 38~millions FCFA) n'ont pas
+été réclamées~: la direction des achats « ne voulait pas dégrader la
+relation pendant la nouvelle bascule ». Le droit d'audit n'a jamais été
+exercé.
+\end{boxscenario}
+
+\subsection{Synthèse et rapport}
+
+\begin{tableaucours}{L{3.2cm}L{5.2cm}cL{2.4cm}}{%
+    \tableauHeader{Volet} &
+    \tableauHeader{Constat principal} &
+    \tableauHeader{Conf.} &
+    \tableauHeader{Objectif}
+}
+Organes & Le comité existe, mais reproduit l'asymétrie d'information
+qu'il devait réduire & Élevée & EDM01 \\
+COBIT & Gains rapides réalisés (DSS04, MEA02)~; chantiers de fond en retard
+(EDM03, APO12) & Moyenne & EDM03, APO12 \\
+Changements & Taux d'urgence élevé, revues a posteriori non faites (70~\%)
+& Élevée & BAI06 \\
+Fournisseurs & Clauses présentes mais non appliquées & Élevée & APO10 \\
+Conformité & Audit de sécurité légal réalisé en 2026 & Élevée & MEA03 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~17.2. Synthèse du diagnostic de la
+BANQUE SANAGA}\end{center}
+
+\textbf{Message principal au conseil.} La banque a mis en place les
+\emph{structures} et les \emph{documents} annoncés, mais pas encore les
+\emph{comportements}~: le comité n'écoute qu'une voix, les contrôles sont
+contournés quand ils dérangent, les clauses ne sont pas appliquées. C'est
+exactement ce que la grille de De Haes et Van Grembergen permet de
+diagnostiquer (Chapitre~\ref{chap:gouv-entreprise})~: des structures sans
+mécanismes relationnels. La COBAC le verra.
+
+\begin{boxscenario}{Opération SANAGA. Feuille de route}
+\begin{tableaucours}{L{5.6cm}L{2.4cm}rL{1.6cm}}{%
+    \tableauHeader{Action} &
+    \tableauHeader{Propriétaire} &
+    \tableauHeader{Coût (M FCFA)} &
+    \tableauHeader{Échéance}
+}
+Audition séparée de la DSI et de l'audit interne à chaque comité &
+Président du comité & 0 & Immédiat \\
+Revue a posteriori obligatoire des changements urgents, indicateur
+trimestriel & Responsable des changements & 15 & 3 mois \\
+Réclamation des pénalités 2026 et premier audit de DIGICORE AFRIQUE &
+Direction des achats, RSSI & 25 & 3 mois \\
+Appétence au risque approuvée par le conseil, registre des risques SI relié
+au registre de la banque & Directeur des risques & 60 & 6 mois \\
+Réévaluation indépendante de la capacité des dix objectifs & Audit interne
+et cabinet externe & 45 & 9 mois \\
+Formation des administrateurs à la gouvernance des SI & Secrétaire du
+conseil & 12 & 6 mois \\
+\textbf{Total} & & \textbf{157} & \\
+\end{tableaucours}
+\medskip
+Le coût est à rapporter aux 1,9~milliard FCFA de la panne de 2026~: moins
+de 9~\%.
+\end{boxscenario}
+
+% ============================================================================
+\section{Cas 2 : KRIBILOG, la Certification en Jeu}
+\label{sec:c17-kribi}
+% ============================================================================
+
+\subsection{Brief initial}
+
+\begin{boxscenario}{Opération KRIBI. Mois 12 sur 18}
+KRIBILOG SA doit obtenir la certification ISO/IEC~20000-1 dans six mois
+pour conserver le contrat de l'armateur (Chapitre~\ref{chap:normes}).
+M.~MBARGA vous demande un avis~: « Pouvons-nous solliciter l'organisme de
+certification comme prévu au mois~16~? »
+
+\medskip
+\textbf{Pièces remises.} Le plan de certification, l'avenant au contrat de
+NETPORT SERVICES, les indicateurs mensuels des six derniers mois, le
+registre des problèmes, le rapport d'audit interne du mois~11.
+\end{boxscenario}
+
+\subsection{Investigation guidée}
+
+\begin{enumerate}
+    \item Les pratiques des articles~8.5 et~8.6 de la norme
+          fonctionnent-elles depuis assez longtemps pour produire des
+          enregistrements probants (Chapitre~\ref{chap:normes})~?
+    \item Les indicateurs ont-ils progressé, et sont-ils mesurés par
+          KRIBILOG elle-même (Chapitres~\ref{chap:itil-incidents}
+          et~\ref{chap:itil-niveaux})~?
+    \item Le correctif de l'éditeur a-t-il été installé, et le problème
+          clos (Chapitre~\ref{chap:itil-changements})~?
+    \item L'avenant donne-t-il à KRIBILOG la maîtrise d'un service exploité
+          par un tiers~?
+\end{enumerate}
+
+\subsection{Révélations progressives}
+
+\begin{boxscenario}{Opération KRIBI. Première révélation}
+Les progrès sont réels. Le taux de réouverture est passé de 30~\% à 12~\%,
+le volume mensuel de tickets de 4~800 à 3~100, grâce au libre-service et à
+l'installation du correctif. La disponibilité de bout en bout du service
+de suivi atteint 99,3~\% en moyenne sur six mois, avec un second
+opérateur mobile depuis le mois~8.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération KRIBI. Deuxième révélation}
+L'audit interne du mois~11 relève que NETPORT SERVICES a confié, sans en
+informer KRIBILOG, l'hébergement des sauvegardes à un sous-traitant situé
+à Casablanca. L'avenant ne traite ni de la sous-traitance en cascade, ni de
+la localisation des données.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération KRIBI. Troisième révélation}
+La revue de direction prévue au mois~15 par la norme n'est pas encore
+programmée~; le directeur général « n'en voit pas l'intérêt, puisque les
+indicateurs sont bons ».
+\end{boxscenario}
+
+\subsection{Synthèse et rapport}
+
+\textbf{Avis.} Le calendrier peut être tenu, \emph{sous deux conditions}. La
+première tient au fournisseur~: un nouvel avenant doit traiter la
+sous-traitance et la localisation des données avant l'audit, faute de
+quoi l'organisme de certification relèvera une non-conformité majeure sur
+la maîtrise des processus confiés à des tiers, et KRIBILOG s'exposera au
+titre de la loi n°~2024/017 (Chapitre~\ref{chap:droit}). La seconde tient à
+la direction~: la revue de direction est une exigence de la norme
+(article~9 de la structure harmonisée), et non une formalité~; sans elle,
+pas de certification.
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Présenter l'avis au directeur général}
+\begin{enumerate}
+    \item Commencer par les progrès, chiffrés~: ils sont réels et
+          mesurés.
+    \item Présenter les deux conditions comme des risques pour le contrat
+          de l'armateur, en termes d'affaires et non de norme.
+    \item Proposer la date de la revue de direction et son ordre du jour.
+    \item Demander une décision écrite sur l'avenant avec NETPORT
+          SERVICES.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Cas 3 : l'ANPP face à la Chambre des Comptes}
+\label{sec:c17-mefou}
+% ============================================================================
+
+\subsection{Brief initial}
+
+\begin{boxscenario}{Opération MEFOU. Le rapport provisoire}
+La Chambre des comptes a transmis à l'ANPP son rapport provisoire d'audit
+des SI (Chapitre~\ref{chap:audit}). Le directeur général dispose de deux
+mois pour répondre. Il vous demande de préparer la réponse et le plan
+d'action.
+
+\medskip
+\textbf{Constats du rapport provisoire.} Absence de comité stratégique des
+SI jusqu'en 2026~; projets lancés sans dossier d'investissement~; trois
+projets ayant consommé 71~\% du budget du schéma directeur sans être
+achevés~; 14~comptes d'agents partis actifs sur le système de paiement~;
+séparation des tâches défaillante sur 6~comptes sur 25.
+\end{boxscenario}
+
+\subsection{Investigation guidée}
+
+\begin{enumerate}
+    \item Quels constats sont fondés, et lesquels peuvent être nuancés par
+          des pièces que l'auditeur n'a pas vues (Chapitre~\ref{chap:audit})~?
+    \item Comment réarbitrer le portefeuille restant (Chapitre~\ref{chap:alignement})~?
+    \item Comment rattacher les projets aux programmes budgétaires
+          (loi n°~2018/012)~?
+    \item Quelles actions immédiates sur les accès (Chapitres~\ref{chap:itil-incidents}
+          et~\ref{chap:audit})~?
+\end{enumerate}
+
+\subsection{Révélations progressives}
+
+\begin{boxscenario}{Opération MEFOU. Première révélation}
+Le projet de paie dématérialisée, présenté comme « inachevé » dans le
+rapport, est en réalité en service depuis janvier~2027. Mais aucun suivi
+des bénéfices n'a été fait~: personne ne sait si les délais de paiement
+ont diminué.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération MEFOU. Deuxième révélation}
+Les 14~comptes actifs d'agents partis ont été désactivés le lendemain du
+passage de l'auditeur. Mais la cause (l'absence de notification des
+départs par les ressources humaines) n'a pas été traitée~: trois nouveaux
+départs, depuis, n'ont pas été signalés.
+\end{boxscenario}
+
+\subsection{Synthèse et rapport}
+
+\textbf{La réponse à la Chambre des comptes} admet les constats fondés,
+apporte les pièces qui nuancent le constat sur le projet de paie, et
+présente un plan d'action qui traite les \emph{causes}~:
+\begin{itemize}
+    \item un comité stratégique des SI, créé par décision du conseil, avec
+          une charte inspirée de l'ISO/IEC~38500 (Chapitre~\ref{chap:normes})~;
+    \item un réarbitrage du portefeuille restant par score multicritère
+          (Chapitre~\ref{chap:alignement}), et l'arrêt d'un projet~;
+    \item un suivi des bénéfices du projet de paie, avec un indicateur
+          rattaché au projet de performance annuel du programme~;
+    \item une notification automatique des départs et une revue trimestrielle
+          des accès (DSS05, DSS06).
+\end{itemize}
+
+\begin{boxalert}
+\textbf{Violation typique.} Corriger le symptôme le lendemain de l'audit
+(désactiver les 14~comptes) et présenter la correction comme une réponse
+au constat. L'auditeur vérifiera la cause, et constatera la récidive.
+
+\smallskip
+\textbf{Règle~:} une réponse à un rapport d'audit traite la cause, désigne
+un responsable et une échéance, et indique la pièce qui prouvera la mise
+en œuvre.
+\end{boxalert}
+
+% ============================================================================
+\section{Cas 4 : NOUN PAY, Croître sans Perdre la Confiance}
+\label{sec:c17-noun}
+% ============================================================================
+
+\subsection{Brief initial}
+
+\begin{boxscenario}{Opération NOUN. La levée de fonds}
+NOUN PAY prépare une levée de fonds de 2~milliards FCFA. Les investisseurs
+exigent un diagnostic de gouvernance des SI avant de signer. Au même
+moment, l'Autorité de protection des données poursuit son enquête sur le
+modèle de notation (Chapitre~\ref{chap:droit}).
+
+\medskip
+\textbf{Pièces remises.} La matrice RACI du processus de mise à jour du
+modèle (Chapitre~\ref{chap:processus}), le contrat type du fournisseur de
+nuage, la réponse provisoire à l'Autorité, les statistiques de refus de
+crédit par région.
+\end{boxscenario}
+
+\subsection{Investigation guidée}
+
+\begin{enumerate}
+    \item Quels facteurs de conception caractérisent NOUN PAY, et quel
+          système de gouvernance proportionné en découle
+          (Chapitre~\ref{chap:cobit-conception})~?
+    \item Le contrat du fournisseur de nuage permet-il de maîtriser la
+          localisation des données, la réversibilité et l'audit
+          (Chapitre~\ref{chap:itil-niveaux})~?
+    \item Qui répond, dans l'entreprise, des effets du modèle sur les
+          clients (Chapitre~\ref{chap:processus})~?
+\end{enumerate}
+
+\subsection{Révélations progressives}
+
+\begin{boxscenario}{Opération NOUN. Première révélation}
+Les statistiques montrent que le taux de refus est de 61~\% pour les
+demandeurs d'une région, contre 24~\% en moyenne nationale. Le modèle
+utilise, parmi ses variables, l'opérateur mobile du demandeur, très
+corrélé à la région.
+\end{boxscenario}
+
+\begin{boxscenario}{Opération NOUN. Deuxième révélation}
+Le contrat type du fournisseur de nuage ne permet ni de choisir la
+localisation des données, ni d'auditer le fournisseur~; il renvoie à ses
+propres certifications. Un contrat d'entreprise négocié existe chez le
+même fournisseur, pour un surcoût annuel de 18~millions FCFA.
+\end{boxscenario}
+
+\subsection{Synthèse et rapport}
+
+\textbf{Message aux investisseurs.} NOUN PAY n'a pas besoin d'un système
+COBIT complet, mais de six objectifs bien tenus (Chapitre~\ref{chap:cobit-conception})~:
+EDM03 (appétence au risque), APO10 (fournisseur de nuage), APO12
+(risques), APO14 (données), BAI06 (changements du modèle) et MEA03
+(conformité). Deux décisions sont urgentes~: souscrire le contrat
+d'entreprise du fournisseur de nuage, et suspendre l'usage de la variable
+« opérateur mobile » en attendant une analyse d'impact du modèle. Le
+Chapitre~\ref{chap:donnees-ia} reprendra ce cas sous l'angle de la
+gouvernance de l'intelligence artificielle.
+
+% ============================================================================
+\section{Grille des Erreurs Transversales}
+\label{sec:c17-erreurs}
+% ============================================================================
+
+Les quatre cas font réapparaître, sous des formes différentes, les mêmes
+erreurs. La grille du Chapitre~\ref{chap:defaillances} s'enrichit de
+celles que révèle la mise en œuvre.
+
+\begin{tableaucours}{L{4.4cm}L{2.4cm}L{5.4cm}}{%
+    \tableauHeader{Erreur} &
+    \tableauHeader{Cas} &
+    \tableauHeader{Antidote}
+}
+Des structures sans comportements & SANAGA & Évaluer le fonctionnement des
+organes, pas leur existence (Chapitre~\ref{chap:cobit-capacite}) \\
+Des contrôles contournés quand ils gênent & SANAGA & Indicateur de
+contournement (taux d'urgence, revues non faites) \\
+Des clauses non appliquées & SANAGA & Comité de service, réclamation
+systématique des pénalités \\
+Une sous-traitance en cascade ignorée & KRIBI & Clause de sous-traitance et
+de localisation, droit d'audit \\
+Un indicateur bon qui dispense de la revue & KRIBI & La revue de
+direction est une exigence, pas une option \\
+Un symptôme corrigé, une cause intacte & MEFOU & Traiter la cause, prouver
+par une pièce \\
+Un projet livré sans suivi des bénéfices & MEFOU & EDM02, indicateur
+rattaché au programme \\
+Une décision automatisée sans responsable & NOUN & Un A pour l'évaluation
+de l'impact sur les clients \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~17.3. Erreurs transversales de mise en
+œuvre}\end{center}
+
+% ============================================================================
+\section{Simulation d'Examen}
+\label{sec:c17-examen}
+% ============================================================================
+
+\begin{boxinfo}
+\textbf{Sujet type.} \emph{Durée~: 3~heures. Documents autorisés~: aucun,
+sauf le tableau des 40~objectifs COBIT fourni.}
+
+\medskip
+\textbf{Cas} \textit{(fictif, construit pour l'examen)}. La SOCIÉTÉ D'EAU
+DU NORD, entreprise publique
+installée à Garoua, distribue l'eau potable à 180~000~abonnés. Son système
+de facturation, exploité par un prestataire, a émis en septembre des
+factures erronées à 30~000~abonnés. Le conseil d'administration, qui se
+réunit deux fois par an, l'a appris par la presse. La direction
+informatique compte huit personnes. Aucun comité ne traite du numérique.
+
+\medskip
+\begin{enumerate}
+    \item \textbf{(4~points)} Distinguez la cause technique probable et les
+          causes de gouvernance, en appliquant les trois questions réflexes.
+    \item \textbf{(4~points)} Proposez les organes de gouvernance des SI
+          adaptés à une entreprise publique de cette taille, en tenant
+          compte de la tutelle.
+    \item \textbf{(4~points)} Renseignez les facteurs de conception et
+          retenez six objectifs COBIT prioritaires, avec leur capacité
+          cible.
+    \item \textbf{(4~points)} Rédigez deux constats d'audit en cinq éléments,
+          l'un sur la gestion des changements, l'autre sur le contrat du
+          prestataire.
+    \item \textbf{(4~points)} Présentez une feuille de route à douze mois,
+          chiffrée en FCFA, en distinguant gains rapides et chantiers de
+          fond.
+\end{enumerate}
+\end{boxinfo}
+
+\begin{boxalert}
+\textbf{Ce que le correcteur attend.} Des constatations séparées des
+analyses~; des références précises (objectifs COBIT, pratiques ITIL,
+textes de loi vérifiés)~; des recommandations qui traitent des causes~; une
+gouvernance \emph{proportionnée} à une organisation de huit informaticiens.
+Une copie qui recommande de « déployer COBIT et ITIL » sans choisir
+n'obtient pas la moyenne.
+\end{boxalert}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Six volets}~: organes et décisions, valeur, système COBIT,
+          conformité, services, fournisseurs et continuité. Un diagnostic
+          les couvre tous.
+    \item \textbf{Les structures ne suffisent pas}~: un an après, la BANQUE
+          SANAGA a ses comités et ses documents, mais pas encore les
+          comportements.
+    \item \textbf{Les bons indicateurs ne dispensent de rien}~: KRIBILOG
+          progresse, mais une sous-traitance cachée et une revue de
+          direction négligée menacent sa certification.
+    \item \textbf{Traiter les causes}~: l'ANPP corrige des symptômes le
+          lendemain de l'audit et voit les écarts revenir.
+    \item \textbf{La proportion}~: NOUN PAY n'a besoin que de six objectifs
+          bien tenus, et de deux décisions urgentes.
+    \item \textbf{Une feuille de route se chiffre}~: à rapporter au coût des
+          défaillances qu'elle prévient.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.1. Le rapport de la BANQUE SANAGA \niveaubase}]
+Rédigez la synthèse d'une page du diagnostic de la BANQUE SANAGA~: trois
+messages, trois décisions demandées au conseil, et le coût de la feuille
+de route rapporté au coût de la panne.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.2. L'avenant de KRIBILOG \niveaumoyen}]
+Rédigez les clauses de l'avenant au contrat de NETPORT SERVICES qui
+traitent la sous-traitance en cascade, la localisation des sauvegardes et
+le droit d'audit. Pour chacune, indiquez le risque traité et la pièce qui
+permettra de vérifier son application.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.3. Traiter le sujet d'examen \niveauexpert}]
+Traitez en trois heures le sujet de la section~\ref{sec:c17-examen}, puis
+comparez votre copie avec les attentes du correcteur. Pour chaque
+question, indiquez les chapitres du cours que vous avez mobilisés.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~\ref{part:pratique} s'achève. Les quatre cas
+ont montré que la gouvernance des SI se joue sur des terrains qui
+évoluent vite~: l'informatique en nuage, les méthodes agiles, les données
+et l'intelligence artificielle. La Partie~\ref{part:avance} les aborde,
+en commençant par le Chapitre~\ref{chap:agile-cloud}~: gouverner à grande
+vitesse.
+\end{boxinfo}

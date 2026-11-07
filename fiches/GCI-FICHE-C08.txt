@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C08
+Chapitre 8 : Mesurer et mettre en œuvre : capacité, maturité et feuille de route
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Sur quel modèle COBIT 2019 aligne-t-il largement sa gestion de la performance ?
+      a) ISO/IEC 15504
+      b) ITIL 4
+      c) CMMI version 2.0
+      d) COSO ERM
+
+ 2. À quoi la notion de maturité s'applique-t-elle dans COBIT 2019 ?
+      a) À un processus pris isolément
+      b) À un domaine d'intérêt
+      c) À une personne
+      d) À un fournisseur
+
+ 3. Que caractérise le niveau de capacité 2 ?
+      a) Le processus atteint sa finalité par un ensemble d'activités élémentaire, mais complet
+      b) Le processus est mesuré quantitativement
+      c) Le processus est en amélioration continue
+      d) Aucune capacité de base
+
+ 4. Quel niveau correspond à un processus bien défini dont la performance est mesurée de manière quantitative ?
+      a) Niveau 2
+      b) Niveau 3
+      c) Niveau 5
+      d) Niveau 4
+
+ 5. Dans la fiche DSS02, à quel niveau se rattachent les activités qui enregistrent, classent et priorisent les incidents ?
+      a) Niveau 1
+      b) Niveau 2
+      c) Niveau 4
+      d) Niveau 5
+
+ 6. Scénario. Une organisation se déclare « au niveau 4 » parce qu'elle produit un tableau de bord, mais les incidents ne sont pas tous enregistrés. Qu'en concluez-vous ?
+      a) Le niveau 4 est acquis
+      b) Le niveau 5 est à portée
+      c) Le processus n'est ni complet ni défini : il ne peut pas être au niveau 4
+      d) Le tableau de bord suffit à prouver le niveau 3
+
+ 7. Comment se détermine la maturité d'un domaine d'intérêt ?
+      a) Par la moyenne des capacités de ses processus
+      b) Par la capacité de son processus le plus fort
+      c) Par l'autoévaluation du DSI
+      d) Par le niveau atteint par tous ses processus : celle du plus faible
+
+ 8. Scénario. Neuf processus de sécurité sont au niveau 3, le dixième au niveau 1. Quelle est la maturité du domaine ?
+      a) Niveau 1
+      b) Niveau 2,8
+      c) Niveau 3
+      d) Niveau 2
+
+ 9. Quel nom porte le niveau de maturité 3 ?
+      a) Gérée
+      b) Définie
+      c) Quantitative
+      d) Initiale
+
+10. Quelle note correspond à un niveau réalisé à plus de 85 % ?
+      a) L, largement
+      b) P, partiellement
+      c) F, complètement
+      d) N, pas
+
+11. Quelle note correspond à un niveau réalisé entre 15 et 50 % ?
+      a) P, partiellement
+      b) L, largement
+      c) F, complètement
+      d) N, pas
+
+12. Quelle règle d'attribution du niveau le cours retient-il ?
+      a) Le niveau le plus élevé ayant au moins une activité réalisée
+      b) La moyenne des taux de réalisation
+      c) Le niveau déclaré par le propriétaire du processus
+      d) Le niveau n est acquis s'il est noté au moins L et si les niveaux inférieurs sont notés F
+
+13. Scénario. Pour BAI06 à la BANQUE SANAGA, le niveau 2 est réalisé à 60 % et le niveau 3 à 25 %. Quelle est la capacité constatée ?
+      a) Niveau 1
+      b) Niveau 2, largement atteint
+      c) Niveau 3, partiellement atteint
+      d) Niveau 0
+
+14. Qui doit réaliser une évaluation de capacité opposable ?
+      a) Le propriétaire du processus lui-même
+      b) Le prestataire du processus
+      c) Un évaluateur indépendant du processus évalué
+      d) N'importe quel utilisateur
+
+15. Pourquoi beaucoup de démarches de gouvernance échouent-elles, selon le guide de mise en œuvre de COBIT ?
+      a) Parce qu'elles ne sont pas pilotées comme de véritables programmes
+      b) Parce que COBIT est trop récent
+      c) Parce que les outils sont trop chers
+      d) Parce que les auditeurs s'y opposent
+
+16. Quelle question correspond à la phase 2 de la mise en œuvre ?
+      a) Quels sont les moteurs ?
+      b) Où voulons-nous aller ?
+      c) Comment garder l'élan ?
+      d) Où en sommes-nous ?
+
+17. Quels sont les trois anneaux de la feuille de route de mise en œuvre ?
+      a) Gouvernance, management et exploitation
+      b) Management du programme, accompagnement du changement, amélioration continue
+      c) Stratégie, tactique et opérations
+      d) Planifier, réaliser, vérifier
+
+18. Quelles phases de la mise en œuvre la démarche de conception alimente-t-elle ?
+      a) Les phases 5 à 7
+      b) La phase 4 seulement
+      c) Les phases 1 à 3
+      d) Aucune
+
+19. Scénario. Quelle action la feuille de route de la BANQUE SANAGA classe-t-elle comme gain rapide pour DSS04 ?
+      a) Tester le plan de continuité du système central
+      b) Renégocier le contrat de l'intégrateur
+      c) Faire approuver l'appétence au risque
+      d) Recruter un nouveau DSI
+
+20. Selon l'encadré du chapitre, quelle cible est réaliste pour la plupart des organisations camerounaises sur leurs objectifs prioritaires ?
+      a) Le niveau 5 partout
+      b) Le niveau 1
+      c) Le niveau 4 partout
+      d) Atteindre durablement le niveau 3
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. COBIT 2019 interdit de continuer à utiliser le modèle de capacité fondé sur l'ISO/IEC 33000.
+      Vrai / Faux
+
+22. Un niveau ne s'acquiert que si les niveaux inférieurs sont atteints.
+      Vrai / Faux
+
+23. La progression des niveaux suit la logique : faire, standardiser, mesurer, améliorer.
+      Vrai / Faux
+
+24. COBIT 2019 propose une méthode d'évaluation des structures organisationnelles généralement admise et formelle.
+      Vrai / Faux
+
+25. Une activité réalisée une seule fois suffit à prouver qu'elle est réalisée.
+      Vrai / Faux
+
+26. Un niveau noté « largement » bloque l'accès au niveau suivant tant qu'il n'est pas porté à « complètement ».
+      Vrai / Faux
+
+27. L'auditeur doit restituer ses constats à l'audité avant de conclure.
+      Vrai / Faux
+
+28. Le programme de gouvernance se clôt quand les documents sont rédigés.
+      Vrai / Faux
+
+29. La phase 3 distingue les gains rapides des chantiers de long terme.
+      Vrai / Faux
+
+30. Viser le niveau 5 sur tous les processus est la meilleure stratégie de gouvernance.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'échelle de capacité des processus de COBIT 2019 va de 0 à ______.
+
+32. Le niveau de capacité 5 correspond à un processus ______.
+
+33. Le niveau de capacité 3 correspond à un processus ______.
+
+34. La mesure de performance au niveau d'un domaine d'intérêt s'appelle la ______.
+
+35. La note L signifie qu'un niveau est réalisé ______.
+
+36. Un niveau réalisé à moins de ______ % reçoit la note N.
+
+37. La règle d'attribution du niveau retenue par le cours est issue de la famille de normes ISO/IEC ______.
+
+38. La démarche de mise en œuvre de COBIT compte ______ phases.
+
+39. La dernière phase pose la question : comment garder l'______ ?
+
+40. Les actions faciles et à fort bénéfice, à traiter en premier, sont les gains ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

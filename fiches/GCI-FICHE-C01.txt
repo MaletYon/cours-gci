@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C01
+Chapitre 1 : De la gouvernance d'entreprise à la gouvernance des SI
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quelle est la définition de la gouvernance d'entreprise donnée par le rapport Cadbury ?
+      a) L'ensemble des processus informatiques d'une société
+      b) Le système par lequel les sociétés sont dirigées et contrôlées
+      c) La relation entre une entreprise et ses clients
+      d) La gestion des risques financiers d'une banque
+
+ 2. En quelle année le rapport Cadbury a-t-il été publié ?
+      a) 1976
+      b) 1985
+      c) 1992
+      d) 2002
+
+ 3. Lequel de ces mécanismes de gouvernance est un mécanisme externe ?
+      a) Le comité d'audit
+      b) Le conseil d'administration
+      c) L'audit interne
+      d) Le régulateur, comme la COBAC
+
+ 4. Scénario. La BANQUE SANAGA disposait de tous les mécanismes de gouvernance classiques. Quel était leur défaut commun ?
+      a) Aucun ne portait sur le système d'information
+      b) Ils étaient trop nombreux
+      c) Ils dépendaient tous de la COBAC
+      d) Ils avaient été créés après la panne
+
+ 5. Quels auteurs ont décrit la relation entre actionnaires et dirigeants comme une relation d'agence (1976) ?
+      a) Weill et Ross
+      b) Henderson et Venkatraman
+      c) Jensen et Meckling
+      d) De Haes et Van Grembergen
+
+ 6. Quels sont les trois éléments des coûts d'agence ?
+      a) Surveillance, dédouanement et perte résiduelle
+      b) Salaire, prime et retraite
+      c) Audit, conseil et formation
+      d) Investissement, exploitation et maintenance
+
+ 7. Comment s'appelle le fait que l'agent en sait plus que le principal sur ce qu'il fait ?
+      a) Le conflit d'intérêts
+      b) L'asymétrie d'information
+      c) La perte résiduelle
+      d) La délégation de pouvoir
+
+ 8. Scénario. Dans la chaîne d'agence des SI, l'information technique décroît en remontant de l'intégrateur vers le conseil. Quel mécanisme réduit le mieux cette asymétrie au niveau du conseil ?
+      a) Augmenter la rémunération du DSI
+      b) Confier toutes les décisions au directeur général
+      c) Un point d'avancement obligatoire et un accès direct du comité à la DSI
+      d) Supprimer le comité de pilotage
+
+ 9. Quel auteur a développé la théorie des parties prenantes en 1984 ?
+      a) R. Edward Freeman
+      b) Robert Solow
+      c) Adrian Cadbury
+      d) Michael Jensen
+
+10. Que suppose la théorie de l'intendance (stewardship) ?
+      a) Que le dirigeant sert toujours ses propres intérêts
+      b) Qu'un dirigeant peut trouver sa motivation dans la réussite de l'organisation
+      c) Que seuls les actionnaires comptent
+      d) Que la surveillance doit être maximale
+
+11. Quelle section de la loi Sarbanes-Oxley a fait entrer l'informatique dans la gouvernance par le contrôle interne ?
+      a) La section 101
+      b) La section 302
+      c) La section 906
+      d) La section 404
+
+12. Quel rapport sud-africain a fait de la gouvernance des technologies et de l'information l'un de ses principes en 2016 ?
+      a) King I
+      b) King II
+      c) King IV
+      d) Cadbury
+
+13. En quelle année a été publiée la première édition de la norme ISO/IEC 38500 ?
+      a) 2008
+      b) 1996
+      c) 2015
+      d) 2024
+
+14. Sur quoi la définition de Weill et Ross met-elle l'accent ?
+      a) Sur les processus informatiques
+      b) Sur les droits de décision et le cadre de responsabilité
+      c) Sur la sécurité de l'information
+      d) Sur la certification des organisations
+
+15. Quelles sont les trois finalités retenues par la définition de travail du cours ?
+      a) Conformité, sécurité et disponibilité
+      b) Vitesse, qualité et coût
+      c) Valeur, maîtrise des risques et usage judicieux des ressources
+      d) Innovation, croissance et rentabilité
+
+16. Selon De Haes et Van Grembergen, quelles sont les trois familles de mécanismes de gouvernance des SI ?
+      a) Structures, processus et mécanismes relationnels
+      b) Matériel, logiciel et réseau
+      c) Stratégie, tactique et opérations
+      d) Audit, conseil et contrôle
+
+17. Pourquoi confier la gouvernance des SI au DSI est-il une erreur ?
+      a) Parce que le DSI n'a pas les compétences techniques
+      b) Parce que cela revient à demander à l'agent de se surveiller lui-même
+      c) Parce que la loi l'interdit
+      d) Parce que le DSI ne fait pas partie de la direction
+
+18. À quel niveau se situe le comité stratégique des SI ?
+      a) Au niveau de l'exploitation
+      b) Au niveau du centre de services
+      c) Au niveau du comité des changements
+      d) Au niveau du conseil, il relève de la gouvernance
+
+19. Quelle loi camerounaise de 2017 régit les établissements publics ?
+      a) La loi n° 2017/010
+      b) La loi n° 2017/011
+      c) La loi n° 2010/012
+      d) La loi n° 2018/012
+
+20. Scénario. À l'ANPP, trois projets ont consommé 71 % du budget du schéma directeur sans être achevés. Comment le conseil l'a-t-il appris ?
+      a) Par le rapport du comité stratégique des SI
+      b) Par la question d'un administrateur représentant le ministère des Finances
+      c) Par un audit de la COBAC
+      d) Par la presse
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La gouvernance des SI est une discipline indépendante de la gouvernance d'entreprise, sans lien avec elle.
+      Vrai / Faux
+
+22. L'informatique allonge la chaîne d'agence et accroît l'asymétrie d'information à chaque maillon.
+      Vrai / Faux
+
+23. Selon COBIT 2019, le premier principe d'un système de gouvernance est la création de valeur pour les parties prenantes.
+      Vrai / Faux
+
+24. La loi Sarbanes-Oxley a été adoptée après les faillites d'Enron et de WorldCom.
+      Vrai / Faux
+
+25. Le rapport King III de 2009 ignorait totalement les technologies de l'information.
+      Vrai / Faux
+
+26. Selon la présentation de la réforme de 2014, l'Acte uniforme OHADA révisé rend le comité d'audit obligatoire dans toutes les sociétés, cotées ou non.
+      Vrai / Faux
+
+27. Une organisation peut être conforme à la loi et investir pourtant dans des projets sans valeur.
+      Vrai / Faux
+
+28. Plus une organisation compte de comités, meilleure est sa gouvernance.
+      Vrai / Faux
+
+29. Un comité stratégique qui ne reçoit l'information que par le directeur général reproduit l'asymétrie qu'il devait réduire.
+      Vrai / Faux
+
+30. La tutelle ministérielle est sans effet sur la gouvernance des SI d'un établissement public.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La gouvernance d'entreprise est le système par lequel les sociétés sont dirigées et ______.
+
+32. Dans une relation d'agence, celui qui délègue est le principal et celui qui agit est l'______.
+
+33. La perte qui subsiste malgré la surveillance et le dédouanement s'appelle la perte ______.
+
+34. Tout groupe qui peut affecter les objectifs d'une organisation, ou être affecté par elle, est une partie ______.
+
+35. Les contrôles qui s'appliquent à tout l'environnement informatique s'appellent les contrôles ______ informatiques.
+
+36. La première édition de COBIT date de l'année ______.
+
+37. Une organisation qui n'a que des structures, sans processus ni relations, a une gouvernance de ______.
+
+38. Le comité qui priorise les projets au niveau de la direction générale est le comité de ______ des SI.
+
+39. L'objectif COBIT consacré à la définition et au maintien du cadre de gouvernance porte le code ______.
+
+40. Le comité d'audit des sociétés cotées est prévu par l'article ______ de l'Acte uniforme révisé, selon la présentation OHADA de la réforme.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

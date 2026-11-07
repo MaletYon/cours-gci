@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C11
+Chapitre 11 : Audit, contrôle et assurance des systèmes d'information
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quel modèle l'IIA a-t-il publié en 2020 pour répartir les rôles dans la maîtrise des risques ?
+      a) Le modèle des trois lignes de défense
+      b) Le modèle des trois lignes
+      c) Le modèle évaluer, diriger, surveiller
+      d) Le cycle planifier, réaliser, vérifier, agir
+
+ 2. À quelle ligne appartient le management opérationnel, qui porte et maîtrise les risques ?
+      a) Première ligne
+      b) Deuxième ligne
+      c) Troisième ligne
+      d) Organe de gouvernance
+
+ 3. À quelle ligne appartiennent la gestion des risques, la conformité et le RSSI ?
+      a) Première ligne
+      b) Troisième ligne
+      c) Deuxième ligne
+      d) Prestataires d'assurance externes
+
+ 4. Comment le modèle classe-t-il le commissaire aux comptes et la COBAC ?
+      a) Première ligne
+      b) Deuxième ligne
+      c) Troisième ligne
+      d) Prestataires d'assurance externes
+
+ 5. Scénario. La recommandation d'octobre 2025 de Mme EKAMBI est restée sans suite. À qui imputer cette défaillance ?
+      a) À l'audit interne seul
+      b) Au suivi par la première ligne et par le comité d'audit
+      c) Au commissaire aux comptes
+      d) À la COBAC
+
+ 6. Depuis quand les Normes mondiales d'audit interne de l'IIA sont-elles applicables ?
+      a) Janvier 2017
+      b) Janvier 2024
+      c) Janvier 2025
+      d) Janvier 2020
+
+ 7. Combien de domaines les Normes mondiales d'audit interne comptent-elles ?
+      a) Cinq
+      b) Quatre
+      c) Treize
+      d) Trois
+
+ 8. Quel domaine des Normes mondiales place sous la responsabilité du conseil la supervision de la fonction d'audit ?
+      a) I, Raison d'être
+      b) II, Éthique et professionnalisme
+      c) V, Réalisation des missions
+      d) III, Gouvernance de la fonction d'audit interne
+
+ 9. Scénario. Le plan d'audit de la BANQUE SANAGA est approuvé par le directeur général. Que faut-il corriger ?
+      a) Rien, c'est la règle
+      b) Le faire approuver par l'organe de gouvernance
+      c) Le faire approuver par le DSI
+      d) Le faire approuver par la COBAC
+
+10. Quel guide de l'INTOSAI fournit le cadre de la vérification des systèmes d'information ?
+      a) ISSAI 100
+      b) GUID 5100
+      c) ISO/IEC 27006
+      d) CRIPP
+
+11. Quel risque d'audit désigne la probabilité que l'auditeur lui-même ne décèle pas une défaillance ?
+      a) Le risque de détection
+      b) Le risque inhérent
+      c) Le risque de contrôle
+      d) Le risque opérationnel
+
+12. Que faut-il pour conclure à l'efficacité opérationnelle d'un contrôle ?
+      a) Un entretien avec le responsable
+      b) L'examen des règles documentées
+      c) Un test de cheminement sur un cas
+      d) Le test d'un échantillon d'opérations sur toute la période
+
+13. Comment le GUID 5100 appelle-t-il les procédures intégrées à un système qui agissent sur le traitement des transactions ?
+      a) Contrôles généraux
+      b) Contrôles de gouvernance
+      c) Contrôles d'application
+      d) Contrôles physiques
+
+14. Qu'est-ce que la lettre d'accompagnement d'une extraction de données doit préciser, selon le GUID 5100 ?
+      a) Le nom de l'auditeur
+      b) La source, l'horodatage, l'empreinte, les paramètres d'extraction et l'environnement
+      c) Le coût de l'extraction
+      d) L'avis du DSI sur les résultats
+
+15. Pourquoi l'auditeur teste-t-il en priorité les contrôles généraux informatiques ?
+      a) Parce qu'ils sont les plus simples
+      b) Parce que la loi l'impose
+      c) Parce que leur défaillance invalide la confiance accordée aux contrôles automatisés
+      d) Parce qu'ils ne concernent que la sécurité
+
+16. Quelles sont les trois familles de contrôles généraux informatiques ?
+      a) Accès, changements, exploitation
+      b) Planification, réalisation, suivi
+      c) Conception, mise en œuvre, efficacité
+      d) Intégrité, objectivité, confidentialité
+
+17. Quel ordre de grandeur d'échantillon le cours indique-t-il pour un contrôle quotidien ?
+      a) 1
+      b) 2 à 5
+      c) 5 à 15
+      d) 20 à 40
+
+18. Scénario. À l'ANPP, 6 comptes sur 25 cumulent saisie et validation d'un paiement. Quel contrôle est défaillant ?
+      a) La sauvegarde
+      b) La séparation des tâches
+      c) La gestion des incidents
+      d) La gestion de la capacité
+
+19. Dans un constat, quel élément répond à la question « Que devrait-il se passer ? »
+      a) La cause
+      b) La conséquence
+      c) Le critère
+      d) La constatation
+
+20. Quel principe la Norme mondiale de 2024 ajoute-t-elle aux quatre principes du Code de 2017 dans son domaine II ?
+      a) La conscience professionnelle
+      b) L'indépendance financière
+      c) La transparence
+      d) La loyauté
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un audit interne qui rédige les procédures qu'il auditera ensuite garde toute son indépendance.
+      Vrai / Faux
+
+22. La troisième ligne donne une assurance ; elle ne maîtrise pas le risque.
+      Vrai / Faux
+
+23. Les Normes mondiales de 2024 remplacent le CRIPP de 2017.
+      Vrai / Faux
+
+24. Au Cameroun, la fonction d'institution supérieure de contrôle est assurée par la Chambre des comptes de la Cour suprême.
+      Vrai / Faux
+
+25. Un entretien suffit pour vérifier la mise en œuvre d'un contrôle.
+      Vrai / Faux
+
+26. Les ordres de grandeur d'échantillonnage du cours sont des exigences normatives.
+      Vrai / Faux
+
+27. « La sécurité des accès est insuffisante et doit être renforcée » est un constat bien rédigé.
+      Vrai / Faux
+
+28. La recommandation doit traiter la cause, et non le symptôme.
+      Vrai / Faux
+
+29. La mention « en cours » sans échéance ni pièce est acceptable dans un tableau de suivi.
+      Vrai / Faux
+
+30. L'audit interne peut donner des conseils en plus de l'assurance.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le sigle de l'Institut des auditeurs internes est ______.
+
+32. Le GUID 5100 propose de délimiter la vérification parmi ______ domaines.
+
+33. Le risque que les contrôles mis en place ne suffisent pas s'appelle le risque de ______.
+
+34. La probabilité que les caractéristiques mêmes d'un système nuisent à sa fonction est le risque ______.
+
+35. Vérifier la mise en œuvre d'un contrôle sur un cas s'appelle un test de ______.
+
+36. À l'ANPP, ______ comptes actifs appartenaient à des agents partis de l'agence.
+
+37. Un constat d'audit compte ______ éléments.
+
+38. Le suivi des recommandations correspond à l'objectif COBIT ______.
+
+39. Le principe selon lequel l'auditeur évalue équitablement tous les éléments, sans se laisser influencer, est l'______.
+
+40. Le principe qui fonde la confiance accordée au jugement de l'auditeur est l'______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

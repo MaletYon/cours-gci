@@ -1,0 +1,602 @@
+% ============================================================================
+% Fichier  : partie1/P01_C02_grandes_defaillances.tex
+% Titre    : Grandes Défaillances et Leçons de Gouvernance
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Chapitre-cas : une section par affaire (brief, déroulé, révélations,
+% synthèse), puis lecture croisée et grille d'erreurs.
+% Sources : uniquement des documents publics de première main (décisions
+% des régulateurs, analyses de cause publiées par les entreprises).
+% ============================================================================
+
+\chapter{Grandes Défaillances et Leçons de Gouvernance}
+\label{chap:defaillances}
+\chaptermark{Grandes défaillances}
+
+\epigraph{%
+    « Chaque grande panne informatique raconte deux histoires~: celle d'un
+    composant qui a cédé, et celle d'une décision que personne n'a
+    prise. »%
+}{Principe d'analyse des défaillances}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:gouv-entreprise} (théorie de l'agence,
+    gouvernance et management, organes de gouvernance).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Analyser des défaillances documentées à partir de sources
+          publiques.
+    \item Isoler, pour chaque cas, la défaillance de gouvernance derrière
+          l'incident technique.
+    \item Distinguer constatation et analyse dans un rapport de défaillance.
+    \item Construire une grille d'erreurs de gouvernance réutilisable.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Mode d'emploi du chapitre}
+% ============================================================================
+
+Le prologue reposait sur un cas fictif, construit pour l'enseignement. Ce
+chapitre passe aux faits. Il étudie trois défaillances réelles, choisies
+parce qu'elles sont \textbf{documentées par des sources de première main}~:
+la décision d'un régulateur des marchés, celle de deux régulateurs
+bancaires, et l'analyse de cause publiée par un éditeur de logiciels. Elles
+couvrent trois situations que tout DSI rencontrera~: un déploiement de
+code, une migration de plateforme, et la mise à jour d'un logiciel fourni
+par un tiers.
+
+Chaque affaire suit le même plan~: le \textbf{brief} (qui, quand, quel
+enjeu), le \textbf{déroulé} (la chronologie), les \textbf{révélations}
+(ce que les enquêtes ont établi) et la \textbf{synthèse} (la cause de
+gouvernance). La section~\ref{sec:c02-croisee} croise les trois cas, et
+la section~\ref{sec:c02-grille} en tire une grille d'erreurs que vous
+réutiliserez tout au long du cours.
+
+\begin{boxalert}
+\textbf{Règle de lecture.} Les faits rapportés dans ce chapitre sont ceux
+qu'établissent les documents cités. Les analyses en termes de gouvernance
+sont les nôtres~: elles sont signalées comme telles, avec leur niveau de
+confiance. Les organisations citées ne sont pas jugées~; leurs défaillances
+sont étudiées parce qu'elles ont eu le mérite d'être rendues publiques.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Une Méthode d'Analyse des Défaillances}
+\label{sec:c02-methode}
+% ============================================================================
+
+\subsection{Les sources}
+
+Une analyse de défaillance vaut ce que valent ses sources. Les articles de
+presse et les billets techniques sont utiles pour s'orienter, mais ils
+simplifient et se recopient. Seules les sources de première main
+permettent d'établir des constatations.
+
+\begin{boxdef}
+\termecle{Source de première main}\index{source de première main}
+(\textit{primary source})~: document produit par une partie qui a eu
+accès direct aux faits et qui engage sa responsabilité sur leur
+exactitude~: décision d'un régulateur ou d'un tribunal, rapport d'enquête
+indépendant commandé par le conseil, analyse de cause publiée par
+l'entreprise elle-même.
+\end{boxdef}
+
+\begin{tableaucours}{L{3.6cm}L{4.2cm}L{4.4cm}}{%
+    \tableauHeader{Type de source} &
+    \tableauHeader{Force} &
+    \tableauHeader{Limite}
+}
+Décision d'un régulateur & Faits contradictoirement établis, sanctions
+motivées & Centrée sur les manquements à la réglementation \\
+Rapport d'enquête indépendant & Examen large, accès aux pièces internes &
+Commandé par l'entreprise, parfois publié en partie seulement \\
+Analyse de cause de l'éditeur & Précision technique & Rédigée par la partie
+en cause, prudente sur les responsabilités \\
+Presse spécialisée & Rapidité, contexte & Chiffres approximatifs,
+sources secondaires \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.1. Hiérarchie des sources d'une
+analyse de défaillance}\end{center}
+
+\subsection{La grille d'analyse}
+
+Pour chaque affaire, sept questions structurent l'analyse. Elles reprennent
+les réflexes du prologue (Chapitre~\ref{chap:prologue}).
+
+\begin{enumerate}
+    \item \textbf{Quel était l'enjeu~?} Activité, taille, dépendance au
+          système.
+    \item \textbf{Que s'est-il passé, et quand~?} Chronologie établie par
+          les sources.
+    \item \textbf{Quelle est la cause technique~?} Le composant, le code,
+          la donnée.
+    \item \textbf{Quelle décision a manqué~?} Qui décide, qui exécute, qui
+          rend compte.
+    \item \textbf{Quels contrôles auraient dû jouer~?} Avant, pendant et
+          après l'incident.
+    \item \textbf{Qui a demandé des comptes, et avec quelles
+          conséquences~?} Régulateur, clients, marché, dirigeants.
+    \item \textbf{Quelle leçon pour une organisation camerounaise~?}
+\end{enumerate}
+
+% ============================================================================
+\section{Knight Capital, 2012 : 45 Minutes, 460 Millions de Dollars}
+\label{sec:c02-knight}
+% ============================================================================
+
+\subsection{Brief}
+
+Knight Capital Americas était, en 2012, l'un des principaux teneurs de
+marché et intermédiaires sur les actions américaines. Son activité
+reposait entièrement sur des systèmes automatisés d'acheminement des
+ordres, dont le système SMARS. Les faits qui suivent sont ceux qu'établit
+la décision de la Securities and Exchange Commission (\sigle{SEC}) du
+16~octobre~2013~\cite{sec2013knight}.
+
+\subsection{Déroulé}
+
+Pour participer à un nouveau programme de la Bourse de New York, Knight
+déploie un nouveau code sur les huit serveurs de SMARS dans les jours qui
+précèdent le 1\textsuperscript{er}~août~2012. Ce nouveau code réutilise un
+indicateur qui servait autrefois à une ancienne fonction, appelée « Power
+Peg », abandonnée depuis des années mais jamais retirée du programme. Un
+technicien déploie le code sur sept serveurs seulement~; le huitième garde
+l'ancien code.
+
+Le 1\textsuperscript{er}~août, à l'ouverture du marché, les ordres qui
+portent le nouvel indicateur réveillent l'ancienne fonction sur le
+huitième serveur. En 45~minutes, alors qu'il traitait 212~ordres de
+clients, SMARS envoie des millions d'ordres sur le marché. Il en résulte
+plus de 4~millions d'exécutions sur 154~valeurs, pour plus de
+397~millions d'actions. Pour tenter de corriger, les équipes retirent le
+nouveau code des sept serveurs où il avait été correctement installé, ce
+qui étend le problème à l'ensemble des serveurs.
+
+\subsection{Révélations}
+
+La décision de la SEC établit notamment que~:
+\begin{itemize}
+    \item Knight ne disposait pas de procédures écrites de déploiement qui
+          imposent une revue par un second technicien~;
+    \item aucun contrôle ne vérifiait que le code était identique sur tous
+          les serveurs~;
+    \item avant l'ouverture du marché, le système avait émis des messages
+          automatiques signalant une anomalie, que personne n'était chargé
+          de traiter~;
+    \item l'entreprise n'avait pas de procédure de réponse aux incidents
+          adaptée à ce type de défaillance.
+\end{itemize}
+Knight a perdu plus de 460~millions de dollars sur les positions ainsi
+créées. Elle a dû lever des fonds en urgence auprès d'investisseurs, puis
+a été absorbée l'année suivante. La SEC lui a infligé une amende de
+12~millions de dollars pour manquement à la règle sur l'accès au marché,
+qui impose aux intermédiaires des contrôles de gestion des risques sur
+leurs ordres automatisés.
+
+\subsection{Synthèse}
+
+\begin{boxscenario}{Knight Capital. Lecture de gouvernance}
+\textbf{Cause technique} (établie). Un code obsolète, réactivé par un
+indicateur réutilisé, sur un serveur où le déploiement était incomplet.
+
+\medskip
+\textbf{Cause de gouvernance} (analyse, confiance élevée). La gestion des
+changements reposait sur le savoir-faire individuel, sans procédure
+écrite, sans double contrôle et sans vérification après déploiement. La
+dette technique (un code mort laissé en place) n'avait jamais été
+arbitrée. Et le dispositif de surveillance produisait des alertes sans
+qu'un rôle soit chargé de les traiter.
+
+\medskip
+\textbf{Les trois questions.} \emph{Qui décide} qu'un déploiement est
+terminé~? Personne, formellement. \emph{Qui exécute}~? Un technicien seul.
+\emph{Qui rend compte} des alertes avant l'ouverture~? Personne.
+\end{boxscenario}
+
+% ============================================================================
+\section{TSB, 2018 : la Migration qui a Paralysé une Banque}
+\label{sec:c02-tsb}
+% ============================================================================
+
+\subsection{Brief}
+
+TSB Bank est une banque de détail britannique, rachetée en 2015 par le
+groupe espagnol Sabadell. Elle utilisait jusqu'alors la plateforme
+informatique de son ancien propriétaire. Le programme de migration vers
+une nouvelle plateforme, fournie par une filiale informatique du groupe
+Sabadell, devait lui donner son autonomie technique. Les faits qui
+suivent sont ceux qu'établissent les décisions conjointes de la Financial
+Conduct Authority (\sigle{FCA}) et de la Prudential Regulation Authority
+(\sigle{PRA}) de décembre~2022~\cite{fca2022tsb}.
+
+\subsection{Déroulé}
+
+La migration des données des clients et de l'entreprise vers la nouvelle
+plateforme a lieu lors d'un week-end d'avril~2018. Dès la remise en
+service, toutes les agences et une part importante des 5,2~millions de
+clients de la banque sont touchées~: accès impossibles aux services en
+ligne et mobiles, opérations erronées, centres d'appel saturés. Le
+rétablissement complet du service prend plusieurs mois. Le directeur
+général quitte ses fonctions à l'automne~2018.
+
+\subsection{Révélations}
+
+Les régulateurs ont établi que TSB n'avait pas organisé ni contrôlé de
+manière adéquate son programme de migration, et qu'elle n'avait pas géré
+de manière adéquate les risques opérationnels nés de son externalisation
+auprès d'un fournisseur tiers critique. La banque a versé 32,7~millions de
+livres de réparation aux clients lésés. Les deux régulateurs lui ont
+infligé une amende totale de 48,65~millions de livres (29,75~millions pour
+la FCA, 18,9~millions pour la PRA), après une réduction de 30~\% accordée
+pour son règlement amiable. En 2023, la PRA a en outre sanctionné
+personnellement l'ancien directeur des systèmes d'information de la banque
+pour ne pas avoir pris de mesures raisonnables de supervision du
+prestataire~\cite{pra2023abarca}.
+
+\begin{boxinfo}
+\textbf{Un précédent pour tous les DSI.} La sanction personnelle de
+l'ancien DSI de TSB montre que la redevabilité n'est pas une notion
+abstraite. Dans le régime britannique de responsabilité des dirigeants du
+secteur financier, le titulaire d'une fonction clé répond personnellement
+des mesures raisonnables qu'il a prises, ou omis de prendre, dans son
+périmètre. Externaliser une activité ne transfère pas la responsabilité de
+la superviser.
+\end{boxinfo}
+
+\subsection{Synthèse}
+
+\begin{boxscenario}{TSB. Lecture de gouvernance}
+\textbf{Cause technique} (établie dans ses grandes lignes). Une plateforme
+et un fournisseur qui n'étaient pas prêts à absorber la charge et les cas
+réels de l'ensemble des clients au moment de la bascule.
+
+\medskip
+\textbf{Cause de gouvernance} (analyse, confiance élevée). Le programme n'a
+pas été piloté avec un contrôle suffisant de son état de préparation, et
+la banque s'est fiée à son fournisseur, entité de son propre groupe, sans
+superviser elle-même les risques qu'il portait. La décision de basculer a
+été prise sans que l'organe de décision dispose d'une évaluation
+indépendante de cet état de préparation.
+
+\medskip
+\textbf{Les trois questions.} \emph{Qui décide} de la bascule~? La
+direction, sur la foi des assurances du programme. \emph{Qui exécute}~?
+Un fournisseur dont la banque ne maîtrisait pas les risques. \emph{Qui
+rend compte}~? La banque, son directeur général et son DSI, devant les
+régulateurs.
+\end{boxscenario}
+
+La ressemblance avec l'opération SANAGA n'est pas fortuite~: le cas fictif
+du prologue reprend des mécanismes que les décisions des régulateurs
+britanniques ont rendus publics. Ils ne sont propres ni à une banque ni à
+un pays.
+
+% ============================================================================
+\section{CrowdStrike, 2024 : la Mise à Jour qui a Arrêté le Monde}
+\label{sec:c02-crowdstrike}
+% ============================================================================
+
+\subsection{Brief}
+
+CrowdStrike est un éditeur américain de solutions de cybersécurité. Son
+logiciel Falcon protège les postes de travail et les serveurs de très
+nombreuses organisations. Pour détecter les attaques, il s'exécute au cœur
+du système d'exploitation Windows et reçoit plusieurs fois par jour des
+mises à jour de contenu, qui décrivent de nouveaux comportements
+malveillants. Les faits techniques qui suivent sont ceux qu'établit
+l'analyse de cause publiée par l'éditeur le 6~août~2024~\cite{crowdstrike2024rca}.
+
+\subsection{Déroulé}
+
+Le 19~juillet~2024, CrowdStrike diffuse une mise à jour de contenu pour
+son capteur Windows. Elle provoque l'arrêt brutal des machines qui la
+reçoivent, puis leur redémarrage en boucle. L'éditeur retire la mise à
+jour dans l'heure et demie qui suit, mais les machines déjà touchées ne
+peuvent plus la recevoir~: il faut souvent intervenir manuellement, poste
+par poste. Microsoft estime à environ 8,5~millions le nombre d'appareils
+Windows touchés~\cite{microsoft2024crowdstrike}. Des compagnies aériennes,
+des hôpitaux, des banques et des médias sont paralysés pendant plusieurs
+jours.
+
+\subsection{Révélations}
+
+L'analyse de cause établit que le capteur attendait 20~champs de données,
+alors que la mise à jour en fournissait 21. Ce décalage a provoqué une
+lecture hors des limites de la mémoire, et l'arrêt du système. Le défaut
+n'avait pas été détecté par les contrôles de validation du contenu.
+L'éditeur annonce, parmi ses mesures correctives, davantage de tests, un
+déploiement progressif de ces mises à jour, et la possibilité pour les
+clients de choisir où et quand elles s'installent.
+
+\subsection{Synthèse}
+
+Ce cas se lit à deux niveaux de gouvernance~: celle de l'éditeur, et celle
+de ses clients.
+
+\begin{boxscenario}{CrowdStrike. Lecture de gouvernance}
+\textbf{Chez l'éditeur} (analyse, confiance moyenne). Les mises à jour de
+contenu n'étaient pas soumises à la même rigueur de gestion des
+changements que les versions du logiciel, ni déployées progressivement.
+Un type de changement fréquent et jugé peu risqué échappait aux contrôles
+les plus stricts.
+
+\medskip
+\textbf{Chez les clients} (analyse, confiance élevée). Des milliers
+d'organisations avaient accordé à un fournisseur unique le droit de
+modifier, sans délai ni contrôle de leur part, un composant qui s'exécute
+au cœur de tous leurs postes. Ce choix est rationnel pour la sécurité~:
+une protection doit être à jour. Mais il crée une \termecle{dépendance
+critique}\index{dépendance critique} qui n'avait, dans la plupart des cas,
+jamais été évaluée ni arbitrée par les instances de gouvernance.
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI}
+\textbf{Évaluer une dépendance critique à un fournisseur de sécurité}
+\begin{enumerate}
+    \item Recenser les logiciels qui disposent de droits élevés sur
+          l'ensemble du parc et reçoivent des mises à jour automatiques.
+    \item Pour chacun, vérifier si l'organisation peut retarder ou
+          échelonner les mises à jour (groupe pilote, puis déploiement
+          général).
+    \item Évaluer le scénario « le fournisseur rend tout le parc
+          inutilisable »~: délai de restauration, procédure manuelle,
+          personnel nécessaire.
+    \item Présenter ce risque au comité des risques, avec une
+          recommandation~: l'accepter, le réduire ou le transférer.
+\end{enumerate}
+Ce qui compte n'est pas de supprimer la dépendance, souvent inévitable,
+mais qu'elle soit \textbf{connue et décidée} par l'instance compétente.
+\end{boxmetier}
+
+% ============================================================================
+\section{Lecture Croisée des Trois Affaires}
+\label{sec:c02-croisee}
+% ============================================================================
+
+\subsection{Comparaison}
+
+\begin{tableaucours}{L{2.9cm}L{3.1cm}L{3.1cm}L{3.1cm}}{%
+    \tableauHeader{Question} &
+    \tableauHeader{Knight Capital} &
+    \tableauHeader{TSB} &
+    \tableauHeader{CrowdStrike}
+}
+Nature du changement & Déploiement de code & Migration de plateforme &
+Mise à jour de contenu \\
+Durée de l'incident & 45 minutes & Plusieurs mois & Plusieurs jours \\
+Contrôle défaillant & Déploiement sans procédure ni double contrôle &
+Préparation de la bascule, supervision du fournisseur & Validation et
+déploiement progressif \\
+Rôle d'un tiers & Aucun & Fournisseur critique du groupe & L'éditeur
+lui-même est le tiers des clients \\
+Sanction & Amende de la SEC, absorption & Amendes FCA et PRA, sanction du
+DSI & Pertes et contentieux des clients \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.2. Comparaison des trois affaires}\end{center}
+
+\subsection{Quatre constantes}
+
+Malgré leurs différences, les trois affaires partagent quatre traits.
+
+\begin{enumerate}
+    \item \textbf{Un changement est à l'origine de chaque incident.} Aucune
+          de ces pannes ne vient d'une usure ou d'une attaque. Toutes
+          viennent d'une modification volontaire du système. La gestion
+          des changements (Chapitre~\ref{chap:itil-changements}) est le
+          premier contrôle de la gouvernance des SI.
+    \item \textbf{Le risque était connu ou connaissable.} Code mort jamais
+          retiré, préparation insuffisante, type de mise à jour moins
+          contrôlé~: aucun de ces risques n'était imprévisible.
+    \item \textbf{La responsabilité était diluée.} Dans chaque cas, il est
+          difficile de nommer la personne ou l'instance qui avait
+          formellement décidé que le risque était acceptable.
+    \item \textbf{Le retour arrière était difficile ou impossible.} Knight a
+          aggravé la situation en tentant de revenir en arrière, TSB a mis
+          des mois à se rétablir, et les clients de CrowdStrike ont dû
+          réparer leurs postes un par un.
+\end{enumerate}
+
+\begin{boiteRemarque}{Et en Afrique~?}
+Les trois affaires sont américaines ou européennes. Ce n'est pas que
+l'Afrique centrale ignore les grandes pannes~: les interruptions de
+services bancaires, de paiement mobile ou de télécommunications y sont
+fréquentes et parfois longues. C'est que leurs causes sont rarement
+rendues publiques. Peu de régulateurs publient leurs décisions motivées,
+et peu d'entreprises publient leurs analyses de cause.
+
+Cette opacité est elle-même une question de gouvernance. Une défaillance
+dont on ne publie pas l'analyse ne profite à personne d'autre qu'à
+l'organisation qui l'a subie, et souvent pas même à elle. Le
+Chapitre~\ref{chap:droit} examinera les obligations de déclaration des
+incidents prévues par le droit camerounais, et le
+Chapitre~\ref{chap:recherche-mesure} la place de cette question dans la
+recherche.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Une Grille d'Erreurs de Gouvernance}
+\label{sec:c02-grille}
+% ============================================================================
+
+Les trois affaires réelles et l'opération SANAGA permettent de construire
+une grille de dix erreurs. Chacune s'accompagne d'un signal d'alerte
+observable et de la question qu'un administrateur, un auditeur ou un DSI
+devrait poser. La dernière colonne renvoie à l'objectif COBIT~2019 qui
+traite l'erreur~; ces objectifs seront étudiés au
+Chapitre~\ref{chap:cobit-objectifs}.
+
+\begin{tableaucours}{L{3.2cm}L{3.4cm}L{3.8cm}L{1.6cm}}{%
+    \tableauHeader{Erreur} &
+    \tableauHeader{Signal d'alerte} &
+    \tableauHeader{Question à poser} &
+    \tableauHeader{COBIT}
+}
+1. Décision sans instance & Date ou budget fixés par une seule personne &
+Quelle instance a décidé, et où est le procès-verbal~? & EDM01 \\
+2. Risque non arbitré & Alerte écrite restée sans réponse & Qui a accepté
+ce risque, par écrit~? & EDM03 \\
+3. Changement non autorisé & Mise en production sans comité & Où est
+l'autorisation, datée avant la mise en production~? & BAI06 \\
+4. Pas de retour arrière & Plan de retour absent ou non testé & Quand le
+retour arrière a-t-il été testé, et avec quel résultat~? & BAI07 \\
+5. Recette incomplète & Bascule avec des scénarios non testés & Quel
+taux de couverture, et qui a accepté le reste~? & BAI07 \\
+6. Fournisseur non supervisé & Rapports de suivi rédigés par le
+fournisseur & Comment vérifions-nous nous-mêmes ce qu'il affirme~? &
+APO10 \\
+7. Contrat sans engagement & Pas de niveau de service ni de pénalité &
+Que se passe-t-il s'il ne tient pas ses engagements~? & APO09 \\
+8. Alertes sans propriétaire & Messages automatiques non traités & Qui est
+chargé de lire cette alerte, et dans quel délai~? & DSS02 \\
+9. Continuité non testée & Plan de continuité jamais exercé & Quand a eu
+lieu le dernier exercice, et qu'a-t-il révélé~? & DSS04 \\
+10. Audit sans suite & Recommandations « en cours » depuis des mois &
+Qui suit les recommandations, devant quelle instance~? & MEA02 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.3. Grille des dix erreurs de
+gouvernance des SI}\end{center}
+
+\begin{boxprocedure}
+\textbf{Le dossier d'analyse d'une défaillance.} Pour qu'une analyse de
+défaillance soit opposable à la direction, au conseil ou au régulateur,
+elle doit contenir~:
+\begin{itemize}
+    \item la liste des sources utilisées, classées selon le
+          Tableau~2.1~;
+    \item une chronologie où chaque entrée renvoie à une pièce~;
+    \item des constatations séparées des analyses, chaque analyse portant
+          un niveau de confiance (faible, moyen, élevé)~;
+    \item la cause technique et la cause de gouvernance, distinguées~;
+    \item pour chaque erreur de la grille relevée, la pièce qui l'établit.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Utiliser la grille en mission}
+\begin{enumerate}
+    \item Avant la mission, choisir les erreurs de la grille les plus
+          probables au regard de l'activité (une banque qui migre~:
+          erreurs 1 à 5~; une entreprise très externalisée~: erreurs 6
+          et~7).
+    \item Pour chaque erreur retenue, préparer la question et la pièce à
+          demander.
+    \item En entretien, poser la question, puis demander la pièce~:
+          une réponse orale n'est pas une preuve.
+    \item Consigner chaque écart sous la forme constatation, critère,
+          cause, conséquence, recommandation
+          (Chapitre~\ref{chap:audit}).
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Trois contrôles à mettre en place dès demain}
+\begin{enumerate}
+    \item Aucun changement en production sans enregistrement préalable, et
+          aucun changement majeur sans autorisation d'un comité.
+    \item Une vérification après chaque déploiement~: la version installée
+          est la même partout.
+    \item Un propriétaire nommé pour chaque alerte automatique, avec un
+          délai de traitement.
+\end{enumerate}
+Ces trois contrôles auraient, à eux seuls, très probablement évité
+l'affaire Knight Capital.
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Les sources de première main d'abord}~: décisions des
+          régulateurs, rapports d'enquête, analyses de cause. La presse
+          oriente, elle n'établit pas.
+    \item \textbf{Knight Capital (2012)}~: un déploiement sans procédure
+          écrite ni double contrôle, un code mort réactivé, des alertes
+          sans propriétaire~; 460~millions de dollars perdus en
+          45~minutes.
+    \item \textbf{TSB (2018)}~: une migration mal pilotée, un fournisseur
+          critique mal supervisé~; des amendes de 48,65~millions de livres
+          et la sanction personnelle de l'ancien DSI.
+    \item \textbf{CrowdStrike (2024)}~: une mise à jour de contenu
+          insuffisamment validée et déployée en une fois~; une dépendance
+          critique que la plupart des clients n'avaient jamais arbitrée.
+    \item \textbf{Quatre constantes}~: un changement à l'origine, un risque
+          connaissable, une responsabilité diluée, un retour arrière
+          difficile.
+    \item \textbf{La grille des dix erreurs} relie chaque erreur à un
+          signal, une question et un objectif COBIT~: elle servira dans
+          tout le cours.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.1. Constatation ou analyse~? \niveaubase}]
+Pour chacune des phrases suivantes, indiquez s'il s'agit d'une constatation
+ou d'une analyse. Pour les analyses, proposez un niveau de confiance et la
+pièce qui permettrait de le renforcer.
+\begin{enumerate}[(a)]
+    \item « Le nouveau code n'a été installé que sur sept des huit
+          serveurs. »
+    \item « Les équipes de Knight manquaient de formation. »
+    \item « TSB a versé 32,7~millions de livres de réparation à ses
+          clients. »
+    \item « Le conseil de TSB aurait dû refuser la date de bascule. »
+    \item « La mise à jour fournissait 21~champs au lieu des 20 attendus. »
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.2. La grille appliquée à KRIBILOG \niveaumoyen}]
+Chez KRIBILOG SA, le logiciel de suivi des conteneurs s'arrête trois fois
+en deux mois. Vous disposez des faits suivants~: l'infogérant NETPORT
+SERVICES applique les correctifs le soir, sans prévenir~; son rapport
+mensuel ne mentionne aucun incident~; le contrat ne prévoit aucun délai
+d'intervention~; le dernier test de continuité date de 2021.
+\begin{enumerate}[(a)]
+    \item Identifiez les erreurs de la grille (Tableau~2.3) présentes dans
+          ce cas.
+    \item Pour chacune, rédigez la question à poser et la pièce à
+          demander.
+    \item Classez-les par ordre de priorité, en justifiant.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.3. Simulation d'examen \niveauexpert}]
+\textit{Durée conseillée~: 1~heure.} Choisissez une interruption de service
+informatique survenue en Afrique et documentée publiquement (communiqué de
+l'organisation, décision d'un régulateur, rapport d'enquête).
+\begin{enumerate}[(a)]
+    \item Classez les sources disponibles selon le Tableau~2.1, et
+          indiquez ce qu'elles permettent d'établir.
+    \item Appliquez les sept questions de la grille d'analyse
+          (section~\ref{sec:c02-methode}).
+    \item Rédigez une synthèse d'une page, en séparant constatations et
+          analyses.
+    \item Si les sources ne permettent pas d'établir la cause de
+          gouvernance, dites-le, et indiquez les pièces qu'il faudrait
+          obtenir. Cette conclusion est une réponse valable.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Les défaillances montrent ce que coûte une
+gouvernance absente. Le Chapitre~\ref{chap:alignement} montre ce qu'une
+gouvernance présente doit rechercher~: l'alignement du SI sur la
+stratégie, la création de valeur, et l'arbitrage des décisions
+d'investissement.
+\end{boxinfo}

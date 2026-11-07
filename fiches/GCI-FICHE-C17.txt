@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C17
+Chapitre 17 : Études de cas intégratrices
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Combien de volets compte le diagnostic intégré de gouvernance des SI ?
+      a) Quatre
+      b) Six
+      c) Cinq
+      d) Sept
+
+ 2. Lequel de ces éléments n'est PAS un volet du diagnostic intégré ?
+      a) Organes et décisions
+      b) Conformité
+      c) Recrutement des développeurs
+      d) Fournisseurs et continuité
+
+ 3. Que contient la première page du rapport de diagnostic remis à l'organe de gouvernance ?
+      a) Trois messages et trois décisions demandées
+      b) La liste de tous les entretiens
+      c) Le détail des 40 objectifs COBIT
+      d) Le contrat des fournisseurs
+
+ 4. Combien d'éléments chaque constat du rapport de diagnostic comporte-t-il ?
+      a) Deux
+      b) Trois
+      c) Quatre
+      d) Cinq
+
+ 5. Qu'a révélé l'examen des procès-verbaux du comité stratégique de la BANQUE SANAGA ?
+      a) Le comité ne s'est jamais réuni
+      b) Le comité n'a examiné que des présentations du directeur général
+      c) Le comité a entendu la DSI chaque trimestre
+      d) Le comité a été dissous
+
+ 6. Quelle part des changements urgents de l'année n'a pas fait l'objet de la revue a posteriori ?
+      a) 22 %
+      b) 35 %
+      c) Environ 70 %
+      d) 100 %
+
+ 7. Pourquoi les pénalités dues par DIGICORE AFRIQUE n'ont-elles pas été réclamées ?
+      a) Pour ne pas dégrader la relation pendant la nouvelle bascule
+      b) Parce que le contrat n'en prévoyait pas
+      c) Parce que la COBAC l'interdisait
+      d) Parce que le fournisseur les avait déjà payées
+
+ 8. Quel est le message principal du diagnostic au conseil de la BANQUE SANAGA ?
+      a) Rien n'a été fait
+      b) Il faut changer de fournisseur
+      c) Il faut certifier la banque ISO/IEC 27001
+      d) Les structures et les documents existent, mais pas encore les comportements
+
+ 9. Quel est le coût total de la feuille de route de la BANQUE SANAGA ?
+      a) 1,9 milliard FCFA
+      b) 157 millions FCFA
+      c) 38 millions FCFA
+      d) 60 millions FCFA
+
+10. Comment le taux de réouverture des tickets de KRIBILOG a-t-il évolué ?
+      a) De 12 % à 30 %
+      b) Il est resté à 30 %
+      c) De 30 % à 12 %
+      d) De 30 % à 0 %
+
+11. Qu'a relevé l'audit interne du mois 11 chez KRIBILOG ?
+      a) NETPORT SERVICES a confié l'hébergement des sauvegardes à un sous-traitant à Casablanca sans l'en informer
+      b) Le correctif n'était pas installé
+      c) Le second opérateur était en panne
+      d) L'armateur avait résilié le contrat
+
+12. Quel article de la structure harmonisée rend la revue de direction obligatoire ?
+      a) Article 4
+      b) Article 6
+      c) Article 10
+      d) Article 9
+
+13. Quel est l'avis rendu à M. MBARGA sur le calendrier de certification ?
+      a) Il est impossible à tenir
+      b) Il peut être tenu sous deux conditions : un nouvel avenant et la revue de direction
+      c) Il peut être tenu sans condition
+      d) Il faut viser l'ISO/IEC 27001 à la place
+
+14. Quelle part du budget du schéma directeur trois projets inachevés de l'ANPP ont-ils consommée ?
+      a) 25 %
+      b) 50 %
+      c) 71 %
+      d) 90 %
+
+15. Qu'a révélé la deuxième révélation sur les 14 comptes d'agents partis ?
+      a) Ils ont été désactivés, mais la cause n'a pas été traitée et trois nouveaux départs n'ont pas été signalés
+      b) Ils n'ont jamais été désactivés
+      c) Ils appartenaient à des prestataires
+      d) L'auditeur s'était trompé
+
+16. Que doit faire une réponse à un rapport d'audit, selon la règle du chapitre ?
+      a) Contester tous les constats
+      b) Corriger le symptôme le lendemain
+      c) Demander un nouvel audit
+      d) Traiter la cause, désigner un responsable et une échéance, indiquer la pièce qui prouvera la mise en œuvre
+
+17. Quel est le taux de refus de crédit de NOUN PAY dans la région concernée, contre 24 % en moyenne nationale ?
+      a) 30 %
+      b) 61 %
+      c) 45 %
+      d) 71 %
+
+18. Combien d'objectifs COBIT bien tenus le diagnostic recommande-t-il à NOUN PAY ?
+      a) Quarante
+      b) Dix
+      c) Six
+      d) Trois
+
+19. Quelle décision urgente le diagnostic recommande-t-il à NOUN PAY ?
+      a) Suspendre l'usage de la variable « opérateur mobile » en attendant une analyse d'impact
+      b) Abandonner la levée de fonds
+      c) Quitter le nuage
+      d) Recruter un DSI
+
+20. Quelle copie n'obtient pas la moyenne, selon les attentes du correcteur ?
+      a) Une copie qui sépare constatations et analyses
+      b) Une copie qui cite des textes vérifiés
+      c) Une copie qui propose une gouvernance proportionnée
+      d) Une copie qui recommande de « déployer COBIT et ITIL » sans choisir
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le chapitre 17 présente de nombreuses notions nouvelles.
+      Vrai / Faux
+
+22. Il est recommandé de travailler chaque cas avant de lire sa synthèse.
+      Vrai / Faux
+
+23. Le pouvoir d'accès direct prévu par la charte du comité a été exercé régulièrement.
+      Vrai / Faux
+
+24. Le diagnostic de la BANQUE SANAGA illustre des structures sans mécanismes relationnels.
+      Vrai / Faux
+
+25. De bons indicateurs dispensent de la revue de direction.
+      Vrai / Faux
+
+26. L'avenant initial avec NETPORT SERVICES traitait la sous-traitance en cascade.
+      Vrai / Faux
+
+27. Le projet de paie dématérialisée de l'ANPP est en service depuis janvier 2027.
+      Vrai / Faux
+
+28. Désactiver les comptes le lendemain de l'audit suffit à répondre au constat.
+      Vrai / Faux
+
+29. Le contrat type du fournisseur de nuage de NOUN PAY permet de choisir la localisation des données.
+      Vrai / Faux
+
+30. Une feuille de route se chiffre et se rapporte au coût des défaillances qu'elle prévient.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le registre des changements de la BANQUE SANAGA compte ______ changements dans l'année.
+
+32. Sur 412 changements, ______ ont été qualifiés d'urgents.
+
+33. Le coût de la feuille de route représente moins de ______ % du coût de la panne de 2026.
+
+34. La disponibilité moyenne de bout en bout du service de suivi atteint ______ % sur six mois.
+
+35. Le volume mensuel de tickets de KRIBILOG est passé de 4 800 à ______.
+
+36. Le contrat d'entreprise du fournisseur de nuage coûte ______ millions FCFA de plus par an.
+
+37. La levée de fonds préparée par NOUN PAY s'élève à ______ milliards FCFA.
+
+38. L'autorité qui a transmis à l'ANPP son rapport provisoire d'audit est la Chambre des ______.
+
+39. Pour l'ANPP, l'erreur transversale est « un symptôme corrigé, une ______ intacte ».
+
+40. L'objectif COBIT du suivi des bénéfices d'un projet livré est ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

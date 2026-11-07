@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C02
+Chapitre 2 : Grandes défaillances et leçons de gouvernance
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Laquelle de ces sources est une source de première main sur une défaillance ?
+      a) Un article de presse généraliste
+      b) Un billet de blog technique
+      c) La décision motivée d'un régulateur
+      d) Un fil de discussion sur un réseau social
+
+ 2. Quelle est la principale limite de l'analyse de cause publiée par l'éditeur en cause ?
+      a) Elle manque de précision technique
+      b) Elle est rédigée par la partie en cause, prudente sur les responsabilités
+      c) Elle n'est jamais publiée
+      d) Elle ne contient aucune chronologie
+
+ 3. Combien de temps a duré l'incident de Knight Capital le 1er août 2012 ?
+      a) 45 minutes
+      b) 3 jours
+      c) 6 heures
+      d) 2 semaines
+
+ 4. Quelle était la cause technique de l'incident de Knight Capital ?
+      a) Une cyberattaque contre ses serveurs
+      b) Une panne électrique du centre de données
+      c) Une erreur de saisie d'un opérateur
+      d) Un code obsolète réactivé sur un serveur où le déploiement était incomplet
+
+ 5. Sur combien de serveurs le nouveau code avait-il été correctement déployé, sur les huit de SMARS ?
+      a) Un seul
+      b) Quatre
+      c) Sept
+      d) Huit
+
+ 6. Quel montant d'amende la SEC a-t-elle infligé à Knight Capital ?
+      a) 12 millions de dollars
+      b) 460 millions de dollars
+      c) 48 millions de dollars
+      d) 1 million de dollars
+
+ 7. Quelle défaillance de gouvernance la décision de la SEC met-elle en évidence chez Knight Capital ?
+      a) L'absence de conseil d'administration
+      b) Un déploiement sans procédure écrite ni double contrôle, et des alertes sans propriétaire
+      c) Un fournisseur étranger mal supervisé
+      d) Une stratégie d'entreprise trop risquée
+
+ 8. Quel groupe avait racheté TSB en 2015 ?
+      a) Lloyds
+      b) Barclays
+      c) Santander
+      d) Sabadell
+
+ 9. Quel est le montant total des amendes infligées à TSB par la FCA et la PRA en 2022 ?
+      a) 12 millions de livres
+      b) 48,65 millions de livres
+      c) 330 millions de livres
+      d) 5,2 millions de livres
+
+10. Quelle conséquence personnelle la PRA a-t-elle tirée de l'affaire TSB en 2023 ?
+      a) La sanction de l'ancien directeur des systèmes d'information
+      b) L'interdiction d'exercer du président du conseil
+      c) La fermeture de la banque
+      d) Aucune, seule la banque a été sanctionnée
+
+11. Quel manquement les régulateurs britanniques ont-ils reproché à TSB à propos de son fournisseur ?
+      a) Le choix d'un fournisseur étranger
+      b) Un prix trop élevé
+      c) Une gestion inadéquate des risques opérationnels nés de l'externalisation
+      d) L'absence d'appel d'offres
+
+12. Selon l'analyse de cause de CrowdStrike, quel décalage a provoqué l'arrêt des machines ?
+      a) Une mise à jour de 32 bits au lieu de 64 bits
+      b) Une date mal formatée
+      c) Un fichier manquant sur le serveur de mise à jour
+      d) Le capteur attendait 20 champs, la mise à jour en fournissait 21
+
+13. Combien d'appareils Windows ont été touchés selon l'estimation de Microsoft ?
+      a) Environ 85 000
+      b) Environ 8,5 millions
+      c) Environ 850 millions
+      d) Environ 1 million
+
+14. Quelle est, chez les clients de CrowdStrike, la défaillance de gouvernance mise en évidence ?
+      a) Une dépendance critique à un fournisseur jamais évaluée ni arbitrée
+      b) L'absence d'antivirus
+      c) Un budget de sécurité insuffisant
+      d) Une mauvaise formation des utilisateurs
+
+15. Quelle constante se retrouve à l'origine des trois affaires étudiées ?
+      a) Une attaque informatique
+      b) L'usure du matériel
+      c) Un changement volontaire apporté au système
+      d) Une erreur humaine d'un utilisateur final
+
+16. Dans la grille des dix erreurs, à quel objectif COBIT se rattache « un changement non autorisé » ?
+      a) BAI06
+      b) EDM01
+      c) APO09
+      d) DSS04
+
+17. Quel signal d'alerte correspond à l'erreur « fournisseur non supervisé » ?
+      a) Un plan de continuité jamais exercé
+      b) Une mise en production sans comité
+      c) Une alerte écrite restée sans réponse
+      d) Des rapports de suivi rédigés par le fournisseur lui-même
+
+18. À quel objectif COBIT se rattache l'erreur « audit sans suite » ?
+      a) BAI07
+      b) MEA02
+      c) APO10
+      d) DSS02
+
+19. Scénario. Chez KRIBILOG, l'infogérant applique les correctifs le soir sans prévenir, et le contrat ne prévoit aucun délai d'intervention. Quelles erreurs de la grille reconnaissez-vous ?
+      a) Décision sans instance et risque non arbitré
+      b) Continuité non testée et audit sans suite
+      c) Changement non autorisé et contrat sans engagement
+      d) Recette incomplète et alertes sans propriétaire
+
+20. Pourquoi le chapitre ne présente-t-il pas de grande panne africaine ?
+      a) Parce que les causes des pannes y sont rarement rendues publiques
+      b) Parce qu'il n'y a pas de grandes pannes en Afrique
+      c) Parce que les régulateurs africains n'existent pas
+      d) Parce que la loi interdit d'en parler
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La presse spécialisée suffit à établir les constatations d'une analyse de défaillance.
+      Vrai / Faux
+
+22. En tentant de revenir en arrière, les équipes de Knight Capital ont étendu le problème à tous les serveurs.
+      Vrai / Faux
+
+23. Knight Capital a perdu plus de 460 millions de dollars dans l'incident.
+      Vrai / Faux
+
+24. Externaliser une activité transfère au prestataire la responsabilité de la superviser.
+      Vrai / Faux
+
+25. TSB a versé environ 32,7 millions de livres de réparation à ses clients lésés.
+      Vrai / Faux
+
+26. L'incident CrowdStrike a été provoqué par une cyberattaque.
+      Vrai / Faux
+
+27. Parmi ses mesures correctives, CrowdStrike a annoncé un déploiement progressif de ses mises à jour de contenu.
+      Vrai / Faux
+
+28. Dans les trois affaires, le risque à l'origine de la panne était imprévisible.
+      Vrai / Faux
+
+29. Une réponse orale d'un responsable suffit à l'auditeur pour lever un doute.
+      Vrai / Faux
+
+30. L'opacité sur les causes des défaillances est elle-même une question de gouvernance.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Un document produit par une partie ayant eu accès direct aux faits est une source de première ______.
+
+32. Le régulateur américain des marchés qui a sanctionné Knight Capital est désigné par le sigle ______.
+
+33. L'ancienne fonction réactivée par erreur chez Knight Capital s'appelait « Power ______ ».
+
+34. TSB comptait environ ______ millions de clients au moment de la migration.
+
+35. Les deux régulateurs britanniques qui ont sanctionné TSB sont la FCA et la ______.
+
+36. L'incident CrowdStrike a eu lieu le 19 juillet ______.
+
+37. Une dépendance à un fournisseur dont l'échec peut arrêter tout le parc est une dépendance ______.
+
+38. L'objectif COBIT associé à l'erreur « continuité non testée » porte le code ______.
+
+39. Les quatre constantes des affaires incluent un retour ______ difficile ou impossible.
+
+40. Chaque analyse d'un rapport de défaillance porte un niveau de ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

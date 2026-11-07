@@ -1,0 +1,558 @@
+% ============================================================================
+% Fichier  : partie4/P04_C14_changements_configuration.tex
+% Titre    : Changements, Mises en Production et Configuration
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : ITIL 4 (sources publiques, notions reformulées) ; COBIT 2019,
+% fiches BAI06, BAI07 et BAI10 (dossier Normes). Laboratoire associé :
+% GCI-LAB-07 (évaluation d'un changement, analyse d'impact, décision).
+% ============================================================================
+
+\chapter{Changements, Mises en Production et Configuration}
+\label{chap:itil-changements}
+\chaptermark{Changements et configuration}
+
+\epigraph{%
+    « Toutes les grandes pannes de ce cours ont commencé par un
+    changement. »%
+}{Leçon des grandes défaillances}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:itil-incidents} (incidents et
+    problèmes) et du Chapitre~\ref{chap:defaillances} (grandes
+    défaillances).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Distinguer changement standard, normal et urgent.
+    \item Évaluer le risque d'un changement et organiser son autorisation.
+    \item Planifier une mise en production et son retour arrière.
+    \item Exploiter une CMDB pour une analyse d'impact.
+    \item Relier ces pratiques à l'objectif COBIT BAI06.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : comment changer sans casser~?}
+% ============================================================================
+
+Knight Capital, TSB, CrowdStrike, la BANQUE SANAGA~: le
+Chapitre~\ref{chap:defaillances} a montré que chaque grande panne avait
+commencé par un changement. Pourtant, une organisation qui ne change
+rien meurt aussi sûrement~: le correctif que KRIBILOG n'a jamais installé
+(Chapitre~\ref{chap:itil-incidents}) est la cause de 40~\% de ses tickets.
+Et la BANQUE SANAGA doit relancer, en 2027, la bascule de son système
+central.
+
+Le dilemme est celui de COBIT, qui rattache la gestion des changements à
+l'\emph{agilité} (Chapitre~\ref{chap:cobit-objectifs})~: il faut changer
+\emph{vite} et changer \emph{bien}. Ce chapitre présente les trois
+pratiques qui y répondent~: l'habilitation des changements
+(sections~\ref{sec:c14-types} et~\ref{sec:c14-risque}), la gestion des
+mises en production et des déploiements (section~\ref{sec:c14-mep}), et la
+gestion de la configuration (section~\ref{sec:c14-config}). Le laboratoire
+GCI-LAB-07 fait évaluer et décider un changement de la banque.
+
+\separateur
+
+% ============================================================================
+\section{Les Changements et leurs Types}
+\label{sec:c14-types}
+% ============================================================================
+
+\subsection{Qu'est-ce qu'un changement~?}
+
+\begin{boxdef}
+\termecle{Changement}\index{changement} (\textit{change})~: ajout,
+modification ou retrait de tout élément susceptible d'avoir un effet,
+direct ou indirect, sur un service.
+
+\medskip
+\termecle{Habilitation des changements}\index{habilitation des
+changements} (\textit{change enablement})~: pratique qui vise à maximiser
+le nombre de changements réussis, en veillant à ce que les risques soient
+correctement évalués, à ce que les changements soient autorisés et à ce
+que leur calendrier soit maîtrisé.
+\end{boxdef}
+{\small\itshape Définitions reformulées d'après ITIL~4~\cite{axelos2019itil4}.
+La pratique s'appelait \emph{change control} dans la première édition
+d'ITIL~4.}
+
+Le mot \emph{habilitation} n'est pas anodin. ITIL~4 ne cherche pas à
+freiner les changements, mais à en permettre le plus grand nombre possible
+\emph{avec succès}. Une organisation où chaque changement attend trois
+semaines l'avis d'un comité contourne tôt ou tard la procédure~: c'est
+l'erreur symétrique de celle de Knight Capital.
+
+\subsection{Trois types de changements}
+
+\begin{tableaucours}{L{2.4cm}L{4.8cm}L{5.0cm}}{%
+    \tableauHeader{Type} &
+    \tableauHeader{Caractéristiques} &
+    \tableauHeader{Exemple}
+}
+Standard & Risque faible, bien connu, procédure documentée~; autorisé
+d'avance & Créer un compte utilisateur, ajouter de la mémoire à un serveur
+virtuel \\
+Normal & Doit être évalué et autorisé selon son risque, par l'autorité
+compétente & Installer le correctif de l'éditeur chez KRIBILOG~; basculer
+le système central de la BANQUE SANAGA \\
+Urgent & Doit être mis en œuvre au plus vite, par exemple pour résoudre un
+incident ou combler une faille~; procédure accélérée & Corriger une faille
+de sécurité activement exploitée \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.1. Les trois types de changements}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Pour échapper au comité des changements, une
+équipe qualifie systématiquement ses changements d'« urgents ». À la BANQUE
+SANAGA, 35~\% des changements de 2025 étaient enregistrés comme urgents~;
+aucun n'avait fait l'objet de la revue a posteriori prévue.
+
+\smallskip
+\textbf{Règle~:} un changement urgent n'est pas un changement non
+contrôlé. Il est autorisé par une autorité désignée à l'avance (souvent
+restreinte), documenté, et revu après coup (BAI06.02). Un taux de
+changements urgents élevé est un indicateur d'alerte.
+\end{boxalert}
+
+\subsection{L'autorité de changement}
+
+ITIL~4 parle d'\termecle{autorité de changement}\index{autorité de
+changement} plutôt que de comité~: la personne ou le groupe qui autorise
+un changement. Elle n'est pas unique~: l'autorisation est
+\emph{déléguée} selon le risque. Un changement standard est autorisé
+d'avance~; un changement normal à faible risque peut l'être par le
+responsable de l'équipe~; un changement à risque élevé exige un
+\termecle{comité des changements}\index{comité des changements}
+(\textit{change advisory board}, \sigle{CAB}), voire la direction.
+
+Cette délégation est une question de \textbf{droits de décision}
+(Chapitre~\ref{chap:alignement})~: qui peut décider de quel changement.
+Elle doit être fixée par écrit et approuvée par la gouvernance.
+
+% ============================================================================
+\section{Évaluer et Autoriser}
+\label{sec:c14-risque}
+% ============================================================================
+
+\subsection{Une grille d'évaluation du risque}
+
+Chaque organisation définit sa grille. Celle que retient la BANQUE SANAGA
+après la panne note six critères de~1 (favorable) à~3 (défavorable)~; le
+total, de 6 à~18, détermine l'autorité compétente.
+
+\begin{tableaucours}{L{3.6cm}L{2.8cm}L{2.8cm}L{2.8cm}}{%
+    \tableauHeader{Critère} &
+    \tableauHeader{1} &
+    \tableauHeader{2} &
+    \tableauHeader{3}
+}
+Criticité du service & Soutien & Important & Critique (paiements,
+système central) \\
+Utilisateurs touchés & Moins de 50 & 50 à 500 & Plus de 500 ou clients \\
+Complexité & Un composant & Plusieurs composants & Plusieurs systèmes,
+données converties \\
+Réversibilité & Retour arrière testé & Retour arrière prévu non testé &
+Retour arrière impossible \\
+Couverture des tests & Plus de 95~\% & 80 à 95~\% & Moins de 80~\% \\
+Expérience & Changement déjà réalisé & Changement analogue & Première fois \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.2. Grille d'évaluation du risque
+d'un changement (convention de la BANQUE SANAGA)}\end{center}
+
+\begin{tableaucours}{L{2.4cm}L{2.6cm}L{7.2cm}}{%
+    \tableauHeader{Score} &
+    \tableauHeader{Risque} &
+    \tableauHeader{Autorité de changement}
+}
+6 à 9 & Faible & Responsable de l'équipe concernée \\
+10 à 13 & Moyen & Responsable des changements, après avis du RSSI \\
+14 à 18 & Élevé & Comité des changements~; et, si la réversibilité vaut~3,
+décision formelle du comité de pilotage avec acceptation écrite du risque \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.3. Score de risque et autorité
+compétente}\end{center}
+
+\begin{boxscenario}{Opération SANAGA. La bascule notée}
+\textbf{Notation a posteriori.} Criticité~3, utilisateurs~3, complexité~3,
+réversibilité~3 (conversion irréversible), tests~3 (63~\%), expérience~3
+(première migration). Score~: \textbf{18 sur 18}.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Avec la grille, la bascule aurait
+relevé du comité des changements \emph{et} d'une décision formelle du
+comité de pilotage, avec acceptation écrite du risque. Aucune des deux
+instances ne s'est prononcée. La grille n'aurait pas empêché la décision
+de basculer, mais elle aurait obligé quelqu'un à la prendre, par écrit,
+en connaissance de cause.
+\end{boxscenario}
+
+\subsection{Le calendrier des changements}
+
+Le \termecle{calendrier des changements}\index{calendrier des changements}
+(\textit{change schedule}) planifie les changements autorisés et en
+informe les parties concernées. Il permet d'éviter les collisions (deux
+changements sur le même système le même soir) et d'appliquer des
+\emph{périodes de gel} pendant les moments sensibles~: la clôture des
+comptes pour une banque, la paie des fonctionnaires pour l'ANPP, l'arrivée
+d'un grand navire pour KRIBILOG.
+
+\begin{boxobjet}{BAI06 · Gérer les changements informatiques}
+\textbf{Finalité~:} permettre la livraison rapide et fiable des
+changements, en limitant le risque d'affecter la stabilité ou l'intégrité
+de l'environnement modifié.
+
+\textbf{Objectifs liés~:} EG01 (portefeuille compétitif)~; AG06 (agilité).
+
+\textbf{Pratiques~:} BAI06.01 évaluer, prioriser et autoriser les demandes
+de changement~; BAI06.02 gérer les changements d'urgence~; BAI06.03 suivre
+l'état des changements et en rendre compte~; BAI06.04 clore et documenter
+les changements.
+
+\textbf{RACI (extrait, BANQUE SANAGA)~:} BAI06.01 pour un risque élevé~:
+\emph{A} au président du comité des changements, \emph{R} au responsable
+des changements, \emph{C} au RSSI, aux métiers et à l'exploitation,
+\emph{I} au centre de services.
+
+\textbf{Indicateurs~:} taux de changements en échec~; taux de changements
+urgents~; nombre de changements non autorisés détectés~; part des
+changements à risque élevé dotés d'un retour arrière testé.
+\end{boxobjet}
+{\small\itshape Finalité, objectifs liés et pratiques résumés et traduits
+par nos soins à partir de COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{La charte du comité des changements}
+\begin{enumerate}
+    \item \textbf{Mandat}~: autoriser les changements à risque élevé,
+          arbitrer les conflits de calendrier, examiner les changements en
+          échec.
+    \item \textbf{Composition}~: responsable des changements (président),
+          exploitation, sécurité, représentants des métiers concernés,
+          fournisseur si besoin.
+    \item \textbf{Fréquence}~: hebdomadaire, et sur convocation pour un
+          changement urgent à risque élevé.
+    \item \textbf{Pièces exigées}~: évaluation du risque, plan de mise en
+          production, plan de retour arrière et preuve de son test,
+          résultats de recette.
+    \item \textbf{Trace}~: décision motivée, inscrite au registre des
+          changements avant toute mise en production.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Mises en Production et Déploiements}
+\label{sec:c14-mep}
+% ============================================================================
+
+\subsection{Deux pratiques distinctes}
+
+ITIL~4 distingue la \termecle{gestion des mises en production}\index{mise en
+production} (\textit{release management}), qui rend disponibles des
+services ou des fonctions nouveaux ou modifiés, et la \termecle{gestion
+des déploiements}\index{déploiement} (\textit{deployment management}),
+qui transfère les composants vers les environnements cibles. On peut
+déployer un logiciel sans le rendre disponible aux utilisateurs, puis
+l'activer plus tard~: c'est le principe des fonctions activables à la
+demande.
+
+\subsection{Stratégies de mise en production}
+
+\begin{tableaucours}{L{3.0cm}L{4.8cm}L{4.4cm}}{%
+    \tableauHeader{Stratégie} &
+    \tableauHeader{Principe} &
+    \tableauHeader{Risque}
+}
+Bascule unique (\textit{big bang}) & Tout le monde passe au nouveau système
+au même moment & Élevé~: tout échec touche tout le monde \\
+Par étapes & Agence par agence, région par région & Modéré~: l'échec est
+circonscrit \\
+Pilote & Un site ou un groupe d'utilisateurs d'abord & Faible pour le
+pilote, mais long \\
+Fonctionnement en parallèle & Ancien et nouveau systèmes tournent
+ensemble pendant une période & Faible, mais coûteux \\
+Déploiement progressif (\textit{canary}) & Une petite part du trafic d'abord,
+puis le reste & Faible~; suppose une architecture adaptée \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.4. Stratégies de mise en
+production}\end{center}
+
+La BANQUE SANAGA avait choisi une bascule unique, avec une conversion des
+données irréversible, pour ses 38~agences. CrowdStrike avait déployé sa
+mise à jour en une fois sur tout son parc (Chapitre~\ref{chap:defaillances}).
+Dans les deux cas, la stratégie a transformé une erreur en catastrophe.
+
+\subsection{Le retour arrière}
+
+\begin{boxdef}
+\termecle{Plan de retour arrière}\index{retour arrière} (\textit{back-out
+plan, rollback})~: ensemble des actions qui permettent de revenir à l'état
+antérieur au changement si celui-ci échoue, avec les critères qui
+déclenchent ce retour et le délai dans lequel il doit être décidé.
+\end{boxdef}
+
+Un retour arrière n'existe que s'il a été \emph{testé}. Quand il est
+impossible (conversion irréversible des données, mise à jour d'un
+schéma de base de données), le risque doit être traité autrement~:
+fonctionnement en parallèle, sauvegarde complète vérifiée, ou acceptation
+formelle par l'instance compétente.
+
+\subsection{Les pratiques de COBIT}
+
+L'objectif BAI07 (gérer l'acceptation et la transition des changements)
+détaille ce qu'il faut maîtriser~: établir un plan de mise en œuvre
+(BAI07.01), planifier la conversion des processus, des systèmes et des
+données (BAI07.02), planifier et réaliser les tests d'acceptation
+(BAI07.03 à BAI07.05), passer en production et gérer les versions
+(BAI07.06), assurer un soutien renforcé au démarrage (BAI07.07) et
+conduire une revue après la mise en œuvre (BAI07.08)~\cite{isaca2018cobitobjectifs}.
+La pratique BAI07.02, la conversion des données, est exactement celle qui
+a fait défaut à la BANQUE SANAGA.
+
+\begin{boxprocedure}
+\textbf{Les critères « go / no-go ».} Avant toute mise en production à
+risque élevé, la décision de passer est prise sur une liste de critères
+fixée à l'avance, et consignée~:
+\begin{itemize}
+    \item recette réalisée au taux convenu, anomalies bloquantes closes~;
+    \item retour arrière testé, avec son délai de mise en œuvre~;
+    \item données converties contrôlées sur un échantillon, avec un
+          rapprochement des soldes~;
+    \item équipes de soutien et fournisseur mobilisés pour la période de
+          démarrage~;
+    \item communication aux utilisateurs prête~;
+    \item heure limite au-delà de laquelle le retour arrière est
+          automatiquement déclenché.
+\end{itemize}
+Un seul critère non rempli suffit à décider « no-go »~; le passer outre
+exige une acceptation écrite du risque.
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération SANAGA. La nouvelle bascule}
+\textbf{Plan de 2027.} Bascule par étapes~: une agence pilote à Douala, puis
+quatre vagues de huit à dix agences, à un mois d'intervalle. Fonctionnement
+en parallèle de l'ancien système pendant deux semaines pour chaque vague,
+avec rapprochement quotidien des soldes. Gel des changements pendant la
+clôture de fin d'année.
+
+\medskip
+\textbf{Évaluation avec la grille.} Criticité~3, utilisateurs~2 (une vague),
+complexité~3, réversibilité~1 (fonctionnement en parallèle), tests~1,
+expérience~2 (après le pilote). Score~: 12, soit un risque moyen par
+vague~; mais le comité de pilotage décide de garder le comité des
+changements comme autorité pour chaque vague, compte tenu de l'histoire
+de la banque.
+\end{boxscenario}
+
+% ============================================================================
+\section{La Gestion de la Configuration}
+\label{sec:c14-config}
+% ============================================================================
+
+\subsection{Éléments de configuration et CMDB}
+
+\begin{boxdef}
+\termecle{Élément de configuration}\index{élément de configuration}
+(\textit{configuration item}, \sigle{CI})~: tout composant qui doit être
+géré pour fournir un service~: un serveur, une application, une base de
+données, un contrat, une documentation.
+
+\medskip
+\termecle{Base de données de gestion de la configuration}\index{CMDB}
+(\textit{configuration management database}, \sigle{CMDB})~: base qui
+enregistre les éléments de configuration, leurs attributs et surtout
+leurs \emph{relations} (dépend de, est hébergé sur, utilise).
+\end{boxdef}
+
+La gestion de la configuration se distingue de la gestion des actifs
+(BAI09)~: l'actif s'intéresse à la valeur et au cycle de vie financier
+d'un bien (achat, amortissement, mise au rebut)~; la configuration
+s'intéresse à son rôle dans le service et à ses relations avec les autres
+composants.
+
+\subsection{L'analyse d'impact}
+
+La valeur de la CMDB est de répondre, avant un changement, à la question
+« qu'est-ce qui sera touché~? ».
+
+\begin{boxscenario}{Opération KRIBI. Installer le correctif}
+\textbf{Extrait de la CMDB pour le CI « Logiciel de suivi des conteneurs,
+version~3.2 ».}
+
+\medskip
+\begin{tableaucours}{L{4.4cm}L{2.6cm}L{5.0cm}}{%
+    \tableauHeader{Élément lié} &
+    \tableauHeader{Relation} &
+    \tableauHeader{Conséquence pour le changement}
+}
+Serveur d'application SRV-KRI-02 & Hébergé sur & Redémarrage nécessaire \\
+Base de données des mouvements & Utilise & Modification du schéma~:
+sauvegarde obligatoire \\
+Passerelle des balises GPS & Reçoit de & Test de reconnexion requis \\
+Portail clients de l'armateur & Fournit à & Interruption à annoncer au
+client \\
+Contrat NETPORT SERVICES & Exploité par & Intervention de l'infogérant à
+planifier \\
+\end{tableaucours}
+
+\medskip
+\textbf{Évaluation.} Criticité~3, utilisateurs~3, complexité~2,
+réversibilité~2 (modification du schéma de la base), tests~2, expérience~2.
+Score~14~: risque élevé, autorité~: comité des changements. Fenêtre
+retenue~: dimanche de 2~h à 6~h, hors arrivée de navire.
+
+\medskip
+\textbf{Ce que révèle l'exercice.} Sans la CMDB, la modification du schéma
+de la base et l'effet sur le portail de l'armateur seraient passés
+inaperçus. C'est précisément ce que KRIBILOG ignorait lorsqu'elle a
+renoncé, il y a six mois, à installer le correctif.
+\end{boxscenario}
+
+\subsection{L'objectif BAI10}
+
+COBIT consacre à la configuration l'objectif BAI10 (gérer la
+configuration), dont les pratiques couvrent la définition d'un modèle de
+configuration, la tenue d'un référentiel et de ses versions de référence,
+la maîtrise des éléments de configuration, les états de configuration, et
+la vérification périodique de l'intégrité du référentiel. Ses liens
+principaux sont le risque métier (EG02), la continuité (EG06) et la
+sécurité (AG07)~\cite{isaca2018cobitobjectifs}~: une CMDB fausse est un
+risque, car elle conduit à des analyses d'impact fausses.
+
+\begin{boxalert}
+\textbf{Violation typique.} Une organisation achète un outil de CMDB, le
+remplit une fois par un inventaire automatique, puis ne le met plus à jour.
+Deux ans plus tard, la moitié des relations sont fausses, et plus personne
+ne s'y fie.
+
+\smallskip
+\textbf{Règle~:} la CMDB se met à jour par le processus de changement~:
+tout changement clos met à jour les éléments de configuration concernés
+(BAI06.04, BAI10.03), et un contrôle périodique vérifie son intégrité
+(BAI10.05).
+\end{boxalert}
+
+% ============================================================================
+\section{Changements et Gouvernance}
+\label{sec:c14-gouvernance}
+% ============================================================================
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Détecter les changements non autorisés}
+\begin{enumerate}
+    \item Extraire les journaux de la production (déploiements, modifications
+          de configuration) sur la période.
+    \item Les rapprocher du registre des changements~: tout déploiement
+          sans changement autorisé correspondant est un écart.
+    \item Sur un échantillon de changements autorisés, vérifier que
+          l'autorisation est antérieure à la mise en production, que les
+          tests et le retour arrière sont documentés.
+    \item Vérifier la séparation des tâches~: celui qui développe ne
+          déploie pas seul en production.
+\end{enumerate}
+Ce rapprochement est le test le plus puissant des contrôles généraux sur
+les changements~: il part de ce qui s'est réellement passé, et non de ce
+qui a été déclaré.
+\end{boxmetier}
+
+\begin{boiteRemarque}{DevOps tue-t-il la gestion des changements~?}
+Les organisations qui déploient plusieurs fois par jour ne peuvent pas
+réunir un comité avant chaque mise en production. Elles ne renoncent pas
+pour autant au contrôle~: elles le \emph{déplacent} dans la chaîne de
+déploiement automatisée (tests obligatoires, revue de code par un pair,
+déploiement progressif, retour arrière automatique) et traitent la plupart
+de leurs changements comme des changements standard. Le
+Chapitre~\ref{chap:agile-cloud} y reviendra. La gouvernance n'exige pas un
+comité~; elle exige que le risque soit évalué et que l'autorisation soit
+traçable.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Changer vite et bien}~: l'habilitation des changements
+          vise à maximiser le nombre de changements réussis, pas à les
+          freiner.
+    \item \textbf{Trois types}~: standard (autorisé d'avance), normal
+          (évalué et autorisé selon son risque), urgent (accéléré, mais
+          contrôlé et revu après coup).
+    \item \textbf{L'autorité de changement est déléguée selon le risque}~:
+          c'est une question de droits de décision, fixée par la
+          gouvernance.
+    \item \textbf{La stratégie de mise en production} détermine l'ampleur
+          d'un échec~; un retour arrière n'existe que s'il a été testé.
+    \item \textbf{Les critères go / no-go} sont fixés à l'avance~; les
+          passer outre exige une acceptation écrite du risque.
+    \item \textbf{La CMDB} sert l'analyse d'impact~; elle se tient à jour
+          par le processus de changement.
+    \item \textbf{BAI06, BAI07, BAI10} sont les objectifs COBIT
+          correspondants~; le rapprochement entre journaux de production et
+          registre des changements en est le meilleur test d'audit.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.1. Quel type de changement~? \niveaubase}]
+Qualifiez chacun des changements suivants (standard, normal, urgent) et
+justifiez.
+\begin{enumerate}[(a)]
+    \item Ajouter un utilisateur au groupe « consultation » du logiciel de
+          suivi.
+    \item Corriger, un samedi soir, une faille activement exploitée sur le
+          portail de paiement de l'ANPP.
+    \item Migrer la messagerie de la BANQUE SANAGA vers un service en
+          nuage.
+    \item Remplacer un disque défectueux dans une baie redondante.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.2. Évaluer un changement \niveaumoyen}]
+L'ANPP veut mettre en production une nouvelle version de son module de
+paie, trois jours avant la paie des fonctionnaires. La recette couvre
+85~\% des scénarios, le retour arrière est prévu mais non testé, le
+changement touche 400~utilisateurs internes et tous les agents de l'État.
+\begin{enumerate}[(a)]
+    \item Notez le changement avec la grille du Tableau~14.2 et déduisez
+          l'autorité compétente.
+    \item Quels critères go / no-go ne sont pas remplis~?
+    \item Que recommandez-vous, et qui doit le décider~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.3. Refonder la gestion des changements de la BANQUE SANAGA \niveauexpert}]
+Le comité stratégique des SI demande un dispositif de gestion des
+changements qui atteigne le niveau de capacité~3 en dix-huit mois
+(Chapitre~\ref{chap:cobit-conception}).
+\begin{enumerate}[(a)]
+    \item Définissez les trois types de changements de la banque, avec des
+          exemples, et la liste initiale des changements standard.
+    \item Fixez la délégation de l'autorité de changement, et indiquez qui
+          doit l'approuver.
+    \item Proposez cinq indicateurs pour le comité d'audit, avec leur cible.
+    \item Indiquez comment l'auditrice interne vérifiera, dans un an, que le
+          dispositif fonctionne.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Les changements modifient les services~; encore
+faut-il savoir ce que l'on a promis à leurs utilisateurs. Le
+Chapitre~\ref{chap:itil-niveaux} traite des engagements de service, de la
+disponibilité, de la continuité et de la gestion des fournisseurs.
+\end{boxinfo}

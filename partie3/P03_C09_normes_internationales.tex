@@ -1,0 +1,600 @@
+% ============================================================================
+% Fichier  : partie3/P03_C09_normes_internationales.tex
+% Titre    : Les Normes Internationales de la Gouvernance et des Services
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : normes du dossier Normes (ISO/IEC 27000:2018, 27001:2013,
+% 27002:2013, 27006 ; résumé COSO ERM 2004 en français) ; éditions en
+% vigueur citées d'après les catalogues ISO. Principes de l'ISO/IEC
+% 38500:2024 repris d'ISO 37000 : liste à vérifier dans le texte de la
+% norme.
+% ============================================================================
+
+\chapter{Les Normes Internationales de la Gouvernance et des Services}
+\label{chap:normes}
+\chaptermark{Normes internationales}
+
+\epigraph{%
+    « Une norme ne dit pas ce qu'il faut penser.\\
+    Elle dit ce qu'il faudra pouvoir démontrer. »%
+}{Adage des auditeurs de systèmes de management}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:referentiels} (natures des référentiels
+    et carte d'articulation).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Présenter les principes et le modèle « évaluer, diriger,
+          surveiller » de l'ISO/IEC~38500.
+    \item Décrire les exigences d'un système de management des services
+          (ISO/IEC~20000-1).
+    \item Articuler la gouvernance des SI avec l'ISO/IEC~27001, l'ISO~31000
+          et COSO ERM.
+    \item Distinguer certification, conformité et alignement volontaire.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : faut-il un certificat~?}
+% ============================================================================
+
+KRIBILOG SA vient de recevoir l'appel d'offres d'un grand armateur pour
+la gestion de ses conteneurs au port de Kribi. Une clause l'arrête~: « Le
+prestataire devra justifier, dans un délai de dix-huit mois, d'une
+certification ISO/IEC~20000-1 sur le périmètre du service. » Au même
+moment, le conseil de la BANQUE SANAGA demande s'il ne faudrait pas
+« se faire certifier ISO~27001 pour rassurer la COBAC ».
+
+La Partie~\ref{part:normatif}, qui s'ouvre ici, place la gouvernance des SI
+dans son cadre normatif, puis juridique (Chapitre~\ref{chap:droit}), puis
+dans celui de l'audit (Chapitre~\ref{chap:audit}). Ce chapitre présente les
+normes internationales qui comptent pour la gouvernance des SI~: leur
+architecture commune (section~\ref{sec:c09-structure}), la norme de la
+gouvernance (section~\ref{sec:c09-38500}), celles des services et de la
+sécurité (sections~\ref{sec:c09-20000} et~\ref{sec:c09-27001}), celles du
+risque (section~\ref{sec:c09-risque}), et enfin la question du certificat
+(section~\ref{sec:c09-certification}).
+
+\separateur
+
+% ============================================================================
+\section{L'Architecture des Systèmes de Management}
+\label{sec:c09-structure}
+% ============================================================================
+
+\subsection{Qu'est-ce qu'un système de management~?}
+
+\begin{boxdef}
+\termecle{Système de management}\index{système de management}
+(\textit{management system})~: ensemble d'éléments corrélés ou en
+interaction d'une organisation (politiques, objectifs, rôles, processus)
+qui sert à établir des politiques et des objectifs, et à atteindre ces
+objectifs. Un système de management de la qualité, de la sécurité de
+l'information ou des services en sont des exemples.
+\end{boxdef}
+
+\subsection{Une structure harmonisée}
+
+Les normes ISO de systèmes de management certifiables partagent une même
+structure, dite \termecle{structure harmonisée}\index{structure
+harmonisée} (anciennement « structure de haut niveau »). Elle facilite la
+mise en place de systèmes intégrés~: une organisation certifiée à la fois
+ISO/IEC~27001 et ISO/IEC~20000-1 n'a qu'un seul cycle de revue de
+direction, d'audit interne et d'amélioration.
+
+\begin{tableaucours}{cL{3.6cm}L{8.0cm}}{%
+    \tableauHeader{Art.} &
+    \tableauHeader{Titre} &
+    \tableauHeader{Contenu}
+}
+4 & Contexte de l'organisation & Enjeux internes et externes, parties
+intéressées, périmètre du système \\
+5 & Leadership & Engagement de la direction, politique, rôles et
+responsabilités \\
+6 & Planification & Risques et opportunités, objectifs et plans pour les
+atteindre \\
+7 & Support & Ressources, compétences, sensibilisation, communication,
+informations documentées \\
+8 & Fonctionnement & Planification et maîtrise opérationnelles~: c'est là
+que chaque norme place ses exigences propres \\
+9 & Évaluation des performances & Surveillance, mesure, audit interne,
+revue de direction \\
+10 & Amélioration & Non-conformités, actions correctives, amélioration
+continue \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.1. La structure harmonisée des
+normes ISO de systèmes de management (articles~4 à~10)}\end{center}
+
+Cette structure suit le cycle \emph{planifier, réaliser, vérifier, agir}~:
+les articles~4 à~7 planifient, l'article~8 réalise, l'article~9 vérifie,
+l'article~10 améliore. On y retrouve, à une autre échelle, la logique de
+COBIT~: le domaine EDM correspond aux articles~5 et~9 (direction et
+surveillance), les domaines de management aux articles~6 à~8 et~10.
+
+% ============================================================================
+\section{ISO/IEC 38500 : la Norme de la Gouvernance}
+\label{sec:c09-38500}
+% ============================================================================
+
+\subsection{Une norme pour l'organe de gouvernance}
+
+L'ISO/IEC~38500 s'adresse à l'organe de gouvernance~: conseil
+d'administration, conseil de surveillance, direction d'un établissement
+public. Elle ne décrit ni processus ni contrôles, mais des principes et un
+modèle. Elle n'est pas certifiable. Sa troisième édition a été publiée en
+février~2024~\cite{iso38500_2024}.
+
+\subsection{Le modèle évaluer, diriger, surveiller}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    tache/.style = {
+        draw=CouleurPrimaire, fill=CouleurPrimaire, rounded corners=4pt,
+        text width=2.4cm, minimum height=0.9cm, align=center,
+        font=\footnotesize\bfseries\color{white}
+    },
+    bloc/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        text width=3.0cm, minimum height=0.9cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    fleche/.style = {-{Stealth[length=5pt]}, thick, color=CouleurSecondaire}
+]
+\node[tache] (ev) at (0,2.2)   {Évaluer};
+\node[tache] (di) at (3.6,2.2) {Diriger};
+\node[tache] (su) at (7.2,2.2) {Surveiller};
+\node[bloc] (pr) at (1.8,0)    {Propositions,\\ plans};
+\node[bloc] (op) at (5.4,0)    {Activités,\\ performance};
+\draw[fleche] (ev) -- (di);
+\draw[fleche] (di) -- node[left, font=\scriptsize\itshape, align=right]{politiques,\\
+    plans} (op);
+\draw[fleche] (op) -- node[right, font=\scriptsize\itshape]{mesures} (su);
+\draw[fleche] (pr) -- (ev);
+\draw[fleche] (su.north) to[out=120, in=60] (ev.north);
+\node[font=\scriptsize\bfseries\color{CouleurAccent}] at (3.6,4.0)
+    {Organe de gouvernance};
+\node[font=\scriptsize\bfseries\color{CouleurAccent}] at (3.6,-0.9)
+    {Management};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~9.1. Le modèle évaluer, diriger,
+surveiller (représentation simplifiée)}\end{center}
+\end{minipage}
+
+\medskip
+
+L'organe de gouvernance \textbf{évalue} l'usage actuel et futur de
+l'informatique, ainsi que les propositions que lui soumet le management~;
+il \textbf{dirige} la préparation et la mise en œuvre des plans et des
+politiques~; il \textbf{surveille} la performance et la conformité. Ce sont
+les trois verbes du domaine EDM de COBIT, qui s'inspire directement de la
+norme.
+
+\subsection{Des principes de 2015 à ceux de 2024}
+
+L'édition de 2015~\cite{iso38500} reposait sur six principes~:
+\emph{responsabilité}, \emph{stratégie}, \emph{acquisition},
+\emph{performance}, \emph{conformité} et \emph{comportement humain}.
+L'édition de 2024 les remplace par les onze principes de la norme
+ISO~37000 sur la gouvernance des organisations, et précise comment ils
+s'appliquent à la gouvernance des SI. Elle fait de la gouvernance des SI
+une partie intégrante de la gouvernance de l'organisation, et l'oriente
+vers trois résultats~: une performance effective, une gestion
+responsable et un comportement éthique.
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Catégorie} &
+    \tableauHeader{Principes (d'après ISO~37000)}
+}
+Principe premier & Raison d'être (\textit{purpose}) \\
+Principes fondateurs & Création de valeur~; stratégie~; supervision~;
+redevabilité \\
+Principes facilitateurs & Engagement des parties prenantes~; leadership~;
+données et décisions~; gouvernance des risques~; responsabilité
+sociétale~; viabilité et performance dans la durée \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.2. Les onze principes de
+gouvernance repris par l'ISO/IEC~38500:2024 (notre traduction)}\end{center}
+% A VERIFIER dans le texte de l'ISO/IEC 38500:2024 : intitulés exacts et
+% ordre des onze principes (source : présentations publiques d'ISO 37000).
+
+\begin{boxscenario}{Opération MEFOU. Une charte inspirée de l'ISO/IEC 38500}
+Le nouveau président du conseil d'administration de l'ANPP demande que la
+charte du comité stratégique des SI (Chapitre~\ref{chap:gouv-entreprise})
+s'appuie sur l'ISO/IEC~38500. La division informatique propose trois
+articles~:
+\begin{enumerate}
+    \item \emph{Raison d'être}~: tout projet informatique doit être rattaché
+          à la mission de l'agence (payer l'État à bonne date) et à un
+          programme budgétaire.
+    \item \emph{Supervision}~: le comité \emph{évalue} chaque année le
+          portefeuille, \emph{dirige} par la décision d'investissement et
+          \emph{surveille} chaque trimestre les projets en cours.
+    \item \emph{Données et décisions}~: le conseil reçoit, avant toute
+          décision d'investissement, un dossier normalisé (coût total,
+          bénéfices, risques).
+\end{enumerate}
+La charte ne cite pas la norme pour la forme~: elle en traduit les
+principes en règles vérifiables.
+\end{boxscenario}
+
+% ============================================================================
+\section{ISO/IEC 20000-1 : le Management des Services}
+\label{sec:c09-20000}
+% ============================================================================
+
+\subsection{Les exigences}
+
+L'ISO/IEC~20000-1, dont l'édition en vigueur date de 2018, formule les
+exigences d'un \termecle{système de management des services}\index{système
+de management des services} (\sigle{SMS}). Elle suit la structure
+harmonisée, et place à l'article~8 ses exigences propres au
+fonctionnement des services.
+
+\begin{tableaucours}{cL{3.6cm}L{8.0cm}}{%
+    \tableauHeader{Art.} &
+    \tableauHeader{Thème} &
+    \tableauHeader{Exigences principales}
+}
+8.2 & Portefeuille de services & Planifier les services, gérer le catalogue,
+les actifs et la configuration \\
+8.3 & Relations et accords & Relations avec les clients, gestion des
+niveaux de service, gestion des fournisseurs \\
+8.4 & Offre et demande & Budgétisation des services, demande et capacité \\
+8.5 & Conception, construction et transition & Gestion des changements,
+conception et transition des services, mises en production et
+déploiement \\
+8.6 & Résolution et réalisation & Gestion des incidents, des demandes de
+service et des problèmes \\
+8.7 & Assurance des services & Disponibilité, continuité, sécurité de
+l'information \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.3. Les exigences de l'article~8 de
+l'ISO/IEC~20000-1:2018 (synthèse, notre traduction)}\end{center}
+
+\subsection{ITIL, COBIT et ISO/IEC 20000-1}
+
+Les trois référentiels se recouvrent largement sur la gestion des services,
+et c'est précisément pourquoi il faut savoir ce que chacun apporte.
+\textbf{ITIL} décrit \emph{comment} mener chaque pratique~;
+\textbf{ISO/IEC~20000-1} dit \emph{ce qui doit être démontré} pour obtenir
+un certificat~; \textbf{COBIT} relie ces pratiques aux objectifs de
+l'organisation et à sa gouvernance. Une organisation qui vise la
+certification ISO/IEC~20000-1 s'appuie le plus souvent sur ITIL pour
+construire ses pratiques. Le Chapitre~\ref{chap:processus} établira la
+correspondance détaillée entre les trois.
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Préparer KRIBILOG à l'ISO/IEC 20000-1}
+\begin{enumerate}
+    \item Définir le périmètre~: le service de suivi des conteneurs, depuis
+          Douala et Kribi, et non toute l'informatique de l'entreprise.
+    \item Établir que KRIBILOG reste \emph{responsable} du service même s'il
+          est exploité par NETPORT SERVICES~: la norme exige la maîtrise
+          des processus confiés à des tiers.
+    \item Mettre d'abord en place les pratiques de l'article~8.6
+          (incidents, demandes, problèmes) et de l'article~8.5
+          (changements), qui sont aujourd'hui les plus défaillantes.
+    \item Conduire un audit interne et une revue de direction avant de
+          solliciter l'organisme de certification.
+\end{enumerate}
+Dix-huit mois sont un délai serré, mais réaliste si le périmètre reste
+limité au service demandé par l'armateur.
+\end{boxmetier}
+
+% ============================================================================
+\section{ISO/IEC 27001 et 27002 : la Sécurité de l'Information}
+\label{sec:c09-27001}
+% ============================================================================
+
+\subsection{Le système de management de la sécurité}
+
+L'ISO/IEC~27001 formule les exigences d'un \termecle{système de management
+de la sécurité de l'information}\index{système de management de la
+sécurité de l'information} (\sigle{SMSI}). Le vocabulaire de la famille
+est fixé par l'ISO/IEC~27000~\cite{iso27000_2018}. La démarche est fondée
+sur le risque~: l'organisation apprécie ses risques de sécurité (selon une
+méthode que précise l'ISO/IEC~27005), choisit les mesures qui les
+traitent, et justifie ses choix.
+
+\begin{boxdef}
+\termecle{Déclaration d'applicabilité}\index{déclaration d'applicabilité}
+(\textit{statement of applicability}, \sigle{SoA})~: document qui liste les
+mesures de sécurité de l'annexe~A de l'ISO/IEC~27001, indique pour
+chacune si elle est retenue ou exclue, et justifie ce choix. C'est la
+pièce centrale d'un audit de certification ISO/IEC~27001.
+\end{boxdef}
+
+\subsection{Deux éditions à ne pas confondre}
+
+\begin{tableaucours}{L{3.4cm}L{4.4cm}L{4.4cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Édition 2013} &
+    \tableauHeader{Édition 2022}
+}
+Mesures de l'annexe~A & 114~mesures en 14~domaines & 93~mesures en
+4~thèmes \\
+Thèmes & · & Organisationnelles (37), humaines (8), physiques (14),
+technologiques (34) \\
+Nouvelles mesures & · & Notamment renseignement sur les menaces,
+sécurité de l'informatique en nuage, préparation des TIC à la continuité \\
+Statut & Remplacée & En vigueur \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.4. ISO/IEC~27001 et 27002~: éditions
+2013 et 2022}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Une organisation rédige en 2026 sa politique de
+sécurité et sa déclaration d'applicabilité à partir des éditions 2013 des
+normes, trouvées dans un dossier partagé. L'auditeur de certification
+relève aussitôt l'écart~: la référence n'est plus celle en vigueur, et les
+mesures relatives à l'informatique en nuage manquent.
+
+\smallskip
+\textbf{Règle~:} toujours vérifier l'édition en vigueur d'une norme dans le
+catalogue de l'ISO avant de s'en servir de référence, et indiquer l'édition
+dans chaque document.
+\end{boxalert}
+
+\subsection{Le lien avec la gouvernance}
+
+La sécurité de l'information n'est pas la gouvernance des SI
+(Chapitre~\ref{chap:gouv-entreprise}), mais elle en relève par trois
+voies. Le conseil fixe l'appétence au risque de sécurité (EDM03). Le
+management conduit le SMSI (APO13, dont la finalité recouvre celle de
+l'ISO/IEC~27001). L'exploitation met en œuvre les mesures (DSS05). Un
+SMSI certifié est un excellent moyen d'atteindre APO13~; il ne dit rien
+de la valeur des investissements ni de la qualité des services.
+
+\begin{boxmetier}{RSSI}
+\textbf{Répondre au conseil de la BANQUE SANAGA}
+\begin{enumerate}
+    \item Une certification ISO/IEC~27001 ne « rassure » le régulateur que
+          si son périmètre couvre les systèmes qui l'intéressent~: les
+          systèmes de paiement et le système central.
+    \item Elle ne remplace ni les audits prévus par la loi n°~2010/012
+          (Chapitre~\ref{chap:referentiels}), ni les exigences de la COBAC
+          sur le contrôle interne.
+    \item Elle n'aurait pas évité la panne de mars~2026, qui ne relevait
+          pas de la sécurité mais de la gestion des changements.
+    \item Recommandation~: viser la certification à trois ans sur le
+          périmètre des paiements, comme le prévoit la carte des
+          référentiels (Chapitre~\ref{chap:referentiels}), et traiter
+          d'abord la feuille de route COBIT (Chapitre~\ref{chap:cobit-capacite}).
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Le Risque : ISO 31000 et COSO}
+\label{sec:c09-risque}
+% ============================================================================
+
+\subsection{ISO 31000 : des lignes directrices pour tout risque}
+
+L'ISO~31000 (édition 2018) donne des lignes directrices sur le management
+du risque, applicables à tout type de risque et à toute organisation. Elle
+n'est pas certifiable. Elle s'articule en trois parties~: des
+\emph{principes} (un management du risque intégré, structuré, adapté,
+inclusif, dynamique, fondé sur la meilleure information disponible,
+attentif aux facteurs humains et culturels, et en amélioration continue),
+un \emph{cadre organisationnel}, et un \emph{processus}~: établir le
+contexte et les critères, apprécier les risques (les identifier, les
+analyser, les évaluer), les traiter, puis surveiller, communiquer et
+rendre compte.
+
+\subsection{COSO : contrôle interne et risques de l'entreprise}
+
+Les deux cadres du COSO (Chapitre~\ref{chap:referentiels}) sont la
+référence des auditeurs et des régulateurs financiers.
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Cadre} &
+    \tableauHeader{Composantes}
+}
+Contrôle interne (2013) & Environnement de contrôle~; évaluation des
+risques~; activités de contrôle~; information et communication~;
+activités de pilotage. Cinq composantes et 17~principes. \\
+Management des risques (2004) & Huit éléments~: environnement interne~;
+fixation des objectifs~; identification des événements~; évaluation des
+risques~; traitement des risques~; activités de contrôle~; information et
+communication~; pilotage~\cite{coso2004ermfr}. \\
+Management des risques (2017) & Cinq composantes~: gouvernance et
+culture~; stratégie et définition des objectifs~; performance~; revue et
+révision~; information, communication et reporting. Vingt
+principes~\cite{coso2017erm}. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.5. Les cadres du COSO}\end{center}
+
+Le résumé en français disponible dans le dossier \texttt{Normes} est celui
+de l'édition de 2004. L'édition de 2017 en déplace le centre de gravité~:
+elle ne traite plus le risque comme un sujet de contrôle, mais comme une
+composante de la stratégie et de la performance. C'est la lecture que
+retient aussi COBIT avec la finalité d'optimisation des risques
+(Chapitre~\ref{chap:alignement}).
+
+\subsection{Articuler les risques}
+
+La règle d'articulation est la suivante~: \textbf{le risque informatique
+est un risque de l'entreprise}. Le registre des risques liés aux SI
+(APO12) doit alimenter le registre des risques de l'organisation, selon
+la même échelle et les mêmes critères, et l'appétence au risque fixée par
+le conseil (EDM03) s'applique aux deux. Une organisation qui tient deux
+registres séparés, avec deux échelles, ne peut pas comparer un risque
+informatique à un risque de crédit~: elle ne peut donc pas arbitrer.
+
+% ============================================================================
+\section{Certification, Conformité, Alignement}
+\label{sec:c09-certification}
+% ============================================================================
+
+\subsection{Trois démarches}
+
+\begin{boxdef}
+\termecle{Certification}\index{certification}~: attestation, par un
+organisme tiers accrédité, qu'un système de management est conforme aux
+exigences d'une norme, sur un périmètre donné et pour une durée donnée.
+
+\medskip
+\termecle{Conformité}\index{conformité}~: respect d'exigences obligatoires
+(lois, règlements, contrats). Elle ne se choisit pas~; elle se démontre.
+
+\medskip
+\termecle{Alignement volontaire}\index{alignement volontaire}~: choix
+d'une organisation de s'inspirer d'un référentiel ou d'une norme sans
+viser de certificat. C'est le cas de tout usage de COBIT, d'ITIL ou de
+l'ISO~31000.
+\end{boxdef}
+
+\subsection{Le cycle de certification}
+
+Une certification de système de management suit un cycle de trois ans~:
+un audit initial en deux étapes (revue de la documentation et de l'état
+de préparation, puis audit de la mise en œuvre), la délivrance du
+certificat, des audits de surveillance au moins annuels, puis un audit de
+renouvellement. Les organismes de certification doivent eux-mêmes
+satisfaire aux exigences de l'ISO/IEC~17021-1, complétées pour la sécurité
+de l'information par l'ISO/IEC~27006, et être accrédités par un organisme
+d'accréditation. Un certificat délivré par un organisme non accrédité n'a
+qu'une valeur commerciale.
+
+\begin{boxprocedure}
+\textbf{Préparer un audit de certification.} Avant de solliciter
+l'organisme de certification, l'organisation doit pouvoir présenter~:
+\begin{itemize}
+    \item le périmètre du système, écrit et justifié~;
+    \item la politique et les objectifs, approuvés par la direction~;
+    \item l'appréciation des risques et, pour l'ISO/IEC~27001, la
+          déclaration d'applicabilité~;
+    \item les procédures exigées et les enregistrements de leur
+          fonctionnement sur plusieurs mois~;
+    \item au moins un cycle complet d'audit interne et de revue de
+          direction~;
+    \item le suivi des non-conformités relevées et des actions correctives.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération KRIBI. Le calendrier de la certification}
+\textbf{Contrainte.} Certification ISO/IEC~20000-1 exigée dans dix-huit
+mois sur le service de suivi des conteneurs.
+
+\medskip
+\textbf{Plan retenu par M.~MBARGA.} Mois 1 à 2~: périmètre, politique et
+objectifs, analyse d'écart. Mois 3 à 9~: mise en place des pratiques
+(incidents, demandes, problèmes, changements, niveaux de service,
+fournisseurs), avec un avenant au contrat de NETPORT SERVICES. Mois 10 à
+13~: fonctionnement et enregistrements. Mois 14~: audit interne. Mois 15~:
+revue de direction et actions correctives. Mois 16 à 17~: audit de
+certification en deux étapes. Mois 18~: certificat.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Le calendrier tient si l'avenant avec
+l'infogérant est signé dans les trois premiers mois~: sans lui, KRIBILOG
+ne pourra démontrer la maîtrise d'un service exploité par un tiers.
+\end{boxscenario}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Lire un certificat en cinq questions}
+\begin{enumerate}
+    \item Quelle norme, et quelle édition~?
+    \item Quel périmètre exact (sites, services, systèmes)~?
+    \item Quel organisme l'a délivré, et est-il accrédité~?
+    \item Quelle date de validité, et le dernier audit de surveillance
+          a-t-il eu lieu~?
+    \item Le périmètre couvre-t-il le service qui vous intéresse~?
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Une structure harmonisée}~: les normes de systèmes de
+          management partagent les articles~4 à~10 (contexte, leadership,
+          planification, support, fonctionnement, évaluation,
+          amélioration), ce qui permet des systèmes intégrés.
+    \item \textbf{ISO/IEC~38500} s'adresse à l'organe de gouvernance~:
+          évaluer, diriger, surveiller. Depuis 2024, elle reprend les onze
+          principes de l'ISO~37000. Elle n'est pas certifiable.
+    \item \textbf{ISO/IEC~20000-1} exige un système de management des
+          services~; ITIL dit comment le construire, COBIT le relie à la
+          gouvernance.
+    \item \textbf{ISO/IEC~27001 et 27002}~: un SMSI fondé sur le risque, une
+          déclaration d'applicabilité, 93~mesures depuis 2022. Vérifier
+          toujours l'édition en vigueur.
+    \item \textbf{ISO~31000 et COSO}~: le risque informatique est un risque
+          de l'entreprise, à inscrire dans un registre et une échelle
+          communs.
+    \item \textbf{Certification, conformité, alignement}~: la certification
+          atteste un périmètre, la conformité répond à une obligation,
+          l'alignement est un choix.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.1. Quel article~? \niveaubase}]
+Indiquez l'article de la structure harmonisée (4 à 10) auquel se rattache
+chacun des éléments suivants.
+\begin{enumerate}[(a)]
+    \item La revue annuelle du système par la direction générale.
+    \item La liste des parties intéressées et de leurs attentes.
+    \item Le plan de formation des techniciens du centre de services.
+    \item Le traitement d'une non-conformité relevée en audit interne.
+    \item La procédure de gestion des incidents.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.2. Deux registres, une échelle \niveaumoyen}]
+La BANQUE SANAGA tient un registre des risques de crédit et de marché
+(échelle de 1 à 4) et, à la DSI, un registre des risques informatiques
+(échelle de 1 à 5, définie différemment).
+\begin{enumerate}[(a)]
+    \item Expliquez pourquoi cette situation empêche le conseil
+          d'arbitrer.
+    \item Proposez une échelle commune, avec des critères d'impact
+          exprimés en FCFA et en durée d'indisponibilité.
+    \item Reclassez sur cette échelle le risque « échec d'une migration du
+          système central ».
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.3. Une stratégie normative pour NOUN PAY \niveauexpert}]
+Les investisseurs de NOUN PAY exigent « des certifications
+internationales ». Les moyens de l'entreprise ne permettent d'en viser
+qu'une dans les deux ans.
+\begin{enumerate}[(a)]
+    \item Comparez l'intérêt d'une certification ISO/IEC~27001 et d'une
+          certification ISO/IEC~20000-1 pour NOUN PAY.
+    \item Proposez un périmètre réaliste pour la certification retenue.
+    \item Indiquez les référentiels que l'entreprise suivra par simple
+          alignement volontaire, et pourquoi.
+    \item Rédigez la réponse de Mme~KAMGA aux investisseurs, en distinguant
+          certification, conformité légale (loi n°~2024/017) et
+          alignement.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Les normes sont des engagements volontaires~; la loi,
+elle, s'impose. Le Chapitre~\ref{chap:droit} présente le cadre juridique
+et réglementaire camerounais et africain de la gouvernance des SI~:
+cybersécurité, communications électroniques, données personnelles,
+réglementation bancaire et droit des sociétés.
+\end{boxinfo}

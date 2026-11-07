@@ -1,0 +1,544 @@
+% ============================================================================
+% Fichier  : partie2/P02_C07_cobit_conception.tex
+% Titre    : Concevoir un Système de Gouvernance sur Mesure
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Source : COBIT 2019 Framework: Introduction and Methodology, chapitres 4.5
+% et 7 (dossier Normes). Le COBIT 2019 Design Guide (outil de calcul
+% officiel) n'est pas dans le dossier : la méthode de calcul de la
+% section 4 est une méthode pédagogique simplifiée, signalée comme telle.
+% Laboratoires associés : GCI-LAB-02 (facteurs de conception) et GCI-LAB-03
+% (cascade des objectifs).
+% ============================================================================
+
+\chapter{Concevoir un Système de Gouvernance sur Mesure}
+\label{chap:cobit-conception}
+\chaptermark{Concevoir un système sur mesure}
+
+\epigraph{%
+    « Il n'existe pas de formule magique. La conception finale est une
+    décision au cas par cas. »%
+}{D'après ISACA, \textit{COBIT 2019 Framework: Introduction and
+Methodology} (2018, notre traduction)}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:cobit-objectifs} (les 40~objectifs et la
+    cascade des objectifs).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Appliquer les onze facteurs de conception.
+    \item Dérouler le processus de conception en quatre étapes.
+    \item Calculer un profil d'objectifs prioritaires et en fixer les
+          niveaux de capacité cibles.
+    \item Justifier les arbitrages devant une direction générale.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : dix objectifs, mais jusqu'où~?}
+% ============================================================================
+
+Au Chapitre~\ref{chap:cobit-objectifs}, la BANQUE SANAGA a retenu dix
+objectifs prioritaires. Le directeur général, M.~FOTSO, pose aussitôt la
+question suivante~: « Faut-il porter les dix au même niveau d'exigence~?
+Notre budget de mise en œuvre ne le permettra pas. » À Bafoussam, la
+fondatrice de NOUN PAY, Mme~KAMGA, pose la question inverse~: « Avec
+quarante-cinq salariés, avons-nous seulement besoin de COBIT~? »
+
+Les deux questions ont la même réponse~: COBIT~2019 ne s'applique pas
+tel quel, il se \textbf{conçoit}. Les quarante objectifs sont, dans le
+modèle, d'importance égale~; ce sont les caractéristiques de chaque
+organisation, les \emph{facteurs de conception}, qui les hiérarchisent.
+Ce chapitre présente leurs effets (section~\ref{sec:c07-effets}), les
+onze facteurs (section~\ref{sec:c07-facteurs}), la démarche en quatre
+étapes (section~\ref{sec:c07-etapes}), une méthode de calcul
+(section~\ref{sec:c07-calcul}) et l'art de l'arbitrage
+(section~\ref{sec:c07-arbitrage}). Les laboratoires GCI-LAB-02 et GCI-LAB-03 du
+NDAP SUKULU en sont l'application.
+
+\separateur
+
+% ============================================================================
+\section{Les Trois Effets des Facteurs de Conception}
+\label{sec:c07-effets}
+% ============================================================================
+
+Le modèle central de COBIT~2019 traite ses quarante objectifs comme
+intrinsèquement équivalents~: il n'existe entre eux aucun ordre de priorité
+naturel. Les facteurs de conception rompent cette équivalence de trois
+manières~\cite{isaca2018cobitintro}.
+
+\begin{enumerate}
+    \item \textbf{La priorité des objectifs et leur capacité cible.} Certains
+          objectifs deviennent plus importants que d'autres, et quelques-uns
+          peuvent même devenir négligeables. En pratique, l'importance se
+          traduit par un \emph{niveau de capacité cible} plus élevé. Une
+          organisation très averse au risque, par exemple, donnera plus de
+          poids à EDM03, APO12, APO13 et DSS05.
+    \item \textbf{La variation des composantes.} Certains facteurs changent
+          l'importance d'une composante, ou en exigent une variante. Une
+          petite organisation n'a pas besoin de toutes les structures du
+          modèle~; une organisation très réglementée accorde plus
+          d'importance aux procédures écrites et à la fonction conformité.
+    \item \textbf{Le recours à un domaine d'intérêt.} Certains facteurs
+          (menaces, méthodes de développement, taille) appellent un contenu
+          adapté, décrit dans un domaine d'intérêt~: DevOps, petites et
+          moyennes entreprises, cybersécurité.
+\end{enumerate}
+
+\begin{boxdef}
+\termecle{Niveau de capacité cible}\index{niveau de capacité cible}
+(\textit{target capability level})~: niveau de capacité, de~0 à~5, que
+l'organisation décide d'atteindre pour un processus donné. Il traduit
+l'importance de l'objectif pour elle. Le Chapitre~\ref{chap:cobit-capacite}
+définit chaque niveau et la manière de mesurer la capacité constatée.
+\end{boxdef}
+
+% ============================================================================
+\section{Les Onze Facteurs de Conception}
+\label{sec:c07-facteurs}
+% ============================================================================
+
+\subsection{Le tableau des facteurs}
+
+COBIT~2019 retient onze facteurs, dont les huit derniers sont parfois
+appelés \emph{facteurs contextuels}. Pour chacun, il propose des valeurs
+types~\cite{isaca2018cobitintro}. Le tableau suivant les applique à deux
+organisations du cours.
+
+\begin{tableaucours}{L{2.7cm}L{3.5cm}L{3.0cm}L{3.0cm}}{%
+    \tableauHeader{Facteur} &
+    \tableauHeader{Valeurs types} &
+    \tableauHeader{BANQUE SANAGA} &
+    \tableauHeader{ANPP}
+}
+1. Stratégie & Croissance, innovation, maîtrise des coûts, service et
+stabilité & Service et stabilité (après la panne) & Service et stabilité \\
+2. Objectifs d'entreprise & EG01 à EG13 & EG06, EG02, EG03 & EG12, EG09,
+EG03 \\
+3. Profil de risque & 19~catégories de risques liés aux SI & Incidents
+d'exploitation, fournisseurs, non-conformité & Projets, décisions
+d'investissement, fournisseurs \\
+4. Problèmes liés aux SI & 20~problèmes types & Incidents majeurs,
+défaillance du prestataire, constats d'audit répétés & Projets en retard,
+doublons, dépenses hors budget \\
+5. Paysage des menaces & Normal, élevé & Élevé (secteur bancaire) &
+Normal \\
+6. Exigences de conformité & Faibles, normales, élevées & Élevées (COBAC,
+loi n°~2010/012) & Élevées (gestion publique) \\
+7. Rôle des SI & Soutien, usine, redressement, stratégique & Stratégique
+& Usine \\
+8. Approvisionnement & Externalisé, nuage, interne, hybride & Hybride &
+Externalisé \\
+9. Méthodes de mise en œuvre & Agile, DevOps, traditionnelle, hybride &
+Traditionnelle & Traditionnelle \\
+10. Adoption des technologies & Pionnier, suiveur, tardif & Suiveur &
+Tardif \\
+11. Taille & Grande (plus de 250), PME (50 à 250) & Grande & Grande \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.1. Les onze facteurs de conception
+appliqués à deux organisations (valeurs types d'après COBIT~2019, notre
+traduction)}\end{center}
+
+\subsection{Quatre facteurs à bien comprendre}
+
+\paragraph{Le rôle des SI.} COBIT reprend une typologie classique en
+quatre rôles. Les SI ont un rôle de \emph{soutien} quand ils ne sont
+cruciaux ni pour le fonctionnement ni pour l'innovation~; d'\emph{usine}
+quand leur panne arrête immédiatement l'activité, sans qu'ils soient un
+moteur d'innovation~; de \emph{redressement} quand ils sont vus comme un
+moteur d'innovation sans que l'activité courante en dépende encore~;
+\emph{stratégiques} quand ils sont critiques à la fois pour fonctionner et
+pour innover. L'ANPP est une usine~: une panne arrête les paiements, mais
+l'agence n'innove pas par le numérique. La BANQUE SANAGA est stratégique.
+
+\paragraph{Les problèmes liés aux SI.} Le profil de risque regarde vers
+l'avenir~; les problèmes regardent ce qui s'est déjà produit. COBIT en
+propose une liste type~: frustrations entre métiers et DSI, incidents
+majeurs, problèmes de service des prestataires, constats d'audit répétés,
+dépenses informatiques cachées, projets en retard, solutions développées
+par les métiers sans la DSI, méconnaissance des règles de protection de la
+vie privée. C'est par ce facteur que la panne de la BANQUE SANAGA remonte
+BAI06 et BAI07 dans ses priorités (Chapitre~\ref{chap:cobit-objectifs}).
+
+\paragraph{Les exigences de conformité.} Elles mesurent le poids des
+obligations légales, réglementaires et contractuelles. Au Cameroun, elles
+sont élevées pour les banques, les opérateurs de communications
+électroniques et, depuis 2026, pour toute organisation qui traite des
+données personnelles à grande échelle.
+
+\paragraph{La taille.} COBIT distingue les grandes organisations (plus de
+250~salariés à temps plein) et les petites et moyennes (de 50 à~250).
+Les très petites organisations, de moins de 50~salariés, ne sont pas
+couvertes par le modèle.
+
+\subsection{L'ancrage juridique camerounais}
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012} du 21~décembre~2010 relative à la
+cybersécurité et la cybercriminalité au Cameroun, article~31, alinéa~1}
+(version anglaise officielle)~:
+
+\medskip
+\textit{« Electronic communication networks and information systems
+content providers shall be bound to ensure the availability of material,
+as well as the data stored in their installations. »}
+
+\medskip
+Soit~: les fournisseurs de contenus des réseaux de communications
+électroniques et des systèmes d'information sont tenus d'assurer la
+disponibilité des contenus et des données stockées dans leurs
+installations.
+
+\medskip
+\textbf{\loicam{n°~2024/017} du 23~décembre~2024 relative à la protection
+des données à caractère personnel.} D'après les présentations publiées
+lors de son adoption~\cite{cio2026donnees}, cette loi s'applique
+pleinement depuis le 23~juin~2026, au terme d'un délai de mise en
+conformité de dix-huit mois. Elle institue une Autorité de protection des
+données à caractère personnel et encadre strictement le transfert des
+données hors du territoire national.
+
+\medskip
+\textbf{Portée pour la conception.} L'obligation de disponibilité de
+l'article~31, l'obligation d'audit des articles~13 et~32
+(Chapitre~\ref{chap:prologue}) et, depuis 2026, les obligations relatives
+aux données personnelles justifient de classer les \emph{exigences de
+conformité} en « élevées » pour la BANQUE SANAGA et pour NOUN PAY. Ce
+classement relève en priorité DSS04 (continuité), MEA03 (conformité aux
+exigences externes) et APO14 (données). Le Chapitre~\ref{chap:droit}
+étudiera ces textes en détail.
+\end{boxjuris}
+% A VERIFIER au Journal officiel : articles de la loi n° 2024/017 (date
+% d'application, autorité, transferts) ; sources utilisées : presse
+% spécialisée (CIO Mag, Droit Médias Finance).
+
+% ============================================================================
+\section{La Démarche en Quatre Étapes}
+\label{sec:c07-etapes}
+% ============================================================================
+
+COBIT~2019 propose une démarche de conception en quatre étapes, chacune
+décomposée en sous-étapes~\cite{isaca2018cobitintro}.
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    etape/.style = {
+        draw=CouleurPrimaire, fill=CouleurPrimaire, rounded corners=4pt,
+        text width=2.7cm, minimum height=1.0cm, align=center,
+        font=\footnotesize\bfseries\color{white}
+    },
+    detail/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=2.7cm, align=left, anchor=north,
+        font=\scriptsize\color{CouleurPrimaire}
+    },
+    fleche/.style = {-{Stealth[length=5pt]}, thick, color=CouleurSecondaire}
+]
+\node[etape] (e1) at (0,0)    {1. Comprendre le contexte et la stratégie};
+\node[etape] (e2) at (3.4,0)  {2. Déterminer le périmètre initial};
+\node[etape] (e3) at (6.8,0)  {3. Affiner le périmètre};
+\node[etape] (e4) at (10.2,0) {4. Conclure la conception};
+\draw[fleche] (e1) -- (e2);
+\draw[fleche] (e2) -- (e3);
+\draw[fleche] (e3) -- (e4);
+\node[detail] at (0,-0.75)    {Stratégie, objectifs d'entreprise, profil de
+    risque, problèmes liés aux SI};
+\node[detail] at (3.4,-0.75)  {Appliquer ces quatre facteurs, dont la
+    cascade des objectifs};
+\node[detail] at (6.8,-0.75)  {Menaces, conformité, rôle des SI,
+    approvisionnement, méthodes, adoption, taille};
+\node[detail] at (10.2,-0.75) {Résoudre les conflits de priorités,
+    arrêter la conception};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~7.1. La démarche de conception de
+COBIT~2019 (d'après ISACA, notre traduction)}\end{center}
+\end{minipage}
+
+\medskip
+
+Les deux premières étapes travaillent sur les quatre premiers facteurs~:
+la première les \emph{comprend}, la deuxième les \emph{applique} pour
+dégager un premier périmètre. La troisième étape affine ce périmètre avec
+les sept facteurs contextuels. La quatrième résout les contradictions et
+arrête la conception.
+
+COBIT recommande de reporter toutes les indications obtenues sur un
+\termecle{canevas de conception}\index{canevas de conception}
+(\textit{design canvas}), puis de résoudre, autant que possible, les
+conflits qui y apparaissent. Ces conflits sont inévitables~: avec onze
+facteurs et des correspondances génériques, certaines indications se
+contredisent.
+
+% ============================================================================
+\section{Calculer un Profil d'Objectifs}
+\label{sec:c07-calcul}
+% ============================================================================
+
+\subsection{Une méthode pédagogique}
+
+Le guide de conception de COBIT~2019 (\textit{Design Guide}) et son outil
+de calcul attribuent, pour chaque facteur et chaque valeur, des
+coefficients d'importance à chacun des quarante objectifs. Ces tables ne
+sont pas reproduites ici. Ce cours utilise une \textbf{méthode
+pédagogique simplifiée}, qui suit la même logique~: chaque facteur
+contribue à l'importance de chaque objectif, et l'importance se traduit en
+niveau de capacité cible. Le laboratoire GCI-LAB-02 applique cette méthode~;
+en entreprise, on utilisera l'outil officiel.
+
+\begin{boxalert}
+\textbf{À ne pas confondre.} Les poids, les notes et les seuils de la
+méthode ci-dessous sont des conventions du cours, fixées pour
+l'apprentissage. Ce ne sont pas les coefficients officiels du
+\textit{Design Guide}. Un rapport professionnel qui les présenterait comme
+tels commettrait une erreur de source.
+\end{boxalert}
+
+\subsection{Les quatre temps du calcul}
+
+\begin{enumerate}
+    \item \textbf{Retenir les facteurs déterminants} et leur donner un poids
+          (la somme des poids vaut 100~\%). Le choix des poids est une
+          décision de gouvernance.
+    \item \textbf{Noter, pour chaque objectif, la contribution de chaque
+          facteur}, de~0 (aucune) à~3 (très forte), en justifiant chaque
+          note.
+    \item \textbf{Calculer le score d'importance} de l'objectif~:
+          \[
+              S = \frac{\sum_{f} w_f \, n_f}{3} \times 100,
+          \]
+          où $w_f$ est le poids du facteur et $n_f$ la note. Le score va
+          de~0 à~100.
+    \item \textbf{Traduire le score en capacité cible} selon la convention
+          du cours~: 75 et plus, niveau~4~; de 50 à~74, niveau~3~; de 25
+          à~49, niveau~2~; moins de~25, niveau~1.
+\end{enumerate}
+
+\subsection{Application à la BANQUE SANAGA}
+
+\begin{boxscenario}{Opération SANAGA. Le profil de la banque}
+Le comité stratégique des SI retient cinq facteurs et leurs poids~:
+cascade des objectifs (25~\%), profil de risque (25~\%), problèmes liés aux
+SI (20~\%), exigences de conformité (15~\%), approvisionnement (15~\%).
+
+\medskip
+\begin{tableaucours}{L{1.5cm}cccccrc}{%
+    \tableauHeader{Objectif} &
+    \tableauHeader{Casc.} &
+    \tableauHeader{Risq.} &
+    \tableauHeader{Prob.} &
+    \tableauHeader{Conf.} &
+    \tableauHeader{Appr.} &
+    \tableauHeader{Score} &
+    \tableauHeader{Cible}
+}
+DSS04 & 3 & 3 & 3 & 3 & 1 & 90,0 & 4 \\
+EDM03 & 3 & 3 & 2 & 3 & 1 & 83,3 & 4 \\
+APO12 & 3 & 3 & 2 & 2 & 1 & 78,3 & 4 \\
+BAI06 & 1 & 3 & 3 & 2 & 2 & 73,3 & 3 \\
+APO10 & 1 & 2 & 3 & 2 & 3 & 70,0 & 3 \\
+BAI07 & 1 & 3 & 3 & 1 & 2 & 68,3 & 3 \\
+MEA02 & 1 & 2 & 3 & 3 & 1 & 65,0 & 3 \\
+APO04 & 1 & 0 & 0 & 0 & 0 & 8,3 & 1 \\
+\end{tableaucours}
+
+\medskip
+\textbf{Calcul de DSS04.} $0{,}25 \times 3 + 0{,}25 \times 3 + 0{,}20
+\times 3 + 0{,}15 \times 3 + 0{,}15 \times 1 = 2{,}70$~; $S = 2{,}70 / 3
+\times 100 = 90{,}0$, d'où une cible de niveau~4.
+
+\medskip
+\textbf{Lecture.} Les notes de la colonne « cascade » reprennent les liens
+du Tableau~6.7~: DSS04, EDM03 et APO12 sont liés à EG06 ou EG02, BAI06 et
+BAI07 ne le sont pas, d'où leur note de~1. Ils remontent par le risque et
+les problèmes. APO04 (innovation) tombe au niveau~1~: la banque n'en fait
+pas une priorité pendant le redressement, ce qui ne veut pas dire qu'elle
+renonce à innover.
+\end{boxscenario}
+
+\begin{boxprocedure}
+\textbf{Le dossier de conception.} Pour qu'un auditeur, ou le régulateur,
+puisse comprendre pourquoi un objectif a reçu telle capacité cible, le
+dossier de conception doit contenir~:
+\begin{itemize}
+    \item la valeur retenue pour chacun des onze facteurs, avec sa
+          justification~;
+    \item les poids des facteurs et la décision qui les a approuvés~;
+    \item les notes et les scores, avec la méthode de calcul et sa source
+          (outil officiel ou méthode interne)~;
+    \item le canevas de conception, avec les conflits relevés et la manière
+          dont ils ont été résolus~;
+    \item la liste finale des objectifs et de leurs capacités cibles,
+          approuvée par le comité stratégique des SI.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Arbitrer et Justifier}
+\label{sec:c07-arbitrage}
+% ============================================================================
+
+\subsection{Résoudre les conflits}
+
+Le calcul propose~; l'organe de gouvernance décide. La quatrième étape de
+la démarche consiste à confronter le résultat aux contraintes et aux
+intentions de l'organisation.
+
+\begin{boxscenario}{Opération SANAGA. Le conflit sur BAI06}
+\textbf{Le conflit.} Le calcul donne une cible de niveau~3 pour BAI06. Le
+président du comité d'audit demande le niveau~4~: « Après ce qui s'est
+passé, la gestion des changements doit être exemplaire. »
+
+\medskip
+\textbf{Les arguments.} Le niveau~4 suppose un processus piloté par des
+mesures quantitatives (Chapitre~\ref{chap:cobit-capacite}). La DSI estime
+qu'il faut d'abord atteindre le niveau~3, c'est-à-dire un processus
+défini et appliqué partout, ce qui n'est pas le cas aujourd'hui. Viser
+directement le niveau~4 disperserait l'effort.
+
+\medskip
+\textbf{La décision} (procès-verbal du comité stratégique). Cible de
+niveau~3 à dix-huit mois, puis réexamen pour le niveau~4. En contrepartie,
+un indicateur trimestriel (part des changements majeurs dotés d'un
+retour arrière testé) est présenté au comité d'audit dès le premier
+trimestre.
+\end{boxscenario}
+
+\subsection{Trois types de conflits fréquents}
+
+\begin{tableaucours}{L{3.4cm}L{4.4cm}L{4.4cm}}{%
+    \tableauHeader{Conflit} &
+    \tableauHeader{Exemple} &
+    \tableauHeader{Piste de résolution}
+}
+Contrôle contre agilité & Une jeune entreprise en DevOps soumise à des
+exigences de conformité élevées & Automatiser les contrôles dans la chaîne
+de déploiement plutôt que d'ajouter des validations manuelles \\
+Ambition contre moyens & Dix objectifs visés au niveau~4 avec une équipe
+de cinq personnes & Échelonner les cibles dans le temps, concentrer
+l'effort sur trois objectifs \\
+Facteurs contradictoires & Stratégie d'innovation, mais profil de risque
+très défavorable & Dissocier les périmètres~: innover sur un périmètre
+isolé, stabiliser le cœur \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.2. Conflits de conception et
+pistes de résolution}\end{center}
+
+\begin{boiteRemarque}{NOUN PAY a-t-elle besoin de COBIT~?}
+Avec 45~salariés, NOUN PAY se situe en dessous du seuil de 50~salariés à
+partir duquel COBIT~2019 considère une organisation comme une PME~: les
+très petites organisations ne sont pas couvertes par le modèle. Faut-il
+pour autant renoncer~? Non, mais il faut l'utiliser comme une liste de
+contrôle plutôt que comme un système complet~: retenir cinq ou six
+objectifs, viser des capacités de niveau~2 ou~3, s'appuyer sur le domaine
+d'intérêt consacré aux PME pour réduire les structures, et réserver
+l'effort aux risques qui la menacent vraiment (dépendance au fournisseur
+de nuage, données personnelles, notation par IA). C'est l'application
+directe du principe~5~: adapter le système aux besoins de l'organisation.
+\end{boiteRemarque}
+
+\begin{boxmetier}{DSI}
+\textbf{Présenter un profil de conception à la direction générale}
+\begin{enumerate}
+    \item Commencer par les facteurs, en langage métier~: « nous sommes une
+          banque dont les SI sont stratégiques, sous forte contrainte
+          réglementaire, qui sort d'une panne majeure ».
+    \item Présenter la liste des objectifs prioritaires et leur capacité
+          cible, sur une seule page.
+    \item Montrer ce qui \emph{n'est pas} retenu, et pourquoi~: c'est ce qui
+          rend le profil crédible.
+    \item Chiffrer l'effort de mise en œuvre de chaque cible, et proposer un
+          échelonnement.
+    \item Demander une décision formelle, et la date de réexamen.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{COBIT se conçoit, il ne s'applique pas tel quel}~: les
+          40~objectifs sont équivalents dans le modèle, les facteurs de
+          conception les hiérarchisent.
+    \item \textbf{Trois effets}~: priorité et capacité cible des objectifs,
+          variation des composantes, recours à des domaines d'intérêt.
+    \item \textbf{Onze facteurs}~: stratégie, objectifs d'entreprise, profil
+          de risque, problèmes liés aux SI, menaces, conformité, rôle des
+          SI, approvisionnement, méthodes, adoption des technologies,
+          taille.
+    \item \textbf{Quatre étapes}~: comprendre le contexte, déterminer le
+          périmètre initial, l'affiner, conclure en résolvant les conflits
+          sur un canevas de conception.
+    \item \textbf{Le calcul propose, la gouvernance décide}~: la méthode de
+          score aide à fixer les capacités cibles, mais les arbitrages
+          relèvent du comité stratégique et se consignent au procès-verbal.
+    \item \textbf{Au Cameroun}, les obligations de disponibilité et d'audit
+          de la loi n°~2010/012 et la loi n°~2024/017 sur les données
+          personnelles placent les exigences de conformité au niveau
+          « élevé » pour les banques et les acteurs du paiement.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.1. Les facteurs de KRIBILOG \niveaubase}]
+Renseignez, pour KRIBILOG SA (opérateur logistique portuaire, 1~200
+salariés, exploitation confiée à l'infogérant NETPORT SERVICES), la valeur
+de chacun des onze facteurs de conception, sur le modèle du Tableau~7.1.
+Justifiez en une phrase les facteurs 4 (problèmes liés aux SI), 7 (rôle
+des SI) et 8 (approvisionnement).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.2. Le profil de l'ANPP \niveaumoyen}]
+Le comité stratégique de l'ANPP retient les poids suivants~: cascade
+(30~\%), problèmes liés aux SI (30~\%), exigences de conformité (20~\%),
+approvisionnement (20~\%). Les notes proposées sont~:
+EDM02~(3,~3,~2,~1), APO05~(3,~3,~1,~1), APO10~(1,~3,~2,~3),
+BAI11~(2,~3,~1,~2), DSS04~(1,~1,~2,~1).
+\begin{enumerate}[(a)]
+    \item Calculez le score d'importance de chaque objectif.
+    \item Déduisez-en la capacité cible selon la convention du cours.
+    \item Le directeur général demande que DSS04 soit porté au niveau~3.
+          Quels arguments pourriez-vous avancer pour et contre~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.3. Concevoir le système de NOUN PAY \niveauexpert}]
+NOUN PAY développe ses applications en DevOps, héberge tout son SI chez un
+fournisseur de nuage étranger et doit se conformer, depuis juin~2026, à la
+loi n°~2024/017 sur les données personnelles.
+\begin{enumerate}[(a)]
+    \item Renseignez les onze facteurs de conception, en signalant ceux pour
+          lesquels COBIT n'est pas pleinement adapté à la taille de
+          l'entreprise.
+    \item Identifiez au moins deux conflits sur le canevas de conception et
+          proposez leur résolution.
+    \item Proposez une liste de six objectifs au plus, avec leur capacité
+          cible et leur échéance.
+    \item Rédigez la page de synthèse que Mme~KAMGA présentera à ses
+          investisseurs.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La conception a fixé des capacités cibles. Il reste à
+savoir ce qu'elles signifient, comment mesurer la capacité réelle d'un
+processus, et comment combler l'écart. C'est l'objet du
+Chapitre~\ref{chap:cobit-capacite}~: le modèle de capacité, la maturité,
+et la démarche de mise en œuvre en sept phases.
+\end{boxinfo}

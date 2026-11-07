@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C18
+Chapitre 18 : Agilité, DevOps et informatique en nuage
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. En quelle année le Manifeste pour le développement agile de logiciels a-t-il été publié ?
+      a) 1999
+      b) 2001
+      c) 2007
+      d) 2019
+
+ 2. Laquelle de ces préférences figure dans le Manifeste agile ?
+      a) Les processus et les outils plutôt que les individus
+      b) La négociation contractuelle plutôt que la collaboration
+      c) L'adaptation au changement plutôt que le suivi d'un plan
+      d) La documentation exhaustive plutôt que les logiciels opérationnels
+
+ 3. Que change l'agilité au contrôle, selon la règle du chapitre ?
+      a) Sa forme, pas son existence
+      b) Son existence : il disparaît
+      c) Rien du tout
+      d) Il est confié au client
+
+ 4. En gouvernance agile, comment est financé le numérique ?
+      a) Un projet, un budget, une date de fin
+      b) Un financement unique au départ
+      c) Par les clients
+      d) Un produit, une équipe stable, un financement par période
+
+ 5. Comment s'appelle la suite automatisée des étapes par lesquelles un changement de code passe jusqu'à la production ?
+      a) Le calendrier des changements
+      b) La chaîne de déploiement
+      c) Le flux de valeur
+      d) Le catalogue de services
+
+ 6. Quels sont les deux indicateurs de stabilité parmi les quatre indicateurs de performance de la livraison ?
+      a) Fréquence de déploiement et délai de livraison
+      b) Fréquence de déploiement et taux d'échec
+      c) Taux d'échec des changements et délai de rétablissement
+      d) Délai de livraison et délai de rétablissement
+
+ 7. Dans une chaîne DevOps, par quoi la séparation des tâches entre développeur et exploitant est-elle remplacée ?
+      a) Par une revue obligatoire du code par un pair
+      b) Par la suppression des contrôles
+      c) Par un comité hebdomadaire
+      d) Par un test manuel
+
+ 8. Qu'est-ce qui remplace le procès-verbal d'autorisation dans une chaîne DevOps ?
+      a) Un courriel du DSI
+      b) Un ticket du centre de services
+      c) Une signature manuscrite
+      d) Le journal inaltérable de la chaîne
+
+ 9. Scénario. À quelle condition les déploiements de l'application mobile de la BANQUE SANAGA deviennent-ils des changements standard ?
+      a) Si l'équipe le décide seule
+      b) Si la chaîne vérifie revue par un pair, tests à 90 %, déploiement progressif et retour arrière automatique
+      c) Si le comité se réunit chaque jour
+      d) Si l'éditeur les signe
+
+10. Quel est le nouveau point de contrôle critique quand on audite une chaîne DevOps ?
+      a) La salle des serveurs
+      b) Le comité des changements
+      c) Qui peut modifier la chaîne elle-même
+      d) Le centre de services
+
+11. Quelle institution fournit la définition de référence de l'informatique en nuage citée dans le cours ?
+      a) Le NIST
+      b) L'ISO
+      c) L'ANTIC
+      d) L'IIA
+
+12. Laquelle de ces caractéristiques fait partie des cinq caractéristiques du nuage selon le NIST ?
+      a) Localisation nationale
+      b) Contrat de dix ans
+      c) Propriété du matériel
+      d) Élasticité rapide
+
+13. Dans quel modèle de service le fournisseur gère-t-il aussi l'application ?
+      a) IaaS
+      b) SaaS
+      c) PaaS
+      d) Aucun
+
+14. Quels éléments restent toujours sous la responsabilité du client, quel que soit le modèle de service ?
+      a) L'infrastructure physique
+      b) Le système d'exploitation
+      c) Les données, les utilisateurs et les droits d'accès
+      d) Le réseau du fournisseur
+
+15. Quelle norme traite de la protection des données personnelles dans le nuage public ?
+      a) ISO/IEC 27018
+      b) ISO/IEC 27017
+      c) ISO/IEC 20000-1
+      d) ISO 22301
+
+16. Comment appelle-t-on les abonnements souscrits par les métiers, hors de tout contrôle, avec une carte bancaire ?
+      a) La dépendance
+      b) La réversibilité
+      c) La mutualisation
+      d) L'informatique fantôme
+
+17. Pourquoi le contrat type d'un fournisseur mondial doit-il être vérifié point par point au Cameroun ?
+      a) Parce qu'il est toujours illégal
+      b) Parce qu'il n'a pas été écrit pour les obligations de la loi n° 2010/012 et de la loi n° 2024/017
+      c) Parce qu'il est trop cher
+      d) Parce qu'il interdit le SaaS
+
+18. Scénario. Quel délai de notification des incidents le contrat d'entreprise du fournisseur de NOUN PAY prévoit-il ?
+      a) Dans les meilleurs délais
+      b) 24 heures
+      c) 72 heures
+      d) 10 jours
+
+19. Quand l'Union africaine a-t-elle adopté son Cadre stratégique sur les données ?
+      a) 2022
+      b) 2013
+      c) 2020
+      d) 2023
+
+20. Quel pays de la liste du cours a adopté sa loi de protection des données en 2019 ?
+      a) Le Ghana
+      b) Le Nigeria
+      c) Le Rwanda
+      d) Le Kenya
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le Manifeste agile supprime la documentation, les contrats et les plans.
+      Vrai / Faux
+
+22. Avec l'agilité, la gouvernance ne disparaît pas : elle se déplace.
+      Vrai / Faux
+
+23. DevOps remplace la gestion des changements.
+      Vrai / Faux
+
+24. Les quatre indicateurs de Forsgren, Humble et Kim mesurent à la fois la vitesse et la stabilité.
+      Vrai / Faux
+
+25. Un déploiement hors chaîne est un changement non autorisé.
+      Vrai / Faux
+
+26. Stocker ses données chez un grand fournisseur mondial suffit à les mettre en sécurité.
+      Vrai / Faux
+
+27. La sécurité du nuage est celle du fournisseur ; la sécurité dans le nuage est celle du client.
+      Vrai / Faux
+
+28. Le contrat d'entreprise de NOUN PAY règle à lui seul la conservation des journaux pendant dix ans.
+      Vrai / Faux
+
+29. La réversibilité doit être préparée par le client lui-même, par exemple avec des formats ouverts.
+      Vrai / Faux
+
+30. Tous les États africains ont fait le même choix en matière de localisation des données.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le modèle de service du nuage qui fournit des serveurs, du stockage et du réseau virtuels est l'______.
+
+32. Le modèle de service qui fournit un environnement d'exécution et des bases de données gérées est le ______.
+
+33. La norme ISO/IEC ______ donne des mesures de sécurité propres aux services en nuage.
+
+34. Dans le nuage, la responsabilité de la sécurité est ______ entre le client et le fournisseur.
+
+35. Les travaux de Forsgren, Humble et Kim proposent ______ indicateurs de performance de la livraison.
+
+36. La part des déploiements qui provoquent un incident ou un retour arrière est le taux d'______ des changements.
+
+37. Le Manifeste agile a été publié par ______ praticiens.
+
+38. La capacité à quitter un fournisseur et récupérer ses données s'appelle la ______.
+
+39. L'initiative qui réunit des États africains autour de projets numériques communs depuis 2013 s'appelle Smart ______.
+
+40. Le déploiement progressif de l'application mobile commence par ______ % des clients pendant une heure.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

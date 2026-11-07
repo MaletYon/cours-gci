@@ -1,0 +1,474 @@
+% ============================================================================
+% Fichier  : partie5/P05_C19_gouvernance_donnees_ia.tex
+% Titre    : Gouvernance des Données et de l'Intelligence Artificielle
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : COBIT 2019, fiche APO14 (dossier Normes) ; ISO/IEC 38507:2022,
+% ISO/IEC 42001:2023, ISO/IEC 23894:2023 (présentation d'après leur objet
+% public) ; NIST AI RMF 1.0 (2023) ; Recommandation de l'UNESCO sur
+% l'éthique de l'IA (2021) ; règlement (UE) 2024/1689. Loi n° 2024/017 :
+% aucun article cité ; le régime des décisions automatisées est à vérifier
+% dans le texte publié.
+% ============================================================================
+
+\chapter{Gouvernance des Données et de l'Intelligence Artificielle}
+\label{chap:donnees-ia}
+\chaptermark{Données et intelligence artificielle}
+
+\epigraph{%
+    « Un algorithme ne décide jamais seul.\\
+    Quelqu'un a décidé de le laisser décider. »%
+}{Principe de la gouvernance de l'IA}
+
+\niveauChapitre{Expert}{%
+    Maîtrise des Chapitres~\ref{chap:droit} (protection des données
+    personnelles) et~\ref{chap:agile-cloud} (informatique en nuage).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir la gouvernance des données (propriété, qualité, cycle de
+          vie).
+    \item Présenter l'ISO/IEC~38507 et l'ISO/IEC~42001.
+    \item Évaluer les risques d'un système d'IA (biais, explicabilité,
+          responsabilité).
+    \item Appliquer la loi de 2024 sur les données personnelles à un cas de
+          notation par IA.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qui répond d'une décision prise par un modèle~?}
+% ============================================================================
+
+Le Chapitre~\ref{chap:cas-integrateurs} l'a établi~: le modèle de notation
+de crédit de NOUN PAY refuse 61~\% des demandes d'une région, contre
+24~\% en moyenne nationale. Il utilise l'opérateur mobile du demandeur,
+très corrélé à la région. Personne, dans l'entreprise, n'était chargé
+d'évaluer les effets du modèle sur les clients (Chapitre~\ref{chap:processus}).
+L'Autorité de protection des données demande des comptes.
+
+Ce cas réunit les deux sujets de ce chapitre. La \textbf{gouvernance des
+données} (sections~\ref{sec:c19-donnees} et~\ref{sec:c19-qualite}) traite
+de ce que l'organisation possède~: qui en répond, avec quelle qualité, pour
+combien de temps. La \textbf{gouvernance de l'intelligence artificielle}
+(sections~\ref{sec:c19-ia} à~\ref{sec:c19-noun}) traite de ce que
+l'organisation en fait quand elle confie des décisions à des modèles.
+
+\separateur
+
+% ============================================================================
+\section{La Gouvernance des Données}
+\label{sec:c19-donnees}
+% ============================================================================
+
+\subsection{Les données, un actif}
+
+\begin{boxdef}
+\termecle{Gouvernance des données}\index{gouvernance des données}~:
+exercice de l'autorité et du contrôle sur la gestion des données~:
+qui décide de leur définition, de leur usage, de leur qualité, de leur
+protection et de leur conservation, selon quelles règles, et qui en rend
+compte.
+\end{boxdef}
+
+COBIT~2019 consacre aux données un objectif de management à part entière,
+APO14, qui couvre tout le cycle de vie des données, de leur création à
+leur archivage. Ses liens principaux sont la qualité de l'information
+financière (EG04) et de l'information de gestion (EG07, AG10)~: les
+données sont d'abord ce sur quoi l'on décide.
+
+\begin{boxobjet}{APO14 · Gérer les données}
+\textbf{Description~:} gérer efficacement les actifs de données de
+l'organisation sur tout leur cycle de vie, de la création à la diffusion,
+à la maintenance et à l'archivage.
+
+\textbf{Finalité~:} assurer l'utilisation efficace des données critiques
+pour atteindre les objectifs de l'organisation.
+
+\textbf{Objectifs liés~:} EG04, EG07~; AG10.
+
+\textbf{Pratiques~:} APO14.01 définir la stratégie de gestion des données
+et les rôles~; APO14.02 tenir un glossaire métier~; APO14.03 gérer les
+métadonnées~; APO14.04 définir une stratégie de qualité des données~;
+APO14.05 profiler les données~; APO14.06 évaluer leur qualité~; APO14.07
+définir leur nettoyage~; APO14.08 gérer le cycle de vie des actifs de
+données~; APO14.09 organiser l'archivage et la conservation~; APO14.10
+gérer les sauvegardes et les restaurations.
+
+\textbf{Indicateurs~:} part des données critiques dotées d'un
+propriétaire, taux d'anomalies de qualité, part des données conservées
+au-delà de leur durée prévue.
+\end{boxobjet}
+{\small\itshape Description, finalité, objectifs liés et pratiques résumés
+et traduits par nos soins à partir de COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\subsection{Les rôles}
+
+\begin{tableaucours}{L{3.4cm}L{5.0cm}L{3.8cm}}{%
+    \tableauHeader{Rôle} &
+    \tableauHeader{Responsabilité} &
+    \tableauHeader{Chez NOUN PAY}
+}
+Propriétaire des données & Répond d'un domaine de données~: usage
+autorisé, niveau de qualité, accès & Directeur commercial pour les données
+clients \\
+Intendant des données (\textit{data steward}) & Veille au quotidien à la
+définition et à la qualité & Analyste du crédit \\
+Dépositaire & Assure le stockage, la sécurité et la sauvegarde &
+Directeur technique et fournisseur de nuage \\
+Délégué à la protection des données & Veille au respect du droit des
+données personnelles & M.~DJOUMESSI \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~19.1. Les rôles de la gouvernance des
+données}\end{center}
+
+La règle cardinale~: \textbf{le propriétaire des données est un métier,
+pas l'informatique}. La DSI conserve et protège~; c'est le métier qui
+décide de ce que les données signifient et de l'usage qui en est fait.
+
+% ============================================================================
+\section{Qualité et Cycle de Vie}
+\label{sec:c19-qualite}
+% ============================================================================
+
+\subsection{Les dimensions de la qualité}
+
+\begin{tableaucours}{L{3.0cm}L{5.0cm}L{4.2cm}}{%
+    \tableauHeader{Dimension} &
+    \tableauHeader{Question} &
+    \tableauHeader{Exemple}
+}
+Exactitude & La donnée reflète-t-elle la réalité~? & Le solde converti
+est-il le bon (SANAGA)~? \\
+Complétude & Toutes les données requises sont-elles présentes~? &
+Revenus manquants dans 18~\% des dossiers de crédit \\
+Cohérence & La même donnée a-t-elle la même valeur partout~? & L'adresse
+du client dans deux systèmes \\
+Actualité & La donnée est-elle à jour~? & Position d'un conteneur vieille
+de six heures (KRIBILOG) \\
+Validité & Respecte-t-elle le format et les règles~? & Numéro de
+téléphone au bon format \\
+Unicité & Chaque entité n'apparaît-elle qu'une fois~? & Un fournisseur
+enregistré trois fois à l'ANPP \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~19.2. Les dimensions de la qualité
+des données}\end{center}
+
+\subsection{Le cycle de vie}
+
+Une donnée se crée, s'utilise, se partage, s'archive et se détruit. La
+gouvernance fixe, pour chaque catégorie, sa \emph{durée de conservation}~:
+assez longue pour répondre aux obligations (dix ans pour les données de
+connexion selon l'article~29 de la loi n°~2010/012, Chapitre~\ref{chap:droit}),
+pas plus longue que nécessaire pour les données personnelles. Conserver
+« au cas où » n'est pas une politique, c'est un risque.
+
+\begin{boxprocedure}
+\textbf{Le registre des données critiques.} Pour qu'un auditeur puisse
+établir que les données critiques sont gouvernées, l'organisation tient
+un registre qui indique, pour chaque domaine de données~:
+\begin{itemize}
+    \item le propriétaire métier et l'intendant~;
+    \item la définition, dans le glossaire métier~;
+    \item la classification (publique, interne, confidentielle,
+          personnelle, sensible)~;
+    \item la localisation (systèmes, pays)~;
+    \item les règles de qualité et leur dernier contrôle~;
+    \item la durée de conservation et son fondement.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Gouverner l'Intelligence Artificielle}
+\label{sec:c19-ia}
+% ============================================================================
+
+\subsection{Ce que l'IA change}
+
+Un système d'intelligence artificielle n'est pas un logiciel comme un
+autre, pour trois raisons qui intéressent directement la gouvernance~:
+\begin{itemize}
+    \item \textbf{il apprend des données}~: ses erreurs viennent souvent de
+          biais présents dans les données d'entraînement, que personne n'a
+          voulus~;
+    \item \textbf{il est difficile à expliquer}~: certains modèles
+          produisent un résultat sans que l'on puisse dire simplement
+          pourquoi~;
+    \item \textbf{il évolue}~: un modèle réentraîné est un nouveau modèle,
+          et ses effets peuvent dériver avec le temps.
+\end{itemize}
+
+\subsection{Les normes et cadres de référence}
+
+\begin{tableaucours}{L{3.4cm}L{2.0cm}L{6.8cm}}{%
+    \tableauHeader{Référence} &
+    \tableauHeader{Nature} &
+    \tableauHeader{Objet}
+}
+ISO/IEC 38507 (2022) & Lignes directrices & Implications, pour l'organe de
+gouvernance, de l'usage de l'IA par l'organisation~; prolonge
+l'ISO/IEC~38500 \\
+ISO/IEC 42001 (2023) & Norme certifiable & Système de management de l'IA,
+selon la structure harmonisée (Chapitre~\ref{chap:normes}) \\
+ISO/IEC 23894 (2023) & Lignes directrices & Management des risques liés à
+l'IA, dans la logique de l'ISO~31000 \\
+NIST AI RMF 1.0 (2023) & Cadre & Quatre fonctions~: gouverner,
+cartographier, mesurer, gérer~\cite{nist2023airmf} \\
+Recommandation de l'UNESCO (2021) & Instrument normatif international &
+Valeurs et principes éthiques de l'IA, adoptés par les États
+membres~\cite{unesco2021ethique} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~19.3. Normes et cadres de la
+gouvernance de l'IA}\end{center}
+
+La Recommandation de l'UNESCO sur l'éthique de l'intelligence
+artificielle, adoptée en novembre~2021, est le premier instrument normatif
+mondial sur le sujet. Elle insiste sur la proportionnalité, la sécurité,
+l'équité et la non-discrimination, la transparence et l'explicabilité, la
+responsabilité et la surveillance humaine. Pour une formation dispensée par
+une Chaire UNESCO, elle est le point de départ naturel.
+
+\begin{boxinfo}
+\textbf{Le contexte africain et international.} L'Union africaine a adopté
+en 2024 une stratégie continentale sur l'intelligence artificielle.
+L'Union européenne a adopté le règlement (UE)~2024/1689 sur l'intelligence
+artificielle, qui classe l'évaluation de la solvabilité des personnes
+physiques parmi les systèmes à haut risque~\cite{ue2024aiact}. Ce règlement
+ne s'applique pas au Cameroun en tant que tel, mais il s'impose aux
+entreprises qui y servent des clients, et sert déjà de référence aux
+investisseurs.
+\end{boxinfo}
+
+% ============================================================================
+\section{Évaluer les Risques d'un Système d'IA}
+\label{sec:c19-risques}
+% ============================================================================
+
+\subsection{Une grille en six risques}
+
+\begin{tableaucours}{L{3.0cm}L{5.0cm}L{4.2cm}}{%
+    \tableauHeader{Risque} &
+    \tableauHeader{Question} &
+    \tableauHeader{Mesure de maîtrise}
+}
+Biais et discrimination & Le modèle traite-t-il défavorablement un groupe~?
+& Mesure des écarts entre groupes, revue des variables \\
+Explicabilité & Peut-on expliquer une décision à la personne concernée~?
+& Motifs principaux de chaque décision, documentation du modèle \\
+Responsabilité & Qui répond d'une décision du modèle~? & Un A dans la
+matrice RACI (Chapitre~\ref{chap:processus}) \\
+Robustesse & Le modèle résiste-t-il aux données inhabituelles et aux
+manipulations~? & Tests de robustesse, surveillance des entrées \\
+Dérive & Ses performances se dégradent-elles avec le temps~? & Indicateurs
+suivis en production, réentraînement contrôlé \\
+Conformité & Les données sont-elles traitées licitement~? & Analyse au
+regard de la loi n°~2024/017 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~19.4. Les risques d'un système d'IA}\end{center}
+
+\subsection{Mesurer un biais}
+
+Une mesure simple de l'écart entre groupes est le \termecle{ratio d'impact
+disproportionné}\index{ratio d'impact disproportionné}~: le taux de
+décisions favorables du groupe le moins favorisé, divisé par celui du
+groupe le plus favorisé. Une pratique répandue, issue du droit américain
+du travail, considère comme suspect un ratio inférieur à~0,8 (la « règle
+des quatre cinquièmes »). Ce seuil n'a pas de valeur juridique au
+Cameroun~; il sert de signal d'alerte.
+
+\begin{boxscenario}{Opération NOUN. Le calcul du biais}
+\textbf{Données.} Taux de refus de 61~\% dans la région concernée, soit un
+taux d'acceptation de 39~\%. Taux de refus moyen national de 24~\%, soit un
+taux d'acceptation de 76~\%.
+
+\medskip
+\textbf{Calcul.} Ratio d'impact $= 0{,}39 / 0{,}76 \approx 0{,}51$, très en
+dessous du seuil d'alerte de 0,8.
+
+\medskip
+\textbf{Constatation.} Le ratio est de 0,51~; la variable « opérateur
+mobile », corrélée à la région, figure parmi les variables du modèle.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). L'écart peut s'expliquer en partie
+par des différences réelles de risque, mais l'usage d'une variable
+corrélée à la région fait peser un risque sérieux de discrimination
+indirecte. Seule une analyse du modèle sans cette variable, à risque égal,
+permettra de conclure. En attendant, la variable doit être suspendue
+(Chapitre~\ref{chap:cas-integrateurs}).
+\end{boxscenario}
+
+% ============================================================================
+\section{La Notation de NOUN PAY au Regard du Droit}
+\label{sec:c19-noun}
+% ============================================================================
+
+\subsection{Les questions à instruire}
+
+La loi n°~2024/017 (Chapitre~\ref{chap:droit}) s'applique aux données
+personnelles utilisées par le modèle. Sans préjuger de la lettre de ses
+articles, que l'on vérifiera dans le texte publié, six questions doivent
+être instruites~:
+\begin{enumerate}
+    \item \textbf{La base juridique}~: sur quel fondement le traitement des
+          données des demandeurs est-il licite~?
+    \item \textbf{La finalité et la proportionnalité}~: les données utilisées
+          sont-elles nécessaires à l'évaluation du crédit~? L'opérateur
+          mobile l'est-il~?
+    \item \textbf{L'information des personnes}~: les demandeurs savent-ils
+          que leur demande est évaluée par un modèle~?
+    \item \textbf{Les décisions automatisées}~: de nombreuses lois de
+          protection des données de cette génération encadrent les
+          décisions fondées exclusivement sur un traitement automatisé et
+          ouvrent un droit à l'intervention humaine~; il faut vérifier si
+          et comment la loi camerounaise le prévoit.
+    \item \textbf{Le transfert hors du territoire}~: les données sont
+          hébergées hors du Cameroun (Chapitre~\ref{chap:agile-cloud}).
+    \item \textbf{La sécurité et la conservation}~: qui accède aux données,
+          et combien de temps sont-elles gardées~?
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Violation typique.} Une entreprise supprime de son modèle la
+variable « région » pour éviter toute discrimination, mais conserve des
+variables qui lui sont étroitement corrélées (opérateur mobile, préfixe
+téléphonique, agence). Le biais demeure, par une autre voie.
+
+\smallskip
+\textbf{Règle~:} on ne prouve pas l'absence de biais en retirant une
+variable~; on la prouve en \emph{mesurant} les résultats par groupe.
+\end{boxalert}
+
+\subsection{Le dispositif de gouvernance}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Doter NOUN PAY d'une gouvernance de l'IA proportionnée}
+\begin{enumerate}
+    \item \textbf{Un inventaire}~: lister les modèles en production, leur
+          usage, les données qu'ils emploient et leurs effets sur les
+          clients.
+    \item \textbf{Une classification}~: la notation de crédit, qui décide
+          de l'accès d'une personne à un service financier, est à risque
+          élevé.
+    \item \textbf{Un responsable}~: désigner un A pour chaque modèle à
+          risque élevé, au niveau de la direction (Chapitre~\ref{chap:processus}).
+    \item \textbf{Une évaluation d'impact avant chaque version}~: mesure
+          des écarts entre groupes, avis du délégué à la protection des
+          données, décision écrite.
+    \item \textbf{Une surveillance en production}~: ratio d'impact et taux
+          d'erreur suivis chaque mois, avec un seuil qui déclenche la
+          suspension.
+    \item \textbf{Un recours humain}~: toute personne refusée peut demander
+          un réexamen par un analyste.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Auditer un modèle de décision}
+\begin{enumerate}
+    \item Demander la documentation du modèle~: finalité, données
+          d'entraînement, variables, performances, limites connues.
+    \item Vérifier que chaque mise à jour a fait l'objet d'une évaluation
+          d'impact et d'une autorisation (BAI06).
+    \item Recalculer, sur un échantillon de décisions récentes, les taux
+          par groupe et le ratio d'impact.
+    \item Vérifier l'existence et l'usage effectif du recours humain.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boiteRemarque}{L'humain dans la boucle suffit-il~?}
+Prévoir qu'un analyste « valide » chaque décision du modèle est souvent
+présenté comme la garantie ultime. L'expérience montre pourtant qu'un
+analyste qui traite deux cents dossiers par jour finit par entériner les
+propositions du modèle. La surveillance humaine n'est réelle que si
+l'analyste dispose du temps, de l'information (les motifs de la
+proposition) et du pouvoir de s'écarter du modèle sans avoir à s'en
+justifier davantage que s'il le suivait.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Les données sont un actif gouverné}~: un propriétaire
+          métier, un intendant, un dépositaire~; COBIT y consacre
+          l'objectif APO14.
+    \item \textbf{Six dimensions de qualité} (exactitude, complétude,
+          cohérence, actualité, validité, unicité) et un cycle de vie avec
+          des durées de conservation fondées.
+    \item \textbf{L'IA apprend, s'explique mal et dérive}~: elle appelle une
+          gouvernance propre.
+    \item \textbf{Les références}~: ISO/IEC~38507 pour le conseil,
+          ISO/IEC~42001 pour le système de management, ISO/IEC~23894 pour
+          les risques, le NIST AI RMF, et la Recommandation de l'UNESCO
+          pour les principes éthiques.
+    \item \textbf{Mesurer le biais}~: le ratio d'impact de NOUN PAY (0,51)
+          est un signal d'alerte~; retirer une variable ne prouve rien.
+    \item \textbf{Un modèle à risque élevé} a un responsable, une évaluation
+          d'impact à chaque version, une surveillance en production et un
+          recours humain réel.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.1. Quelle dimension de qualité~? \niveaubase}]
+Rattachez chacune des anomalies suivantes à une dimension de qualité
+(Tableau~19.2).
+\begin{enumerate}[(a)]
+    \item Un agent payé deux fois par l'ANPP parce qu'il figure sous deux
+          matricules.
+    \item Un client de la BANQUE SANAGA dont la date de naissance est le
+          31~février.
+    \item Un conteneur localisé à Kribi alors qu'il est à Douala depuis la
+          veille.
+    \item Un dossier de crédit sans les revenus du demandeur.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.2. Le registre des données de la BANQUE SANAGA \niveaumoyen}]
+Établissez les cinq premières lignes du registre des données critiques de
+la BANQUE SANAGA (exigence de contrôle de la section~\ref{sec:c19-qualite}),
+en commençant par les soldes des comptes.
+\begin{enumerate}[(a)]
+    \item Pour chaque domaine, désignez le propriétaire métier et
+          justifiez.
+    \item Fixez les règles de qualité et leur fréquence de contrôle.
+    \item Indiquez la durée de conservation et son fondement, en signalant
+          ce qui reste à vérifier.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.3. La réponse à l'Autorité de protection des données \niveauexpert}]
+Rédigez, pour Mme~KAMGA, la réponse de NOUN PAY à l'Autorité de
+protection des données.
+\begin{enumerate}[(a)]
+    \item Exposez les faits, en séparant constatations et analyses.
+    \item Répondez aux six questions de la section~\ref{sec:c19-noun}, en
+          indiquant ce qui suppose une vérification du texte de la loi.
+    \item Présentez les mesures prises et prévues, avec leur échéance.
+    \item Expliquez en quoi la Recommandation de l'UNESCO sur l'éthique de
+          l'IA éclaire les engagements pris.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~\ref{part:avance} a confronté la gouvernance
+des SI aux défis de la vitesse, du nuage, des données et de
+l'intelligence artificielle. La Partie~\ref{part:recherche} prend du
+recul~: le Chapitre~\ref{chap:recherche-mesure} présente l'état de la
+recherche sur la mesure de la gouvernance des SI.
+\end{boxinfo}

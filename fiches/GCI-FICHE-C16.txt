@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C16
+Chapitre 16 : Processus, RACI et mesure de la performance
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Qui répond de la conception, de la performance et de l'amélioration d'un processus dans toute l'organisation ?
+      a) Le gestionnaire de processus
+      b) Le propriétaire de processus
+      c) L'auditeur interne
+      d) L'utilisateur final
+
+ 2. Quelle différence le chapitre fait-il entre pratique et processus ?
+      a) La pratique décrit un domaine de maîtrise ; le processus est l'enchaînement concret qui en réalise une partie
+      b) Ce sont deux mots pour la même chose
+      c) Le processus est plus large que la pratique
+      d) La pratique n'existe que dans COBIT
+
+ 3. Quelle norme ISO reprend BPMN 2.0 ?
+      a) ISO/IEC 20000-1
+      b) ISO 31000
+      c) ISO/IEC 19510
+      d) ISO/IEC 38500
+
+ 4. Quel élément BPMN représente un choix ou une séparation en parallèle ?
+      a) L'événement
+      b) L'activité
+      c) Le couloir
+      d) La passerelle
+
+ 5. Comment BPMN représente-t-il un échange entre deux acteurs ?
+      a) Par un flux de messages en pointillé
+      b) Par un flux de séquence plein
+      c) Par un losange
+      d) Par un cercle
+
+ 6. Scénario. Que fait apparaître le schéma BPMN du traitement d'un incident chez KRIBILOG ?
+      a) Que le centre de services est surdimensionné
+      b) Le passage d'un couloir à l'autre, où se perdent les incidents
+      c) Que NETPORT SERVICES n'intervient jamais
+      d) Que les incidents sont tous P1
+
+ 7. Que faut-il modéliser en premier, selon la règle du chapitre ?
+      a) Le processus cible issu des référentiels
+      b) Le processus d'un concurrent
+      c) Le processus tel qu'il est, à partir d'entretiens et des traces de l'outil
+      d) Le processus imposé par l'auditeur
+
+ 8. Que signifie la lettre A dans une matrice RACI ?
+      a) Celui qui réalise l'activité
+      b) Celui qui est consulté avant
+      c) Celui qui est informé après
+      d) Celui qui répond de l'activité et l'approuve
+
+ 9. Que signifie la lettre C dans une matrice RACI ?
+      a) Est consulté avant
+      b) Contrôle l'activité
+      c) Coordonne l'équipe
+      d) Clôt l'activité
+
+10. Combien de A doit-on trouver par activité ?
+      a) Au moins deux
+      b) Un seul
+      c) Autant que de directions
+      d) Aucun
+
+11. Pourquoi la matrice RACI doit-elle utiliser des noms de fonctions plutôt que de personnes ?
+      a) Pour la rendre plus courte
+      b) Pour respecter la loi
+      c) Pour qu'elle survive aux départs
+      d) Pour faciliter l'audit financier
+
+12. Scénario. Chez NOUN PAY, quelle activité n'a ni R ni A ?
+      a) Préparer la version
+      b) Tester
+      c) Déployer
+      d) Évaluer l'impact sur les clients
+
+13. Scénario. Quel acteur n'apparaît nulle part dans la matrice de NOUN PAY ?
+      a) Le délégué à la protection des données
+      b) L'équipe DevOps
+      c) Le directeur technique
+      d) La fondatrice
+
+14. Quel objectif COBIT correspond à l'article 8.6.3 « Problèmes » de l'ISO/IEC 20000-1 ?
+      a) DSS02
+      b) DSS03
+      c) BAI06
+      d) APO09
+
+15. Quel article de l'ISO/IEC 20000-1 correspond à BAI06 et à l'habilitation des changements ?
+      a) 8.6.1
+      b) 8.7.2
+      c) 8.5.1
+      d) 8.2.6
+
+16. Pourquoi une correspondance n'est-elle jamais une équivalence ?
+      a) Parce que les périmètres et les natures des référentiels diffèrent et que les éditions changent
+      b) Parce que COBIT est payant
+      c) Parce qu'ITIL est obsolète
+      d) Parce que l'ISO interdit les correspondances
+
+17. Que mesure un KGI ?
+      a) Une performance en cours de route
+      b) Le coût d'un processus
+      c) La satisfaction d'un agent
+      d) Si un objectif est atteint, après coup
+
+18. Quel référentiel a mis en avant la distinction entre KGI et KPI ?
+      a) ITIL v3
+      b) COBIT 4.1
+      c) ISO/IEC 20000-1
+      d) COSO 2017
+
+19. Qu'est-ce qu'un indicateur inutile, selon le chapitre ?
+      a) Un indicateur sans graphique
+      b) Un indicateur mensuel
+      c) Un indicateur dont l'écart ne déclenche jamais rien
+      d) Un indicateur de contrôle
+
+20. À quelle fréquence minimale le propriétaire conduit-il la revue de son processus ?
+      a) Une fois par an
+      b) Une fois par semaine
+      c) Tous les trois ans
+      d) Seulement après un incident
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La pratique « gestion des incidents » peut donner lieu à plusieurs processus.
+      Vrai / Faux
+
+22. Le propriétaire de processus exécute nécessairement lui-même le processus.
+      Vrai / Faux
+
+23. Une activité sans R ne sera pas faite.
+      Vrai / Faux
+
+24. Multiplier les C accélère les décisions.
+      Vrai / Faux
+
+25. COBIT 2019 fournit pour chaque pratique une matrice RACI type, à traduire avec les fonctions de l'organisation.
+      Vrai / Faux
+
+26. Satisfaire une pratique ITIL garantit de satisfaire l'exigence correspondante de l'ISO/IEC 20000-1.
+      Vrai / Faux
+
+27. Une correspondance entre référentiels se date et se révise à chaque nouvelle édition.
+      Vrai / Faux
+
+28. On peut externaliser la propriété d'un processus chez l'infogérant.
+      Vrai / Faux
+
+29. L'absence de processus, c'est l'agilité.
+      Vrai / Faux
+
+30. Un bon indicateur est assorti d'une cible et attribué à un responsable.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Dans BPMN, la bande horizontale qui représente un rôle ou une organisation s'appelle un ______.
+
+32. BPMN est publié par l'Object Management Group dans sa version ______.
+
+33. Dans une matrice RACI, la lettre R désigne celui qui ______ l'activité.
+
+34. Dans une matrice RACI, la lettre I désigne celui qui est ______ après.
+
+35. Le sigle de l'indicateur clé de performance est ______.
+
+36. Le sigle de l'indicateur clé d'objectif est ______.
+
+37. L'objectif COBIT de surveillance de la performance et de la conformité porte le code ______.
+
+38. La personne qui pilote l'exécution quotidienne d'un processus sur un périmètre donné est le ______ de processus.
+
+39. Un processus sans ______ se dégrade.
+
+40. Dans la matrice de NOUN PAY, l'autorisation de mise en production compte ______ A.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

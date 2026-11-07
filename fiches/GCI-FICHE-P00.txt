@@ -1,0 +1,236 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-P00
+Chapitre 0 : Prologue : trois jours sans banque, quand personne n'a décidé
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Combien de temps les agences de la BANQUE SANAGA sont-elles restées paralysées ?
+      a) Quelques heures
+      b) Une journée
+      c) Trois jours
+      d) Deux semaines
+
+ 2. Selon l'enquête interne, quelle était la cause réelle de la panne ?
+      a) Une suite de décisions non prises ou prises sans trace ni contrôle
+      b) Un logiciel défectueux livré par l'intégrateur
+      c) Une cyberattaque contre le système central
+      d) Une coupure d'électricité prolongée
+
+ 3. À quel taux la recette du nouveau système était-elle réalisée quand la date de bascule a été maintenue ?
+      a) 38 %
+      b) 63 %
+      c) 85 %
+      d) 98 %
+
+ 4. Quel régulateur a demandé à la BANQUE SANAGA un rapport circonstancié ?
+      a) L'ANTIC
+      b) L'ART
+      c) La Chambre des comptes
+      d) La COBAC
+
+ 5. Que doit contenir une chronologie de défaillance ?
+      a) Les hypothèses de l'analyste sur les responsabilités
+      b) Les seuls faits techniques relevés par l'exploitation
+      c) Des faits datés, chacun rattaché à une pièce justificative
+      d) Les recommandations du rapport final
+
+ 6. Laquelle de ces phrases est une constatation, et non une analyse ?
+      a) « La recette couvrait 63 % des scénarios le 20 février. »
+      b) « Le prestataire a livré un logiciel non conforme. »
+      c) « Les écarts de solde viennent sans doute de scénarios non testés. »
+      d) « Le directeur général a manqué de prudence. »
+
+ 7. Qu'est-ce qui doit accompagner une analyse dans un rapport de défaillance ?
+      a) Le nom du coupable
+      b) Un niveau de confiance
+      c) L'avis du conseil d'administration
+      d) Une citation du référentiel COBIT
+
+ 8. À quelle question répond la cause de gouvernance d'une défaillance ?
+      a) Quel composant a cédé ?
+      b) Combien la panne a-t-elle coûté ?
+      c) Qui doit être sanctionné ?
+      d) Pourquoi était-il possible que cela arrive ?
+
+ 9. Quand une analyse de défaillance peut-elle être considérée comme terminée ?
+      a) Quand le composant défaillant a été remplacé
+      b) Quand le service est rétabli
+      c) Quand elle a atteint une décision, ou une absence de décision, et nommé le rôle qui aurait dû la prendre
+      d) Quand le prestataire a reconnu sa faute
+
+10. Scénario. Un serveur de messagerie tombe en panne. On découvre que ses sauvegardes n'ont pas été vérifiées depuis deux ans, sans que personne en soit chargé. Quelle est la cause de gouvernance ?
+
+      a) La panne du disque du serveur
+      b) L'absence de responsable désigné pour vérifier les sauvegardes
+      c) Le vieillissement du matériel
+      d) Le volume excessif de courriels
+
+11. Quelles sont les trois questions réflexes du prologue ?
+      a) Quoi, où, quand ?
+      b) Combien, pour qui, jusqu'à quand ?
+      c) Qui décide, qui exécute, qui rend compte ?
+      d) Qui paie, qui livre, qui contrôle ?
+
+12. Que désigne la redevabilité (accountability) ?
+      a) L'obligation de rendre compte d'une responsabilité à l'instance qui l'a confiée, et d'en assumer les conséquences
+      b) La capacité technique à exécuter une tâche
+      c) Le droit de refuser une décision de la direction
+      d) La part du budget consacrée au contrôle interne
+
+13. Scénario. À la BANQUE SANAGA, qui a réellement fixé la date de bascule du nouveau système central ?
+
+      a) Le comité de pilotage, sur avis de la DSI
+      b) Le conseil d'administration
+      c) L'intégrateur DIGICORE AFRIQUE
+      d) Le directeur général seul
+
+14. Scénario. La note de la DSI du 20 février, qui demandait un report, était juste sur le fond. Pourquoi a-t-elle échoué ?
+
+      a) Elle était adressée au seul directeur général et ne demandait aucune décision
+      b) Elle contenait des erreurs de chiffres
+      c) Elle avait été envoyée trop tard, après la bascule
+      d) Elle n'avait pas été signée par le DSI
+
+15. Selon COBIT 2019, quelles activités relèvent de la gouvernance ?
+      a) Planifier, bâtir, exploiter, surveiller
+      b) Évaluer, diriger, surveiller
+      c) Concevoir, tester, déployer
+      d) Acheter, installer, maintenir
+
+16. Dans la plupart des organisations, à qui revient la gouvernance des SI ?
+      a) Au DSI
+      b) Au responsable de la sécurité
+      c) À l'organe de gouvernance, en général le conseil d'administration
+      d) Aux prestataires informatiques
+
+17. Qu'attend le commissaire aux comptes après la panne de la BANQUE SANAGA ?
+      a) La preuve de l'exactitude des soldes convertis
+      b) Un plan de communication à la presse
+      c) La démission du directeur général
+      d) Un nouveau contrat avec l'intégrateur
+
+18. Quel est l'ordre de grandeur du rapport entre le coût de la panne et le coût d'un report de six semaines ?
+      a) Le report aurait coûté plus cher que la panne
+      b) Les deux coûts sont à peu près égaux
+      c) La panne a coûté environ deux fois le report
+      d) La panne a coûté plus de vingt fois le report
+
+19. Que prévoit l'article 32 de la loi n° 2010/012 sur la cybersécurité ?
+      a) Un audit obligatoire et périodique de la sécurité des systèmes d'information
+      b) La certification ISO 27001 de toutes les banques
+      c) L'interdiction de l'externalisation informatique
+      d) La création de la COBAC
+
+20. Comment le prologue répartit-il les rôles de COBIT et d'ITIL ?
+      a) ITIL fixe les objectifs, COBIT décrit les procédures
+      b) COBIT dit ce qui doit être maîtrisé ; ITIL décrit en détail comment gérer les services
+      c) Les deux référentiels disent la même chose
+      d) COBIT ne concerne que l'audit, ITIL que la sécurité
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La panne de la BANQUE SANAGA a coûté environ 1,9 milliard de francs CFA.
+      Vrai / Faux
+
+22. Un retour arrière avait été testé avant la bascule, mais il n'a pas fonctionné.
+      Vrai / Faux
+
+23. L'audit interne avait signalé les faiblesses de la gestion des changements plusieurs mois avant la panne.
+      Vrai / Faux
+
+24. Mélanger constatation et analyse rend un rapport plus facile à défendre face à un contradicteur.
+      Vrai / Faux
+
+25. Une décision qui n'a été prise par personne, faute d'instance compétente, est un signal d'alerte de gouvernance.
+      Vrai / Faux
+
+26. Le DSI est l'organe de gouvernance des systèmes d'information de l'organisation.
+      Vrai / Faux
+
+27. La gouvernance se demande si l'on fait les bonnes choses ; le management, si l'on fait bien les choses.
+      Vrai / Faux
+
+28. Une bonne gouvernance des SI empêche tout incident technique.
+      Vrai / Faux
+
+29. Dans la bascule gouvernée, le même incident technique s'est produit, mais il est resté un incident d'exploitation.
+      Vrai / Faux
+
+30. Pour un changement majeur, l'autorisation du comité des changements peut être datée après la mise en production.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Les trois questions réflexes sont qui décide, qui exécute et qui rend ______.
+
+32. La répartition formelle du pouvoir de décider s'appelle les droits de ______.
+
+33. Le terme anglais accountability se traduit dans ce cours par ______.
+
+34. Les trois verbes de la gouvernance selon COBIT sont évaluer, diriger et ______.
+
+35. Un fait vérifiable, rattaché à une pièce, est une ______.
+
+36. La suite datée des faits et des décisions qui entourent une défaillance s'appelle la ______ de défaillance.
+
+37. Le régulateur bancaire de la zone CEMAC est désigné par le sigle ______.
+
+38. L'objectif COBIT consacré à la gestion des changements informatiques porte le code ______.
+
+39. Le plan qui permet de revenir à l'état antérieur si un changement échoue est le plan de retour ______.
+
+40. La loi camerounaise de 2010 sur la cybersécurité porte le numéro 2010/______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

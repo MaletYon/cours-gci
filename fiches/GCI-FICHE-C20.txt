@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C20
+Chapitre 20 : Mesurer la gouvernance : l'état de la recherche
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quelle question le premier courant de recherche sur la gouvernance des SI s'est-il posée ?
+      a) La gouvernance améliore-t-elle les résultats ?
+      b) Où se prennent les décisions informatiques ?
+      c) Par quels moyens la gouvernance s'exerce-t-elle ?
+      d) Combien coûte la gouvernance ?
+
+ 2. Selon Sambamurthy et Zmud, de quoi dépend le bon arrangement de gouvernance des SI ?
+      a) De plusieurs facteurs de contingence qui agissent ensemble
+      b) Du seul secteur d'activité
+      c) Du référentiel adopté
+      d) Du nombre d'informaticiens
+
+ 3. Quels auteurs ont distingué structures, processus et capacités relationnelles ?
+      a) Weill et Ross
+      b) Brown et Grant
+      c) Peterson
+      d) Wu, Straub et Liang
+
+ 4. Quelle est la particularité méthodologique de l'étude de Wu, Straub et Liang ?
+      a) Elle porte sur une seule entreprise
+      b) Elle est longitudinale sur vingt ans
+      c) Elle n'utilise que des données financières
+      d) Elle croise les réponses de dirigeants métiers et de responsables informatiques des mêmes entreprises
+
+ 5. Quel écart de rentabilité Weill et Ross ont-ils rapporté entre les entreprises les mieux et les moins bien gouvernées ?
+      a) De l'ordre de 5 %
+      b) De l'ordre de 20 %
+      c) De l'ordre de 50 %
+      d) Aucun écart
+
+ 6. Par quel intermédiaire la gouvernance agit-elle surtout sur la performance ?
+      a) Par la réduction des coûts
+      b) Par la certification
+      c) Par l'alignement stratégique
+      d) Par l'externalisation
+
+ 7. Scénario. Un mémoire affirme que « COBIT améliore la performance de 20 % » en citant Weill et Ross. Quelle est l'erreur ?
+      a) Weill et Ross n'étudient pas COBIT et mesurent une association, pas un effet causal
+      b) Le chiffre exact est 25 %
+      c) Weill et Ross ont étudié ITIL
+      d) Il n'y a pas d'erreur
+
+ 8. Pourquoi les études transversales ne permettent-elles pas de trancher le sens de la causalité ?
+      a) Parce qu'elles portent sur trop d'entreprises
+      b) Parce qu'elles sont évaluées par les pairs
+      c) Parce qu'elles sont trop récentes
+      d) Parce qu'elles observent les organisations à une seule date
+
+ 9. Quelle faiblesse fragilise souvent la mesure de la gouvernance dans les études ?
+      a) L'usage de données financières
+      b) L'autoévaluation par un seul répondant
+      c) La taille excessive des échantillons
+      d) L'évaluation par les pairs
+
+10. Quel modèle a inspiré le modèle de capacité de COBIT 2019 ?
+      a) ISO/IEC 27001
+      b) ITIL v3
+      c) Le CMMI
+      d) COSO 2017
+
+11. Quelle critique des modèles de maturité désigne l'hypothèse d'un chemin unique du niveau 1 au niveau 5 ?
+      a) La linéarité
+      b) Le fondement théorique
+      c) La fiabilité de la mesure
+      d) Le lien avec la performance
+
+12. Comment faut-il utiliser les modèles de maturité, selon le chapitre ?
+      a) Comme des instruments de mesure scientifique
+      b) Comme des exigences légales
+      c) Il faut y renoncer
+      d) Comme des outils de diagnostic et de dialogue
+
+13. Comment COBIT 2019 répond-il à la critique de la linéarité ?
+      a) En supprimant le niveau 5
+      b) En faisant dépendre la capacité cible des facteurs de conception
+      c) En imposant le niveau 3 partout
+      d) En confiant l'évaluation à l'ISACA
+
+14. Quel biais de méthode la grille de lecture fait-elle rechercher ?
+      a) L'usage de l'anglais
+      b) Le nombre de pages
+      c) Le même répondant décrivant à la fois la gouvernance et la performance
+      d) L'absence de graphiques
+
+15. Que garantit l'évaluation par les pairs ?
+      a) Que les résultats ont été soumis à une critique méthodologique
+      b) Que les résultats sont justes
+      c) Que l'étude est causale
+      d) Que l'échantillon est représentatif
+
+16. Comment doit-on citer une prépublication ?
+      a) Comme un article publié
+      b) Sans indiquer son statut
+      c) Il est interdit de la citer
+      d) Comme telle, en indiquant qu'elle n'est pas encore évaluée par les pairs
+
+17. Scénario. Une enquête auprès de 85 DSI volontaires trouve une satisfaction client supérieure de 15 % chez les adoptants de COBIT. Comment présenter ce résultat ?
+      a) Comme la preuve que COBIT améliore la satisfaction
+      b) Comme une association observée sur un échantillon de convenance
+      c) Comme un résultat sans aucun intérêt
+      d) Comme un effet causal établi
+
+18. Quelle méthode convient aux questions « comment ? » et « pourquoi ? » dans des contextes peu connus ?
+      a) L'enquête par questionnaire
+      b) L'expérience de laboratoire
+      c) L'étude de cas
+      d) La revue de littérature seule
+
+19. Quelle méthode construit un artefact et l'évalue en situation ?
+      a) La recherche orientée conception
+      b) L'étude de cas
+      c) L'enquête par questionnaire
+      d) L'étude longitudinale
+
+20. Combien de références au moins la bibliographie d'un projet de mémoire recevable doit-elle compter ?
+      a) Cinq
+      b) Dix
+      c) Trente
+      d) Quinze
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Plusieurs études observent qu'à structures égales, les mécanismes relationnels font la différence.
+      Vrai / Faux
+
+22. L'effet propre de l'adoption de COBIT ou d'ITIL sur la performance est solidement établi.
+      Vrai / Faux
+
+23. La plupart des études sur la gouvernance des SI portent sur des organisations d'Afrique centrale.
+      Vrai / Faux
+
+24. Deux évaluateurs attribuent toujours le même niveau au même processus.
+      Vrai / Faux
+
+25. COBIT utilise un modèle de maturité depuis sa version 3.
+      Vrai / Faux
+
+26. Une différence statistiquement significative n'est pas une preuve d'effet.
+      Vrai / Faux
+
+27. Les enquêtes des cabinets de conseil publient toujours leur méthode.
+      Vrai / Faux
+
+28. Citer un résultat, c'est citer aussi ce qu'il mesure, sur quel échantillon et avec quelle méthode.
+      Vrai / Faux
+
+29. Les données d'audit peuvent servir à la recherche sans l'accord des organisations.
+      Vrai / Faux
+
+30. Un projet de mémoire recevable prévoit des règles de confidentialité et d'anonymisation.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La recherche sur la gouvernance des SI s'organise en ______ courants.
+
+32. De Haes et Van Grembergen distinguent structures, processus et mécanismes ______.
+
+33. Le premier modèle de maturité du logiciel est né à l'université Carnegie ______.
+
+34. L'échelle des modèles de maturité va de 0 à ______.
+
+35. Une étude qui suit les mêmes organisations sur plusieurs dates est dite ______.
+
+36. L'examen d'un article par des chercheurs indépendants avant publication s'appelle l'évaluation par les ______.
+
+37. La version d'un travail rendue publique avant évaluation par les pairs s'appelle une ______.
+
+38. La recherche orientée ______ construit un artefact et l'évalue en situation.
+
+39. L'étude fictive porte sur un échantillon de ______ DSI.
+
+40. Un projet de mémoire suppose un accord ______ de l'organisation étudiée.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

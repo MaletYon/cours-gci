@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C10
+Chapitre 10 : Le cadre juridique et réglementaire camerounais et africain
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quelle autorité la loi n° 2010/012 charge-t-elle de la régulation de la sécurité électronique ?
+      a) L'ART
+      b) L'ANTIC
+      c) La COBAC
+      d) Le MINFI
+
+ 2. Que l'article 26 de la loi n° 2010/012 exige-t-il des exploitants de systèmes d'information, au-delà de mesures techniques ?
+      a) Une certification ISO/IEC 27001
+      b) Un hébergement au Cameroun
+      c) Des dispositifs normalisés pour identifier, évaluer et traiter les risques de sécurité
+      d) Un délégué à la protection des données
+
+ 3. Pendant combien de temps l'article 29 de la loi n° 2010/012 impose-t-il de conserver les données de connexion et de trafic ?
+      a) Dix ans
+      b) Cinq ans
+      c) Un an
+      d) Dix-huit mois
+
+ 4. Quel principe l'article 30 de la loi n° 2010/012 consacre-t-il ?
+      a) La confidentialité des échanges
+      b) La responsabilité pénale des personnes morales
+      c) L'audit obligatoire
+      d) L'évaluation et la révision des dispositifs de sécurité selon l'évolution technologique
+
+ 5. Quels articles de la loi n° 2010/012 prévoient l'audit de sécurité obligatoire et périodique ?
+      a) Articles 41 et 42
+      b) Articles 13 et 32
+      c) Articles 63 et 64
+      d) Article 7 seulement
+
+ 6. Quel est le montant de l'amende prévue par l'article 64 contre une personne morale défaillante ?
+      a) De 5 à 50 millions de FCFA
+      b) De 1 à 10 millions de FCFA
+      c) De 50 à 500 millions de FCFA
+      d) Aucune amende n'est prévue
+
+ 7. Selon l'article 32 de la loi n° 2010/012, à quel ministère sont destinés les rapports d'audit de sécurité ?
+      a) MINFI
+      b) MINESUP
+      c) MINPOSTEL
+      d) MINJUSTICE
+
+ 8. Quelle autorité est principalement compétente pour le contrôle interne et le risque informatique d'une banque ?
+      a) L'ANTIC
+      b) L'ART
+      c) La Chambre des comptes
+      d) La COBAC
+
+ 9. Quelle autorité audite les établissements et entreprises publics, y compris leurs SI ?
+      a) L'ART
+      b) La Chambre des comptes
+      c) La COBAC
+      d) L'Autorité de protection des données
+
+10. Depuis quelle date la loi n° 2024/017 s'applique-t-elle pleinement, d'après les présentations publiées ?
+      a) 21 décembre 2010
+      b) 8 juin 2023
+      c) 23 juin 2026
+      d) 1er janvier 2025
+
+11. Quel objectif COBIT correspond à l'inventaire des traitements de données personnelles ?
+      a) APO14
+      b) DSS01
+      c) BAI06
+      d) EDM01
+
+12. Quel objectif COBIT correspond à la maîtrise des sous-traitants qui traitent des données pour le compte de l'organisation ?
+      a) APO12
+      b) MEA01
+      c) BAI03
+      d) APO10
+
+13. Scénario. Lequel de ces points n'est PAS un manquement probable relevé chez NOUN PAY ?
+      a) L'absence d'inventaire des traitements
+      b) L'absence de certification ISO/IEC 20000-1
+      c) Un transfert hors du territoire non examiné
+      d) L'absence de recours contre une décision automatisée
+
+14. Quel règlement fixe les exigences minimales du contrôle interne des établissements de crédit de la CEMAC ?
+      a) COBAC R-2016/04
+      b) Loi n° 2018/012
+      c) Convention de Malabo
+      d) Loi n° 2010/013
+
+15. Selon le règlement COBAC R-2016/04, quels risques le risque opérationnel exclut-il ?
+      a) Le risque juridique
+      b) Le risque lié aux systèmes
+      c) Le risque lié aux personnes
+      d) Les risques stratégiques et de réputation
+
+16. Scénario. Comment qualifier la panne de la BANQUE SANAGA au regard du règlement COBAC ?
+      a) Un simple incident technique
+      b) Un risque de marché
+      c) Un risque opérationnel relevant du dispositif de contrôle interne
+      d) Un risque stratégique
+
+17. Quand l'Acte uniforme OHADA relatif au droit des sociétés commerciales a-t-il été révisé ?
+      a) 30 janvier 2014
+      b) 27 juin 2014
+      c) 23 décembre 2024
+      d) 21 décembre 2010
+
+18. Quel article de l'Acte uniforme révisé rend le comité d'audit obligatoire dans les sociétés cotées ?
+      a) Article 740
+      b) Article 829-1
+      c) Article 161
+      d) Article 64
+
+19. Selon le chapitre, quelle est la première défense d'un dirigeant diligent ?
+      a) Une assurance responsabilité civile
+      b) Une certification de l'organisation
+      c) La trace écrite des décisions
+      d) Le silence
+
+20. Quand la Convention de Malabo est-elle entrée en vigueur ?
+      a) 27 juin 2014
+      b) 23 juin 2026
+      c) 30 janvier 2014
+      d) 8 juin 2023
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La responsabilité pénale de la personne morale exclut celle des personnes physiques.
+      Vrai / Faux
+
+22. Une certification ISO/IEC 27001 dispense de l'audit de sécurité prévu par la loi n° 2010/012.
+      Vrai / Faux
+
+23. L'externalisation d'un traitement transfère la responsabilité au prestataire.
+      Vrai / Faux
+
+24. Héberger ses serveurs à l'étranger soustrait l'organisation à la loi camerounaise sur les données personnelles.
+      Vrai / Faux
+
+25. La loi n° 2024/017 institue une Autorité de protection des données à caractère personnel.
+      Vrai / Faux
+
+26. La loi n° 2010/013 sur les communications électroniques a été modifiée en 2015.
+      Vrai / Faux
+
+27. Le chapitre établit que le Cameroun a ratifié la Convention de Malabo.
+      Vrai / Faux
+
+28. Le registre des obligations légales indique, pour chaque obligation, la preuve de conformité.
+      Vrai / Faux
+
+29. Le registre des obligations légales est revu au moins une fois par an, et à chaque nouveau texte.
+      Vrai / Faux
+
+30. On peut citer entre guillemets un article qu'on n'a pas vérifié dans le texte publié.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La loi sur la cybersécurité et la cybercriminalité porte le numéro 2010/______.
+
+32. L'article ______ de la loi n° 2010/012 rend les personnes morales pénalement responsables.
+
+33. Le sigle de l'Agence de régulation des télécommunications est ______.
+
+34. La loi n° 2024/017 a accordé aux organisations un délai de ______ mois pour se mettre en conformité.
+
+35. La loi relative à la protection des données à caractère personnel porte le numéro 2024/______.
+
+36. Le sigle de la Commission bancaire de l'Afrique centrale est ______.
+
+37. Pour la société anonyme, l'article ______ de l'AUSCGIE rend les administrateurs responsables envers la société ou les tiers.
+
+38. La Convention de l'Union africaine sur la cybersécurité et les données personnelles a été adoptée à ______.
+
+39. Pour démontrer la conformité légale, l'organisation tient un registre des ______ légales.
+
+40. L'objectif COBIT de la conformité aux exigences externes est ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

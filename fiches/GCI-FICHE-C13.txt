@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C13
+Chapitre 13 : Incidents, problèmes et demandes de service
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Qu'est-ce qu'un problème, au sens d'ITIL 4 ?
+      a) Une interruption non planifiée d'un service
+      b) La cause, réelle ou potentielle, d'un ou de plusieurs incidents
+      c) Une demande portant sur une prestation prévue
+      d) Une modification d'un composant
+
+ 2. Comment appelle-t-on un problème analysé, dont la cause est identifiée, mais pas encore résolu ?
+      a) Une erreur connue
+      b) Un incident majeur
+      c) Une demande de service
+      d) Une solution de contournement
+
+ 3. Scénario. Un agent du port demande une nouvelle fonction du logiciel de suivi. De quoi s'agit-il ?
+      a) D'un incident
+      b) D'une demande de service
+      c) D'une demande de changement
+      d) D'un problème
+
+ 4. Scénario. On relance à la main la synchronisation du logiciel de suivi. De quoi s'agit-il ?
+      a) D'une erreur connue
+      b) D'un problème
+      c) D'une demande de service
+      d) D'une solution de contournement
+
+ 5. Quel rôle ITIL 4 souligne-t-il pour le centre de services ?
+      a) Il est la vitrine du service, par laquelle l'utilisateur perçoit la valeur
+      b) Il corrige les causes des incidents
+      c) Il approuve les changements
+      d) Il fixe les délais cibles
+
+ 6. Quel niveau de support correspond à l'éditeur ou à l'infogérant ?
+      a) Niveau 1
+      b) Niveau 2
+      c) Niveau 3
+      d) Niveau 0
+
+ 7. Scénario. 20 % des tickets de KRIBILOG sont des réinitialisations de mot de passe. Quelle mesure le cours propose-t-il ?
+      a) Recruter davantage d'agents
+      b) Un portail en libre-service
+      c) Ouvrir un problème
+      d) Supprimer les mots de passe
+
+ 8. Quel est le but de la gestion des incidents ?
+      a) Identifier la cause racine
+      b) Approuver les changements
+      c) Mesurer la satisfaction
+      d) Rétablir le service le plus vite possible et limiter l'effet sur l'activité
+
+ 9. Quels deux critères la priorité d'un incident combine-t-elle ?
+      a) Coût et délai
+      b) Impact et urgence
+      c) Fréquence et gravité
+      d) Probabilité et impact
+
+10. Dans la matrice d'exemple, quelle priorité correspond à un impact moyen et une urgence moyenne ?
+      a) P1
+      b) P2
+      c) P3
+      d) P5
+
+11. Quel délai cible KRIBILOG retient-il pour un incident P1 ?
+      a) 4 heures
+      b) 8 heures
+      c) 24 heures
+      d) 72 heures
+
+12. Qui fixe les délais cibles de résolution ?
+      a) ITIL 4
+      b) L'infogérant seul
+      c) La COBAC
+      d) Les engagements de service convenus avec les métiers
+
+13. Quelle est la première action du DSI face à un incident majeur ?
+      a) Lancer immédiatement le plan de continuité
+      b) Désigner un responsable de l'incident, distinct de ceux qui réparent
+      c) Attendre le rapport de l'éditeur
+      d) Informer la presse
+
+14. Que recommande ITIL 4 pour chaque type de demande de service ?
+      a) Un traitement par courriel
+      b) Une analyse de cause
+      c) Un modèle (contenu, circuit d'approbation, délai) et autant que possible un libre-service
+      d) Un passage en comité des changements
+
+15. Quelle phase de la gestion des problèmes suit les erreurs connues jusqu'à leur correction ?
+      a) Le contrôle des erreurs
+      b) L'identification des problèmes
+      c) Le contrôle des problèmes
+      d) La clôture des incidents
+
+16. Quelle technique d'analyse classe les causes possibles par familles (méthodes, matériel, personnes…) ?
+      a) Les cinq pourquoi
+      b) L'analyse de Pareto
+      c) L'analyse chronologique
+      d) Le diagramme d'Ishikawa
+
+17. Scénario. Selon les cinq pourquoi, quelle est la cause de gouvernance des conteneurs perdus chez KRIBILOG ?
+      a) La balise est défectueuse
+      b) Personne n'était chargé de suivre les correctifs de l'éditeur
+      c) Le réseau mobile est instable
+      d) Les agents ne savent pas utiliser le logiciel
+
+18. Scénario. Huit tickets totalisent 124 heures de résolution. Quel est le MTTR ?
+      a) 12,4 heures
+      b) 124 heures
+      c) 15,5 heures
+      d) 8 heures
+
+19. Comment se calcule la résolution au premier contact ?
+      a) Incidents résolus par le niveau 1 sans escalade / incidents reçus
+      b) Incidents rouverts / incidents clos
+      c) Somme des durées / nombre d'incidents
+      d) Incidents dans le délai / incidents résolus
+
+20. Scénario. Le MTTR de KRIBILOG est de 15,5 heures, mais l'incident P1 a duré 49 heures. Quelle leçon en tirer ?
+      a) Le MTTR suffit à piloter le service
+      b) Il faut supprimer la priorité P1
+      c) Il faut allonger les délais cibles
+      d) Un indicateur moyen ne remplace jamais l'examen des incidents prioritaires
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La confusion la plus coûteuse est celle de l'incident et du problème.
+      Vrai / Faux
+
+22. Une solution de contournement traite la cause d'un incident.
+      Vrai / Faux
+
+23. Le centre de services de KRIBILOG peut se limiter aux heures de bureau, même si le port travaille 24 h/24.
+      Vrai / Faux
+
+24. Les délais cibles de résolution sont fixés par ITIL 4.
+      Vrai / Faux
+
+25. Le dossier d'incident majeur comporte une revue post-incident avec l'ouverture d'un problème.
+      Vrai / Faux
+
+26. À l'ANPP, traiter les demandes d'accès par courriel sans approbation est conforme aux bonnes pratiques.
+      Vrai / Faux
+
+27. La gestion des problèmes vise à réduire la probabilité et l'effet des incidents.
+      Vrai / Faux
+
+28. Une erreur connue se résout souvent par un changement.
+      Vrai / Faux
+
+29. Clore un ticket dès qu'un contournement est appliqué améliore réellement la qualité du service.
+      Vrai / Faux
+
+30. Il est recommandé de confier la gestion des problèmes à une personne distincte du responsable du centre de services.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'objectif COBIT « Gérer les problèmes » porte le code ______.
+
+32. L'objectif COBIT de gestion des incidents et des demandes porte le code ______.
+
+33. L'interruption non planifiée d'un service, ou la dégradation de sa qualité, s'appelle un ______.
+
+34. Le point de contact unique entre le fournisseur et les utilisateurs est le centre de ______.
+
+35. L'étendue des effets d'un incident sur l'activité s'appelle l'______.
+
+36. La vitesse à laquelle l'effet d'un incident s'aggrave s'appelle l'______.
+
+37. La technique qui classe les catégories d'incidents par fréquence est l'analyse de ______.
+
+38. Chez KRIBILOG, le suivi des conteneurs représente ______ % des tickets du mois.
+
+39. Le sigle du délai moyen de résolution est ______.
+
+40. Pour 3 tickets rouverts sur 8 clos, le taux de réouverture est de ______ %.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

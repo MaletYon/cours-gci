@@ -1,0 +1,577 @@
+% ============================================================================
+% Fichier  : partie4/P04_C12_itil_systeme_valeur.tex
+% Titre    : ITIL 4 : le Système de Valeur des Services
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Décision de l'auteur (29/10/2026) : la Partie IV s'appuie sur ITIL 4,
+% avec une note sur ITIL version 5 (PeopleCert, 2026). Sources publiques
+% uniquement : les définitions sont reformulées, aucune n'est citée
+% textuellement.
+% ============================================================================
+
+\chapter{ITIL 4 : le Système de Valeur des Services}
+\label{chap:itil-svs}
+\chaptermark{ITIL 4 : le système de valeur}
+
+\epigraph{%
+    « La valeur ne se livre pas.\\
+    Elle se crée avec celui qui reçoit le service. »%
+}{Idée centrale d'ITIL~4}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:cobit-archi} (architecture de COBIT~2019)
+    et du Chapitre~\ref{chap:referentiels} (place d'ITIL parmi les
+    référentiels).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Retracer l'évolution d'ITIL (v2, v3 et son cycle de vie, ITIL~4).
+    \item Définir service, valeur, produit et relation de service.
+    \item Décrire le système de valeur des services et sa chaîne de valeur.
+    \item Appliquer les sept principes directeurs et les quatre dimensions.
+    \item Situer ITIL version~5 (2026) par rapport à ITIL~4.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : que veut vraiment le client~?}
+% ============================================================================
+
+Chez KRIBILOG SA, le centre de services traite 4~800~tickets par mois, et
+30~\% d'entre eux sont rouverts. Les indicateurs de l'infogérant NETPORT
+SERVICES sont pourtant au vert~: les serveurs sont disponibles à
+99,8~\%. Le directeur des opérations portuaires résume le malentendu~:
+« Vos serveurs fonctionnent, mais mes conteneurs restent bloqués. »
+
+Ce malentendu est l'objet d'ITIL~4. La Partie~\ref{part:pratique}, qui
+s'ouvre ici, passe de la gouvernance à la pratique quotidienne des
+services. Ce chapitre en pose les fondations~: l'histoire d'ITIL
+(section~\ref{sec:c12-histoire}), ses concepts clés
+(section~\ref{sec:c12-concepts}), le système de valeur des services et sa
+chaîne de valeur (sections~\ref{sec:c12-svs} et~\ref{sec:c12-chaine}), les
+quatre dimensions et les sept principes (sections~\ref{sec:c12-dimensions}
+et~\ref{sec:c12-principes}), et enfin la place d'ITIL version~5
+(section~\ref{sec:c12-itil5}).
+
+\separateur
+
+% ============================================================================
+\section{Trente-Cinq Ans d'ITIL}
+\label{sec:c12-histoire}
+% ============================================================================
+
+\begin{tableaucours}{L{2.4cm}L{4.0cm}L{5.8cm}}{%
+    \tableauHeader{Version} &
+    \tableauHeader{Logique} &
+    \tableauHeader{Apport}
+}
+Fin des années 1980 & Recueil de pratiques & L'administration britannique
+rassemble les bonnes pratiques de gestion de ses services informatiques \\
+ITIL v2 (2000--2001) & Processus & Deux ouvrages centraux~: le soutien et la
+fourniture des services~; diffusion mondiale \\
+ITIL v3 (2007, révisé en 2011) & Cycle de vie & Cinq étapes~: stratégie,
+conception, transition, exploitation et amélioration continue des
+services \\
+ITIL 4 (2019) & Système de valeur & Co-création de la valeur, 34~pratiques,
+intégration de l'agilité, de DevOps et du \textit{lean} \\
+ITIL version 5 (2026) & Produits et services & Voir la
+section~\ref{sec:c12-itil5} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.1. Évolution d'ITIL}\end{center}
+
+Le passage d'ITIL~v3 à ITIL~4 est le plus profond. ITIL~v3 décrivait
+\emph{comment le fournisseur gère ses services} au long de leur cycle de
+vie. ITIL~4 décrit \emph{comment la valeur se crée entre le fournisseur et
+ses clients}, et intègre les méthodes agiles et DevOps qui s'étaient
+développées en dehors d'ITIL. Le mot « processus » cède la place au mot
+« pratique », plus large~: une pratique comprend des processus, mais aussi
+des personnes, des informations et des outils, comme les composantes de
+COBIT (Chapitre~\ref{chap:cobit-archi}).
+
+% ============================================================================
+\section{Les Concepts Clés}
+\label{sec:c12-concepts}
+% ============================================================================
+
+\subsection{Service et valeur}
+
+\begin{boxdef}
+\termecle{Service}\index{service (ITIL)}~: moyen de permettre la
+co-création de valeur, en facilitant l'obtention des résultats que le
+client veut atteindre, sans qu'il ait à gérer lui-même certains coûts et
+certains risques.
+
+\medskip
+\termecle{Valeur}\index{valeur (ITIL)}~: bénéfices, utilité et importance
+perçus de quelque chose. La valeur est \emph{perçue} par celui qui la
+reçoit~: elle ne se décrète pas chez le fournisseur.
+
+\medskip
+\termecle{Co-création de valeur}\index{co-création de valeur}~: idée selon
+laquelle la valeur naît de la collaboration entre le fournisseur et le
+consommateur du service, et non de la seule action du fournisseur.
+\end{boxdef}
+{\small\itshape Définitions reformulées d'après ITIL~4~\cite{axelos2019itil4}.}
+
+\subsection{Résultats, produits et relations}
+
+ITIL~4 distingue soigneusement ce que le fournisseur \emph{produit} de ce
+que le client \emph{obtient}.
+
+\begin{tableaucours}{L{3.2cm}L{5.0cm}L{4.0cm}}{%
+    \tableauHeader{Notion} &
+    \tableauHeader{Sens} &
+    \tableauHeader{Exemple KRIBILOG}
+}
+Livrable (\textit{output}) & Ce qu'une activité produit & Un écran de suivi
+affiché, un ticket clos \\
+Résultat (\textit{outcome}) & Ce que le client obtient grâce aux livrables
+& Un conteneur localisé et chargé à l'heure \\
+Produit & Configuration de ressources conçue pour offrir de la valeur &
+Le logiciel de suivi, l'infrastructure, l'équipe de support \\
+Offre de service & Description d'un ou plusieurs services, pour un groupe
+de clients & « Suivi des conteneurs 24~h/24, support en 30~minutes » \\
+Relation de service & Coopération entre fournisseur et consommateur &
+Fourniture, consommation et gestion du service \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.2. Les notions clés d'ITIL~4
+(reformulées)}\end{center}
+
+Le malentendu de KRIBILOG s'éclaire~: NETPORT SERVICES mesure des
+\emph{livrables} (serveurs disponibles, tickets clos), le directeur des
+opérations attend un \emph{résultat} (conteneurs chargés). Un ticket clos
+qui est rouvert le lendemain est un livrable sans résultat.
+
+\subsection{Utilité et garantie}
+
+\begin{boxdef}
+\termecle{Utilité}\index{utilité} (\textit{utility})~: fonctionnalité
+offerte par un service pour répondre à un besoin~: ce que fait le
+service.
+
+\medskip
+\termecle{Garantie}\index{garantie} (\textit{warranty})~: assurance que le
+service répondra aux exigences convenues~: disponibilité, capacité,
+sécurité, continuité. C'est \emph{comment} le service le fait.
+\end{boxdef}
+
+Un service n'a de valeur que s'il a les deux~: une utilité sans garantie
+(un logiciel parfait, mais indisponible un jour sur deux) n'en a pas
+davantage qu'une garantie sans utilité.
+
+% ============================================================================
+\section{Le Système de Valeur des Services}
+\label{sec:c12-svs}
+% ============================================================================
+
+\subsection{Cinq composantes}
+
+Le cœur d'ITIL~4 est le \termecle{système de valeur des services}\index{système
+de valeur des services} (\textit{service value system}, \sigle{SVS}). Il
+décrit comment les composantes et les activités d'une organisation
+fonctionnent ensemble pour transformer une \emph{opportunité} ou une
+\emph{demande} en \emph{valeur}.
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    entree/.style = {
+        draw=CouleurAccent, fill=CouleurAccent!15, rounded corners=4pt,
+        text width=2.2cm, minimum height=1.0cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    comp/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=3.6cm, minimum height=0.6cm, align=center,
+        font=\scriptsize\bfseries\color{CouleurPrimaire}
+    },
+    cadre/.style = {
+        draw=CouleurPrimaire, thick, rounded corners=6pt
+    },
+    fleche/.style = {-{Stealth[length=5pt]}, thick, color=CouleurSecondaire}
+]
+\node[entree] (op) at (0,0)   {Opportunité\\ et demande};
+\node[comp] (p) at (4.2,1.3)  {Principes directeurs};
+\node[comp] (g) at (4.2,0.6)  {Gouvernance};
+\node[comp, fill=CouleurPrimaire, text=white] (c) at (4.2,-0.1)
+    {Chaîne de valeur des services};
+\node[comp] (pr) at (4.2,-0.8) {Pratiques};
+\node[comp] (am) at (4.2,-1.5) {Amélioration continue};
+\node[cadre, fit=(p)(am), inner sep=6pt] (svs) {};
+\node[font=\scriptsize\bfseries\color{CouleurAccent}, above=0.05cm of svs]
+    {Système de valeur des services};
+\node[entree] (va) at (8.4,0) {Valeur};
+\draw[fleche] (op) -- (svs.west |- op);
+\draw[fleche] (svs.east |- va) -- (va);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~12.1. Le système de valeur des
+services d'ITIL~4 (représentation simplifiée)}\end{center}
+\end{minipage}
+
+\medskip
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Composante} &
+    \tableauHeader{Rôle}
+}
+Principes directeurs & Recommandations qui guident les décisions en toutes
+circonstances (section~\ref{sec:c12-principes}) \\
+Gouvernance & Moyens par lesquels l'organisation est dirigée et
+contrôlée~: évaluer, diriger, surveiller \\
+Chaîne de valeur des services & Modèle des six activités qui répondent à
+la demande et créent la valeur (section~\ref{sec:c12-chaine}) \\
+Pratiques & Ensembles de ressources organisationnelles conçus pour
+accomplir un travail ou atteindre un objectif (34~pratiques) \\
+Amélioration continue & Activité récurrente, à tous les niveaux, qui
+assure que la performance répond aux attentes \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.3. Les composantes du système de
+valeur des services}\end{center}
+
+\subsection{ITIL et la gouvernance}
+
+La deuxième composante est la \emph{gouvernance}. ITIL~4 y reprend le
+modèle de l'ISO/IEC~38500~: évaluer, diriger, surveiller
+(Chapitre~\ref{chap:normes}). C'est le point d'ancrage d'ITIL dans la
+gouvernance des SI~: ITIL ne prétend pas organiser la gouvernance, mais il
+s'y soumet. Le système de valeur des services d'une organisation doit être
+dirigé et contrôlé par son organe de gouvernance, celui que COBIT organise
+avec le domaine EDM.
+
+% ============================================================================
+\section{La Chaîne de Valeur des Services}
+\label{sec:c12-chaine}
+% ============================================================================
+
+\subsection{Six activités}
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Activité} &
+    \tableauHeader{Finalité}
+}
+Planifier & Partager une vision commune de l'état actuel, des orientations
+et des améliorations, pour tous les produits et services \\
+Améliorer & Améliorer en continu les produits, les services et les
+pratiques \\
+S'engager & Comprendre les besoins des parties prenantes, entretenir la
+transparence et de bonnes relations \\
+Concevoir et faire la transition & Faire en sorte que les produits et
+services répondent aux attentes de qualité, de coût et de délai \\
+Obtenir ou construire & Disposer des composants de service nécessaires,
+quand et où il le faut \\
+Fournir et soutenir & Livrer et soutenir les services selon les
+spécifications et les attentes convenues \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.4. Les six activités de la chaîne
+de valeur des services (finalités reformulées)}\end{center}
+
+\subsection{Des chaînes de valeur, pas un ordre fixe}
+
+Les six activités ne forment pas un cycle à parcourir dans l'ordre, comme
+les étapes d'ITIL~v3. Elles se combinent, dans un ordre propre à chaque
+situation, en \termecle{flux de valeur}\index{flux de valeur}
+(\textit{value streams})~: la suite d'étapes qu'une organisation enchaîne
+pour créer un résultat donné pour un client. Une même pratique peut
+intervenir dans plusieurs activités.
+
+\begin{boxscenario}{Opération KRIBI. Conteneur bloqué}
+\textbf{Déclencheur.} Un agent du port signale qu'un conteneur n'apparaît
+plus dans le logiciel de suivi.
+
+\medskip
+\textbf{Flux de valeur.}
+\begin{enumerate}
+    \item \emph{S'engager}~: le centre de services enregistre l'appel et
+          comprend l'impact (un navire attend).
+    \item \emph{Fournir et soutenir}~: le support diagnostique, contourne
+          le problème et relocalise le conteneur.
+    \item \emph{Obtenir ou construire}~: l'éditeur corrige l'anomalie
+          logicielle.
+    \item \emph{Concevoir et faire la transition}~: la correction est
+          testée, autorisée, puis déployée.
+    \item \emph{Améliorer}~: l'analyse de cause alimente le registre des
+          problèmes.
+\end{enumerate}
+
+\textbf{Constatation.} Chez KRIBILOG, le flux s'arrête aujourd'hui à
+l'étape~2~: le ticket est clos dès le contournement, sans correction de
+la cause. Il est rouvert lors du blocage suivant.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le taux de réouverture de 30~\%
+s'explique par l'absence des étapes~3 à~5 dans le flux réel~; les
+pratiques de gestion des problèmes et d'habilitation des changements
+(Chapitres~\ref{chap:itil-incidents} et~\ref{chap:itil-changements}) sont
+les premières à mettre en place.
+\end{boxscenario}
+
+% ============================================================================
+\section{Les Quatre Dimensions}
+\label{sec:c12-dimensions}
+% ============================================================================
+
+ITIL~4 rappelle qu'un service ne se réduit pas à sa technique. Toute
+démarche doit tenir compte de quatre dimensions, sous l'influence de
+facteurs externes (politiques, économiques, sociaux, technologiques,
+juridiques et environnementaux).
+
+\begin{tableaucours}{L{3.6cm}L{4.4cm}L{4.2cm}}{%
+    \tableauHeader{Dimension} &
+    \tableauHeader{Contenu} &
+    \tableauHeader{Chez KRIBILOG}
+}
+Organisations et personnes & Structures, rôles, compétences, culture &
+Centre de services sous-dimensionné, pas de responsable des problèmes \\
+Information et technologie & Données, applications, infrastructures,
+outils & Logiciel de suivi, outil de tickets, base de connaissances
+absente \\
+Partenaires et fournisseurs & Relations avec les autres organisations qui
+contribuent au service & NETPORT SERVICES, l'éditeur du logiciel \\
+Flux de valeur et processus & Enchaînement des activités et des
+processus & Flux « conteneur bloqué » interrompu \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.5. Les quatre dimensions de la
+gestion des services}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Un projet ITIL est réduit à l'achat d'un outil
+de gestion des tickets. L'outil est installé, mais les rôles ne sont pas
+définis, l'infogérant n'est pas tenu par le contrat d'y saisir ses
+interventions, et aucun flux de valeur n'est décrit.
+
+\smallskip
+\textbf{Règle~:} une démarche ITIL traite toujours les quatre dimensions.
+Un outil ne couvre qu'une partie de la deuxième.
+\end{boxalert}
+
+% ============================================================================
+\section{Les Sept Principes Directeurs}
+\label{sec:c12-principes}
+% ============================================================================
+
+\begin{tableaucours}{L{3.8cm}L{8.4cm}}{%
+    \tableauHeader{Principe} &
+    \tableauHeader{Application}
+}
+Privilégier la valeur & Tout ce que l'on fait doit, directement ou
+indirectement, créer de la valeur pour les parties prenantes \\
+Commencer là où l'on est & Partir de l'existant, l'observer et le
+mesurer, plutôt que de tout reconstruire \\
+Progresser par itérations, avec retour d'information & Avancer par
+étapes courtes, en recueillant les retours à chaque étape \\
+Collaborer et promouvoir la visibilité & Associer les bonnes personnes,
+rendre le travail et ses résultats visibles \\
+Penser et travailler de manière globale & Traiter le service comme un
+tout, avec ses quatre dimensions \\
+Rester simple et pratique & Supprimer ce qui ne crée pas de valeur,
+préférer le nombre minimal d'étapes \\
+Optimiser et automatiser & Optimiser d'abord, automatiser ensuite~; ne pas
+automatiser un processus défaillant \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.6. Les sept principes directeurs
+d'ITIL~4 (notre traduction)}\end{center}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Appliquer les principes au projet ITIL de KRIBILOG}
+\begin{enumerate}
+    \item \emph{Privilégier la valeur}~: mesurer les conteneurs bloqués et
+          les délais de chargement, pas seulement la disponibilité des
+          serveurs.
+    \item \emph{Commencer là où l'on est}~: analyser les 4~800~tickets du
+          dernier mois avant de choisir un nouvel outil.
+    \item \emph{Progresser par itérations}~: traiter d'abord la gestion des
+          problèmes sur le logiciel de suivi, puis étendre.
+    \item \emph{Collaborer}~: associer les agents du port et NETPORT
+          SERVICES à la définition des priorités.
+    \item \emph{Optimiser et automatiser}~: n'automatiser l'affectation des
+          tickets qu'une fois la classification stabilisée.
+\end{enumerate}
+\end{boxmetier}
+
+\subsection{Les 34 pratiques}
+
+ITIL~4 décrit 34~pratiques, réparties en trois familles~\cite{axelos2019itil4}.
+
+\begin{tableaucours}{L{3.2cm}cL{8.0cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Nb} &
+    \tableauHeader{Exemples}
+}
+Management général & 14 & Amélioration continue, gestion des risques,
+gestion de la sécurité de l'information, gestion des fournisseurs, gestion
+des projets, gestion du portefeuille, gestion des relations \\
+Gestion des services & 17 & Centre de services, gestion des incidents,
+des problèmes, des demandes de service, habilitation des changements,
+gestion des mises en production, des niveaux de service, de la
+disponibilité, de la continuité, de la configuration \\
+Gestion technique & 3 & Gestion des déploiements, gestion des
+infrastructures et des plateformes, développement et gestion des
+logiciels \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.7. Les trois familles de pratiques
+d'ITIL~4}\end{center}
+
+Les Chapitres~\ref{chap:itil-incidents} à~\ref{chap:itil-niveaux}
+présentent les pratiques de gestion des services les plus importantes pour
+la gouvernance~; le Chapitre~\ref{chap:processus} les met en
+correspondance avec COBIT et l'ISO/IEC~20000-1.
+
+\begin{boxobjet}{Amélioration continue (pratique ITIL 4)}
+\textbf{Finalité~:} aligner en permanence les pratiques et les services
+sur les besoins de l'organisation, par l'amélioration des produits, des
+services et des pratiques.
+
+\textbf{Modèle en sept étapes~:} quelle est la vision~? Où en
+sommes-nous~? Où voulons-nous aller~? Comment y arriver~? Agir. Y
+sommes-nous arrivés~? Comment garder l'élan~?
+
+\textbf{Sorties~:} registre des améliorations, plans d'action, mesures
+avant et après.
+
+\textbf{RACI (extrait, KRIBILOG)~:} \emph{A} au responsable des services
+informatiques, \emph{R} aux propriétaires des pratiques, \emph{C} aux
+métiers et à l'infogérant.
+
+\textbf{Indicateurs~:} nombre d'améliorations menées à terme, gain mesuré
+par amélioration.
+
+\textbf{Correspondance COBIT~:} objectifs APO11 (qualité) et MEA01
+(surveillance de la performance).
+\end{boxobjet}
+
+On remarquera que le modèle d'amélioration continue d'ITIL reprend les
+sept questions de la feuille de route de COBIT~2019
+(Chapitre~\ref{chap:cobit-capacite})~: les deux référentiels partagent la
+même logique d'amélioration.
+
+% ============================================================================
+\section{Et ITIL Version 5~?}
+\label{sec:c12-itil5}
+% ============================================================================
+
+ITIL version~5 a été annoncée par PeopleCert en janvier~2026, et ses
+modules de formation sont publiés progressivement depuis~\cite{peoplecert2026itil5}.
+Les sources publiques disponibles permettent d'établir les points
+suivants.
+
+\begin{tableaucours}{L{3.4cm}L{4.2cm}L{4.6cm}}{%
+    \tableauHeader{Aspect} &
+    \tableauHeader{ITIL 4 (2019)} &
+    \tableauHeader{ITIL version 5 (2026)}
+}
+Objet & Gestion des services & Produits et services numériques, gérés
+ensemble \\
+Modèle central & Système et chaîne de valeur des services & Cycle de vie
+des produits et des services, de bout en bout \\
+Principes directeurs & Sept principes & Les mêmes sept principes, selon
+les présentations disponibles \\
+Pratiques & 34~pratiques en trois familles & 34~pratiques, regroupées
+autrement selon les présentations disponibles \\
+Intelligence artificielle & Peu traitée & Présentée comme intégrée dès la
+conception, avec un module consacré à la gouvernance de l'IA \\
+Certifications & Toujours reconnues & Nouveau schéma, introduit
+progressivement \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.8. ITIL~4 et ITIL version~5
+(d'après les sources publiques disponibles en octobre~2026)}\end{center}
+
+\begin{boiteRemarque}{Pourquoi ce cours reste-t-il sur ITIL~4~?}
+Trois raisons. D'abord, ITIL~4 est la version que pratiquent aujourd'hui
+les organisations où exerceront les étudiants. Ensuite, ses concepts sont
+largement repris par la version~5~: principes, pratiques, co-création de
+la valeur. Enfin, le modèle central de la version~5 n'est pas encore
+documenté en détail dans les sources publiques~: l'enseigner exigerait de
+s'appuyer sur la publication officielle. Les étudiants qui passeront une
+certification devront vérifier la version exigée par l'examen.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{De processus en système de valeur}~: ITIL est passé d'un
+          recueil de processus (v2) à un cycle de vie (v3), puis à un
+          système de valeur des services (ITIL~4, 2019).
+    \item \textbf{La valeur est co-créée}~: elle est perçue par le client.
+          Ne pas confondre livrable (ce que l'on produit) et résultat (ce
+          que le client obtient).
+    \item \textbf{Utilité et garantie}~: ce que fait le service, et
+          l'assurance qu'il le fera comme convenu.
+    \item \textbf{Cinq composantes}~: principes directeurs, gouvernance,
+          chaîne de valeur, pratiques, amélioration continue. La
+          gouvernance reprend le modèle évaluer, diriger, surveiller.
+    \item \textbf{Six activités} qui se combinent en flux de valeur, sans
+          ordre imposé.
+    \item \textbf{Quatre dimensions et sept principes}~: un projet ITIL n'est
+          jamais un simple projet d'outil.
+    \item \textbf{ITIL version~5} (2026) recentre le référentiel sur les
+          produits et services numériques~; ce cours reste sur ITIL~4.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.1. Livrable ou résultat~? \niveaubase}]
+Pour chacun des éléments suivants, indiquez s'il s'agit d'un livrable ou
+d'un résultat, et précisez pour quel client.
+\begin{enumerate}[(a)]
+    \item Un ticket clos dans le délai.
+    \item Un fournisseur de l'État payé à bonne date par l'ANPP.
+    \item Un serveur disponible à 99,8~\%.
+    \item Un client de la BANQUE SANAGA qui retire de l'argent un dimanche.
+    \item Un rapport mensuel de NETPORT SERVICES.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.2. Un flux de valeur à la BANQUE SANAGA \niveaumoyen}]
+Décrivez le flux de valeur « ouverture d'un compte par l'application
+mobile », de la demande du client jusqu'au premier virement.
+\begin{enumerate}[(a)]
+    \item Identifiez les étapes et rattachez chacune à une activité de la
+          chaîne de valeur.
+    \item Pour chaque étape, indiquez la pratique ITIL concernée.
+    \item Identifiez, pour chacune des quatre dimensions, un risque qui
+          pourrait interrompre le flux.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.3. Le contrat de KRIBILOG au prisme d'ITIL~4 \niveauexpert}]
+Le contrat entre KRIBILOG et NETPORT SERVICES fixe un seul engagement~: la
+disponibilité des serveurs à 99,5~\%.
+\begin{enumerate}[(a)]
+    \item Expliquez, avec les notions d'utilité, de garantie, de livrable et
+          de résultat, pourquoi cet engagement ne protège pas KRIBILOG.
+    \item Proposez trois engagements orientés vers le résultat, mesurables.
+    \item Montrez comment ces engagements s'inscrivent dans la gouvernance
+          de KRIBILOG (qui les fixe, qui les surveille, qui en rend compte).
+    \item Ce travail sera repris au Chapitre~\ref{chap:itil-niveaux}~:
+          indiquez les pratiques ITIL qu'il mobilisera.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Le système de valeur fixe le cadre. Le
+Chapitre~\ref{chap:itil-incidents} entre dans les pratiques du quotidien~:
+le centre de services, la gestion des incidents, des problèmes et des
+demandes de service, là où se joue la perception du service par ses
+utilisateurs.
+\end{boxinfo}

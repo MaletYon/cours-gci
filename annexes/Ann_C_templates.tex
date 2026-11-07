@@ -1,0 +1,151 @@
+% ============================================================================
+% Fichier : annexes/Ann_C_templates.tex
+% Titre   : Modèles de Documents Opérationnels
+% Version : 1.0 -- novembre 2026
+% ============================================================================
+% Modèles annoncés dans le mode d'emploi (charte, RACI, SLA, grille de
+% capacité), complétés de la demande de changement, de la fiche
+% d'investissement, du constat en cinq éléments et de la chronologie.
+% Contenus repris des chapitres 1, 3, 8, 11, 14, 15 et 16.
+% ============================================================================
+
+\chapter{Modèles de Documents Opérationnels}
+\label{ann:templates}
+
+Chaque modèle reprend les rubriques présentées dans un chapitre. Ils sont
+à adapter à la taille de l'organisation~: un modèle complet mal tenu vaut
+moins qu'un modèle simple tenu à jour.
+
+\section*{1. Charte d'un comité stratégique des SI (Chapitre~\ref{chap:gouv-entreprise})}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu}
+}
+Mission & Assister le conseil dans l'évaluation de la stratégie numérique,
+de la valeur des investissements et des risques liés au SI \\
+Composition & Au moins deux administrateurs, dont le président~; DG et DSI
+membres~; audit interne invité permanent \\
+Pouvoirs & Accès direct à la DSI et à l'audit interne~; droit de demander
+une expertise externe \\
+Fréquence & Au moins trimestrielle~; sur convocation pour un projet majeur
+en difficulté \\
+Quorum et décisions & Règle de quorum~; décisions inscrites au procès-verbal
+avec un responsable et une échéance \\
+Reddition de comptes & Rapport écrit au conseil après chaque séance \\
+\end{tableaucours}
+
+\section*{2. Fiche d'investissement (Chapitre~\ref{chap:alignement})}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu}
+}
+Objectif & Objectif d'entreprise servi, et objectif d'alignement \\
+Coût & Coût total de possession sur la durée de vie, par poste \\
+Bénéfices & Bénéfices attendus, datés, avec leur indicateur et leur
+propriétaire \\
+Rentabilité & Valeur actuelle nette, taux d'actualisation retenu \\
+Risques & Risques du projet et risques de ne pas le faire \\
+Décision & Organe qui décide, date, conditions~; revue des bénéfices
+prévue \\
+\end{tableaucours}
+
+\section*{3. Grille d'évaluation de la capacité d'un processus}
+
+\begin{tableaucours}{L{2.8cm}cL{4.4cm}L{3.4cm}}{%
+    \tableauHeader{Pratique} &
+    \tableauHeader{Niv.} &
+    \tableauHeader{Activité} &
+    \tableauHeader{Preuve et cote}
+}
+BAI06.01 & 2 & \ldots & Pièce~; note~: complètement, largement,
+partiellement, pas \\
+BAI06.01 & 3 & \ldots & \ldots \\
+\ldots & \ldots & \ldots & \ldots \\
+\end{tableaucours}
+
+\noindent Notes~: complètement (plus de 85~\%), largement (50 à 85~\%),
+partiellement (15 à 50~\%), pas (moins de 15~\%). Un niveau est atteint
+s'il est noté au moins « largement » et si tous les niveaux inférieurs sont
+notés « complètement »~; la capacité retenue est celle que les preuves
+établissent, non celle que l'on déclare (Chapitre~\ref{chap:cobit-capacite}).
+
+\section*{4. Demande de changement (Chapitre~\ref{chap:itil-changements})}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu}
+}
+Description & Ce qui change, pourquoi, éléments de configuration concernés \\
+Type & Standard, normal ou urgent \\
+Risque & Impact et probabilité~; services et clients exposés (analyse
+d'impact sur la CMDB) \\
+Tests & Recette réalisée, taux, anomalies bloquantes closes \\
+Mise en production & Date dans le calendrier, période de gel, équipes
+mobilisées \\
+Retour arrière & Plan testé, critères de déclenchement, heure limite \\
+Autorisation & Autorité de changement compétente, décision motivée \\
+Revue & Résultat constaté après la mise en production \\
+\end{tableaucours}
+
+\section*{5. Accord de niveau de service (Chapitre~\ref{chap:itil-niveaux})}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu}
+}
+Description du service & Ce que le service permet au client d'obtenir \\
+Horaires & Périodes où les engagements s'appliquent \\
+Disponibilité & Part du temps de service convenu où le service est
+utilisable \\
+Délais de rétablissement & Par priorité \\
+Indicateur de résultat & Ce que le client vit, défini avec lui \\
+Mesure et compte rendu & Source des données, fréquence \\
+Pénalités & Conséquences du non-respect, et leur application \\
+Revue & Fréquence de révision, comité de service \\
+\end{tableaucours}
+
+\section*{6. Matrice RACI}
+
+\begin{tableaucours}{L{4.0cm}ccccc}{%
+    \tableauHeader{Activité} &
+    \tableauHeader{Rôle 1} & \tableauHeader{Rôle 2} &
+    \tableauHeader{Rôle 3} & \tableauHeader{Rôle 4} &
+    \tableauHeader{Rôle 5}
+}
+Activité 1 & A & R & C & I & \\
+Activité 2 & & A & R & C & I \\
+\ldots & & & & & \\
+\end{tableaucours}
+
+\noindent Règles (Chapitre~\ref{chap:processus})~: un seul A par activité~;
+au moins un R~; le A au bon niveau~; peu de C~; des fonctions et non des
+personnes.
+
+\section*{7. Constat d'audit en cinq éléments (Chapitre~\ref{chap:audit})}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Question}
+}
+Constatation & Que se passe-t-il réellement~? \\
+Critère & Que devrait-il se passer~? Avec sa source \\
+Cause & Pourquoi l'écart existe-t-il~? \\
+Conséquence & Quel risque, ou quel effet~? \\
+Recommandation & Que faut-il faire, par qui, pour quand~? \\
+\end{tableaucours}
+
+\section*{8. Chronologie de défaillance}
+
+\begin{tableaucours}{L{2.6cm}L{6.4cm}L{3.2cm}}{%
+    \tableauHeader{Date} &
+    \tableauHeader{Fait établi} &
+    \tableauHeader{Pièce}
+}
+\ldots & Fait, décision, ou absence de décision & Procès-verbal, courriel,
+journal \\
+\end{tableaucours}
+
+\noindent La chronologie ne contient que des constatations~; l'analyse vient
+ensuite, avec son niveau de confiance (Chapitre~\ref{chap:prologue}).

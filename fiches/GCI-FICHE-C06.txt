@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C06
+Chapitre 6 : Les 40 objectifs de gouvernance et de management
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Que décrit la rubrique B d'une fiche d'objectif COBIT 2019 ?
+      a) Les flux d'information
+      b) Les structures organisationnelles, avec une matrice RACI par pratique
+      c) Les outils et applications
+      d) Les politiques et procédures
+
+ 2. À quoi chaque activité d'une pratique COBIT est-elle rattachée ?
+      a) À un objectif d'entreprise
+      b) À un fournisseur
+      c) À un niveau de capacité
+      d) À une norme ISO
+
+ 3. Quelle est la finalité de l'objectif DSS02 ?
+      a) Accroître la productivité et réduire les perturbations par une résolution rapide des demandes et des incidents
+      b) Gérer les changements informatiques
+      c) Assurer la continuité après un sinistre
+      d) Gérer le portefeuille de projets
+
+ 4. Combien de pratiques compte l'objectif DSS02 ?
+      a) Quatre
+      b) Cinq
+      c) Dix
+      d) Sept
+
+ 5. Que faut-il faire de la matrice RACI générique de COBIT dans une fiche processus utilisable ?
+      a) La recopier telle quelle
+      b) La supprimer
+      c) Remplacer les rôles génériques par les fonctions réelles de l'organisation
+      d) La confier au prestataire
+
+ 6. Quelle question pose au conseil l'objectif EDM03 ?
+      a) Les risques liés aux SI restent-ils dans notre appétence ?
+      b) Nos investissements produisent-ils la valeur annoncée ?
+      c) Rendons-nous compte à ceux qui doivent l'être ?
+      d) Avons-nous les compétences de notre stratégie ?
+
+ 7. Quel objectif couvre la sélection, les contrats et la supervision des prestataires ?
+      a) APO09
+      b) APO10
+      c) APO12
+      d) APO05
+
+ 8. Quel objectif couvre la gouvernance et la qualité des données ?
+      a) APO13
+      b) APO11
+      c) APO03
+      d) APO14
+
+ 9. Scénario. L'ANPP confie APO10 à la direction des achats, qui le réduit à la passation des marchés. Quel est le risque ?
+      a) Payer trop cher les prestataires
+      b) Que plus personne ne supervise les prestataires une fois le contrat signé
+      c) Que les achats deviennent trop lents
+      d) Qu'aucun appel d'offres ne soit lancé
+
+10. Quel objectif couvre la recette, la mise en production et le retour arrière ?
+      a) BAI07
+      b) BAI06
+      c) BAI10
+      d) BAI02
+
+11. Quel objectif couvre la base de configuration et ses relations ?
+      a) BAI09
+      b) BAI08
+      c) BAI10
+      d) BAI04
+
+12. Quel objectif couvre les causes profondes et les erreurs connues ?
+      a) DSS01
+      b) DSS02
+      c) DSS05
+      d) DSS03
+
+13. Quel objectif couvre la conformité aux lois, règlements et contrats ?
+      a) MEA03
+      b) MEA01
+      c) MEA02
+      d) MEA04
+
+14. Dans quel ordre la cascade des objectifs de COBIT 2019 procède-t-elle ?
+      a) Objectifs COBIT, objectifs d'entreprise, besoins des parties prenantes
+      b) Besoins des parties prenantes, objectifs d'entreprise, objectifs d'alignement, objectifs COBIT
+      c) Objectifs d'alignement, objectifs d'entreprise, objectifs COBIT
+      d) Besoins des parties prenantes, objectifs COBIT, objectifs d'entreprise
+
+15. Comment COBIT 5 appelait-il les objectifs d'alignement ?
+      a) Les objectifs de gouvernance
+      b) Les objectifs de contrôle
+      c) Les objectifs liés aux SI
+      d) Les objectifs d'entreprise
+
+16. Selon quel outil les objectifs d'entreprise sont-ils classés en quatre dimensions ?
+      a) Le tableau de bord prospectif
+      b) La matrice RACI
+      c) Le modèle CMMI
+      d) La structure harmonisée ISO
+
+17. Selon les fiches officielles, à quels objectifs les liens principaux de BAI06 conduisent-ils ?
+      a) EG02 et AG02, le risque
+      b) EG03 et AG01, la conformité
+      c) EG06 et AG07, la continuité et la sécurité
+      d) EG01 et AG06, la compétitivité et l'agilité
+
+18. Quels objectifs d'entreprise sont reliés à titre principal à EDM03 et à APO12 ?
+      a) EG02 et EG06
+      b) EG01 et EG08
+      c) EG12 et EG13
+      d) EG04 et EG07
+
+19. Scénario. Combien d'objectifs prioritaires la BANQUE SANAGA retient-elle, au lieu des trente-deux « cases rouges » ?
+      a) Quarante
+      b) Dix
+      c) Trois
+      d) Vingt-cinq
+
+20. Pourquoi une grille « conforme / non conforme » sur les 40 objectifs n'a-t-elle pas de sens ?
+      a) Parce qu'il y a trop d'objectifs
+      b) Parce que seuls les auditeurs externes peuvent la remplir
+      c) Parce que COBIT fixe des objectifs à atteindre à une capacité choisie, pas des exigences
+      d) Parce que COBIT est obsolète
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Une fiche d'objectif COBIT décrit un morceau de système de gouvernance, avec ses sept composantes.
+      Vrai / Faux
+
+22. Les activités d'une pratique COBIT sont rattachées à des niveaux de capacité allant de 2 à 5.
+      Vrai / Faux
+
+23. Une fiche processus utilisable n'a pas besoin d'être datée ni approuvée.
+      Vrai / Faux
+
+24. Toutes les défaillances du chapitre 2 se sont produites dans le domaine BAI.
+      Vrai / Faux
+
+25. MEA04 couvre les missions d'assurance et d'audit.
+      Vrai / Faux
+
+26. Les objectifs d'alignement sont des objectifs internes de la DSI, sans lien avec les métiers.
+      Vrai / Faux
+
+27. COBIT 2019 compte 13 objectifs d'entreprise et 13 objectifs d'alignement.
+      Vrai / Faux
+
+28. La cascade des objectifs suffit, à elle seule, à fixer les priorités d'une organisation.
+      Vrai / Faux
+
+29. Les objectifs non prioritaires sont abandonnés.
+      Vrai / Faux
+
+30. Pour l'ANPP, la transformation numérique (EG12) fait partie des objectifs d'entreprise prioritaires.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Une action clé, codée par exemple DSS02.04, est une ______.
+
+32. Une action concrète qui met en œuvre une pratique s'appelle une ______.
+
+33. L'objectif qui couvre le catalogue de services et les accords de niveau de service porte le code ______.
+
+34. L'objectif qui couvre l'arbitrage des investissements, gérer le portefeuille, porte le code ______.
+
+35. L'objectif « gérer les projets » porte le code ______.
+
+36. L'objectif « gérer la continuité » porte le code ______.
+
+37. L'objectif « gérer le système de contrôle interne » porte le code ______.
+
+38. Le premier objectif d'entreprise de COBIT 2019, EG01, porte sur un portefeuille de produits et services ______.
+
+39. L'objectif d'entreprise relatif à la continuité et à la disponibilité des services métier porte le code ______.
+
+40. L'objectif d'alignement « agilité pour transformer les exigences en solutions » porte le code ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

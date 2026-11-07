@@ -1,0 +1,555 @@
+% ============================================================================
+% Fichier  : partie5/P05_C18_agilite_devops_cloud.tex
+% Titre    : Agilité, DevOps et Cloud : Gouverner à Grande Vitesse
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : Manifeste agile (2001) ; Forsgren, Humble et Kim (2018) ; NIST
+% SP 800-145 (2011) ; ISO/IEC 27017 et 27018 ; loi n° 2010/012 (texte
+% anglais officiel) ; loi n° 2024/017 (présentations publiées). Le tableau
+% comparatif africain ne cite que l'intitulé et l'année des lois ; aucun
+% article n'est cité.
+% ============================================================================
+
+\chapter{Agilité, DevOps et Cloud : Gouverner à Grande Vitesse}
+\label{chap:agile-cloud}
+\chaptermark{Agilité, DevOps et cloud}
+
+\epigraph{%
+    « La vitesse n'est pas l'ennemie du contrôle.\\
+    C'est le contrôle manuel qui est l'ennemi de la vitesse. »%
+}{Principe des équipes DevOps}
+
+\niveauChapitre{Expert}{%
+    Maîtrise des Chapitres~\ref{chap:itil-changements} (gestion des
+    changements) et~\ref{chap:itil-niveaux} (niveaux de service et
+    fournisseurs).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Concilier contrôle et agilité (DevOps, gestion automatisée des
+          changements).
+    \item Gouverner l'informatique en nuage (responsabilité partagée,
+          réversibilité, localisation des données).
+    \item Évaluer un contrat d'informatique en nuage au regard du droit
+          camerounais.
+    \item Comparer les approches de gouvernance numérique de plusieurs pays
+          africains.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : peut-on gouverner ce qui change chaque jour~?}
+% ============================================================================
+
+La nouvelle équipe mobile de la BANQUE SANAGA déploie une version de
+l'application chaque semaine, et voudrait passer à un déploiement par
+jour. Le comité des changements, qui se réunit le mardi, ne peut pas
+suivre. À Bafoussam, NOUN PAY n'a pas un seul serveur à elle~: tout son
+système d'information est loué, à la minute, à un fournisseur de nuage
+étranger.
+
+Les Parties~\ref{part:cobit} à~\ref{part:pratique} ont construit une
+gouvernance faite de comités, de procédures et d'autorisations. La
+Partie~\ref{part:avance}, qui s'ouvre ici, la confronte aux pratiques
+qui en bousculent les rythmes et les frontières. Ce chapitre traite de
+l'agilité et de DevOps (sections~\ref{sec:c18-agile}
+et~\ref{sec:c18-devops}), de l'informatique en nuage
+(section~\ref{sec:c18-cloud}), du contrat de nuage au regard du droit
+camerounais (section~\ref{sec:c18-contrat}), puis des approches
+africaines de la gouvernance numérique (section~\ref{sec:c18-afrique}).
+
+\separateur
+
+% ============================================================================
+\section{L'Agilité}
+\label{sec:c18-agile}
+% ============================================================================
+
+\subsection{Le manifeste et ses conséquences}
+
+Le \emph{Manifeste pour le développement agile de logiciels}, publié en
+2001 par dix-sept praticiens, pose quatre préférences~: les individus et
+leurs interactions plutôt que les processus et les outils, des logiciels
+opérationnels plutôt qu'une documentation exhaustive, la collaboration
+avec les clients plutôt que la négociation contractuelle, l'adaptation au
+changement plutôt que le suivi d'un plan~\cite{agile2001manifeste}. Il
+précise que les éléments de droite gardent leur valeur, mais que ceux de
+gauche en ont davantage.
+
+\begin{boxalert}
+\textbf{Violation typique.} Une équipe invoque l'agilité pour ne rien
+documenter, ne rien faire autoriser et ne rendre compte à personne. Lors
+d'un incident, personne ne sait quelle version est en production ni qui
+l'a validée.
+
+\smallskip
+\textbf{Règle~:} l'agilité change la \emph{forme} du contrôle, pas son
+existence. Le manifeste ne supprime ni la documentation, ni les contrats,
+ni les plans~: il en change le poids relatif.
+\end{boxalert}
+
+\subsection{Ce qui change pour la gouvernance}
+
+\begin{tableaucours}{L{3.2cm}L{4.4cm}L{4.6cm}}{%
+    \tableauHeader{Sujet} &
+    \tableauHeader{Approche traditionnelle} &
+    \tableauHeader{Approche agile}
+}
+Décision d'investissement & Un projet, un budget, une date de fin & Un
+produit, une équipe stable, un financement par période \\
+Pilotage & Respect du plan, du budget, des délais & Valeur livrée à chaque
+itération \\
+Exigences & Définies au départ & Priorisées en continu par un responsable
+de produit \\
+Contrôle & Jalons et validations formelles & Démonstrations régulières,
+critères de « fini » \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.1. Gouvernance traditionnelle et
+gouvernance agile}\end{center}
+
+La gouvernance ne disparaît pas~: elle se déplace. Le comité stratégique
+n'approuve plus un cahier des charges, il fixe les objectifs d'un produit,
+l'enveloppe d'une équipe et les indicateurs de valeur
+(Chapitre~\ref{chap:alignement}), puis revoit ces décisions à intervalles
+réguliers.
+
+% ============================================================================
+\section{DevOps}
+\label{sec:c18-devops}
+% ============================================================================
+
+\subsection{Rapprocher le développement et l'exploitation}
+
+\begin{boxdef}
+\termecle{DevOps}\index{DevOps}~: ensemble de pratiques culturelles et
+techniques qui rapproche les équipes de développement et d'exploitation,
+pour livrer des changements fréquents, fiables et réversibles, grâce à
+l'automatisation de la construction, des tests et du déploiement.
+
+\medskip
+\termecle{Chaîne de déploiement}\index{chaîne de déploiement}
+(\textit{pipeline})~: suite automatisée des étapes par lesquelles un
+changement de code passe, de sa validation par un pair à sa mise en
+production.
+\end{boxdef}
+
+\subsection{Mesurer la performance de la livraison}
+
+Les travaux de Forsgren, Humble et Kim~\cite{forsgren2018accelerate} ont
+popularisé quatre indicateurs de la performance de la livraison
+logicielle. Ils ont une propriété précieuse pour la gouvernance~: ils
+mesurent à la fois la vitesse \emph{et} la stabilité.
+
+\begin{tableaucours}{L{3.8cm}L{4.4cm}L{4.0cm}}{%
+    \tableauHeader{Indicateur} &
+    \tableauHeader{Mesure} &
+    \tableauHeader{Dimension}
+}
+Fréquence de déploiement & Nombre de mises en production par période &
+Vitesse \\
+Délai de livraison des changements & Temps entre la validation du code et
+sa mise en production & Vitesse \\
+Taux d'échec des changements & Part des déploiements qui provoquent un
+incident ou un retour arrière & Stabilité \\
+Délai de rétablissement & Temps pour rétablir le service après un échec &
+Stabilité \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.2. Les quatre indicateurs de la
+performance de livraison}\end{center}
+
+Le taux d'échec des changements et le délai de rétablissement sont les
+indicateurs de BAI06 et de DSS02 (Chapitres~\ref{chap:itil-changements}
+et~\ref{chap:itil-incidents})~: DevOps ne remplace pas la gestion des
+changements, il en mesure le résultat.
+
+\subsection{Déplacer le contrôle dans la chaîne}
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Contrôle traditionnel} &
+    \tableauHeader{Équivalent dans une chaîne DevOps}
+}
+Autorisation par le comité des changements & Changement standard
+pré-autorisé, si la chaîne valide toutes les étapes~; comité réservé aux
+changements hors norme \\
+Séparation des tâches entre développeur et exploitant & Revue obligatoire
+du code par un pair~; le développeur ne peut pas fusionner seul son code \\
+Tests de recette manuels & Tests automatisés obligatoires, avec seuil de
+couverture bloquant \\
+Plan de retour arrière & Déploiement progressif et retour arrière
+automatique en cas d'erreur \\
+Procès-verbal d'autorisation & Journal inaltérable de la chaîne (qui, quoi,
+quand, avec quels résultats de tests) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.3. Les contrôles de la gestion des
+changements dans une chaîne DevOps}\end{center}
+
+\begin{boxscenario}{Opération SANAGA. L'équipe mobile}
+\textbf{Demande.} L'équipe mobile veut déployer chaque jour, sans passer
+par le comité des changements.
+
+\medskip
+\textbf{Décision du comité stratégique.} Les déploiements de l'application
+mobile sont reconnus comme \emph{changements standard} à quatre conditions,
+vérifiées par la chaîne~: revue du code par un pair, tests automatisés
+couvrant au moins 90~\% des fonctions de paiement, déploiement progressif
+(5~\% des clients pendant une heure), retour arrière automatique. Tout
+changement touchant l'interface avec le système central reste un
+changement normal, soumis au comité.
+
+\medskip
+\textbf{Contrôle.} L'auditrice interne examine chaque trimestre un
+échantillon de déploiements dans le journal de la chaîne~: elle teste
+désormais un contrôle \emph{automatisé}, et non plus une signature.
+\end{boxscenario}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Auditer une chaîne DevOps}
+\begin{enumerate}
+    \item Obtenir la description de la chaîne et des contrôles qu'elle
+          impose, puis vérifier qu'ils sont bloquants (un test échoué
+          arrête le déploiement).
+    \item Vérifier qui peut modifier la chaîne elle-même~: c'est le
+          nouveau point de contrôle critique.
+    \item Rapprocher les déploiements en production du journal de la
+          chaîne~: un déploiement hors chaîne est un changement non
+          autorisé.
+    \item Suivre les quatre indicateurs de performance de livraison, et
+          notamment le taux d'échec.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{L'Informatique en Nuage}
+\label{sec:c18-cloud}
+% ============================================================================
+
+\subsection{Définitions}
+
+La définition de référence est celle du NIST~\cite{nist2011cloud}~:
+l'informatique en nuage permet un accès à la demande, par le réseau, à un
+ensemble partagé de ressources informatiques configurables, rapidement
+mises à disposition et libérées avec un effort de gestion minimal. Elle
+présente cinq caractéristiques~: libre-service à la demande, large accès
+par le réseau, mutualisation des ressources, élasticité rapide, service
+mesuré.
+
+\begin{tableaucours}{L{2.8cm}L{4.8cm}L{4.6cm}}{%
+    \tableauHeader{Modèle} &
+    \tableauHeader{Ce que fournit le prestataire} &
+    \tableauHeader{Exemple}
+}
+IaaS (infrastructure) & Serveurs, stockage, réseau virtuels & L'hébergement
+des serveurs de NOUN PAY \\
+PaaS (plateforme) & Environnement d'exécution, bases de données gérées &
+La base de données gérée du modèle de notation \\
+SaaS (logiciel) & Application complète & La messagerie de la BANQUE SANAGA \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.4. Les trois modèles de service du
+NIST}\end{center}
+
+\subsection{La responsabilité partagée}
+
+Dans le nuage, la responsabilité de la sécurité et de l'exploitation est
+\emph{partagée} entre le client et le fournisseur, selon le modèle de
+service. Quel que soit le modèle, \textbf{le client reste responsable de
+ses données, de ses utilisateurs et de ses droits d'accès}.
+
+\begin{tableaucours}{L{4.0cm}ccc}{%
+    \tableauHeader{Domaine} &
+    \tableauHeader{IaaS} &
+    \tableauHeader{PaaS} &
+    \tableauHeader{SaaS}
+}
+Données et leur classification & Client & Client & Client \\
+Identités et droits d'accès & Client & Client & Client \\
+Application & Client & Client & Fournisseur \\
+Système d'exploitation, intergiciels & Client & Fournisseur & Fournisseur \\
+Infrastructure physique, réseau & Fournisseur & Fournisseur & Fournisseur \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.5. Le modèle de responsabilité
+partagée (simplifié)}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} « Nos données sont chez un grand fournisseur
+mondial, elles sont donc en sécurité. » Le stockage de NOUN PAY était
+configuré en accès public par erreur~; le fournisseur, dont la plateforme
+fonctionnait parfaitement, n'y était pour rien.
+
+\smallskip
+\textbf{Règle~:} la sécurité du nuage est celle du fournisseur~; la
+sécurité \emph{dans} le nuage est celle du client.
+\end{boxalert}
+
+\subsection{Gouverner le nuage}
+
+Le nuage déplace quatre risques que la gouvernance doit arbitrer
+explicitement~:
+\begin{itemize}
+    \item \textbf{la dépendance}~: changer de fournisseur peut être long et
+          coûteux, surtout en PaaS~;
+    \item \textbf{la localisation}~: les données peuvent être stockées
+          hors du territoire, ce que le droit encadre
+          (section~\ref{sec:c18-contrat})~;
+    \item \textbf{l'informatique fantôme}~: n'importe quel service peut
+          souscrire un abonnement avec une carte bancaire, hors de tout
+          contrôle~;
+    \item \textbf{le coût}~: payé à l'usage, il dérive vite sans pilotage.
+\end{itemize}
+Deux normes aident à traiter la sécurité~: l'ISO/IEC~27017, qui donne des
+mesures de sécurité propres aux services en nuage, et l'ISO/IEC~27018, qui
+traite de la protection des données personnelles dans le nuage public.
+
+% ============================================================================
+\section{Le Contrat de Nuage et le Droit Camerounais}
+\label{sec:c18-contrat}
+% ============================================================================
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, articles~26 et~29} (version anglaise
+officielle, extraits)~:
+
+\medskip
+\textit{« [Operators of information systems] shall have standardized
+systems enabling them to at all times identify, assess, process or manage
+any risk relating to the security of the information systems of the
+services provided directly or indirectly. »} (art.~26, al.~1)
+
+\medskip
+\textit{« Operators of information systems shall be bound to conserve the
+connection and traffic data of their information systems for a period of
+10 (ten) years. »} (art.~29, al.~1)
+
+\medskip
+\textbf{\loicam{n°~2024/017}} (d'après les présentations publiées). La loi
+encadre strictement le transfert des données personnelles hors du
+territoire national (Chapitre~\ref{chap:droit}).
+
+\medskip
+\textbf{Portée pour un contrat de nuage.} Une organisation qui confie son
+système d'information à un fournisseur de nuage reste tenue de maîtriser
+les risques de sécurité des services fournis « indirectement », de
+conserver ses données de connexion pendant dix ans, et de faire examiner
+tout transfert de données personnelles hors du Cameroun au regard de la
+loi n°~2024/017. Le contrat type d'un fournisseur mondial n'a pas été
+écrit pour ces obligations~: il faut en vérifier chaque point.
+\end{boxjuris}
+% A VERIFIER : conditions exactes des transferts hors du territoire dans le
+% texte publié de la loi n° 2024/017 et ses décrets d'application.
+
+\begin{boxprocedure}
+\textbf{La grille d'évaluation d'un contrat de nuage.} Avant de signer, ou
+lors de l'audit, chaque point est noté conforme, partiellement conforme
+ou non conforme, avec la clause correspondante~:
+\begin{itemize}
+    \item localisation des données et des sauvegardes, et liste des pays~;
+    \item conditions de transfert hors du Cameroun~;
+    \item conservation et accès aux journaux pendant la durée légale~;
+    \item droit d'audit, ou rapports d'audit indépendants et leur
+          périmètre~;
+    \item notification des incidents de sécurité, dans un délai fixé~;
+    \item engagements de service et pénalités~;
+    \item sous-traitants du fournisseur et information du client~;
+    \item réversibilité~: formats, délais, assistance, coûts~;
+    \item droit applicable et juridiction compétente.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération NOUN. Deux contrats comparés}
+\begin{tableaucours}{L{4.2cm}L{3.8cm}L{3.8cm}}{%
+    \tableauHeader{Point de la grille} &
+    \tableauHeader{Contrat type} &
+    \tableauHeader{Contrat d'entreprise}
+}
+Localisation des données & Non conforme (non choisie) & Conforme (région
+choisie, liste des pays) \\
+Droit d'audit & Non conforme (renvoi aux certifications) & Partiel
+(rapports d'audit indépendants) \\
+Notification des incidents & Partiel (« dans les meilleurs délais ») &
+Conforme (72~heures) \\
+Réversibilité & Non conforme & Partiel (exports, sans assistance) \\
+Journaux & Partiel (90~jours) & Partiel (configurable, coût de stockage) \\
+\end{tableaucours}
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Le contrat d'entreprise, pour un
+surcoût de 18~millions FCFA par an (Chapitre~\ref{chap:cas-integrateurs}),
+corrige les points les plus graves. Il ne règle pas tout~: la conservation
+des journaux pendant dix ans suppose un archivage complémentaire, et la
+réversibilité doit être préparée par NOUN PAY elle-même (formats ouverts,
+exercice de restitution annuel).
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI}
+\textbf{Gouverner les abonnements en nuage}
+\begin{enumerate}
+    \item Tenir l'inventaire des services en nuage utilisés, y compris ceux
+          payés par carte bancaire par les métiers.
+    \item Classer les données selon leur sensibilité, et interdire les
+          plus sensibles sur les services non évalués.
+    \item Vérifier la configuration des services (accès publics, chiffrement,
+          comptes à privilèges) au moins chaque mois.
+    \item Présenter chaque année au comité des risques la carte des
+          dépendances aux fournisseurs de nuage.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{La Gouvernance Numérique en Afrique}
+\label{sec:c18-afrique}
+% ============================================================================
+
+\subsection{Un cadre continental}
+
+L'Union africaine a adopté en 2020 une \emph{Stratégie de transformation
+numérique pour l'Afrique 2020--2030}, puis en 2022 un \emph{Cadre
+stratégique sur les données}, qui encourage l'harmonisation des règles de
+circulation des données sur le continent. La Convention de Malabo, entrée
+en vigueur en 2023, en constitue le volet juridique
+(Chapitre~\ref{chap:droit}). L'initiative Smart Africa, lancée en 2013,
+réunit des États autour de projets numériques communs.
+
+\subsection{Des lois nationales de protection des données}
+
+\begin{tableaucours}{L{3.0cm}L{6.2cm}L{3.0cm}}{%
+    \tableauHeader{Pays} &
+    \tableauHeader{Texte} &
+    \tableauHeader{Année}
+}
+Sénégal & Loi sur la protection des données à caractère personnel & 2008 \\
+Maroc & Loi n°~09-08 relative à la protection des personnes physiques à
+l'égard du traitement des données personnelles & 2009 \\
+Ghana & Data Protection Act & 2012 \\
+Côte d'Ivoire & Loi relative à la protection des données à caractère
+personnel & 2013 \\
+Kenya & Data Protection Act & 2019 \\
+Rwanda & Loi sur la protection des données personnelles et de la vie
+privée & 2021 \\
+Nigeria & Nigeria Data Protection Act & 2023 \\
+Cameroun & Loi n°~2024/017 & 2024 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.6. Quelques lois africaines de
+protection des données (intitulés abrégés)}\end{center}
+
+\subsection{Trois enseignements}
+
+\begin{enumerate}
+    \item \textbf{La localisation des données est un choix politique.}
+          Certains États privilégient la libre circulation pour attirer les
+          services, d'autres la conservation sur le territoire pour des
+          raisons de souveraineté. Une organisation présente dans plusieurs
+          pays doit en tenir un registre (Chapitre~\ref{chap:droit}).
+    \item \textbf{Les infrastructures nationales se développent.} Plusieurs
+          États ont investi dans des centres de données nationaux, qui
+          offrent une alternative au nuage étranger~; leur niveau de
+          service et de sécurité doit être évalué comme celui de tout
+          fournisseur.
+    \item \textbf{Le droit précède souvent les autorités.} Une loi n'a
+          d'effet que si l'autorité qu'elle crée dispose de moyens.
+          L'efficacité réelle d'un régime se mesure à ses décisions
+          publiées, encore rares (Chapitre~\ref{chap:defaillances}).
+\end{enumerate}
+
+\begin{boiteRemarque}{Souveraineté numérique ou isolement~?}
+Imposer que toutes les données restent au Cameroun protège contre
+certains risques (accès par des autorités étrangères, coupure de
+connectivité internationale), mais en crée d'autres~: dépendance à un
+nombre réduit de fournisseurs locaux, coûts plus élevés, moindre
+résilience si un seul centre de données héberge tout. La bonne réponse
+de gouvernance n'est ni l'interdiction ni l'indifférence, mais la
+\emph{classification}~: localiser ce qui doit l'être, et choisir
+librement pour le reste, contrat par contrat.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{L'agilité change la forme du contrôle, pas son
+          existence}~: la gouvernance finance des produits et des équipes,
+          et revoit ses décisions à intervalles réguliers.
+    \item \textbf{DevOps déplace le contrôle dans la chaîne}~: revue par un
+          pair, tests bloquants, déploiement progressif, retour arrière
+          automatique, journal inaltérable. Le point critique devient la
+          chaîne elle-même.
+    \item \textbf{Quatre indicateurs} mesurent ensemble la vitesse et la
+          stabilité de la livraison.
+    \item \textbf{Dans le nuage, la responsabilité est partagée}~: le client
+          reste responsable de ses données, de ses utilisateurs et de ses
+          accès.
+    \item \textbf{Le contrat de nuage s'évalue au regard du droit
+          camerounais}~: risques des services fournis indirectement,
+          conservation des journaux pendant dix ans, transferts hors du
+          territoire.
+    \item \textbf{L'Afrique se dote de règles}~: stratégie continentale,
+          lois nationales de protection des données, centres de données
+          nationaux. La réponse de gouvernance est la classification des
+          données.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.1. Qui est responsable~? \niveaubase}]
+Pour chacune des situations suivantes, indiquez si la responsabilité
+incombe au client ou au fournisseur de nuage, selon le Tableau~18.5.
+\begin{enumerate}[(a)]
+    \item Un ancien salarié de NOUN PAY se connecte encore à la console
+          d'administration.
+    \item Une panne électrique arrête le centre de données du fournisseur.
+    \item La messagerie en SaaS de la BANQUE SANAGA présente une faille
+          logicielle.
+    \item Une base de données gérée (PaaS) est accessible depuis Internet
+          sans mot de passe.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.2. Calculer les indicateurs de livraison \niveaumoyen}]
+En un mois, l'équipe mobile de la BANQUE SANAGA a réalisé 22~déploiements.
+Trois ont provoqué un incident~; les délais de rétablissement ont été de
+20~minutes, 45~minutes et 3~heures. Le délai moyen entre la validation du
+code et la mise en production est de 2~jours.
+\begin{enumerate}[(a)]
+    \item Calculez le taux d'échec des changements et le délai moyen de
+          rétablissement.
+    \item L'incident de 3~heures a touché le paiement. Qu'en déduisez-vous
+          sur le périmètre des changements standard~?
+    \item Proposez une cible pour chacun des quatre indicateurs.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.3. Migrer l'ANPP vers le nuage~? \niveauexpert}]
+Un fournisseur propose à l'ANPP d'héberger son système de paiement dans
+son nuage, hors du Cameroun, pour un coût annuel inférieur de 30~\% à celui
+de son centre de données actuel.
+\begin{enumerate}[(a)]
+    \item Classez les données de l'agence selon leur sensibilité.
+    \item Appliquez la grille d'évaluation du contrat de nuage à l'offre,
+          en indiquant les informations qui vous manquent.
+    \item Identifiez les obligations légales en jeu, en citant uniquement
+          les articles vérifiés, et signalez ce qui reste à vérifier.
+    \item Rédigez la recommandation au conseil d'administration, en
+          présentant au moins deux options.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Le nuage concentre les données~; l'intelligence
+artificielle les exploite pour décider. Le Chapitre~\ref{chap:donnees-ia}
+traite de la gouvernance des données et de l'intelligence artificielle, à
+partir du cas de la notation de crédit de NOUN PAY.
+\end{boxinfo}

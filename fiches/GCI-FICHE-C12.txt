@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C12
+Chapitre 12 : ITIL 4 et le système de valeur des services
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quelle version d'ITIL était organisée autour d'un cycle de vie en cinq étapes ?
+      a) ITIL v2
+      b) ITIL v3
+      c) ITIL 4
+      d) ITIL version 5
+
+ 2. En quelle année ITIL 4 a-t-il été publié ?
+      a) 2007
+      b) 2011
+      c) 2019
+      d) 2026
+
+ 3. Quel mot ITIL 4 préfère-t-il à « processus », parce qu'il inclut aussi personnes, informations et outils ?
+      a) Pratique
+      b) Fonction
+      c) Activité
+      d) Procédure
+
+ 4. Selon ITIL 4, qui perçoit la valeur d'un service ?
+      a) Le fournisseur
+      b) L'infogérant
+      c) L'auditeur
+      d) Celui qui la reçoit
+
+ 5. Comment s'appelle ce que le client obtient grâce aux livrables, par exemple un conteneur chargé à l'heure ?
+      a) Un produit
+      b) Un résultat
+      c) Une offre de service
+      d) Une garantie
+
+ 6. Scénario. NETPORT SERVICES affiche des serveurs disponibles à 99,8 % et des tickets clos. Que mesure-t-il ?
+      a) Des résultats
+      b) Des risques
+      c) Des livrables
+      d) De la valeur co-créée
+
+ 7. Qu'est-ce que la garantie d'un service ?
+      a) L'assurance qu'il répondra aux exigences convenues de disponibilité, capacité, sécurité et continuité
+      b) La fonctionnalité offerte pour répondre à un besoin
+      c) Le contrat avec le fournisseur
+      d) Le prix du service
+
+ 8. Qu'est-ce que l'utilité d'un service ?
+      a) Sa disponibilité
+      b) Sa sécurité
+      c) Son coût total
+      d) Ce que fait le service pour répondre à un besoin
+
+ 9. Que transforme le système de valeur des services ?
+      a) Des incidents en problèmes
+      b) Une opportunité ou une demande en valeur
+      c) Des processus en pratiques
+      d) Des risques en contrôles
+
+10. Laquelle de ces composantes n'appartient PAS au système de valeur des services ?
+      a) Les principes directeurs
+      b) La gouvernance
+      c) La déclaration d'applicabilité
+      d) L'amélioration continue
+
+11. Quel modèle la composante gouvernance du système de valeur reprend-elle ?
+      a) Évaluer, diriger, surveiller
+      b) Planifier, réaliser, vérifier, agir
+      c) Les trois lignes
+      d) Le cycle de vie en cinq étapes
+
+12. Combien d'activités compte la chaîne de valeur des services ?
+      a) Quatre
+      b) Sept
+      c) Cinq
+      d) Six
+
+13. Quelle activité vise à comprendre les besoins des parties prenantes et à entretenir de bonnes relations ?
+      a) Planifier
+      b) S'engager
+      c) Fournir et soutenir
+      d) Améliorer
+
+14. Comment appelle-t-on la suite d'étapes qu'une organisation enchaîne pour créer un résultat donné pour un client ?
+      a) Un cycle de vie
+      b) Une pratique
+      c) Un flux de valeur
+      d) Une offre de service
+
+15. Scénario. Chez KRIBILOG, le ticket « conteneur bloqué » est clos dès le contournement. Quelles étapes manquent au flux réel ?
+      a) Obtenir ou construire, concevoir et faire la transition, améliorer
+      b) S'engager seulement
+      c) Fournir et soutenir seulement
+      d) Planifier seulement
+
+16. Laquelle de ces dimensions fait partie des quatre dimensions d'ITIL 4 ?
+      a) Stratégie et finance
+      b) Gouvernance et culture
+      c) Conformité et audit
+      d) Partenaires et fournisseurs
+
+17. Un projet ITIL réduit à l'achat d'un outil de tickets ne couvre qu'une partie de quelle dimension ?
+      a) Organisations et personnes
+      b) Information et technologie
+      c) Partenaires et fournisseurs
+      d) Flux de valeur et processus
+
+18. Quel principe recommande de partir de l'existant, de l'observer et de le mesurer ?
+      a) Privilégier la valeur
+      b) Rester simple et pratique
+      c) Commencer là où l'on est
+      d) Penser de manière globale
+
+19. Combien de pratiques de gestion des services ITIL 4 compte-t-il, sur 34 au total ?
+      a) 17
+      b) 14
+      c) 3
+      d) 7
+
+20. Pourquoi le cours reste-t-il sur ITIL 4 ?
+      a) ITIL 5 est interdit au Cameroun
+      b) ITIL 5 n'a plus de principes
+      c) ITIL 4 n'est plus certifié
+      d) ITIL 4 est la version pratiquée aujourd'hui et le modèle central d'ITIL 5 n'est pas encore documenté en détail dans les sources publiques
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. ITIL 4 intègre l'agilité, DevOps et le lean.
+      Vrai / Faux
+
+22. La valeur naît de la seule action du fournisseur.
+      Vrai / Faux
+
+23. Un ticket clos qui est rouvert le lendemain est un livrable sans résultat.
+      Vrai / Faux
+
+24. Un service peut avoir de la valeur avec une utilité, même sans garantie.
+      Vrai / Faux
+
+25. ITIL prétend organiser à lui seul la gouvernance des SI.
+      Vrai / Faux
+
+26. Les six activités de la chaîne de valeur se parcourent toujours dans le même ordre.
+      Vrai / Faux
+
+27. Une même pratique peut intervenir dans plusieurs activités de la chaîne de valeur.
+      Vrai / Faux
+
+28. Le principe « optimiser et automatiser » recommande d'automatiser d'abord, puis d'optimiser.
+      Vrai / Faux
+
+29. Le modèle d'amélioration continue d'ITIL reprend les sept questions de la feuille de route de COBIT 2019.
+      Vrai / Faux
+
+30. ITIL version 5 a été annoncée par PeopleCert en janvier 2026.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le sigle anglais du système de valeur des services est ______.
+
+32. ITIL 4 décrit ______ pratiques au total.
+
+33. L'idée que la valeur naît de la collaboration entre fournisseur et consommateur s'appelle la ______ de valeur.
+
+34. Ce que fait le service pour répondre à un besoin s'appelle l'______.
+
+35. Ce qu'une activité produit, comme un ticket clos, s'appelle un ______.
+
+36. ITIL 4 demande de tenir compte de ______ dimensions.
+
+37. ITIL 4 compte ______ principes directeurs.
+
+38. La famille de gestion ______ ne compte que trois pratiques.
+
+39. L'activité qui livre et soutient les services selon les spécifications convenues s'appelle fournir et ______.
+
+40. Chez KRIBILOG, ______ % des tickets sont rouverts.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

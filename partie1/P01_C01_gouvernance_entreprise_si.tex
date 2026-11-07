@@ -1,0 +1,787 @@
+% ============================================================================
+% Fichier  : partie1/P01_C01_gouvernance_entreprise_si.tex
+% Titre    : De la Gouvernance d'Entreprise à la Gouvernance des SI
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+
+\chapter{De la Gouvernance d'Entreprise à la Gouvernance des SI}
+\label{chap:gouv-entreprise}
+\chaptermark{Gouvernance d'entreprise et des SI}
+
+\epigraph{%
+    « Le gouvernement d'entreprise est le système par lequel les sociétés
+    sont dirigées et contrôlées. »%
+}{Rapport \textsc{Cadbury}, Royaume-Uni, 1992 (notre traduction)}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:prologue} (les trois questions réflexes
+    et la distinction entre gouvernance et management).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir la gouvernance d'entreprise et ses mécanismes (conseil,
+          comités, contrôle).
+    \item Expliquer la théorie de l'agence et la théorie des parties
+          prenantes.
+    \item Retracer l'émergence de la gouvernance des SI (rapport Cadbury,
+          loi Sarbanes-Oxley, OHADA).
+    \item Définir la gouvernance des SI et la distinguer du management des
+          SI.
+    \item Identifier les organes de gouvernance des SI (comité stratégique,
+          comité de pilotage).
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : pourquoi le conseil ne savait-il rien~?}
+% ============================================================================
+
+Le prologue s'est achevé sur une séance extraordinaire du conseil
+d'administration de la BANQUE SANAGA. Un administrateur y a posé la
+question qui ouvre ce chapitre~: « Nous avons voté 3,2~milliards FCFA pour
+ce projet. Comment avons-nous pu ignorer, jusqu'au jour de la panne, qu'il
+était en danger~? »
+
+La question n'est pas technique. Elle porte sur la relation entre ceux qui
+possèdent l'entreprise, ceux qui la contrôlent et ceux qui la dirigent~:
+qui informe qui, qui surveille qui, et avec quels moyens. Cette relation
+est l'objet de la \termecle{gouvernance d'entreprise}, discipline bien plus
+ancienne que l'informatique. La gouvernance des systèmes d'information n'en
+est pas une invention à part~: elle en est le prolongement, devenu
+nécessaire le jour où l'activité de l'entreprise a reposé sur ses systèmes.
+
+Ce chapitre suit ce prolongement en cinq temps~: ce qu'est la gouvernance
+d'entreprise (section~\ref{sec:c01-gouv-ent}), les théories qui
+l'expliquent (section~\ref{sec:c01-theories}), son histoire et son entrée
+dans le champ informatique (section~\ref{sec:c01-histoire}), la définition
+de la gouvernance des SI (section~\ref{sec:c01-definition}), et enfin ses
+organes (section~\ref{sec:c01-organes}), replacés dans le contexte
+camerounais (section~\ref{sec:c01-cameroun}).
+
+\separateur
+
+% ============================================================================
+\section{La Gouvernance d'Entreprise : Définition et Mécanismes}
+\label{sec:c01-gouv-ent}
+% ============================================================================
+
+\subsection{Diriger et contrôler}
+
+La définition la plus citée tient en une phrase, celle de l'épigraphe~: la
+gouvernance d'entreprise est le système par lequel les sociétés sont
+dirigées et contrôlées~\cite{cadbury1992}. Les deux verbes comptent. Une
+entreprise dirigée mais non contrôlée dépend entièrement de la qualité de
+ses dirigeants. Une entreprise contrôlée mais mal dirigée se conforme sans
+avancer. La gouvernance organise l'équilibre entre les deux.
+
+\begin{boxdef}
+\termecle{Gouvernance d'entreprise}\index{gouvernance d'entreprise}
+(\textit{corporate governance})~: ensemble des relations, des règles et des
+mécanismes par lesquels une société est dirigée et contrôlée. Elle répartit
+les droits et les responsabilités entre les actionnaires, le conseil
+d'administration, la direction générale et les autres parties prenantes,
+et fixe les règles de décision et de reddition de comptes.
+\end{boxdef}
+
+Les Principes de gouvernance d'entreprise du G20 et de l'\sigle{OCDE},
+publiés pour la première fois en 1999 et révisés en dernier lieu en
+2023~\cite{oecd2023principles}, constituent la référence internationale.
+Ils traitent des droits des actionnaires, de la transparence de
+l'information, du rôle des parties prenantes et des responsabilités du
+conseil d'administration.
+
+\subsection{Les mécanismes de la gouvernance}
+
+La gouvernance d'entreprise s'appuie sur deux familles de mécanismes. Les
+\textbf{mécanismes internes} sont créés par l'entreprise elle-même~; les
+\textbf{mécanismes externes} lui sont imposés ou s'exercent de l'extérieur.
+
+\begin{tableaucours}{L{3.6cm}L{4.4cm}L{4.2cm}}{%
+    \tableauHeader{Mécanisme} &
+    \tableauHeader{Rôle} &
+    \tableauHeader{À la BANQUE SANAGA}
+}
+\multicolumn{3}{l}{\textit{Mécanismes internes}} \\
+Assemblée générale & Désigne les administrateurs, approuve les comptes &
+Réunie une fois par an \\
+Conseil d'administration & Fixe les orientations, contrôle la direction &
+A approuvé le projet HORIZON, puis n'en a plus entendu parler \\
+Comités du conseil (audit, risques) & Préparent les décisions du conseil
+sur des sujets techniques & Comité d'audit sans point sur le projet \\
+Contrôle interne et audit interne & Vérifient que les risques sont maîtrisés
+& Alerte d'octobre~2025 restée sans suite \\
+\multicolumn{3}{l}{\textit{Mécanismes externes}} \\
+Commissaire aux comptes & Certifie les comptes & Interroge la fiabilité des
+soldes convertis \\
+Régulateur (COBAC) & Contrôle la solidité et la conformité & Demande un
+rapport circonstancié \\
+Marché et clients & Sanctionnent par la réputation et le départ & Files
+d'attente, plaintes, presse \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.1. Mécanismes de la gouvernance d'entreprise}\end{center}
+
+Le tableau montre que la BANQUE SANAGA ne manquait d'aucun mécanisme. Ils
+existaient tous, mais aucun ne portait sur le système d'information. Le
+conseil votait le budget du projet sans en recevoir le suivi~; le comité
+d'audit examinait les comptes sans examiner le risque qui allait les
+fausser. C'est la situation typique que la gouvernance des SI vient
+corriger.
+
+% ============================================================================
+\section{Les Théories qui Expliquent la Gouvernance}
+\label{sec:c01-theories}
+% ============================================================================
+
+\subsection{La théorie de l'agence}
+
+Pourquoi faut-il contrôler les dirigeants~? La réponse la plus influente
+vient de Jensen et Meckling, qui décrivent l'entreprise comme un nœud de
+contrats, et la relation entre actionnaires et dirigeants comme une
+\termecle{relation d'agence}~\cite{jensen1976agency}.
+
+\begin{boxdef}
+\termecle{Relation d'agence}\index{relation d'agence} (\textit{agency
+relationship})~: contrat par lequel une personne, le \emph{principal},
+engage une autre personne, l'\emph{agent}, pour accomplir en son nom une
+tâche qui implique de lui déléguer un pouvoir de décision.
+
+\medskip
+\termecle{Coûts d'agence}\index{coûts d'agence} (\textit{agency costs})~:
+somme des dépenses de surveillance engagées par le principal, des dépenses
+d'engagement (de « dédouanement ») engagées par l'agent pour prouver sa
+loyauté, et de la perte résiduelle due aux divergences d'intérêts qui
+subsistent malgré tout.
+\end{boxdef}
+
+La théorie repose sur deux hypothèses. L'agent a ses propres intérêts, qui
+ne coïncident pas toujours avec ceux du principal. Et l'agent en sait plus
+que le principal sur ce qu'il fait~: c'est l'\termecle{asymétrie
+d'information}\index{asymétrie d'information}. La gouvernance est alors
+l'ensemble des dispositifs qui réduisent cette asymétrie (rapports,
+audits, comités) et alignent les intérêts (rémunération, responsabilité).
+
+\subsection{La chaîne d'agence des systèmes d'information}
+
+L'informatique allonge la chaîne d'agence et accroît l'asymétrie
+d'information à chaque maillon. Le conseil délègue au directeur général,
+qui délègue au DSI, qui délègue à un intégrateur. À chaque niveau, l'agent
+comprend mieux le système que son principal.
+
+\begin{center}
+\begin{tikzpicture}[
+    maillon/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        text width=2.5cm, minimum height=1.0cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    fleche/.style = {-{Stealth[length=5pt]}, thick, color=CouleurSecondaire}
+]
+\node[maillon] (ca)  at (0,0)    {Conseil\\ d'administration};
+\node[maillon] (dg)  at (3.9,0)  {Directeur\\ général};
+\node[maillon] (dsi) at (7.8,0)  {DSI};
+\node[maillon] (int) at (11.7,0) {Intégrateur};
+\draw[fleche] (ca) -- node[above, font=\scriptsize\itshape]{délègue} (dg);
+\draw[fleche] (dg) -- node[above, font=\scriptsize\itshape]{délègue} (dsi);
+\draw[fleche] (dsi) -- node[above, font=\scriptsize\itshape]{délègue} (int);
+\draw[fleche, color=CouleurAccent] (0,-0.9) -- node[below, align=center,
+    font=\scriptsize\itshape\color{CouleurAccent}]{l'information technique
+    décroît en remontant la chaîne} (11.7,-0.9);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~1.1. La chaîne d'agence des systèmes
+d'information}\end{center}
+
+\begin{boxscenario}{Opération SANAGA. L'agence}
+\textbf{Constatation.} Le directeur général fixe seul la date de bascule
+en janvier~2026. La DSI l'alerte par une note le 20~février. Le conseil
+n'est informé de rien entre juin~2025 et le 9~mars~2026.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le directeur général, agent du
+conseil, avait un intérêt propre au respect de la date~: le lancement
+de l'offre mobile, déjà annoncé, était l'objectif sur lequel il serait
+jugé. Il disposait d'une information (la note de la DSI) que son principal
+n'avait pas. Le conseil n'avait mis en place aucun dispositif pour réduire
+cette asymétrie~: ni point d'avancement obligatoire, ni accès direct du
+comité d'audit à la DSI. La perte résiduelle s'est élevée à
+1,9~milliard FCFA.
+\end{boxscenario}
+
+\subsection{La théorie des parties prenantes}
+
+La théorie de l'agence ne connaît que deux acteurs~: le principal et
+l'agent. Freeman élargit la perspective~: l'entreprise doit tenir compte
+de tous les groupes qui affectent ses objectifs ou sont affectés par
+eux~\cite{freeman1984stakeholder}. Pour une banque, ce sont aussi les
+déposants, les salariés, le régulateur, l'État et les commerçants qui
+dépendent de ses paiements.
+
+\begin{boxdef}
+\termecle{Partie prenante}\index{partie prenante} (\textit{stakeholder})~:
+tout groupe ou individu qui peut affecter la réalisation des objectifs
+d'une organisation ou qui est affecté par elle.
+\end{boxdef}
+
+Cette théorie a une conséquence directe pour la gouvernance des SI~: la
+valeur d'un système d'information ne se mesure pas seulement pour
+l'actionnaire. La panne de la BANQUE SANAGA a touché des clients qui ne
+pouvaient plus payer leurs salariés, et des commerçants dont les terminaux
+de paiement étaient bloqués. COBIT~2019 retient d'ailleurs, comme premier
+principe de tout système de gouvernance, la création de valeur pour les
+parties prenantes~\cite{isaca2018cobitintro}.
+
+\begin{boiteRemarque}{Et si les dirigeants étaient loyaux~?}
+La théorie de l'agence suppose un agent qui sert d'abord ses propres
+intérêts. La théorie de l'intendance (\textit{stewardship theory}) part de
+l'hypothèse inverse~: un dirigeant peut trouver sa motivation dans la
+réussite de l'organisation elle-même~\cite{davis1997stewardship}. Elle
+plaide alors pour la confiance et la délégation plutôt que pour la
+surveillance. Les deux lectures ne s'excluent pas. Le directeur général de
+la BANQUE SANAGA était sans doute sincèrement convaincu de servir la
+banque en tenant sa date. Le problème n'était pas sa loyauté, mais
+l'absence d'un mécanisme qui confronte sa conviction aux faits techniques.
+Une bonne gouvernance ne présume pas la malhonnêteté~: elle organise la
+contradiction.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Histoire : de Cadbury à la Gouvernance des SI}
+\label{sec:c01-histoire}
+% ============================================================================
+
+\subsection{Les scandales fondateurs}
+
+La gouvernance d'entreprise s'est construite par réaction à des scandales.
+Au Royaume-Uni, la faillite du groupe Maxwell et celle de la banque BCCI,
+en 1991, conduisent à la création du comité présidé par Sir Adrian
+Cadbury, dont le rapport de 1992 pose les règles de séparation des
+pouvoirs et du rôle des comités~\cite{cadbury1992}. Aux États-Unis, les
+faillites d'Enron (2001) et de WorldCom (2002) entraînent l'adoption de la
+loi Sarbanes-Oxley~\cite{sox2002}.
+
+\subsection{Sarbanes-Oxley~: l'informatique entre dans la gouvernance}
+
+La loi Sarbanes-Oxley est le moment où l'informatique entre dans la
+gouvernance d'entreprise, presque sans l'avoir cherché. Sa section~404
+impose à la direction des sociétés cotées aux États-Unis d'évaluer chaque
+année l'efficacité de son contrôle interne sur l'information financière,
+et à l'auditeur externe d'en attester. Or l'information financière est
+produite par des systèmes informatiques. Évaluer le contrôle interne,
+c'est donc évaluer aussi les contrôles qui garantissent la fiabilité de
+ces systèmes~: qui peut modifier un programme, qui peut accéder aux
+données, comment les changements sont autorisés.
+
+\begin{boxdef}
+\termecle{Contrôles généraux informatiques}\index{contrôles généraux
+informatiques} (\textit{IT general controls}, \sigle{ITGC})~: contrôles qui
+s'appliquent à l'ensemble de l'environnement informatique et conditionnent
+la fiabilité de toutes les applications~: gestion des accès, gestion des
+changements, exploitation, développement et acquisition des systèmes.
+\end{boxdef}
+
+Le Chapitre~\ref{chap:audit} reviendra sur ces contrôles, que l'auditeur
+teste en priorité. Il suffit ici de noter que les défaillances de la
+BANQUE SANAGA en sont deux exemples directs~: un changement non autorisé
+et des données dont l'exactitude n'était plus garantie.
+
+\subsection{Les étapes de la gouvernance des SI}
+
+\begin{tableaucours}{L{1.6cm}L{10.6cm}}{%
+    \tableauHeader{Année} &
+    \tableauHeader{Étape}
+}
+1992 & Rapport Cadbury (Royaume-Uni)~: séparation des pouvoirs, comités
+du conseil \\
+1994 & Premier rapport King (Afrique du Sud) \\
+1996 & Première édition de COBIT, alors centrée sur l'audit et le contrôle
+informatiques \\
+1997 & Acte uniforme OHADA relatif au droit des sociétés commerciales et du
+groupement d'intérêt économique \\
+1998 & Création de l'IT Governance Institute (\sigle{ITGI}) \\
+2002 & Loi Sarbanes-Oxley (États-Unis) \\
+2004 & Weill et Ross définissent la gouvernance des SI par les droits de
+décision~\cite{weill2004itgovernance} \\
+2008 & Première édition de la norme ISO/IEC~38500 sur la gouvernance des
+technologies de l'information \\
+2009 & Rapport King~III~: la gouvernance des technologies de l'information
+y devient un chapitre à part entière \\
+2014 & Acte uniforme OHADA révisé~: comité d'audit obligatoire dans les
+sociétés cotées \\
+2016 & Rapport King~IV~: principe~12 sur la gouvernance des technologies et
+de l'information~\cite{iod2016king4} \\
+2018 & COBIT~2019~: système de gouvernance sur mesure, facteurs de
+conception \\
+2023 & Révision des Principes de gouvernance d'entreprise du G20 et de
+l'OCDE \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.2. Repères historiques de la
+gouvernance d'entreprise et de la gouvernance des SI}\end{center}
+
+\subsection{Une voix africaine~: les rapports King}
+
+L'Afrique n'est pas restée en marge de ce mouvement. Les rapports King,
+publiés par l'Institute of Directors in Southern Africa, figurent parmi
+les codes de gouvernance les plus avancés au monde. Le troisième (2009) a
+été l'un des premiers codes nationaux à consacrer un chapitre entier à la
+gouvernance des technologies de l'information. Le quatrième (2016) en fait
+l'un de ses principes~: l'organe de gouvernance doit gouverner la
+technologie et l'information de manière à aider l'organisation à définir
+et à atteindre ses objectifs stratégiques~\cite{iod2016king4}. COBIT~2019
+cite d'ailleurs le rapport King~IV parmi ses références pour l'objectif de
+gouvernance EDM01~\cite{isaca2018cobitobjectifs}.
+
+% ============================================================================
+\section{Définir la Gouvernance des SI}
+\label{sec:c01-definition}
+% ============================================================================
+
+\subsection{Quatre définitions de référence}
+
+Il n'existe pas une définition unique, mais quatre définitions qui se
+complètent. Chacune met l'accent sur un aspect différent.
+
+\begin{boxdef}
+\textbf{COBIT~4.1 (ITGI, 2007, version française de l'AFAI)}~:
+« La gouvernance des SI est de la responsabilité des dirigeants et du
+conseil d'administration, et elle est constituée des structures et
+processus de commandement et de fonctionnement qui conduisent
+l'informatique de l'entreprise à soutenir les stratégies et les objectifs
+de l'entreprise, et à lui permettre de les élargir. »~\cite{itgi2007cobit41}
+
+\medskip
+\textbf{Weill et Ross (2004)}~: spécifier les droits de décision et le
+cadre de responsabilité qui encouragent les comportements souhaitables
+dans l'usage des technologies de l'information~\cite{weill2004itgovernance}.
+
+\medskip
+\textbf{ISO/IEC~38500}~: système par lequel l'utilisation actuelle et
+future de l'informatique est dirigée et contrôlée~\cite{iso38500}.
+
+\medskip
+\textbf{COBIT~2019}~: activités par lesquelles l'organe de gouvernance
+évalue les besoins des parties prenantes, dirige par la priorisation et la
+décision, et surveille la performance et la conformité~\cite{isaca2018cobitintro}.
+\end{boxdef}
+
+\begin{tableaucours}{L{2.8cm}L{4.4cm}L{5.0cm}}{%
+    \tableauHeader{Source} &
+    \tableauHeader{Accent principal} &
+    \tableauHeader{Question qu'elle pose}
+}
+COBIT 4.1 & Responsabilité des dirigeants, structures et processus & Qui
+porte la gouvernance, et par quels dispositifs~? \\
+Weill et Ross & Droits de décision et comportements & Qui décide de quoi,
+et quels comportements cela produit-il~? \\
+ISO/IEC 38500 & Direction et contrôle de l'usage de l'informatique &
+L'usage de l'informatique est-il dirigé et contrôlé~? \\
+COBIT 2019 & Évaluer, diriger, surveiller & Les besoins sont-ils évalués,
+les priorités fixées, les résultats suivis~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.3. Comparaison des définitions de
+la gouvernance des SI}\end{center}
+
+\subsection{Une définition de travail pour ce cours}
+
+De ces quatre définitions, ce cours retient une synthèse, qui servira de
+référence dans tous les chapitres.
+
+\begin{boxdef}
+\termecle{Gouvernance des SI}\index{gouvernance des SI!définition de
+travail}~: ensemble des responsabilités, des droits de décision et des
+mécanismes par lesquels l'organe de gouvernance d'une organisation
+s'assure que l'usage, présent et futur, de l'information et des
+technologies \emph{crée de la valeur} pour les parties prenantes,
+\emph{maîtrise les risques} qui en découlent et \emph{utilise
+judicieusement les ressources} qui lui sont consacrées.
+\end{boxdef}
+
+Les trois finalités soulignées (valeur, risque, ressources) seront
+développées au Chapitre~\ref{chap:alignement}. Elles donnent déjà un
+critère simple~: une décision relève de la gouvernance des SI lorsqu'elle
+engage durablement l'une de ces trois finalités pour l'organisation
+entière.
+
+\subsection{Structures, processus et mécanismes relationnels}
+
+De Haes et Van Grembergen proposent de décrire la gouvernance des SI d'une
+organisation par trois familles de mécanismes~\cite{dehaes2015egit}. La
+grille est utile en diagnostic~: une organisation qui n'a que des
+structures, sans processus ni relations, a une gouvernance de façade.
+
+\begin{tableaucours}{L{2.6cm}L{4.6cm}L{5.0cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Exemples} &
+    \tableauHeader{Signal d'absence}
+}
+Structures & Comité stratégique des SI, comité de pilotage, rôle de DSI
+membre de la direction & Personne n'est désigné pour trancher \\
+Processus & Planification stratégique des SI, gestion du portefeuille,
+suivi de la valeur, audit & Les décisions se prennent au cas par cas,
+sans calendrier ni critères \\
+Mécanismes relationnels & Formation des administrateurs, communication
+entre métiers et DSI, binômes métier-informatique & Les métiers découvrent
+les décisions informatiques après coup \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.4. Les trois familles de
+mécanismes de gouvernance des SI}\end{center}
+
+% ============================================================================
+\section{Gouvernance et Management des SI : Quatre Confusions}
+\label{sec:c01-confusions}
+% ============================================================================
+
+Le prologue a posé la distinction entre gouvernance et management
+(section~\ref{sec:pro-gouv-management}). Dans la pratique, elle est
+brouillée par quatre confusions fréquentes. Chacune conduit à une
+gouvernance qui n'en a que le nom.
+
+\begin{enumerate}
+    \item \textbf{« La gouvernance des SI, c'est l'affaire du DSI. »} Le DSI
+          est un acteur central du management des SI. La gouvernance, elle,
+          relève de l'organe qui le contrôle~: le conseil et ses comités.
+          Confier la gouvernance au DSI, c'est demander à l'agent de se
+          surveiller lui-même.
+    \item \textbf{« La gouvernance, c'est la conformité. »} Respecter la
+          loi et les normes est une exigence de la gouvernance, mais ne
+          suffit pas à la définir. Une organisation peut être conforme et
+          investir dans des projets sans valeur.
+    \item \textbf{« La gouvernance, c'est la sécurité. »} La sécurité de
+          l'information est un domaine de risque parmi d'autres. La
+          gouvernance arbitre entre la sécurité, la valeur et le coût~;
+          elle ne se réduit à aucun des trois.
+    \item \textbf{« La gouvernance, c'est de la bureaucratie. »} Une
+          gouvernance qui multiplie les comités sans décisions alourdit
+          l'organisation. Une bonne gouvernance est proportionnée~: le
+          Chapitre~\ref{chap:cobit-conception} montrera comment COBIT~2019
+          l'adapte à la taille et aux risques de chaque organisation.
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Violation typique.} Après la panne, le conseil d'administration de
+la BANQUE SANAGA envisage de « confier la gouvernance des SI » à un DSI
+adjoint nouvellement recruté, chargé de produire des rapports mensuels au
+directeur général.
+
+\smallskip
+\textbf{Règle~:} on ne corrige pas une défaillance de gouvernance en
+ajoutant un acteur de management. Il faut un dispositif qui rende compte
+\emph{au conseil}, et non à celui dont les décisions doivent être
+contrôlées.
+\end{boxalert}
+
+% ============================================================================
+\section{Les Organes de la Gouvernance des SI}
+\label{sec:c01-organes}
+% ============================================================================
+
+\subsection{Deux niveaux de comités}
+
+L'ITGI a popularisé une distinction devenue classique entre deux comités.
+Le \termecle{comité stratégique des SI}\index{comité stratégique des SI}
+(\textit{IT strategy committee}) se situe au niveau du conseil~: il
+l'assiste sur les orientations, la valeur et les risques du numérique. Le
+\termecle{comité de pilotage des SI}\index{comité de pilotage des SI}
+(\textit{IT steering committee}) se situe au niveau de la direction
+générale~: il priorise les projets, arbitre les ressources et suit leur
+exécution.
+
+\begin{tableaucours}{L{2.8cm}L{2.2cm}L{3.4cm}L{3.8cm}}{%
+    \tableauHeader{Organe} &
+    \tableauHeader{Niveau} &
+    \tableauHeader{Composition type} &
+    \tableauHeader{Décisions}
+}
+Conseil d'administration & Gouvernance & Administrateurs & Approuve la
+stratégie numérique, l'appétence au risque, les grands investissements \\
+Comité d'audit, comité des risques & Gouvernance & Administrateurs
+indépendants & Surveille le contrôle interne et les risques, dont ceux du
+SI \\
+Comité stratégique des SI & Gouvernance & Administrateurs, DG, DSI,
+experts invités & Évalue l'alignement, la valeur et les risques du
+portefeuille numérique \\
+Comité de pilotage des SI & Management & DG ou DGA, directeurs métiers,
+DSI & Priorise les projets, arbitre les ressources, décide des bascules \\
+Comité des changements & Management & DSI, exploitation, sécurité,
+métiers & Autorise les changements majeurs (Chapitre~\ref{chap:itil-changements}) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.5. Les organes de la gouvernance et
+du management des SI}\end{center}
+
+\subsection{La gouvernance du système de gouvernance}
+
+COBIT~2019 consacre son premier objectif à la mise en place et au maintien
+de ce dispositif lui-même. C'est l'objectif qui manquait le plus
+visiblement à la BANQUE SANAGA.
+
+\begin{boxobjet}{EDM01 · Assurer la définition et le maintien du cadre de gouvernance}
+\textbf{Finalité~:} doter l'organisation d'une approche cohérente de la
+gouvernance de l'information et des technologies, intégrée à la
+gouvernance d'entreprise, avec des décisions alignées sur sa stratégie.
+
+\textbf{Pratiques~:} EDM01.01 \emph{évaluer} le système de gouvernance
+(identifier les parties prenantes et leurs exigences)~; EDM01.02
+\emph{diriger} le système de gouvernance (définir les structures, les
+principes, les niveaux d'autorité et l'information nécessaire aux
+décisions)~; EDM01.03 \emph{surveiller} le système de gouvernance (vérifier
+qu'il fonctionne et assure une supervision effective).
+
+\textbf{Sorties~:} principes de gouvernance, modèle de décision et niveaux
+d'autorité, rapports sur l'efficacité du système de gouvernance.
+
+\textbf{RACI (extrait)~:} \emph{A} au conseil d'administration, \emph{R} au
+directeur général et au comité stratégique des SI, \emph{C} au DSI et à
+l'audit interne.
+
+\textbf{Indicateurs~:} part des décisions stratégiques prises par
+l'instance prévue~; délai de traitement des alertes remontées au conseil.
+\end{boxobjet}
+{\small\itshape Intitulés et pratiques traduits par nos soins à partir de
+COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\begin{boxprocedure}
+\textbf{Un comité de gouvernance qui fonctionne.} Pour qu'un auditeur
+puisse établir que le comité stratégique des SI existe autrement que sur
+le papier, il doit trouver~:
+\begin{itemize}
+    \item une charte approuvée par le conseil (mission, composition,
+          pouvoirs, fréquence, quorum)~;
+    \item un calendrier de réunions respecté, et des procès-verbaux datés
+          et signés~;
+    \item des décisions inscrites au procès-verbal, avec leur responsable
+          et leur échéance~;
+    \item un suivi de ces décisions d'une séance à l'autre~;
+    \item un compte rendu régulier au conseil d'administration.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Rédiger la charte d'un comité stratégique des SI}
+\begin{enumerate}
+    \item \textbf{Mission~:} assister le conseil dans l'évaluation de la
+          stratégie numérique, de la valeur des investissements et des
+          risques liés au SI.
+    \item \textbf{Composition~:} au moins deux administrateurs, dont l'un
+          préside~; le directeur général et le DSI comme membres~; l'audit
+          interne comme invité permanent.
+    \item \textbf{Pouvoirs~:} accès direct à la DSI et à l'audit interne~;
+          droit de demander toute expertise externe.
+    \item \textbf{Fréquence~:} au moins trimestrielle, et sur convocation
+          en cas de projet majeur en difficulté.
+    \item \textbf{Reddition de comptes~:} rapport écrit au conseil après
+          chaque séance.
+\end{enumerate}
+Le point décisif est le deuxième pouvoir~: un comité qui ne reçoit
+l'information que par le directeur général reproduit l'asymétrie qu'il
+devait réduire.
+\end{boxmetier}
+
+% ============================================================================
+\section{Le Contexte Camerounais et Africain}
+\label{sec:c01-cameroun}
+% ============================================================================
+
+\subsection{Des organisations, des cadres différents}
+
+La gouvernance des SI ne s'exerce pas de la même manière dans toutes les
+organisations camerounaises, parce que leur gouvernance d'entreprise
+relève de cadres juridiques différents.
+
+\begin{tableaucours}{L{3.2cm}L{4.6cm}L{4.4cm}}{%
+    \tableauHeader{Organisation} &
+    \tableauHeader{Cadre de gouvernance} &
+    \tableauHeader{Cas du cours}
+}
+Société commerciale & Acte uniforme OHADA sur les sociétés commerciales
+(révisé en 2014) & KRIBILOG SA, NOUN PAY \\
+Établissement de crédit & Droit OHADA et réglementation de la COBAC &
+BANQUE SANAGA \\
+Entreprise publique & Loi n°~2017/011 du 12~juillet~2017 & · \\
+Établissement public & Loi n°~2017/010 du 12~juillet~2017 & ANPP
+(opération MEFOU) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.6. Cadres de gouvernance des
+organisations camerounaises}\end{center}
+
+Les lois de 2017 sur les établissements publics et les entreprises
+publiques, précisées par le décret n°~2019/320 du 19~juin~2019, organisent
+notamment le conseil d'administration et la tutelle de l'État. Le
+Chapitre~\ref{chap:droit} en étudiera les dispositions.
+
+% A VERIFIER au Journal officiel de l'OHADA : libellé exact de l'article
+% 829-1 de l'AUSCGIE (source utilisée : brochure de présentation de la
+% réforme de 2014, PwC/OHADA).
+\begin{boxjuris}
+\textbf{Acte uniforme OHADA relatif au droit des sociétés commerciales et
+du groupement d'intérêt économique, révisé le 30~janvier~2014,
+article~829-1}~\cite{ohada2014auscgie}.
+
+\medskip
+Selon la présentation de la réforme publiée par l'OHADA, l'Acte uniforme
+révisé rend le comité d'audit obligatoire dans les sociétés cotées. Ce
+comité, composé exclusivement d'administrateurs non salariés et n'exerçant
+pas de mandat de direction générale, assure notamment le suivi de
+l'efficacité des systèmes de contrôle interne et de gestion des risques,
+et rend compte régulièrement au conseil d'administration.
+
+\medskip
+\textbf{Portée.} Le droit OHADA institue ainsi, pour les sociétés cotées,
+une instance du conseil chargée de surveiller les risques. Rien ne
+l'oblige à examiner les risques du SI, mais rien ne l'en dispense~: le
+système d'information porte aujourd'hui l'essentiel du contrôle interne.
+Pour les sociétés non cotées, comme la BANQUE SANAGA dans notre cas, la
+création d'un tel comité relève des statuts et de la réglementation
+sectorielle.
+\end{boxjuris}
+
+\subsection{Quatre défis propres au contexte}
+
+\begin{enumerate}
+    \item \textbf{La concentration du pouvoir.} Dans de nombreuses
+          organisations, le directeur général concentre la décision, et le
+          conseil se réunit peu. La chaîne d'agence y est courte en
+          apparence, mais l'asymétrie d'information y est forte.
+    \item \textbf{La tutelle.} Dans le secteur public, une partie des
+          décisions relève du ministère de tutelle. La gouvernance des SI
+          doit préciser ce qui se décide au conseil et ce qui remonte à la
+          tutelle.
+    \item \textbf{La dépendance aux prestataires.} Les grands systèmes sont
+          souvent conçus et maintenus par des intégrateurs étrangers. Le
+          dernier maillon de la chaîne d'agence échappe alors au droit et
+          au contrôle local, d'où l'importance des contrats
+          (Chapitre~\ref{chap:itil-niveaux}).
+    \item \textbf{La compétence numérique des conseils.} Peu
+          d'administrateurs ont une expérience des systèmes d'information.
+          La formation des administrateurs est un mécanisme relationnel de
+          première importance.
+\end{enumerate}
+
+\begin{boxscenario}{Opération MEFOU. Une agence sans comité stratégique}
+L'AGENCE NATIONALE DES PAIEMENTS PUBLICS (ANPP), établissement public
+installé à Yaoundé, gère le paiement dématérialisé des salaires et des
+fournisseurs de l'État. Son schéma directeur informatique, adopté en 2023
+pour 14~milliards FCFA, comprend neuf projets. Le conseil d'administration
+se réunit deux fois par an et consacre en moyenne vingt minutes au
+numérique. Aucun comité ne suit le schéma directeur. Les projets sont
+lancés sur décision du directeur général, M.~ESSOMBA, souvent à la demande
+du ministère de tutelle.
+
+\medskip
+\textbf{Constatation.} À mi-parcours, trois projets ont consommé 71~\% du
+budget et aucun n'est achevé. Le conseil l'apprend par une question d'un
+administrateur représentant le ministère des Finances.
+
+\medskip
+Ce cas reviendra au Chapitre~\ref{chap:alignement} (arbitrage du
+portefeuille) et au Chapitre~\ref{chap:audit} (audit de la Chambre des
+comptes).
+\end{boxscenario}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Diriger et contrôler}~: la gouvernance d'entreprise est le
+          système par lequel les sociétés sont dirigées et contrôlées. Elle
+          repose sur des mécanismes internes (conseil, comités, contrôle
+          interne) et externes (commissaire aux comptes, régulateur,
+          marché).
+    \item \textbf{La théorie de l'agence}~: le dirigeant, agent des
+          actionnaires, en sait plus qu'eux. La gouvernance réduit cette
+          asymétrie d'information. L'informatique allonge la chaîne
+          d'agence et l'accroît.
+    \item \textbf{Les parties prenantes}~: la valeur d'un SI se mesure pour
+          tous ceux qu'il affecte, et non pour le seul actionnaire.
+    \item \textbf{L'informatique est entrée dans la gouvernance par le
+          contrôle interne}~: la loi Sarbanes-Oxley a fait des contrôles
+          généraux informatiques une condition de la fiabilité financière.
+    \item \textbf{La gouvernance des SI} est l'ensemble des
+          responsabilités, des droits de décision et des mécanismes par
+          lesquels l'organe de gouvernance s'assure que l'usage de
+          l'information et des technologies crée de la valeur, maîtrise les
+          risques et utilise judicieusement les ressources.
+    \item \textbf{Deux niveaux de comités}~: le comité stratégique des SI
+          relève du conseil, le comité de pilotage relève de la direction
+          générale. Ne pas les confondre.
+    \item \textbf{Le contexte africain} a ses repères (rapports King, droit
+          OHADA, lois camerounaises de 2017) et ses défis (concentration du
+          pouvoir, tutelle, dépendance aux prestataires, compétence des
+          conseils).
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.1. Gouvernance ou management~? \niveaubase}]
+Classez chacune des décisions suivantes dans la gouvernance ou dans le
+management des SI, et indiquez l'organe qui devrait la prendre
+(Tableau~1.5).
+\begin{enumerate}[(a)]
+    \item Fixer la part du budget de la banque consacrée au numérique pour
+          les trois prochaines années.
+    \item Choisir entre deux éditeurs pour le nouveau logiciel de gestion
+          des crédits.
+    \item Décider de reporter la bascule d'un système critique.
+    \item Fixer le niveau de risque informatique que la banque accepte de
+          supporter.
+    \item Autoriser l'installation d'un correctif sur les serveurs de
+          messagerie.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.2. La chaîne d'agence de KRIBILOG \niveaumoyen}]
+La société KRIBILOG SA confie l'exploitation de son logiciel de suivi des
+conteneurs à l'infogérant NETPORT SERVICES. Le conseil d'administration ne
+reçoit aucun indicateur sur ce service~; le responsable des services
+informatiques, M.~MBARGA, reçoit chaque mois un rapport rédigé par
+NETPORT SERVICES elle-même.
+\begin{enumerate}[(a)]
+    \item Dessinez la chaîne d'agence de ce service, sur le modèle de la
+          Figure~1.1.
+    \item Identifiez, à chaque maillon, l'asymétrie d'information.
+    \item Proposez, pour chaque maillon, un mécanisme qui la réduit, en
+          précisant s'il s'agit d'une structure, d'un processus ou d'un
+          mécanisme relationnel (Tableau~1.4).
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.3. Doter l'ANPP d'une gouvernance des SI \niveauexpert}]
+Le nouveau président du conseil d'administration de l'ANPP (opération
+MEFOU) vous demande une note de trois pages pour doter l'agence d'une
+gouvernance des SI.
+\begin{enumerate}[(a)]
+    \item Rédigez la constatation de départ, à partir des faits de
+          l'opération MEFOU, en la séparant de votre analyse.
+    \item Proposez les organes à créer, leur niveau (gouvernance ou
+          management) et leur composition, en tenant compte de la tutelle
+          ministérielle.
+    \item Rédigez les cinq articles essentiels de la charte du comité
+          stratégique des SI.
+    \item Indiquez les trois pièces qu'un auditeur demandera, dans un an,
+          pour vérifier que ce dispositif fonctionne réellement.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Ce chapitre a défini la gouvernance des SI et ses
+organes à partir de la gouvernance d'entreprise. Le
+Chapitre~\ref{chap:defaillances} met ces notions à l'épreuve des faits~:
+il analyse de grandes défaillances réelles et documentées, pour montrer
+qu'à chaque fois une décision de gouvernance a manqué derrière l'incident
+technique.
+\end{boxinfo}

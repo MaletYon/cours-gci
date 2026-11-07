@@ -1,0 +1,631 @@
+% ============================================================================
+% Fichier  : partie2/P02_C06_cobit_objectifs.tex
+% Titre    : Les 40 Objectifs de Gouvernance et de Management
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : COBIT 2019 Framework: Governance and Management Objectives et
+% Introduction and Methodology (ISACA, 2018), dossier Normes. Intitulés
+% traduits par nos soins ; liens objectifs/buts relevés dans les fiches
+% officielles (EDM03, APO12, BAI06, BAI07, DSS02, DSS04).
+% ============================================================================
+
+\chapter{Les 40 Objectifs de Gouvernance et de Management}
+\label{chap:cobit-objectifs}
+\chaptermark{Les 40 objectifs de COBIT 2019}
+
+\epigraph{%
+    « Quarante objectifs ne font pas quarante chantiers.\\
+    Ils font une liste dans laquelle on choisit. »%
+}{Principe de mise en œuvre de COBIT}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:cobit-archi} (principes, composantes et
+    domaines de COBIT~2019).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Parcourir les objectifs de chaque domaine et en lire la
+          structure.
+    \item Rédiger la fiche processus d'un objectif (finalité, pratiques,
+          entrées et sorties, RACI, indicateurs).
+    \item Relier objectifs d'entreprise, objectifs d'alignement et
+          objectifs COBIT (cascade des objectifs).
+    \item Identifier les objectifs prioritaires d'une banque et d'une
+          administration.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : par où commencer~?}
+% ============================================================================
+
+Mme~EKAMBI, directrice de l'audit interne de la BANQUE SANAGA, a remis au
+conseil un tableau des 40~objectifs de COBIT~2019. Devant chacun, une case
+« conforme » ou « non conforme ». Trente-deux cases sont rouges. Le
+président s'inquiète~: « Faut-il lancer trente-deux chantiers~? »
+
+La réponse est non, et ce chapitre explique pourquoi. Il apprend d'abord à
+\textbf{lire} un objectif (section~\ref{sec:c06-lire}), puis parcourt les
+\textbf{quarante objectifs}, domaine par domaine
+(sections~\ref{sec:c06-edm} à~\ref{sec:c06-dss-mea}). Il montre enfin
+comment la \textbf{cascade des objectifs} relie les besoins de
+l'organisation aux objectifs COBIT, et permet de choisir ceux qui comptent
+(sections~\ref{sec:c06-cascade} et~\ref{sec:c06-priorites}).
+
+\separateur
+
+% ============================================================================
+\section{Lire un Objectif COBIT}
+\label{sec:c06-lire}
+% ============================================================================
+
+\subsection{L'anatomie d'une fiche}
+
+Le guide \textit{COBIT~2019 Framework: Governance and Management
+Objectives}~\cite{isaca2018cobitobjectifs} présente chaque objectif sous
+une forme constante. Savoir la lire est la première compétence du
+praticien.
+
+\begin{tableaucours}{L{3.8cm}L{8.4cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu}
+}
+En-tête & Domaine, code et intitulé de l'objectif, domaine d'intérêt
+(le modèle central, ou un domaine particulier) \\
+Description et finalité & Ce que l'objectif couvre, et pourquoi il existe \\
+Objectifs liés & Objectifs d'entreprise et objectifs d'alignement
+auxquels l'objectif contribue \emph{à titre principal}, avec des exemples
+d'indicateurs \\
+A. Processus & Les pratiques, leurs activités (chacune rattachée à un
+niveau de capacité) et des indicateurs \\
+B. Structures organisationnelles & Une matrice RACI par pratique \\
+C. Flux d'information & Entrées et sorties de chaque pratique, avec leur
+provenance et leur destination \\
+D. Personnes et compétences & Compétences requises, avec renvoi aux
+référentiels de compétences \\
+E. Politiques et procédures & Politiques pertinentes et leur contenu \\
+F. Culture et comportement & Éléments culturels clés \\
+G. Services et applications & Outils et services qui supportent
+l'objectif \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.1. Structure d'une fiche d'objectif
+COBIT~2019 (d'après ISACA, notre traduction)}\end{center}
+
+On retrouve dans les rubriques~A à~G les sept composantes du
+Chapitre~\ref{chap:cobit-archi}. Une fiche COBIT n'est donc pas la
+description d'un processus~: c'est la description d'un \emph{morceau de
+système de gouvernance}, avec toutes ses composantes.
+
+\subsection{Pratiques et activités}
+
+\begin{boxdef}
+\termecle{Pratique}\index{pratique (COBIT)} (\textit{governance or
+management practice})~: action clé qu'il faut accomplir pour atteindre un
+objectif. Elle porte un code (par exemple DSS02.04) et un intitulé à
+l'infinitif.
+
+\medskip
+\termecle{Activité}\index{activité (COBIT)} (\textit{activity})~: action
+concrète qui met en œuvre une pratique. Chaque activité est rattachée à
+un niveau de capacité (de~2 à~5)~: c'est ce qui permet de mesurer
+la capacité d'un processus (Chapitre~\ref{chap:cobit-capacite}).
+\end{boxdef}
+
+\subsection{Rédiger une fiche processus}
+
+Le cours présente les objectifs sous une forme condensée, la
+\emph{fiche processus}, qui retient l'essentiel des rubriques officielles.
+Voici la fiche complète d'un objectif central de l'exploitation.
+
+\begin{boxobjet}{DSS02 · Gérer les demandes de service et les incidents}
+\textbf{Description~:} répondre de manière rapide et efficace aux demandes
+des utilisateurs et résoudre tous les types d'incidents~; rétablir le
+service normal, enregistrer et satisfaire les demandes, enregistrer,
+analyser, diagnostiquer, faire remonter et résoudre les incidents.
+
+\textbf{Finalité~:} accroître la productivité et réduire les
+perturbations par une résolution rapide des demandes et des incidents.
+
+\textbf{Objectifs liés~:} EG01 (portefeuille de produits et services
+compétitifs), EG08 (optimisation des processus internes)~; AG05 (services
+conformes aux exigences des métiers).
+
+\textbf{Pratiques~:} DSS02.01 définir les schémas de classification des
+incidents et des demandes~; DSS02.02 enregistrer, classer et prioriser~;
+DSS02.03 vérifier, approuver et satisfaire les demandes~; DSS02.04
+analyser, diagnostiquer et affecter les incidents~; DSS02.05 résoudre les
+incidents et rétablir le service~; DSS02.06 clore les demandes et les
+incidents~; DSS02.07 suivre l'état et produire des rapports.
+
+\textbf{Entrées et sorties (exemples)~:} entrées~: accords de niveau de
+service (APO09), base des erreurs connues (DSS03)~; sorties~: tickets
+classés et priorisés, rapports d'incidents, demandes de changement
+(vers BAI06).
+
+\textbf{RACI (extrait, adapté à la BANQUE SANAGA)~:} DSS02.05~: \emph{A}
+au responsable de l'exploitation, \emph{R} au centre de services et aux
+équipes de support, \emph{C} aux métiers concernés, \emph{I} au DSI pour
+les incidents majeurs.
+
+\textbf{Indicateurs~:} délai moyen de résolution, taux de résolution au
+premier contact, nombre d'incidents réouverts, satisfaction des
+utilisateurs.
+\end{boxobjet}
+{\small\itshape Description, finalité, objectifs liés et pratiques résumés
+et traduits par nos soins à partir de COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\begin{boxprocedure}
+\textbf{Une fiche processus utilisable.} Pour qu'une fiche processus serve
+réellement, et puisse être auditée, elle doit~:
+\begin{itemize}
+    \item citer l'objectif COBIT et l'édition de référence~;
+    \item nommer le propriétaire du processus, au niveau de l'organisation
+          (et non du référentiel)~;
+    \item remplacer les rôles génériques de COBIT par les fonctions réelles
+          de l'organisation dans la matrice RACI~;
+    \item préciser pour chaque indicateur sa cible, sa source et sa
+          fréquence~;
+    \item être approuvée et datée, et revue au moins une fois par an.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Le Domaine de Gouvernance : EDM}
+\label{sec:c06-edm}
+% ============================================================================
+
+Les cinq objectifs du domaine EDM relèvent de l'organe de gouvernance. Ils
+reprennent, objectif par objectif, la définition de travail du
+Chapitre~\ref{chap:gouv-entreprise}~: un cadre de gouvernance, trois
+finalités et l'engagement des parties prenantes.
+
+\begin{tableaucours}{L{1.4cm}L{4.6cm}L{6.2cm}}{%
+    \tableauHeader{Code} &
+    \tableauHeader{Intitulé} &
+    \tableauHeader{Question pour le conseil}
+}
+EDM01 & Assurer la définition et le maintien du cadre de gouvernance &
+Qui décide de quoi, et le dispositif fonctionne-t-il~? \\
+EDM02 & Assurer la réalisation des bénéfices & Nos investissements
+produisent-ils la valeur annoncée~? \\
+EDM03 & Assurer l'optimisation des risques & Les risques liés aux SI
+restent-ils dans notre appétence~? \\
+EDM04 & Assurer l'optimisation des ressources & Avons-nous les
+compétences et les moyens de notre stratégie~? \\
+EDM05 & Assurer l'engagement des parties prenantes & Rendons-nous compte
+à ceux qui doivent l'être~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.2. Les objectifs du domaine EDM}\end{center}
+
+Les fiches EDM01, EDM02 et EDM05 ont été présentées aux
+Chapitres~\ref{chap:gouv-entreprise}, \ref{chap:alignement}
+et~\ref{chap:cobit-archi}. EDM03 a pour finalité de s'assurer que les
+risques d'entreprise liés aux SI ne dépassent pas l'appétence et la
+tolérance au risque de l'organisation~; il sera repris avec APO12.
+
+% ============================================================================
+\section{Aligner, Planifier et Organiser : APO}
+\label{sec:c06-apo}
+% ============================================================================
+
+Le domaine APO est le plus vaste. Il couvre l'organisation d'ensemble des
+SI, leur stratégie et les activités de soutien.
+
+\begin{tableaucours}{L{1.4cm}L{4.6cm}L{6.2cm}}{%
+    \tableauHeader{Code} &
+    \tableauHeader{Intitulé} &
+    \tableauHeader{Ce qu'il couvre}
+}
+APO01 & Gérer le cadre de management des SI & Politiques, rôles, choix des
+référentiels (Chapitre~\ref{chap:referentiels}) \\
+APO02 & Gérer la stratégie & Plan stratégique des SI, feuille de route \\
+APO03 & Gérer l'architecture d'entreprise & Cohérence des processus,
+données, applications et technologies \\
+APO04 & Gérer l'innovation & Veille, expérimentation des technologies
+émergentes \\
+APO05 & Gérer le portefeuille & Arbitrage des investissements
+(Chapitre~\ref{chap:alignement}) \\
+APO06 & Gérer le budget et les coûts & Budget des SI, refacturation,
+suivi des coûts \\
+APO07 & Gérer les ressources humaines & Effectifs, compétences,
+formation, dépendance à des personnes clés \\
+APO08 & Gérer les relations & Relation entre la DSI et les métiers \\
+APO09 & Gérer les accords de service & Catalogue de services, accords de
+niveau de service \\
+APO10 & Gérer les fournisseurs & Sélection, contrats, supervision des
+prestataires \\
+APO11 & Gérer la qualité & Système de management de la qualité des SI \\
+APO12 & Gérer le risque & Identification, évaluation et traitement des
+risques liés aux SI \\
+APO13 & Gérer la sécurité & Système de management de la sécurité de
+l'information \\
+APO14 & Gérer les données & Gouvernance et qualité des données
+(Chapitre~\ref{chap:donnees-ia}) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.3. Les objectifs du domaine APO
+(intitulés traduits par nos soins)}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} L'ANPP (opération MEFOU) confie l'objectif
+APO10 à la direction des achats, qui le réduit à la passation des
+marchés. Une fois le contrat signé, plus personne ne supervise les
+prestataires.
+
+\smallskip
+\textbf{Règle~:} gérer un fournisseur ne s'arrête pas à la signature.
+APO10 couvre toute la relation, jusqu'à la supervision de la
+performance et des risques du prestataire, que l'ancien DSI de TSB a été
+sanctionné pour avoir négligée (Chapitre~\ref{chap:defaillances}).
+\end{boxalert}
+
+% ============================================================================
+\section{Bâtir, Acquérir et Implémenter : BAI}
+\label{sec:c06-bai}
+% ============================================================================
+
+Le domaine BAI couvre tout ce qui fait \emph{changer} le système
+d'information~: projets, acquisitions, mises en production. C'est
+le domaine où se sont produites toutes les défaillances du
+Chapitre~\ref{chap:defaillances}.
+
+\begin{tableaucours}{L{1.4cm}L{4.6cm}L{6.2cm}}{%
+    \tableauHeader{Code} &
+    \tableauHeader{Intitulé} &
+    \tableauHeader{Ce qu'il couvre}
+}
+BAI01 & Gérer les programmes & Pilotage des programmes et de leurs
+bénéfices \\
+BAI02 & Gérer la définition des exigences & Recueil et validation des
+besoins des métiers \\
+BAI03 & Gérer l'identification et la construction des solutions &
+Conception, développement, acquisition \\
+BAI04 & Gérer la disponibilité et la capacité & Dimensionnement et
+performance (Chapitre~\ref{chap:itil-niveaux}) \\
+BAI05 & Gérer le changement organisationnel & Accompagnement des
+utilisateurs et des métiers \\
+BAI06 & Gérer les changements informatiques & Évaluation, autorisation et
+suivi des changements (Chapitre~\ref{chap:itil-changements}) \\
+BAI07 & Gérer l'acceptation et la transition des changements & Recette,
+mise en production, retour arrière \\
+BAI08 & Gérer la connaissance & Capitalisation et partage des
+connaissances \\
+BAI09 & Gérer les actifs & Inventaire et cycle de vie des actifs \\
+BAI10 & Gérer la configuration & Base de configuration et ses relations \\
+BAI11 & Gérer les projets & Conduite des projets \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.4. Les objectifs du domaine BAI
+(intitulés traduits par nos soins)}\end{center}
+
+% ============================================================================
+\section{Délivrer, Servir, Soutenir et Surveiller : DSS et MEA}
+\label{sec:c06-dss-mea}
+% ============================================================================
+
+Le domaine DSS couvre l'exploitation quotidienne des services, sécurité
+comprise. Le domaine MEA ferme la boucle~: il vérifie la performance et
+la conformité, et fournit l'assurance.
+
+\begin{tableaucours}{L{1.4cm}L{4.6cm}L{6.2cm}}{%
+    \tableauHeader{Code} &
+    \tableauHeader{Intitulé} &
+    \tableauHeader{Ce qu'il couvre}
+}
+DSS01 & Gérer l'exploitation & Exploitation courante, ordonnancement,
+environnement physique \\
+DSS02 & Gérer les demandes de service et les incidents & Centre de
+services, incidents (Chapitre~\ref{chap:itil-incidents}) \\
+DSS03 & Gérer les problèmes & Causes profondes, erreurs connues \\
+DSS04 & Gérer la continuité & Plans de continuité, tests, reprise \\
+DSS05 & Gérer les services de sécurité & Protection contre les logiciels
+malveillants, accès, surveillance \\
+DSS06 & Gérer les contrôles des processus métier & Contrôles applicatifs
+intégrés aux processus \\
+MEA01 & Gérer la surveillance de la performance et de la conformité &
+Indicateurs, tableaux de bord \\
+MEA02 & Gérer le système de contrôle interne & Autoévaluation, suivi des
+déficiences \\
+MEA03 & Gérer la conformité aux exigences externes & Lois, règlements,
+contrats \\
+MEA04 & Gérer l'assurance & Missions d'assurance et d'audit
+(Chapitre~\ref{chap:audit}) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.5. Les objectifs des domaines DSS et
+MEA (intitulés traduits par nos soins)}\end{center}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Les six objectifs du quotidien}
+\begin{enumerate}
+    \item DSS01, DSS02 et DSS03 forment le noyau de l'exploitation~:
+          faire tourner, réparer, éviter que cela recommence.
+    \item BAI06 et BAI07 encadrent tout ce qui modifie la production.
+    \item APO09 fixe les engagements de service sur lesquels l'exploitation
+          est jugée.
+\end{enumerate}
+Ces six objectifs correspondent aux pratiques d'ITIL~4 étudiées dans la
+Partie~\ref{part:pratique}~: COBIT dit ce qui doit être maîtrisé, ITIL
+comment le faire.
+\end{boxmetier}
+
+% ============================================================================
+\section{La Cascade des Objectifs}
+\label{sec:c06-cascade}
+% ============================================================================
+
+\subsection{Des besoins aux objectifs COBIT}
+
+Comment choisir, parmi les quarante objectifs, ceux qui comptent pour une
+organisation donnée~? COBIT~2019 propose un premier outil~: la
+\termecle{cascade des objectifs}\index{cascade des objectifs}
+(\textit{goals cascade})~\cite{isaca2018cobitintro}.
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    etape/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        text width=2.5cm, minimum height=1.2cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    fleche/.style = {-{Stealth[length=5pt]}, thick, color=CouleurSecondaire}
+]
+\node[etape] (a) at (0,0)    {Besoins des\\ parties prenantes};
+\node[etape] (b) at (3.4,0)  {13 objectifs\\ d'entreprise};
+\node[etape] (c) at (6.8,0)  {13 objectifs\\ d'alignement};
+\node[etape] (d) at (10.2,0) {40 objectifs\\ COBIT};
+\draw[fleche] (a) -- (b);
+\draw[fleche] (b) -- (c);
+\draw[fleche] (c) -- (d);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~6.1. La cascade des objectifs de
+COBIT~2019}\end{center}
+\end{minipage}
+
+\begin{boxdef}
+\termecle{Objectif d'entreprise}\index{objectif d'entreprise}
+(\textit{enterprise goal}, EG)~: but de l'organisation dans son ensemble,
+classé selon les quatre dimensions du tableau de bord prospectif
+(finances, clients, processus internes, apprentissage et croissance).
+
+\medskip
+\termecle{Objectif d'alignement}\index{objectif d'alignement}
+(\textit{alignment goal}, AG)~: but que l'informatique et les technologies
+doivent atteindre pour soutenir les objectifs d'entreprise. COBIT~5 les
+appelait « objectifs liés aux SI »~; le nouveau terme souligne qu'ils ne
+sont pas des objectifs internes de la DSI.
+\end{boxdef}
+
+\subsection{Les vingt-six objectifs intermédiaires}
+
+\begin{tableaucours}{L{1.0cm}L{5.0cm}L{1.0cm}L{5.0cm}}{%
+    \tableauHeader{Code} &
+    \tableauHeader{Objectif d'entreprise} &
+    \tableauHeader{Code} &
+    \tableauHeader{Objectif d'alignement}
+}
+EG01 & Portefeuille de produits et services compétitifs & AG01 &
+Conformité des SI et soutien à la conformité aux lois \\
+EG02 & Risque métier maîtrisé & AG02 & Risque lié aux SI maîtrisé \\
+EG03 & Conformité aux lois et règlements & AG03 & Bénéfices réalisés des
+investissements et services \\
+EG04 & Qualité de l'information financière & AG04 & Qualité de
+l'information financière liée aux technologies \\
+EG05 & Culture de service orientée client & AG05 & Services conformes aux
+exigences des métiers \\
+EG06 & Continuité et disponibilité des services métier & AG06 & Agilité
+pour transformer les exigences en solutions \\
+EG07 & Qualité de l'information de gestion & AG07 & Sécurité de
+l'information, des infrastructures et des applications, et vie privée \\
+EG08 & Optimisation des fonctionnalités des processus internes & AG08 &
+Soutien aux processus métier par l'intégration des applications \\
+EG09 & Optimisation des coûts des processus & AG09 & Programmes livrés dans
+les délais, les budgets et la qualité \\
+EG10 & Compétences, motivation et productivité du personnel & AG10 &
+Qualité de l'information de gestion des SI \\
+EG11 & Conformité aux politiques internes & AG11 & Conformité des SI aux
+politiques internes \\
+EG12 & Programmes de transformation numérique maîtrisés & AG12 &
+Personnel compétent, compréhension mutuelle des technologies et des
+métiers \\
+EG13 & Innovation des produits et des processus & AG13 & Connaissances et
+initiatives pour l'innovation \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.6. Objectifs d'entreprise et
+objectifs d'alignement de COBIT~2019 (intitulés abrégés et traduits par
+nos soins)}\end{center}
+
+\subsection{Lire la cascade dans les fiches}
+
+Chaque fiche d'objectif indique les objectifs d'entreprise et
+d'alignement auxquels il contribue \emph{à titre principal}. En les
+relevant, on peut parcourir la cascade dans les deux sens. Le relevé
+suivant est tiré des fiches officielles~\cite{isaca2018cobitobjectifs}.
+
+\begin{tableaucours}{L{2.6cm}L{4.4cm}L{5.2cm}}{%
+    \tableauHeader{Objectif} &
+    \tableauHeader{Objectifs d'entreprise} &
+    \tableauHeader{Objectifs d'alignement}
+}
+EDM03 & EG02, EG06 & AG02, AG07 \\
+APO12 & EG02, EG06 & AG02, AG07 \\
+DSS04 & EG01, EG02, EG06, EG08 & AG05, AG07 \\
+DSS02 & EG01, EG08 & AG05 \\
+BAI06, BAI07 & EG01 & AG06 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.7. Liens principaux de quelques
+objectifs (relevés dans COBIT~2019)}\end{center}
+
+\begin{boiteRemarque}{Pourquoi la gestion des changements n'est-elle pas reliée au risque~?}
+Le Tableau~6.7 réserve une surprise. On s'attendrait à ce que BAI06 et
+BAI07, au cœur de toutes les défaillances du Chapitre~\ref{chap:defaillances},
+soient rattachés en priorité au risque (EG02, AG02). Or leurs liens
+principaux sont l'agilité (AG06) et la compétitivité de l'offre (EG01)~:
+COBIT voit d'abord dans la gestion des changements le moyen de changer
+\emph{vite et bien}.
+
+La leçon est double. D'abord, la cascade ne relève que les liens
+\emph{principaux}~; elle ne suffit pas, à elle seule, à prioriser. Ensuite,
+une organisation qui a connu une défaillance due à un changement doit
+remonter BAI06 et BAI07 par un autre chemin~: le profil de risque et les
+problèmes liés aux SI, qui sont des facteurs de conception
+(Chapitre~\ref{chap:cobit-conception}). C'est ce que fera la BANQUE
+SANAGA.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Objectifs Prioritaires : une Banque, une Administration}
+\label{sec:c06-priorites}
+% ============================================================================
+
+\subsection{La BANQUE SANAGA}
+
+\begin{boxscenario}{Opération SANAGA. Choisir dans la liste}
+La responsable GRC part des objectifs d'entreprise que le conseil a
+déclarés prioritaires après la panne~: EG06 (continuité et disponibilité),
+EG02 (risque métier maîtrisé) et EG03 (conformité, au regard de la COBAC).
+
+\medskip
+\textbf{Par la cascade.} EG06 et EG02 conduisent, par les fiches
+officielles, à EDM03, APO12 et DSS04 (Tableau~6.7). EG03 conduit à
+l'objectif d'alignement AG01, et de là aux objectifs de conformité, dont
+MEA03.
+
+\medskip
+\textbf{Par l'histoire de la banque.} La panne impose d'ajouter BAI06 et
+BAI07 (changements), APO10 (fournisseurs), MEA02 (suivi des
+recommandations) et EDM01 (cadre de gouvernance).
+
+\medskip
+\textbf{Résultat.} Dix objectifs prioritaires, et non trente-deux~: EDM01,
+EDM03, APO10, APO12, BAI06, BAI07, DSS02, DSS04, MEA02, MEA03. Les autres
+objectifs ne sont pas abandonnés~: ils seront visés à un niveau de
+capacité plus modeste (Chapitre~\ref{chap:cobit-capacite}).
+\end{boxscenario}
+
+\subsection{L'ANPP}
+
+Pour l'ANPP (opération MEFOU), le point de départ est différent. Les
+objectifs d'entreprise prioritaires sont EG12 (programmes de
+transformation numérique maîtrisés), EG09 (optimisation des coûts) et
+EG03 (conformité, au regard des règles de la gestion publique et de la
+Chambre des comptes). L'histoire de l'agence (Chapitres~\ref{chap:gouv-entreprise}
+et~\ref{chap:alignement}) désigne d'elle-même les objectifs de
+gouvernance du portefeuille (EDM02, APO05), de conduite des programmes et
+des projets (BAI01, BAI11) et de gestion des fournisseurs (APO10). Le
+choix définitif se fera avec les facteurs de conception, au
+Chapitre~\ref{chap:cobit-conception}, puis avec les tables de
+correspondance complètes de COBIT~2019 dans le laboratoire GCI-LAB-03.
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Répondre au « trente-deux cases rouges »}
+\begin{enumerate}
+    \item Une grille « conforme / non conforme » sur les 40~objectifs n'a
+          pas de sens~: COBIT ne fixe pas d'exigences, mais des objectifs à
+          atteindre à un niveau de capacité choisi.
+    \item Demander d'abord quels objectifs ont été retenus comme
+          prioritaires, et selon quelle démarche.
+    \item Évaluer ensuite la capacité des seuls objectifs prioritaires, au
+          regard de la cible fixée.
+    \item Présenter au conseil l'écart entre capacité constatée et capacité
+          cible, objectif par objectif.
+\end{enumerate}
+Mme~EKAMBI reprendra son tableau sur ces bases au Chapitre~\ref{chap:cobit-capacite}.
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Une fiche COBIT décrit un morceau de système de
+          gouvernance}~: description, finalité, objectifs liés, puis les
+          sept composantes (processus, RACI, flux d'information,
+          compétences, politiques, culture, outils).
+    \item \textbf{Pratiques et activités}~: chaque activité est rattachée à
+          un niveau de capacité, ce qui permet la mesure.
+    \item \textbf{Quarante objectifs en cinq domaines}~: EDM pour le
+          conseil~; APO pour l'organisation et la stratégie~; BAI pour tout
+          ce qui change~; DSS pour l'exploitation~; MEA pour la surveillance
+          et l'assurance.
+    \item \textbf{La cascade des objectifs} relie les besoins des parties
+          prenantes aux 13~objectifs d'entreprise, aux 13~objectifs
+          d'alignement, puis aux 40~objectifs COBIT.
+    \item \textbf{La cascade ne suffit pas}~: elle ne relève que les liens
+          principaux~; l'histoire et le profil de risque de l'organisation
+          complètent le choix.
+    \item \textbf{Choisir, c'est retenir une dizaine d'objectifs
+          prioritaires}, et viser pour les autres une capacité plus
+          modeste.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.1. Trouver l'objectif \niveaubase}]
+Pour chacune des situations suivantes, indiquez l'objectif COBIT~2019
+concerné (code et intitulé).
+\begin{enumerate}[(a)]
+    \item Personne ne sait combien de licences de logiciels la banque
+          possède.
+    \item Le même incident de messagerie se reproduit chaque lundi.
+    \item Le budget informatique est dépassé de 30~\% sans que la direction
+          financière en soit informée.
+    \item Les recommandations de l'audit interne restent sans suite.
+    \item Les métiers se plaignent de ne jamais être consultés sur les
+          projets informatiques.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.2. La fiche processus de DSS04 \niveaumoyen}]
+À l'aide du guide \textit{COBIT~2019 Governance and Management Objectives}
+(dossier \texttt{Normes}), rédigez la fiche processus de l'objectif DSS04
+(gérer la continuité) pour la BANQUE SANAGA, sur le modèle de la fiche
+DSS02 de la section~\ref{sec:c06-lire}.
+\begin{enumerate}[(a)]
+    \item Résumez sa description et sa finalité, sans recopier le texte.
+    \item Relevez ses objectifs d'entreprise et d'alignement liés.
+    \item Listez ses pratiques et proposez une matrice RACI avec les
+          fonctions réelles de la banque.
+    \item Proposez trois indicateurs, avec leur cible et leur source.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.3. Les priorités de NOUN PAY \niveauexpert}]
+NOUN PAY (Bafoussam) fait face à deux enjeux~: l'enquête de l'autorité des
+données personnelles sur sa notation de crédit par IA, et sa dépendance à
+un fournisseur unique d'informatique en nuage.
+\begin{enumerate}[(a)]
+    \item Choisissez trois objectifs d'entreprise prioritaires, et
+          justifiez.
+    \item Descendez la cascade jusqu'aux objectifs d'alignement, puis aux
+          objectifs COBIT, en vous appuyant sur les fiches officielles.
+    \item Ajoutez les objectifs que la cascade ne fait pas apparaître mais
+          que la situation impose, et expliquez pourquoi.
+    \item Limitez votre liste finale à huit objectifs au plus, et
+          justifiez chaque exclusion importante.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La cascade des objectifs n'est qu'un des facteurs qui
+orientent le choix des objectifs prioritaires. Le
+Chapitre~\ref{chap:cobit-conception} présente les onze facteurs de
+conception et la démarche complète de COBIT~2019 pour concevoir un
+système de gouvernance sur mesure, avec les niveaux de capacité cibles.
+\end{boxinfo}

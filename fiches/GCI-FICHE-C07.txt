@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C07
+Chapitre 7 : Concevoir un système de gouvernance sur mesure
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Dans le modèle central de COBIT 2019, comment les 40 objectifs sont-ils classés entre eux ?
+      a) Par ordre d'importance décroissante
+      b) Ils sont intrinsèquement équivalents, sans ordre de priorité naturel
+      c) Par domaine, EDM étant toujours prioritaire
+      d) Par coût de mise en œuvre
+
+ 2. Lequel de ces effets est l'un des trois effets des facteurs de conception ?
+      a) La suppression des domaines EDM et MEA
+      b) Le choix d'un éditeur de logiciel
+      c) La variation des composantes
+      d) La certification de l'organisation
+
+ 3. Une organisation très averse au risque donnera plus de poids à quels objectifs ?
+      a) EDM03, APO12, APO13 et DSS05
+      b) APO04, APO05 et BAI11
+      c) APO07 et APO08
+      d) BAI03 et DSS01
+
+ 4. Quel rôle des SI correspond à des SI dont la panne arrête immédiatement l'activité, sans qu'ils soient un moteur d'innovation ?
+      a) Soutien
+      b) Redressement
+      c) Stratégique
+      d) Usine
+
+ 5. Scénario. Quel est le rôle des SI pour la BANQUE SANAGA, selon le tableau des facteurs ?
+      a) Soutien
+      b) Stratégique
+      c) Usine
+      d) Redressement
+
+ 6. Quelle taille COBIT 2019 attribue-t-il à une PME ?
+      a) De 50 à 250 salariés à temps plein
+      b) Moins de 50 salariés
+      c) De 250 à 1 000 salariés
+      d) Moins de 10 salariés
+
+ 7. Quelle différence le chapitre fait-il entre le profil de risque et les problèmes liés aux SI ?
+      a) Aucune, ce sont deux mots pour la même chose
+      b) Le profil de risque concerne les fournisseurs, les problèmes concernent les clients
+      c) Le profil de risque regarde vers l'avenir ; les problèmes regardent ce qui s'est déjà produit
+      d) Les problèmes sont fixés par la loi
+
+ 8. Par quel facteur la panne de la BANQUE SANAGA fait-elle remonter BAI06 et BAI07 dans ses priorités ?
+      a) La taille de l'organisation
+      b) La stratégie d'adoption des technologies
+      c) Les méthodes de mise en œuvre
+      d) Les problèmes liés aux SI
+
+ 9. Quelle obligation l'article 31 de la loi n° 2010/012 impose-t-il aux fournisseurs de contenus ?
+      a) Assurer la disponibilité des contenus et des données stockées
+      b) Obtenir une certification ISO
+      c) Héberger leurs données au Cameroun
+      d) Désigner un délégué à la protection des données
+
+10. Depuis quand la loi n° 2024/017 s'applique-t-elle pleinement, selon les présentations publiées ?
+      a) Le 23 décembre 2024
+      b) Le 1er janvier 2025
+      c) Le 23 juin 2026
+      d) Le 8 juin 2023
+
+11. Quelle est la première étape de la démarche de conception de COBIT 2019 ?
+      a) Comprendre le contexte et la stratégie de l'organisation
+      b) Conclure la conception
+      c) Affiner le périmètre
+      d) Évaluer la capacité des processus
+
+12. À quelle étape résout-on les conflits de priorités ?
+      a) À l'étape 1
+      b) À l'étape 2
+      c) À l'étape 3
+      d) À l'étape 4, conclure la conception
+
+13. Où COBIT recommande-t-il de reporter toutes les indications obtenues pendant la conception ?
+      a) Dans le registre des risques
+      b) Sur un canevas de conception
+      c) Dans le contrat du prestataire
+      d) Dans le rapport annuel
+
+14. Quel est le statut de la méthode de score présentée dans le chapitre ?
+      a) C'est la méthode officielle du Design Guide
+      b) C'est une exigence de la COBAC
+      c) C'est une méthode pédagogique simplifiée, distincte de l'outil officiel
+      d) C'est une norme ISO
+
+15. Selon la convention du cours, quelle capacité cible correspond à un score de 65 ?
+      a) Niveau 1
+      b) Niveau 2
+      c) Niveau 3
+      d) Niveau 4
+
+16. Scénario. Avec les poids 25, 25, 20, 15 et 15 %, DSS04 reçoit les notes 3, 3, 3, 3 et 1. Quel est son score ?
+      a) 90,0
+      b) 83,3
+      c) 100
+      d) 75,0
+
+17. Scénario. Le comité d'audit veut porter BAI06 au niveau 4. Quelle décision le comité stratégique prend-il ?
+      a) Niveau 4 immédiatement
+      b) Niveau 3 à dix-huit mois, puis réexamen, avec un indicateur trimestriel au comité d'audit
+      c) Niveau 2, faute de budget
+      d) Abandon de BAI06
+
+18. Quelle piste de résolution le chapitre propose-t-il pour le conflit entre contrôle et agilité ?
+      a) Ajouter des validations manuelles
+      b) Renoncer aux contrôles
+      c) Externaliser le développement
+      d) Automatiser les contrôles dans la chaîne de déploiement
+
+19. Scénario. NOUN PAY compte 45 salariés. Que dit le chapitre de l'usage de COBIT par cette entreprise ?
+      a) L'utiliser comme une liste de contrôle, avec cinq ou six objectifs et des capacités de niveau 2 ou 3
+      b) L'appliquer intégralement, comme une grande entreprise
+      c) Y renoncer complètement
+      d) Attendre d'avoir 250 salariés
+
+20. Selon l'encadré du DSI, qu'est-ce qui rend crédible un profil de conception présenté à la direction ?
+      a) Le nombre d'objectifs retenus
+      b) Le recours à un cabinet international
+      c) Le fait de montrer ce qui n'est pas retenu, et pourquoi
+      d) Le niveau 5 visé partout
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le niveau de capacité cible traduit l'importance d'un objectif pour l'organisation.
+      Vrai / Faux
+
+22. L'ANPP joue un rôle stratégique pour ses SI, au sens de COBIT.
+      Vrai / Faux
+
+23. Les organisations de moins de 50 salariés ne sont pas couvertes par le modèle COBIT 2019.
+      Vrai / Faux
+
+24. Les exigences de conformité de la BANQUE SANAGA sont classées « faibles ».
+      Vrai / Faux
+
+25. Avec onze facteurs et des correspondances génériques, certaines indications se contredisent inévitablement.
+      Vrai / Faux
+
+26. Les poids des facteurs sont une décision de gouvernance.
+      Vrai / Faux
+
+27. Un rapport professionnel peut présenter les seuils du cours comme les coefficients officiels du Design Guide.
+      Vrai / Faux
+
+28. Dans le profil de la BANQUE SANAGA, l'objectif APO04 (innovation) reçoit une capacité cible de niveau 1.
+      Vrai / Faux
+
+29. Le calcul du score décide seul de la capacité cible, sans intervention du comité.
+      Vrai / Faux
+
+30. Viser le niveau 4 sur dix objectifs avec une équipe de cinq personnes est un conflit entre ambition et moyens.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le niveau de capacité que l'organisation décide d'atteindre pour un processus s'appelle le niveau de capacité ______.
+
+32. COBIT 2019 retient ______ facteurs de conception.
+
+33. Le paysage des menaces peut être normal ou ______.
+
+34. Une organisation qui adopte les nouvelles technologies le plus tôt possible est un ______.
+
+35. La démarche de conception de COBIT 2019 compte ______ étapes.
+
+36. Le guide officiel de conception de COBIT 2019 s'appelle le ______ Guide.
+
+37. Selon la convention du cours, un score de 75 ou plus donne une capacité cible de niveau ______.
+
+38. Selon la convention du cours, un score inférieur à 25 donne une capacité cible de niveau ______.
+
+39. La loi camerounaise de 2024 sur les données personnelles porte le numéro 2024/______.
+
+40. Le calcul propose, la ______ décide.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

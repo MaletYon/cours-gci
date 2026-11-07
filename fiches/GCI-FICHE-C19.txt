@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C19
+Chapitre 19 : Gouvernance des données et de l'intelligence artificielle
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quel objectif COBIT 2019 est consacré à la gestion des données ?
+      a) APO12
+      b) APO14
+      c) DSS05
+      d) BAI09
+
+ 2. Qui est le propriétaire des données, selon la règle cardinale du chapitre ?
+      a) Un métier
+      b) La DSI
+      c) Le fournisseur de nuage
+      d) L'auditeur interne
+
+ 3. Quel rôle veille au quotidien à la définition et à la qualité des données ?
+      a) Le dépositaire
+      b) Le propriétaire
+      c) L'intendant des données
+      d) Le délégué à la protection des données
+
+ 4. Quel rôle assure le stockage, la sécurité et la sauvegarde des données ?
+      a) L'intendant
+      b) Le propriétaire
+      c) Le délégué à la protection des données
+      d) Le dépositaire
+
+ 5. Quelle dimension de la qualité est en cause quand un fournisseur est enregistré trois fois à l'ANPP ?
+      a) L'exactitude
+      b) L'unicité
+      c) L'actualité
+      d) La validité
+
+ 6. Quelle dimension de la qualité est en cause quand les revenus manquent dans 18 % des dossiers de crédit ?
+      a) La cohérence
+      b) La validité
+      c) La complétude
+      d) L'exactitude
+
+ 7. Quelle dimension de la qualité est en cause quand la position d'un conteneur date de six heures ?
+      a) L'actualité
+      b) L'unicité
+      c) La cohérence
+      d) La complétude
+
+ 8. Que dit le chapitre de la conservation des données « au cas où » ?
+      a) C'est une bonne pratique
+      b) C'est une obligation légale
+      c) C'est neutre
+      d) Ce n'est pas une politique, c'est un risque
+
+ 9. Pourquoi un système d'IA appelle-t-il une gouvernance propre ?
+      a) Parce qu'il coûte plus cher
+      b) Parce qu'il apprend des données, s'explique mal et dérive avec le temps
+      c) Parce qu'il est toujours hébergé à l'étranger
+      d) Parce qu'il remplace le DSI
+
+10. Quelle norme certifiable définit un système de management de l'IA ?
+      a) ISO/IEC 38507
+      b) ISO/IEC 23894
+      c) ISO/IEC 42001
+      d) ISO 31000
+
+11. Quelle norme traite des implications de l'usage de l'IA pour l'organe de gouvernance, dans le prolongement de l'ISO/IEC 38500 ?
+      a) ISO/IEC 38507
+      b) ISO/IEC 42001
+      c) ISO/IEC 27018
+      d) ISO/IEC 20000-1
+
+12. Quelles sont les quatre fonctions du NIST AI RMF 1.0 ?
+      a) Évaluer, diriger, surveiller, améliorer
+      b) Planifier, réaliser, vérifier, agir
+      c) Identifier, protéger, détecter, répondre
+      d) Gouverner, cartographier, mesurer, gérer
+
+13. Quand la Recommandation de l'UNESCO sur l'éthique de l'IA a-t-elle été adoptée ?
+      a) Novembre 2019
+      b) Novembre 2021
+      c) Juin 2023
+      d) Janvier 2024
+
+14. Comment le règlement (UE) 2024/1689 classe-t-il l'évaluation de la solvabilité des personnes physiques ?
+      a) Risque minimal
+      b) Interdite
+      c) À haut risque
+      d) Hors champ
+
+15. Comment se calcule le ratio d'impact disproportionné ?
+      a) Taux de décisions favorables du groupe le moins favorisé divisé par celui du plus favorisé
+      b) Taux de refus moyen divisé par 2
+      c) Nombre de refus divisé par le nombre de demandes
+      d) Taux d'erreur du modèle multiplié par 100
+
+16. Quel seuil la « règle des quatre cinquièmes » retient-elle comme signal d'alerte ?
+      a) Un ratio supérieur à 1
+      b) Un ratio inférieur à 0,5
+      c) Un ratio égal à 1
+      d) Un ratio inférieur à 0,8
+
+17. Scénario. Avec 39 % d'acceptation dans la région et 76 % en moyenne nationale, quel est le ratio d'impact de NOUN PAY ?
+      a) 0,8
+      b) 0,51
+      c) 0,24
+      d) 1,95
+
+18. Quel risque d'un système d'IA désigne la dégradation de ses performances avec le temps ?
+      a) Le biais
+      b) La robustesse
+      c) La dérive
+      d) L'explicabilité
+
+19. Comment prouve-t-on l'absence de biais d'un modèle, selon la règle du chapitre ?
+      a) En mesurant les résultats par groupe
+      b) En retirant la variable « région »
+      c) En faisant certifier le modèle
+      d) En le faisant valider par un analyste
+
+20. Quelle mesure de gouvernance permet à une personne refusée de demander un réexamen ?
+      a) L'inventaire des modèles
+      b) La classification
+      c) La surveillance en production
+      d) Le recours humain
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La DSI décide de ce que les données signifient et de l'usage qui en est fait.
+      Vrai / Faux
+
+22. APO14 couvre tout le cycle de vie des données, de leur création à leur archivage.
+      Vrai / Faux
+
+23. Les données de connexion doivent être conservées dix ans selon l'article 29 de la loi n° 2010/012.
+      Vrai / Faux
+
+24. Le règlement européen sur l'IA s'applique au Cameroun en tant que tel.
+      Vrai / Faux
+
+25. La Recommandation de l'UNESCO est le premier instrument normatif mondial sur l'éthique de l'IA.
+      Vrai / Faux
+
+26. Le seuil de 0,8 a une valeur juridique au Cameroun.
+      Vrai / Faux
+
+27. Un modèle réentraîné est un nouveau modèle.
+      Vrai / Faux
+
+28. Retirer la variable « région » d'un modèle suffit à éliminer le biais régional.
+      Vrai / Faux
+
+29. La notation de crédit, qui décide de l'accès à un service financier, est un usage à risque élevé.
+      Vrai / Faux
+
+30. Un analyste qui valide deux cents dossiers par jour garantit à coup sûr une surveillance humaine réelle.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le rôle anglais de data steward se traduit par ______ des données.
+
+32. Le cours retient ______ dimensions de la qualité des données.
+
+33. La dimension qui vérifie que la donnée reflète la réalité est l'______.
+
+34. La pratique APO14.02 consiste à tenir un glossaire ______.
+
+35. La norme ISO/IEC ______ traite du management des risques liés à l'IA.
+
+36. Le sigle de l'institut américain qui publie l'AI RMF est ______.
+
+37. La règle selon laquelle un ratio inférieur à 0,8 est suspect s'appelle la règle des quatre ______.
+
+38. La variable du modèle de NOUN PAY corrélée à la région est l'______ mobile.
+
+39. Pour chaque modèle à risque élevé, il faut désigner un ______ dans la matrice RACI.
+
+40. Le taux de refus de NOUN PAY dans la région concernée est de ______ %.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

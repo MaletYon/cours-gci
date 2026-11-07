@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C14
+Chapitre 14 : Changements, mises en production et configuration
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quel est le but de la pratique d'habilitation des changements dans ITIL 4 ?
+      a) Réduire au minimum le nombre de changements
+      b) Maximiser le nombre de changements réussis, en évaluant les risques et en autorisant les changements
+      c) Confier tous les changements au comité
+      d) Supprimer les changements urgents
+
+ 2. Quel type de changement, à faible risque et bien connu, est autorisé d'avance ?
+      a) Le changement standard
+      b) Le changement normal
+      c) Le changement urgent
+      d) Le changement majeur
+
+ 3. Comment s'appelait la pratique d'habilitation des changements dans la première édition d'ITIL 4 ?
+      a) Change advisory
+      b) Release control
+      c) Change control
+      d) Configuration control
+
+ 4. Scénario. 35 % des changements de 2025 de la BANQUE SANAGA étaient enregistrés comme urgents. Qu'indique ce taux ?
+      a) Une grande agilité
+      b) Une bonne maîtrise des risques
+      c) Un respect de BAI06
+      d) Un indicateur d'alerte : les équipes contournent probablement le comité
+
+ 5. Comment ITIL 4 désigne-t-il la personne ou le groupe qui autorise un changement ?
+      a) Le propriétaire du service
+      b) L'autorité de changement
+      c) Le gestionnaire des incidents
+      d) Le comité de pilotage
+
+ 6. Par qui la délégation de l'autorisation des changements selon le risque doit-elle être approuvée ?
+      a) Par l'infogérant
+      b) Par le centre de services
+      c) Par la gouvernance, par écrit
+      d) Par l'éditeur
+
+ 7. Dans la grille de la BANQUE SANAGA, quelle autorité correspond à un score de 6 à 9 ?
+      a) Le responsable de l'équipe concernée
+      b) Le responsable des changements, après avis du RSSI
+      c) Le comité des changements
+      d) Le conseil d'administration
+
+ 8. Scénario. Quel score la bascule de mars 2026 obtient-elle sur la grille de la BANQUE SANAGA ?
+      a) 12 sur 18
+      b) 14 sur 18
+      c) 6 sur 18
+      d) 18 sur 18
+
+ 9. À quoi servent les périodes de gel du calendrier des changements ?
+      a) À accélérer les changements urgents
+      b) À éviter les changements pendant les moments sensibles, comme la clôture des comptes
+      c) À tester les retours arrière
+      d) À former les équipes
+
+10. Quelle pratique COBIT traite des changements d'urgence ?
+      a) BAI06.01
+      b) BAI06.04
+      c) BAI06.02
+      d) BAI07.02
+
+11. Quelle pratique ITIL 4 transfère les composants vers les environnements cibles ?
+      a) La gestion des déploiements
+      b) La gestion des mises en production
+      c) L'habilitation des changements
+      d) La gestion de la configuration
+
+12. Quelle stratégie de mise en production fait passer tout le monde au nouveau système au même moment ?
+      a) Le pilote
+      b) Le fonctionnement en parallèle
+      c) Le déploiement progressif
+      d) La bascule unique
+
+13. Quelle stratégie fait tourner ensemble l'ancien et le nouveau système pendant une période ?
+      a) La bascule unique
+      b) Le fonctionnement en parallèle
+      c) Le déploiement par étapes
+      d) Le canary
+
+14. Quand un plan de retour arrière existe-t-il vraiment ?
+      a) Quand il est écrit
+      b) Quand l'éditeur le garantit
+      c) Quand il a été testé
+      d) Quand le comité l'a lu
+
+15. Quelle pratique de BAI07 a fait défaut à la BANQUE SANAGA ?
+      a) BAI07.02, planifier la conversion des processus, des systèmes et des données
+      b) BAI07.07, soutien renforcé au démarrage
+      c) BAI07.08, revue après la mise en œuvre
+      d) BAI07.06, gestion des versions
+
+16. Selon les critères « go / no-go », combien de critères non remplis suffisent à décider « no-go » ?
+      a) Trois
+      b) La moitié
+      c) Tous
+      d) Un seul
+
+17. Scénario. Quelle stratégie la BANQUE SANAGA retient-elle pour la bascule de 2027 ?
+      a) Une nouvelle bascule unique
+      b) Une agence pilote, puis quatre vagues, avec fonctionnement en parallèle
+      c) Un déploiement canary sur le trafic web
+      d) Aucune bascule
+
+18. Qu'est-ce que la CMDB enregistre surtout, au-delà des éléments de configuration ?
+      a) Leur prix d'achat
+      b) Leur amortissement
+      c) Leurs relations
+      d) Leurs fournisseurs
+
+19. Quelle différence fait le cours entre gestion des actifs et gestion de la configuration ?
+      a) L'actif porte sur la valeur et le cycle de vie financier, la configuration sur le rôle dans le service et les relations
+      b) Il n'y a aucune différence
+      c) La configuration porte sur l'amortissement
+      d) L'actif porte sur les relations entre composants
+
+20. Comment la CMDB doit-elle être tenue à jour ?
+      a) Par un inventaire automatique unique
+      b) Par l'éditeur de l'outil
+      c) Une fois par an par l'audit
+      d) Par le processus de changement, chaque changement clos mettant à jour les éléments concernés
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un changement urgent est un changement non contrôlé.
+      Vrai / Faux
+
+22. Une organisation où chaque changement attend trois semaines l'avis d'un comité finit souvent par contourner la procédure.
+      Vrai / Faux
+
+23. La grille n'aurait pas empêché la bascule, mais elle aurait obligé quelqu'un à la décider par écrit.
+      Vrai / Faux
+
+24. Dans la grille de la BANQUE SANAGA, chaque critère est noté de 1 à 5.
+      Vrai / Faux
+
+25. On peut déployer un logiciel sans le rendre immédiatement disponible aux utilisateurs.
+      Vrai / Faux
+
+26. La bascule unique est la stratégie de mise en production la moins risquée.
+      Vrai / Faux
+
+27. Quand le retour arrière est impossible, le risque peut être accepté formellement par l'instance compétente.
+      Vrai / Faux
+
+28. Un contrat ou une documentation peuvent être des éléments de configuration.
+      Vrai / Faux
+
+29. Une CMDB fausse n'est pas un risque, puisqu'elle n'est qu'un outil.
+      Vrai / Faux
+
+30. Les organisations DevOps renoncent à tout contrôle des changements.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'objectif COBIT « Gérer les changements informatiques » porte le code ______.
+
+32. L'objectif COBIT « Gérer la configuration » porte le code ______.
+
+33. Le sigle anglais du comité des changements est ______.
+
+34. Le sigle de la base de données de gestion de la configuration est ______.
+
+35. Le document qui planifie les changements autorisés et en informe les parties s'appelle le ______ des changements.
+
+36. L'ensemble des actions qui permettent de revenir à l'état antérieur si un changement échoue est le plan de retour ______.
+
+37. La stratégie qui envoie d'abord une petite part du trafic vers la nouvelle version s'appelle le déploiement ______.
+
+38. Le correctif du logiciel de suivi de KRIBILOG obtient un score de ______ sur la grille.
+
+39. L'objectif COBIT de l'acceptation et de la transition des changements porte le code ______.
+
+40. Sur la grille de la BANQUE SANAGA, le score total varie de 6 à ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

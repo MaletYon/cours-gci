@@ -1,0 +1,563 @@
+% ============================================================================
+% Fichier  : partie1/P01_C04_panorama_referentiels.tex
+% Titre    : Panorama et Articulation des Référentiels
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+
+\chapter{Panorama et Articulation des Référentiels}
+\label{chap:referentiels}
+\chaptermark{Panorama des référentiels}
+
+\epigraph{%
+    « Un référentiel ne pense pas à votre place.\\
+    Il vous évite seulement d'oublier ce que d'autres ont appris à leurs
+    dépens. »%
+}{Adage des praticiens de la gouvernance}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:alignement} (alignement, droits de
+    décision, trois finalités de la gouvernance).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Situer COBIT, ITIL, ISO/IEC~38500, ISO/IEC~20000, ISO/IEC~27001,
+          COSO, CMMI, TOGAF et PMBOK.
+    \item Distinguer cadre, norme certifiable et bonnes pratiques.
+    \item Associer chaque référentiel au besoin qu'il couvre.
+    \item Construire une carte d'articulation des référentiels pour une
+          organisation donnée.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : faut-il tout appliquer~?}
+% ============================================================================
+
+Après la panne, le conseil d'administration de la BANQUE SANAGA reçoit en
+trois semaines quatre propositions de cabinets de conseil. La première
+propose « une mise en conformité COBIT », la deuxième « un déploiement
+ITIL », la troisième « une certification ISO~27001 », la quatrième « un
+programme de maturité CMMI ». Chacune promet de régler le problème. Le
+président du conseil demande à la nouvelle responsable GRC~: « Faut-il
+tout faire~? Dans quel ordre~? Et ces référentiels se contredisent-ils~? »
+
+Ce chapitre répond à ces questions. Il commence par distinguer les natures
+de référentiels (section~\ref{sec:c04-natures}), présente ensuite les
+principaux d'entre eux, regroupés par besoin
+(sections~\ref{sec:c04-gouvernance} à~\ref{sec:c04-projets}), puis montre
+comment les articuler en une carte cohérente
+(section~\ref{sec:c04-carte}). La réponse courte est~: \textbf{non, il ne
+faut pas tout appliquer}, et les référentiels sérieux ne se contredisent
+pas~: ils se répartissent le travail.
+
+\separateur
+
+% ============================================================================
+\section{Trois Natures de Référentiels}
+\label{sec:c04-natures}
+% ============================================================================
+
+\subsection{Cadre, norme, bonnes pratiques}
+
+Le mot « référentiel » recouvre des documents de nature très différente.
+Les confondre conduit à des promesses impossibles, comme celle d'une
+« certification COBIT » d'entreprise, qui n'existe pas.
+
+\begin{boxdef}
+\termecle{Cadre de référence}\index{cadre de référence}
+(\textit{framework})~: ensemble structuré de principes, de concepts et
+d'objectifs qui organise un domaine et guide sa mise en œuvre, sans
+imposer d'exigences vérifiables par un tiers. Exemples~: COBIT, COSO.
+
+\medskip
+\termecle{Norme certifiable}\index{norme certifiable}
+(\textit{certifiable standard})~: norme qui formule des \emph{exigences}
+(le verbe « doit »), dont le respect peut être audité par un organisme de
+certification accrédité, qui délivre alors un certificat à
+l'organisation. Exemples~: ISO/IEC~27001, ISO/IEC~20000-1, ISO~22301.
+
+\medskip
+\termecle{Recueil de bonnes pratiques}\index{bonnes pratiques}
+(\textit{body of knowledge, guidance})~: ensemble de pratiques reconnues,
+présentées comme des recommandations (« il convient de »), que
+l'organisation adapte librement. Exemples~: ITIL, PMBOK, ISO/IEC~27002,
+ISO~31000.
+\end{boxdef}
+
+\subsection{Certifier une organisation, certifier une personne}
+
+La seconde confusion porte sur ce qui est certifié. Une organisation peut
+être certifiée conforme à une norme d'exigences. Une personne peut être
+certifiée compétente dans un référentiel. Les deux n'ont pas la même
+portée.
+
+\begin{tableaucours}{L{3.0cm}L{4.4cm}L{4.8cm}}{%
+    \tableauHeader{Référentiel} &
+    \tableauHeader{Certification de l'organisation} &
+    \tableauHeader{Certification des personnes (exemples)}
+}
+COBIT & Non (évaluation de capacité possible) & COBIT Foundation, CGEIT,
+CISA (ISACA) \\
+ITIL & Non (voir ISO/IEC~20000-1) & ITIL Foundation et niveaux supérieurs
+(PeopleCert) \\
+ISO/IEC 20000-1 & Oui & Auditeur ou responsable de mise en œuvre \\
+ISO/IEC 27001 & Oui & Auditeur ou responsable de mise en œuvre \\
+ISO/IEC 38500 & Non & Formations spécialisées \\
+COSO & Non & Certificats de l'IIA et d'autres organismes \\
+CMMI & Évaluation de niveau de maturité (pas une certification ISO) &
+Évaluateurs agréés \\
+TOGAF & Non & TOGAF (The Open Group) \\
+PMBOK & Non & PMP et autres (PMI) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~4.1. Ce qui se certifie, et pour qui}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Une organisation obtient la certification
+ISO~27001 et en conclut que sa gouvernance des SI est « conforme ». Or le
+périmètre du certificat peut ne couvrir qu'un centre de données, et la
+norme ne traite que du management de la sécurité de l'information~: elle
+ne dit rien de la valeur des investissements ni de la qualité des
+services.
+
+\smallskip
+\textbf{Règle~:} lire toujours le \emph{périmètre} d'un certificat, et ne
+jamais confondre la certification d'un système de management avec une
+gouvernance des SI d'ensemble.
+\end{boxalert}
+
+\subsection{Le cadre légal camerounais}
+
+Une certification volontaire ne remplace pas les obligations légales.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012} du 21~décembre~2010 relative à la
+cybersécurité et la cybercriminalité au Cameroun, article~11} (version
+anglaise officielle)~:
+
+\medskip
+\textit{« The following activities may be subject to authorization:
+\textelp{} the provision of security auditing, security programs editing,
+and other authorized security services to the public. »}
+
+\medskip
+Soit~: la fourniture au public de services d'audit de sécurité peut être
+soumise à autorisation.
+
+\medskip
+\textbf{Portée.} Au Cameroun, l'audit de sécurité des systèmes
+d'information n'est pas une activité libre au même titre que le conseil
+en organisation. Les articles~13 et~32 de la même loi
+(Chapitre~\ref{chap:prologue}) rendent par ailleurs cet audit obligatoire
+pour certains systèmes. Un certificat ISO/IEC~27001, délivré par un
+organisme étranger, ne dispense donc pas des audits prévus par la loi~:
+les deux démarches coexistent, et une bonne gouvernance les coordonne. Le
+Chapitre~\ref{chap:droit} précisera les textes d'application.
+\end{boxjuris}
+
+% ============================================================================
+\section{Les Référentiels de la Gouvernance}
+\label{sec:c04-gouvernance}
+% ============================================================================
+
+\subsection{COBIT : le cadre de gouvernance et de management}
+
+COBIT est publié par l'ISACA, association internationale des
+professionnels de l'audit et de la gouvernance des SI. Né en 1996 comme
+un référentiel de \emph{contrôle} à l'usage des auditeurs, il est devenu
+un cadre de \emph{gouvernance et de management} de l'ensemble de
+l'information et des technologies de l'organisation. Sa version
+actuelle, COBIT~2019~\cite{isaca2018cobitintro}, compte 40~objectifs
+répartis entre un domaine de gouvernance (EDM) et quatre domaines de
+management (APO, BAI, DSS, MEA). Elle fait l'objet de la
+Partie~\ref{part:cobit}.
+
+\textbf{Sa force}~: c'est le seul référentiel qui couvre de bout en bout
+le domaine, de la décision du conseil au contrôle de l'exploitation. Il
+sert de « référentiel parapluie » sous lequel les autres viennent se
+ranger. \textbf{Sa limite}~: il dit \emph{quoi} maîtriser, rarement
+\emph{comment} le faire en détail.
+
+\subsection{ISO/IEC 38500 : les principes pour l'organe de gouvernance}
+
+La norme ISO/IEC~38500 s'adresse directement à l'organe de gouvernance
+(conseil d'administration, direction). Sa troisième édition date de
+février~2024~\cite{iso38500_2024}. Courte, elle ne décrit pas de
+processus, mais des principes et un modèle de gouvernance fondé sur trois
+tâches~: \emph{évaluer}, \emph{diriger}, \emph{surveiller}. Elle n'est
+pas certifiable. Elle est étudiée au Chapitre~\ref{chap:normes}.
+
+\subsection{COSO : le contrôle interne et la gestion des risques}
+
+Le Committee of Sponsoring Organizations of the Treadway Commission
+(\sigle{COSO}) publie deux cadres de référence. Le premier, sur le
+\emph{contrôle interne} (1992, mis à jour en 2013), est la référence des
+auditeurs et des régulateurs financiers, notamment pour la loi
+Sarbanes-Oxley. Le second, sur la \emph{gestion des risques de
+l'entreprise} (2004, refondu en 2017 sous le titre \emph{Enterprise Risk
+Management: Integrating with Strategy and Performance}), relie le risque à
+la stratégie et à la performance~\cite{coso2017erm}. COSO n'est pas
+propre à l'informatique, mais la gouvernance des SI s'y inscrit~: les
+contrôles généraux informatiques font partie du contrôle interne.
+
+% ============================================================================
+\section{Les Référentiels des Services et de la Sécurité}
+\label{sec:c04-services}
+% ============================================================================
+
+\subsection{ITIL : les bonnes pratiques de la gestion des services}
+
+ITIL est né à la fin des années 1980 au sein de l'administration
+britannique, qui cherchait à rationaliser la gestion de ses services
+informatiques. Ses versions successives l'ont fait passer d'un catalogue
+de processus (version~2) à un cycle de vie des services (version~3, 2007),
+puis à un système de valeur des services organisé en pratiques
+(ITIL~4, 2019). Il est aujourd'hui la propriété de PeopleCert, qui a
+lancé en 2026 \emph{ITIL version~5}~\cite{peoplecert2026itil5}.
+
+\textbf{Sa force}~: une description détaillée et éprouvée de la manière de
+gérer les services au quotidien (incidents, changements, niveaux de
+service\ldots). \textbf{Sa limite}~: il ne traite la gouvernance qu'à la
+marge, et ce n'est pas une norme~: on ne « certifie » pas une organisation
+ITIL.
+
+\begin{boiteRemarque}{De ITIL~4 à ITIL version~5}
+ITIL version~5 a été annoncée par PeopleCert en janvier~2026, et ses
+modules de formation sont publiés progressivement depuis. Selon la
+présentation de l'éditeur, elle passe d'une approche centrée sur la
+gestion des services à une approche intégrée des \emph{produits et des
+services numériques}, couvre leur cycle de vie de bout en bout, et se
+veut conçue d'emblée pour un environnement où l'intelligence artificielle
+est omniprésente~\cite{peoplecert2026itil5}. Elle conserve les sept
+principes directeurs et l'essentiel des pratiques d'ITIL~4. ITIL~4 reste
+commercialisé et ses certifications restent reconnues pendant la
+transition.
+
+\smallskip
+Ce cours s'appuie sur \textbf{ITIL~4} dans la Partie~\ref{part:pratique}~:
+c'est la version documentée par des sources publiques, et celle que
+pratiquent aujourd'hui les organisations. Le Chapitre~\ref{chap:itil-svs}
+situera ITIL version~5 par rapport à elle.
+\end{boiteRemarque}
+
+\subsection{ISO/IEC 20000-1 : la norme du management des services}
+
+ISO/IEC~20000-1 formule les exigences d'un \emph{système de management des
+services}. Elle est certifiable, et c'est par elle qu'une organisation
+peut faire reconnaître par un tiers la qualité de sa gestion des services.
+Ses exigences sont très proches des pratiques d'ITIL, dont elle est
+historiquement issue~: ITIL dit \emph{comment faire}, ISO/IEC~20000-1 dit
+\emph{ce qui doit être démontré}.
+
+\subsection{ISO/IEC 27001 et 27002 : la sécurité de l'information}
+
+ISO/IEC~27001 formule les exigences d'un \emph{système de management de la
+sécurité de l'information} (\sigle{SMSI}) et est certifiable. ISO/IEC~27002
+détaille les mesures de sécurité qui peuvent y être mises en œuvre. Leur
+édition en vigueur date de 2022. Elles s'appuient sur une appréciation des
+risques, que précise ISO/IEC~27005. La famille ISO/IEC~27000 sera reprise
+au Chapitre~\ref{chap:normes}.
+
+\subsection{ISO 22301 et ISO 31000 : continuité et risques}
+
+ISO~22301 formule les exigences d'un système de management de la
+continuité d'activité et est certifiable. ISO~31000 donne des lignes
+directrices générales sur le management du risque, applicables à tout
+type de risque, et n'est pas certifiable.
+
+% ============================================================================
+\section{Architecture, Projets et Maturité}
+\label{sec:c04-projets}
+% ============================================================================
+
+\subsection{TOGAF : l'architecture d'entreprise}
+
+TOGAF, publié par The Open Group, est le cadre de référence le plus
+répandu en \termecle{architecture d'entreprise}\index{architecture
+d'entreprise}~: la description cohérente des processus métier, des
+données, des applications et des technologies d'une organisation, et de
+leur évolution. Son cœur est une méthode de développement de
+l'architecture (\textit{Architecture Development Method}, \sigle{ADM}).
+TOGAF répond à la deuxième décision de Weill et Ross~: l'architecture
+(Chapitre~\ref{chap:alignement}).
+
+\subsection{PMBOK et PRINCE2 : la gestion de projet}
+
+Le \textit{Guide to the Project Management Body of Knowledge}
+(\sigle{PMBOK}), publié par le Project Management Institute, et la
+méthode PRINCE2, d'origine britannique, sont les deux grandes références
+de la gestion de projet. Le premier est un recueil de connaissances et de
+principes~; la seconde, une méthode structurée en processus et en rôles.
+Ils outillent l'objectif COBIT BAI11 (gérer les projets).
+
+\subsection{CMMI : la maturité des processus}
+
+Le CMMI (\textit{Capability Maturity Model Integration}), né à
+l'université Carnegie Mellon pour évaluer les fournisseurs de logiciels du
+département de la Défense américain, est aujourd'hui géré par l'ISACA. Il
+décrit des niveaux de maturité, de~1 (processus improvisés) à~5
+(processus en amélioration continue). COBIT~2019 s'en inspire directement
+pour son modèle de capacité des processus (Chapitre~\ref{chap:cobit-capacite}).
+
+% ============================================================================
+\section{À Chaque Besoin son Référentiel}
+\label{sec:c04-besoins}
+% ============================================================================
+
+Le choix d'un référentiel ne part pas du référentiel, mais du besoin.
+
+\begin{tableaucours}{L{4.4cm}L{3.8cm}L{4.0cm}}{%
+    \tableauHeader{Besoin de l'organisation} &
+    \tableauHeader{Référentiel principal} &
+    \tableauHeader{Compléments}
+}
+Organiser la gouvernance du conseil & ISO/IEC 38500, COBIT (EDM) & King~IV,
+principes OCDE \\
+Couvrir l'ensemble du management des SI & COBIT 2019 & · \\
+Fiabiliser le contrôle interne & COSO (contrôle interne) & COBIT (MEA02) \\
+Gérer les risques de l'entreprise & COSO ERM, ISO 31000 & COBIT (EDM03,
+APO12) \\
+Gérer les services au quotidien & ITIL & ISO/IEC 20000-1 \\
+Faire reconnaître la qualité des services & ISO/IEC 20000-1 & ITIL \\
+Sécuriser l'information & ISO/IEC 27001 et 27002 & COBIT (APO13, DSS05) \\
+Assurer la continuité & ISO 22301 & ITIL, COBIT (DSS04) \\
+Cohérence des systèmes & TOGAF & COBIT (APO03) \\
+Conduire les projets & PMBOK, PRINCE2 & COBIT (BAI01, BAI11) \\
+Améliorer la maturité des processus & CMMI & COBIT (capacité) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~4.2. Correspondance entre besoins et
+référentiels}\end{center}
+
+\begin{boxobjet}{APO01 · Gérer le cadre de management des SI}
+\textbf{Finalité~:} concevoir le système de management de l'information
+et des technologies de l'organisation, et en garantir la cohérence avec
+ses objectifs.
+
+\textbf{Pratiques (extrait)~:} concevoir le système de management~;
+communiquer les objectifs et l'orientation~; définir la structure
+organisationnelle~; définir et entretenir les politiques et procédures.
+
+\textbf{Sorties~:} politiques et procédures, définition des rôles,
+\emph{choix et articulation des référentiels retenus}.
+
+\textbf{RACI (extrait)~:} \emph{A} au directeur général, \emph{R} au DSI,
+\emph{C} au responsable GRC et au RSSI.
+
+\textbf{Indicateurs~:} part des politiques à jour et approuvées~;
+couverture des processus par un référentiel identifié.
+\end{boxobjet}
+{\small\itshape Intitulé traduit par nos soins à partir de
+COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+% ============================================================================
+\section{La Carte d'Articulation}
+\label{sec:c04-carte}
+% ============================================================================
+
+\subsection{Trois niveaux}
+
+Les référentiels s'articulent naturellement en trois niveaux. Au
+sommet, ceux qui s'adressent à l'organe de gouvernance. Au milieu, le
+cadre qui organise l'ensemble du management des SI. À la base, les
+référentiels spécialisés, chacun sur son domaine.
+
+\begin{center}
+\begin{tikzpicture}[
+    niv/.style = {
+        draw=CouleurPrimaire, fill=CouleurPrimaire, rounded corners=4pt,
+        minimum width=12.6cm, minimum height=0.9cm, align=center,
+        font=\footnotesize\bfseries\color{white}
+    },
+    mil/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        minimum width=12.6cm, minimum height=0.9cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    spe/.style = {
+        draw=CouleurBordDef, fill=white, rounded corners=3pt,
+        text width=1.4cm, minimum height=1.3cm, align=center,
+        anchor=north, inner sep=2pt,
+        font=\tiny\bfseries\color{CouleurPrimaire}
+    }
+]
+\node[niv] (g) at (0,2.6) {Gouvernance~: ISO/IEC 38500 · COBIT (EDM) ·
+    COSO · King~IV};
+\node[mil] (m) at (0,1.3) {Management des SI~: COBIT 2019 (APO · BAI ·
+    DSS · MEA)};
+\node[spe] at (-5.4,0.6) {Services\\ ITIL\\ ISO 20000};
+\node[spe] at (-3.6,0.6) {Sécurité\\ ISO 27001\\ ISO 27002};
+\node[spe] at (-1.8,0.6) {Continuité\\ ISO 22301};
+\node[spe] at (0,0.6)    {Risques\\ ISO 31000\\ COSO ERM};
+\node[spe] at (1.8,0.6)  {Architecture\\ TOGAF};
+\node[spe] at (3.6,0.6)  {Projets\\ PMBOK\\ PRINCE2};
+\node[spe] at (5.4,0.6)  {Maturité\\ CMMI};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~4.1. La carte d'articulation des
+référentiels}\end{center}
+
+La règle d'articulation est simple~: \textbf{COBIT fixe les objectifs, les
+référentiels spécialisés fournissent les pratiques}. COBIT~2019 le prévoit
+lui-même~: pour chacun de ses objectifs, il indique les normes et
+référentiels qui le détaillent.
+
+\subsection{Construire la carte d'une organisation}
+
+\begin{boxscenario}{Opération SANAGA. La carte de la banque}
+La responsable GRC de la BANQUE SANAGA propose au conseil la carte
+suivante, à partir des défaillances du prologue et des exigences de la
+COBAC.
+\begin{enumerate}
+    \item \textbf{Gouvernance}~: principes de l'ISO/IEC~38500 dans la
+          charte du comité stratégique des SI, objectifs EDM de COBIT.
+    \item \textbf{Management}~: COBIT~2019 comme cadre unique, avec une
+          évaluation de capacité sur les objectifs prioritaires
+          (Partie~\ref{part:cobit}).
+    \item \textbf{Services}~: les pratiques ITIL de gestion des
+          changements, des mises en production et des incidents, en
+          priorité.
+    \item \textbf{Continuité}~: un plan conforme à ISO~22301, sans viser la
+          certification dans un premier temps.
+    \item \textbf{Sécurité}~: un SMSI conforme à ISO/IEC~27001, avec une
+          certification visée à trois ans sur le périmètre des systèmes de
+          paiement.
+\end{enumerate}
+\textbf{Ce qui est écarté, et pourquoi.} Le programme CMMI proposé par un
+cabinet n'est pas retenu~: le modèle de capacité de COBIT suffit au
+besoin de mesure, et la banque ne développe pas elle-même ses logiciels.
+\end{boxscenario}
+
+\begin{boxprocedure}
+\textbf{La carte des référentiels, pièce de gouvernance.} Pour qu'un
+auditeur puisse établir que le choix des référentiels est maîtrisé, il
+doit trouver~:
+\begin{itemize}
+    \item un document qui liste les référentiels retenus, leur rôle et leur
+          édition de référence~;
+    \item la décision qui l'approuve, et sa date~;
+    \item pour chaque norme certifiable visée, le périmètre et l'échéance~;
+    \item la liste des référentiels écartés, avec la raison~;
+    \item une date de revue, pour suivre les nouvelles éditions.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Choisir les référentiels sans les empiler}
+\begin{enumerate}
+    \item Partir des besoins et des obligations (lois, régulateur, clients),
+          jamais de l'offre des cabinets.
+    \item Retenir un cadre unique de gouvernance et de management, puis un
+          référentiel spécialisé par domaine.
+    \item Ne viser une certification que si un tiers l'exige ou si elle
+          apporte un avantage identifié, et toujours sur un périmètre
+          défini.
+    \item Suivre les éditions~: une politique rédigée sur une édition
+          périmée expose à des écarts lors de l'audit.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boiteRemarque}{Les référentiels importés sont-ils adaptés à l'Afrique~?}
+Les référentiels internationaux ont été conçus pour des organisations
+dotées de moyens, de compétences et de marchés de prestataires que
+beaucoup d'organisations camerounaises n'ont pas. Ce n'est pas une raison
+de les écarter, mais d'en faire un usage \emph{proportionné}~: retenir les
+objectifs essentiels, viser des niveaux de capacité réalistes, et
+privilégier les pratiques qui traitent les risques locaux les plus
+probables (dépendance aux prestataires, coupures d'énergie, rareté des
+compétences). COBIT~2019 offre précisément cet outil d'adaptation avec
+ses facteurs de conception (Chapitre~\ref{chap:cobit-conception}).
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Trois natures}~: les cadres (COBIT, COSO) organisent, les
+          normes certifiables (ISO/IEC~27001, 20000-1, ISO~22301) exigent,
+          les recueils de bonnes pratiques (ITIL, PMBOK, ISO/IEC~27002)
+          recommandent.
+    \item \textbf{Certifier une organisation n'est pas certifier une
+          personne}~: il n'existe pas de certification COBIT ou ITIL d'une
+          entreprise.
+    \item \textbf{Lire le périmètre}~: un certificat ne vaut que pour le
+          périmètre qu'il désigne.
+    \item \textbf{Trois niveaux}~: gouvernance (ISO/IEC~38500, COBIT EDM,
+          COSO), management (COBIT~2019), domaines spécialisés (ITIL,
+          ISO~27001, ISO~22301, TOGAF, PMBOK, CMMI\ldots).
+    \item \textbf{COBIT fixe les objectifs, les autres fournissent les
+          pratiques}~: ils ne se contredisent pas, ils se répartissent le
+          travail.
+    \item \textbf{Partir du besoin}~: une carte d'articulation se construit à
+          partir des risques et des obligations, et se révise à chaque
+          nouvelle édition.
+    \item \textbf{La loi s'ajoute aux normes}~: au Cameroun, les audits de
+          sécurité prévus par la loi n°~2010/012 coexistent avec les
+          certifications volontaires.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.1. Quelle nature~? \niveaubase}]
+Pour chacun des documents suivants, indiquez s'il s'agit d'un cadre de
+référence, d'une norme certifiable ou d'un recueil de bonnes pratiques, et
+si une organisation peut être certifiée sur sa base.
+\begin{enumerate}[(a)]
+    \item ISO/IEC~27001.
+    \item ITIL.
+    \item COSO ERM.
+    \item ISO/IEC~20000-1.
+    \item ISO~31000.
+    \item COBIT~2019.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.2. Lire un certificat \niveaumoyen}]
+Un prestataire candidat à l'infogérance de KRIBILOG SA joint à son offre
+un certificat ISO/IEC~27001 dont le périmètre est~: « Hébergement des
+serveurs du centre de données de Casablanca ». Le service proposé à
+KRIBILOG serait exploité depuis Douala.
+\begin{enumerate}[(a)]
+    \item Que prouve ce certificat, et que ne prouve-t-il pas pour le
+          service proposé~?
+    \item Quelles pièces complémentaires M.~MBARGA doit-il exiger~?
+    \item Quelle clause proposez-vous d'insérer dans le contrat
+          (Chapitre~\ref{chap:itil-niveaux})~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.3. La carte de NOUN PAY \niveauexpert}]
+NOUN PAY, jeune entreprise de paiement mobile de Bafoussam, compte
+45~salariés, héberge tout son SI chez un fournisseur d'informatique en
+nuage étranger et utilise un modèle d'intelligence artificielle pour
+noter les demandes de microcrédit. Ses investisseurs exigent « une
+gouvernance des SI au niveau des standards internationaux ».
+\begin{enumerate}[(a)]
+    \item Identifiez ses besoins et ses obligations prioritaires.
+    \item Construisez sa carte d'articulation sur le modèle de la
+          Figure~4.1, en justifiant chaque référentiel retenu.
+    \item Indiquez au moins deux référentiels que vous écartez, et
+          pourquoi.
+    \item Proposez un calendrier sur trois ans, compatible avec la taille
+          de l'entreprise.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~\ref{part:fondements} a posé les fondements
+de la gouvernance des SI~: ses origines, ses défaillances, ses modèles et
+ses référentiels. La Partie~\ref{part:cobit} entre dans le référentiel
+central de ce cours. Le Chapitre~\ref{chap:cobit-archi} présente les
+principes et l'architecture de COBIT~2019.
+\end{boxinfo}

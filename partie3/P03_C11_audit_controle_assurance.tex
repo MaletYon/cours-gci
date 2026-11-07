@@ -1,0 +1,579 @@
+% ============================================================================
+% Fichier  : partie3/P03_C11_audit_controle_assurance.tex
+% Titre    : Audit, Contrôle et Assurance de la Gouvernance des SI
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources du dossier Normes : IIA, Cadre de référence international des
+% pratiques professionnelles (édition 2017) et Code de déontologie ; INTOSAI
+% GUID 5100 (2019) ; IDI, Manuel de mise en œuvre des ISSAI d'audit de
+% conformité (2021). Les Normes mondiales de l'IIA (2024) sont présentées
+% d'après leur structure publique. Laboratoire associé : GCI-LAB-05 (test des
+% contrôles généraux informatiques à l'ANPP).
+% ============================================================================
+
+\chapter{Audit, Contrôle et Assurance de la Gouvernance des SI}
+\label{chap:audit}
+\chaptermark{Audit, contrôle et assurance}
+
+\epigraph{%
+    « Une réponse orale n'est pas une preuve. »%
+}{Règle des auditeurs}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise des Chapitres~\ref{chap:cobit-capacite} (évaluation de
+    capacité) et~\ref{chap:droit} (obligations légales).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Appliquer le modèle des trois lignes.
+    \item Situer les Normes mondiales d'audit interne de l'IIA (2024) et le
+          cadre de 2017.
+    \item Mener un audit des SI selon l'INTOSAI GUID~5100 dans le secteur
+          public.
+    \item Tester des contrôles généraux informatiques (accès, changements,
+          exploitation).
+    \item Rédiger un constat d'audit qui sépare constatation, critère,
+          cause, conséquence et recommandation.
+    \item Identifier les exigences déontologiques de l'auditeur et du DSI.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qui vérifie que tout cela fonctionne~?}
+% ============================================================================
+
+Les chapitres précédents ont construit un système de gouvernance, fixé des
+capacités cibles et dressé la liste des obligations légales. Il reste une
+question~: \emph{qui vérifie, et avec quelle indépendance, que ce système
+fonctionne réellement~?} À Yaoundé, la Chambre des comptes vient d'annoncer
+à l'ANPP (opération MEFOU) un audit de ses systèmes d'information. À
+Douala, Mme~EKAMBI, directrice de l'audit interne de la BANQUE SANAGA, doit
+expliquer au comité d'audit pourquoi sa recommandation d'octobre~2025 est
+restée sans suite.
+
+Ce chapitre présente l'organisation de l'assurance (le modèle des trois
+lignes, section~\ref{sec:c11-trois-lignes}), les normes de l'audit interne
+(section~\ref{sec:c11-iia}) et de l'audit public
+(section~\ref{sec:c11-intosai}), la pratique du test des contrôles
+généraux informatiques (section~\ref{sec:c11-itgc}), la rédaction des
+constats (section~\ref{sec:c11-constat}) et la déontologie
+(section~\ref{sec:c11-deontologie}). Le laboratoire GCI-LAB-05 fait tester des
+contrôles à partir des pièces de l'ANPP.
+
+\separateur
+
+% ============================================================================
+\section{Le Modèle des Trois Lignes}
+\label{sec:c11-trois-lignes}
+% ============================================================================
+
+\subsection{Qui fait quoi dans la maîtrise des risques}
+
+L'Institut des auditeurs internes (\sigle{IIA}) a publié en 2020 le
+\termecle{modèle des trois lignes}\index{modèle des trois lignes}
+(\textit{Three Lines Model}), qui a succédé au modèle des « trois lignes de
+défense ». Il répartit les rôles entre l'organe de gouvernance, le
+management et l'audit interne~\cite{iia2020troislignes}.
+
+\begin{tableaucours}{L{2.8cm}L{4.2cm}L{5.2cm}}{%
+    \tableauHeader{Acteur} &
+    \tableauHeader{Rôle} &
+    \tableauHeader{À la BANQUE SANAGA}
+}
+Organe de gouvernance & Rend compte aux parties prenantes, fixe la
+direction, supervise & Conseil d'administration, comité d'audit, comité
+stratégique des SI \\
+Première ligne & Le management opérationnel, qui porte et maîtrise les
+risques dans ses activités & DSI, exploitation, chefs de projet, métiers \\
+Deuxième ligne & Les fonctions d'expertise, de soutien et de surveillance
+des risques & Gestion des risques, conformité, RSSI, responsable GRC \\
+Troisième ligne & L'audit interne, qui fournit une assurance indépendante
+et objective & Direction de l'audit interne (Mme~EKAMBI) \\
+Prestataires d'assurance externes & Assurance complémentaire,
+indépendante de l'organisation & Commissaire aux comptes, COBAC, audit de
+sécurité prévu par la loi n°~2010/012 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.1. Le modèle des trois lignes
+appliqué à la BANQUE SANAGA}\end{center}
+
+\subsection{Trois erreurs fréquentes}
+
+\begin{enumerate}
+    \item \textbf{Confier la deuxième ligne à la première.} Un RSSI
+          rattaché au DSI, et noté par lui, ne peut pas surveiller librement
+          les risques que le DSI prend. Le modèle ne prescrit pas un
+          rattachement, mais il exige que la deuxième ligne puisse remonter
+          ses alertes sans filtre.
+    \item \textbf{Faire faire le travail de la première ligne par la
+          troisième.} Un audit interne qui rédige les procédures qu'il
+          auditera ensuite perd son indépendance.
+    \item \textbf{Croire que l'audit est responsable du risque.} La
+          troisième ligne donne une assurance~; elle ne maîtrise pas le
+          risque. La recommandation non suivie de Mme~EKAMBI n'est pas une
+          faute de l'audit~: c'est une défaillance du suivi par la première
+          ligne et par le comité d'audit (MEA02).
+\end{enumerate}
+
+% ============================================================================
+\section{Les Normes de l'Audit Interne}
+\label{sec:c11-iia}
+% ============================================================================
+
+\subsection{Du cadre de 2017 aux Normes mondiales de 2024}
+
+L'IIA définit l'audit interne comme une activité indépendante et objective
+qui donne à une organisation une assurance sur le degré de maîtrise de ses
+opérations, lui apporte des conseils pour les améliorer et contribue à
+créer de la valeur, en évaluant de manière systématique ses processus de
+gouvernance, de management des risques et de contrôle~\cite{iia2017cripp}.
+
+Jusqu'en 2024, la profession se référait au \emph{Cadre de référence
+international des pratiques professionnelles} (\sigle{CRIPP}), dans son
+édition de 2017, disponible en français dans le dossier \texttt{Normes}.
+Il comprenait notamment la définition de l'audit interne, le Code de
+déontologie et des normes réparties entre normes de qualification (série
+1000) et normes de fonctionnement (série 2000).
+
+En janvier~2024, l'IIA a publié les \textbf{Normes mondiales d'audit
+interne} (\textit{Global Internal Audit Standards}), applicables depuis
+janvier~2025~\cite{iia2024gias}. Elles remplacent le CRIPP et
+s'organisent en cinq domaines~:
+
+\begin{tableaucours}{cL{4.0cm}L{8.0cm}}{%
+    \tableauHeader{Dom.} &
+    \tableauHeader{Intitulé} &
+    \tableauHeader{Contenu}
+}
+I & Raison d'être de l'audit interne & Ce que l'audit interne apporte à
+l'organisation \\
+II & Éthique et professionnalisme & Intégrité, objectivité, compétence,
+conscience professionnelle, confidentialité \\
+III & Gouvernance de la fonction d'audit interne & Relation avec le
+conseil, mandat, indépendance, supervision \\
+IV & Management de la fonction d'audit interne & Stratégie, ressources,
+méthodologie, qualité \\
+V & Réalisation des missions & Planification, conduite, communication des
+résultats, suivi \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.2. Les cinq domaines des Normes
+mondiales d'audit interne (2024, notre traduction)}\end{center}
+
+Le domaine~III est le plus directement lié à la gouvernance~: il place
+expressément sous la responsabilité du conseil la supervision de la
+fonction d'audit interne, son mandat et les moyens de son indépendance.
+
+\begin{boxalert}
+\textbf{Violation typique.} La charte d'audit interne de la BANQUE SANAGA
+date de 2015 et renvoie aux « normes de l'IIA » sans préciser l'édition.
+Le plan d'audit est approuvé par le directeur général, et non par le
+comité d'audit.
+
+\smallskip
+\textbf{Règle~:} la charte d'audit doit se référer aux Normes mondiales de
+2024, et le plan d'audit comme les moyens de la fonction doivent être
+approuvés par l'organe de gouvernance, non par la direction auditée.
+\end{boxalert}
+
+% ============================================================================
+\section{L'Audit Public des SI : l'INTOSAI GUID 5100}
+\label{sec:c11-intosai}
+% ============================================================================
+
+\subsection{Les institutions supérieures de contrôle}
+
+Dans le secteur public, l'audit externe relève des institutions
+supérieures de contrôle des finances publiques (\sigle{ISC}), qui
+appliquent les normes de l'INTOSAI (les \sigle{ISSAI}). Au Cameroun, cette
+fonction est assurée par la Chambre des comptes de la Cour suprême. Le
+GUID~5100 de l'INTOSAI (2019) fournit le cadre général de la vérification
+des systèmes d'information~\cite{intosai2019guid5100}.
+
+\begin{boxdef}
+\termecle{Vérification des systèmes d'information}\index{vérification des
+systèmes d'information} (\textit{information systems audit})~: selon le
+GUID~5100, examen des contrôles liés aux systèmes d'information pour
+déceler les écarts par rapport à des critères, définis selon le type de
+mission (audit financier, de conformité ou de performance).
+
+\medskip
+\termecle{Contrôles généraux}\index{contrôles généraux}~: procédures
+manuelles ou automatisées qui visent à assurer la confidentialité,
+l'intégrité et la disponibilité de l'information dans l'environnement où
+les systèmes sont développés, gérés et exploités.
+
+\medskip
+\termecle{Contrôles d'application}\index{contrôles d'application}~:
+procédures, dépendantes des TI, intégrées à un système et qui agissent sur
+le traitement des transactions~: validation des données d'entrée,
+exactitude du traitement, contrôle des sorties, intégrité des données de
+référence.
+\end{boxdef}
+
+\subsection{La démarche du GUID 5100}
+
+Le GUID~5100 suit les quatre étapes de tout audit public~: planification,
+réalisation, rapport et suivi. Trois de ses apports sont particulièrement
+utiles.
+
+\paragraph{Les trois risques d'audit.} L'auditeur apprécie le
+\emph{risque inhérent} (la probabilité que les caractéristiques mêmes d'un
+système nuisent à la fonction qu'il remplit), le \emph{risque de contrôle}
+(la probabilité que les contrôles mis en place ne suffisent pas) et le
+\emph{risque de détection} (la probabilité que l'auditeur lui-même ne
+décèle pas une défaillance). Le portail de paiement de l'ANPP, ouvert à
+tous les fournisseurs de l'État, porte un risque inhérent élevé de
+saturation.
+
+\paragraph{Treize domaines.} Le GUID~5100 propose de délimiter la
+vérification parmi treize domaines, dont la plupart sont adaptés de
+l'ISO/IEC~27001~: politique de l'organisation en matière de TI,
+structures de gouvernance, contrôles généraux, gestion des actifs,
+développement et maintenance, exploitation, environnement physique,
+ressources humaines, communications, sécurité de l'information,
+conformité réglementaire, continuité et reprise, contrôles
+d'application.
+
+\paragraph{Conception, mise en œuvre, efficacité.} Le GUID~5100 distingue
+trois niveaux d'examen d'un contrôle. Pour la \emph{conception}, un
+entretien ou l'examen des règles documentées peut suffire. Pour la
+\emph{mise en œuvre}, l'entretien ne suffit plus~: il faut une revue
+structurée ou une analyse de données. Pour l'\emph{efficacité
+opérationnelle}, il faut tester un échantillon d'opérations sur toute la
+période.
+
+\begin{boxprocedure}
+\textbf{Recevoir une extraction de données.} Le GUID~5100 recommande que
+toute extraction de données remise par l'entité auditée soit accompagnée
+d'une lettre qui précise~:
+\begin{itemize}
+    \item la source des données et leur horodatage, avec l'empreinte
+          numérique (valeur de hachage) du fichier, pour en garantir
+          l'intégrité~;
+    \item les paramètres d'extraction (requêtes utilisées, états
+          exécutés)~;
+    \item l'environnement d'origine (production ou autre).
+\end{itemize}
+À défaut de lettre, l'auditeur documente lui-même ces informations.
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération MEFOU. La lettre de mission de la Chambre des comptes}
+\textbf{Mandat.} Audit de conformité et de performance des systèmes
+d'information de l'ANPP, période 2023--2026.
+
+\medskip
+\textbf{Délimitation retenue} (parmi les treize domaines)~: structures de
+gouvernance des TI, développement et acquisition (le schéma directeur de
+14~milliards FCFA), contrôles généraux (accès et changements) et
+conformité réglementaire.
+
+\medskip
+\textbf{Critères.} Le régime financier de l'État (loi n°~2018/012), la loi
+n°~2010/012, les procédures internes de l'agence et, comme référentiel de
+bonnes pratiques, COBIT~2019.
+
+\medskip
+\textbf{Équipe.} Le magistrat vérificateur, M.~NJOYA, est assisté d'un
+auditeur des SI certifié, recruté sur contrat, conformément à la
+possibilité qu'ouvre le GUID~5100 de recourir à des ressources externes
+supervisées.
+\end{boxscenario}
+
+% ============================================================================
+\section{Tester les Contrôles Généraux Informatiques}
+\label{sec:c11-itgc}
+% ============================================================================
+
+\subsection{Trois familles de contrôles}
+
+Les contrôles généraux informatiques (Chapitre~\ref{chap:gouv-entreprise})
+conditionnent la fiabilité de toutes les applications. L'auditeur les
+teste en priorité, parce que leur défaillance invalide la confiance que
+l'on peut accorder aux contrôles automatisés des applications~: si
+n'importe qui peut modifier un programme, le contrôle que ce programme
+réalise ne vaut plus rien.
+
+\begin{tableaucours}{L{2.6cm}L{4.6cm}L{5.0cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Contrôles typiques} &
+    \tableauHeader{Test typique}
+}
+Accès & Création et suppression des comptes, revue périodique des droits,
+comptes à privilèges & Rapprocher la liste des comptes actifs de la liste
+des agents présents \\
+Changements & Autorisation, test, séparation entre développement et
+production, mise en production tracée & Vérifier, sur un échantillon de
+changements, l'autorisation préalable et le test \\
+Exploitation & Sauvegardes et tests de restauration, ordonnancement des
+traitements, gestion des incidents & Vérifier les journaux de sauvegarde
+et la preuve d'une restauration réussie \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.3. Les trois familles de contrôles
+généraux informatiques}\end{center}
+
+\subsection{L'échantillonnage}
+
+On ne teste pas tous les comptes ni tous les changements~: on
+échantillonne. La taille de l'échantillon dépend de la fréquence du
+contrôle et du risque. Les cabinets d'audit utilisent couramment des
+ordres de grandeur comme ceux du tableau suivant~; ce ne sont pas des
+exigences normatives, et chaque organisation d'audit fixe sa propre
+méthode.
+
+\begin{tableaucours}{L{4.6cm}L{4.6cm}}{%
+    \tableauHeader{Fréquence du contrôle} &
+    \tableauHeader{Échantillon indicatif}
+}
+Annuelle & 1 \\
+Trimestrielle & 2 \\
+Mensuelle & 2 à 5 \\
+Hebdomadaire & 5 à 15 \\
+Quotidienne & 20 à 40 \\
+Plusieurs fois par jour & 25 à 60 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.4. Ordres de grandeur
+d'échantillonnage pratiqués en audit (indicatifs)}\end{center}
+
+\begin{boxscenario}{Opération MEFOU. Le test des accès}
+\textbf{Test.} L'auditeur rapproche la liste des 312~comptes actifs du
+système de paiement de l'ANPP et la liste du personnel au 30~juin~2026
+fournie par les ressources humaines. Il examine en outre un échantillon de
+25~comptes pour vérifier que les droits correspondent aux fonctions.
+
+\medskip
+\textbf{Résultats.} 14~comptes appartiennent à des agents partis de
+l'agence, dont 3 depuis plus d'un an~; l'un de ces comptes a été utilisé
+en mai~2026. Sur les 25~comptes examinés, 6 cumulent les droits de saisie
+et de validation d'un paiement. Aucune revue des droits n'a été
+documentée depuis 2023.
+
+\medskip
+\textbf{Qualification.} Le contrôle « revue périodique des accès » n'est
+pas mis en œuvre~; le contrôle « séparation des tâches » est défaillant.
+Ces écarts relèvent des objectifs DSS05 et DSS06 de COBIT et de
+l'obligation de dispositifs de sécurité de l'article~26 de la loi
+n°~2010/012 (Chapitre~\ref{chap:droit}).
+\end{boxscenario}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Tester un contrôle en cinq temps}
+\begin{enumerate}
+    \item Décrire le contrôle tel qu'il est censé fonctionner (qui, quoi,
+          quand, avec quelle preuve).
+    \item Vérifier sa conception~: le contrôle, s'il fonctionne, traite-t-il
+          le risque~?
+    \item Vérifier sa mise en œuvre sur un cas (test de cheminement).
+    \item Tester son efficacité sur un échantillon couvrant la période.
+    \item Documenter chaque pièce examinée, et conclure~: efficace,
+          partiellement efficace, inefficace.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Rédiger un Constat d'Audit}
+\label{sec:c11-constat}
+% ============================================================================
+
+\subsection{Les cinq éléments}
+
+Un constat d'audit n'est pas une opinion~: c'est un raisonnement en cinq
+éléments, que l'on retrouve dans les normes de l'IIA comme dans celles de
+l'INTOSAI.
+
+\begin{tableaucours}{L{2.8cm}L{4.6cm}L{4.8cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Question} &
+    \tableauHeader{Exemple (ANPP)}
+}
+Constatation & Que se passe-t-il réellement~? & 14 comptes d'agents partis
+restent actifs~; l'un a été utilisé en mai~2026 \\
+Critère & Que devrait-il se passer~? & Procédure interne~: désactivation
+sous 48~heures~; loi n°~2010/012, art.~26 \\
+Cause & Pourquoi l'écart existe-t-il~? & Les départs ne sont pas notifiés
+par les RH à la division informatique \\
+Conséquence & Quel risque ou quel effet~? & Paiement frauduleux possible
+au nom d'un agent parti~; exposition juridique \\
+Recommandation & Que faut-il faire~? & Notification automatique des
+départs, revue trimestrielle des accès \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.5. Les cinq éléments d'un constat
+d'audit}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} « La sécurité des accès est insuffisante et
+doit être renforcée. » Cette phrase ne contient ni constatation chiffrée,
+ni critère, ni cause~: elle ne peut être ni vérifiée ni mise en œuvre, et
+l'audité peut la contester sans peine.
+
+\smallskip
+\textbf{Règle~:} chaque constat chiffre la constatation, cite son critère,
+identifie la cause, mesure la conséquence, et formule une recommandation
+qui traite la \emph{cause}, et non le symptôme.
+\end{boxalert}
+
+\subsection{Le suivi des recommandations}
+
+Une recommandation non suivie est une assurance perdue. Le suivi relève de
+la première ligne (qui met en œuvre), de l'audit interne (qui vérifie) et
+de l'organe de gouvernance (qui exige). C'est l'objectif MEA02 de COBIT.
+
+\begin{boxprocedure}
+\textbf{Le tableau de suivi des recommandations.} Pour chaque
+recommandation, le tableau présenté au comité d'audit indique~:
+\begin{itemize}
+    \item la date du rapport et la priorité de la recommandation~;
+    \item le responsable de la mise en œuvre et l'échéance convenue~;
+    \item l'état (non commencée, en cours, mise en œuvre, vérifiée)~;
+    \item pour l'état « mise en œuvre », la pièce qui le prouve~;
+    \item les reports d'échéance, avec leur motif et leur approbation.
+\end{itemize}
+La mention « en cours » sans échéance ni pièce, qui figurait dans le
+rapport de la BANQUE SANAGA d'octobre~2025, est précisément ce qu'il faut
+proscrire.
+\end{boxprocedure}
+
+% ============================================================================
+\section{La Déontologie}
+\label{sec:c11-deontologie}
+% ============================================================================
+
+\subsection{L'auditeur}
+
+Le Code de déontologie de l'IIA (édition 2017) pose quatre principes, que
+les Normes mondiales de 2024 reprennent dans leur domaine~II en y ajoutant
+la conscience professionnelle~\cite{iia2017cripp}.
+
+\begin{tableaucours}{L{2.8cm}L{9.4cm}}{%
+    \tableauHeader{Principe} &
+    \tableauHeader{Exigence (résumé)}
+}
+Intégrité & Elle fonde la confiance accordée au jugement de l'auditeur~:
+honnêteté, diligence, responsabilité. \\
+Objectivité & L'auditeur évalue équitablement tous les éléments
+pertinents, sans se laisser influencer par ses intérêts ou par autrui. \\
+Confidentialité & Il respecte la valeur et la propriété des informations
+reçues, et ne les divulgue qu'avec autorisation, sauf obligation légale
+ou professionnelle. \\
+Compétence & Il met en œuvre les connaissances, les savoir-faire et
+l'expérience que requiert sa mission. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.6. Les principes du Code de
+déontologie de l'IIA (résumé d'après l'édition française de 2017)}\end{center}
+
+\subsection{Le DSI}
+
+Le DSI n'est pas soumis à un code de déontologie professionnel
+obligatoire, mais sa position l'expose à des situations délicates~: il
+choisit des fournisseurs et dispose d'accès étendus aux données. Trois
+règles de conduite en découlent.
+\begin{itemize}
+    \item \textbf{Déclarer ses conflits d'intérêts}, notamment dans le choix
+          des prestataires, et s'abstenir dans les décisions concernées.
+    \item \textbf{Rendre compte loyalement}, y compris des mauvaises
+          nouvelles~: la note de la DSI de la BANQUE SANAGA du
+          20~février~2026 en est l'exemple.
+    \item \textbf{Ne pas faire obstacle à l'audit}~: donner accès aux pièces
+          et aux systèmes, et ne pas « préparer » les données remises.
+\end{itemize}
+
+\begin{boiteRemarque}{L'auditeur peut-il conseiller~?}
+Oui, et les normes de l'IIA le prévoient expressément~: l'audit interne
+donne une assurance \emph{et} des conseils. Mais il y a une limite. Un
+auditeur qui conçoit un dispositif ne peut pas, ensuite, en donner une
+assurance objective. Dans une petite organisation, où l'audit interne
+compte une ou deux personnes, cette tension est permanente. La solution
+consiste à déclarer la situation au comité d'audit, et à faire réaliser
+l'évaluation du dispositif par un tiers.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Trois lignes}~: le management porte le risque, les
+          fonctions de deuxième ligne le surveillent, l'audit interne donne
+          une assurance indépendante, sous la supervision de l'organe de
+          gouvernance.
+    \item \textbf{Les Normes mondiales de l'IIA (2024)} remplacent le cadre
+          de 2017~: cinq domaines, dont la gouvernance de la fonction d'audit
+          par le conseil.
+    \item \textbf{Le GUID~5100 de l'INTOSAI} guide l'audit public des SI~:
+          trois risques d'audit, treize domaines, et la distinction entre
+          conception, mise en œuvre et efficacité des contrôles.
+    \item \textbf{Les contrôles généraux informatiques} (accès,
+          changements, exploitation) se testent en priorité, par
+          échantillonnage.
+    \item \textbf{Un constat a cinq éléments}~: constatation, critère,
+          cause, conséquence, recommandation. La recommandation traite la
+          cause.
+    \item \textbf{Le suivi est une responsabilité de gouvernance}~: une
+          recommandation « en cours » sans échéance ni pièce est une
+          assurance perdue.
+    \item \textbf{La déontologie} repose sur l'intégrité, l'objectivité, la
+          confidentialité et la compétence~; elle concerne aussi le DSI.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.1. Quelle ligne~? \niveaubase}]
+Rattachez chacun des acteurs suivants à la ligne qui convient (première,
+deuxième, troisième, ou prestataire d'assurance externe), et justifiez.
+\begin{enumerate}[(a)]
+    \item Le responsable de l'exploitation de la BANQUE SANAGA.
+    \item Le RSSI, rattaché au directeur des risques.
+    \item Le commissaire aux comptes.
+    \item La directrice de l'audit interne.
+    \item Le cabinet agréé qui réalise l'audit de sécurité prévu par la loi
+          n°~2010/012.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.2. Rédiger un constat \niveaumoyen}]
+À partir des résultats du test des accès de l'ANPP (section~\ref{sec:c11-itgc}),
+rédigez le constat relatif à la séparation des tâches (6~comptes sur
+25 cumulant saisie et validation d'un paiement).
+\begin{enumerate}[(a)]
+    \item Rédigez les cinq éléments du constat.
+    \item Proposez une priorité (élevée, moyenne, faible) et justifiez.
+    \item Proposez l'indicateur qui permettra au comité d'audit de suivre la
+          mise en œuvre.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.3. Planifier l'audit des changements de la BANQUE SANAGA \niveauexpert}]
+Le comité d'audit demande à Mme~EKAMBI un audit de la gestion des
+changements après la panne.
+\begin{enumerate}[(a)]
+    \item Rédigez l'objectif, le périmètre et les critères de la mission.
+    \item Listez les contrôles à tester, en distinguant conception, mise en
+          œuvre et efficacité, et indiquez pour chacun la pièce attendue.
+    \item Déterminez la taille de l'échantillon de changements à examiner,
+          en justifiant au regard de la fréquence des changements.
+    \item Mme~EKAMBI avait elle-même proposé, en 2025, la procédure de
+          gestion des changements. Quelle difficulté déontologique cela
+          pose-t-il, et comment la traiter~?
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~\ref{part:normatif} a placé la gouvernance
+des SI sous le regard des normes, de la loi et de l'audit. La
+Partie~\ref{part:pratique} descend au niveau de la pratique quotidienne.
+Le Chapitre~\ref{chap:itil-svs} ouvre la gestion des services avec ITIL~4
+et son système de valeur des services.
+\end{boxinfo}

@@ -1,0 +1,549 @@
+% ============================================================================
+% Fichier  : partie4/P04_C16_processus_raci_mesure.tex
+% Titre    : Processus : Modéliser, Responsabiliser, Mesurer
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : BPMN 2.0 (OMG, ISO/IEC 19510) ; COBIT 2019 (dossier Normes) ;
+% ITIL 4 (sources publiques). La correspondance avec les articles de
+% l'ISO/IEC 20000-1:2018 est établie par nos soins (norme absente du
+% dossier Normes) : A VERIFIER dans le texte de la norme.
+% Laboratoire associé : GCI-LAB-09 (matrice RACI et correspondance COBIT-ITIL
+% d'un processus de NOUN PAY).
+% ============================================================================
+
+\chapter{Processus : Modéliser, Responsabiliser, Mesurer}
+\label{chap:processus}
+\chaptermark{Processus : modéliser, responsabiliser}
+
+\epigraph{%
+    « Quand tout le monde est responsable, personne ne l'est. »%
+}{Adage du management}
+
+\niveauChapitre{Expert}{%
+    Maîtrise des Chapitres~\ref{chap:cobit-objectifs} (les objectifs COBIT)
+    et~\ref{chap:itil-niveaux} (niveaux de service et fournisseurs).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Modéliser un processus en BPMN.
+    \item Construire une matrice RACI sans ambiguïté.
+    \item Mettre en correspondance COBIT, ITIL et ISO/IEC~20000-1.
+    \item Définir les indicateurs (KPI, KGI) et un tableau de bord.
+    \item Désigner les propriétaires de processus et organiser
+          l'amélioration continue.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qui fait quoi, et comment le sait-on~?}
+% ============================================================================
+
+Les Chapitres~\ref{chap:itil-svs} à~\ref{chap:itil-niveaux} ont présenté
+les pratiques une par une. Mais une organisation ne vit pas des pratiques
+isolées~: elle vit des enchaînements d'activités, qui traversent les
+équipes, les fournisseurs et les outils. Chez NOUN PAY, à Bafoussam, la
+mise à jour du modèle de notation de crédit passe par cinq personnes et un
+fournisseur de nuage~; personne ne sait qui l'autorise. Chez KRIBILOG,
+NETPORT SERVICES et le centre de services se renvoient les incidents.
+
+Ce chapitre apprend à assembler les pratiques en processus maîtrisés~: les
+modéliser (section~\ref{sec:c16-bpmn}), répartir les responsabilités
+(section~\ref{sec:c16-raci}), établir la correspondance entre les
+référentiels (section~\ref{sec:c16-correspondance}), mesurer
+(section~\ref{sec:c16-mesure}) et améliorer (section~\ref{sec:c16-proprietaires}).
+Le laboratoire GCI-LAB-09 fait construire la matrice RACI et la
+correspondance d'un processus de NOUN PAY.
+
+\separateur
+
+% ============================================================================
+\section{Processus et Pratiques}
+\label{sec:c16-notions}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Processus}\index{processus}~: ensemble d'activités corrélées qui
+transforme des entrées en sorties, en vue d'un objectif. Il a un début, une
+fin, des acteurs et des résultats mesurables.
+
+\medskip
+\termecle{Propriétaire de processus}\index{propriétaire de processus}
+(\textit{process owner})~: personne qui répond de la conception, de la
+performance et de l'amélioration d'un processus dans toute
+l'organisation. Elle ne l'exécute pas nécessairement elle-même.
+
+\medskip
+\termecle{Gestionnaire de processus}\index{gestionnaire de processus}
+(\textit{process manager})~: personne qui pilote l'exécution quotidienne du
+processus, sur un périmètre donné.
+\end{boxdef}
+
+Un processus n'est pas une pratique. Une \emph{pratique} ITIL ou un
+\emph{objectif} COBIT décrivent un domaine de maîtrise, avec toutes ses
+composantes (Chapitre~\ref{chap:cobit-archi}). Un \emph{processus} est
+l'enchaînement concret par lequel une organisation réalise une partie de
+ce domaine. La pratique « gestion des incidents » peut donner lieu à
+plusieurs processus~: incidents ordinaires, incidents majeurs, incidents
+de sécurité.
+
+% ============================================================================
+\section{Modéliser en BPMN}
+\label{sec:c16-bpmn}
+% ============================================================================
+
+\subsection{Les éléments du langage}
+
+Le langage BPMN (\textit{Business Process Model and Notation}), publié par
+l'Object Management Group dans sa version~2.0 et repris par la norme
+ISO/IEC~19510, est la notation de référence pour modéliser les
+processus. Il suffit de quelques éléments pour en tirer l'essentiel.
+
+\begin{tableaucours}{L{3.0cm}L{3.6cm}L{5.6cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Représentation} &
+    \tableauHeader{Usage}
+}
+Événement & Cercle (début, intermédiaire, fin) & Ce qui déclenche, ponctue
+ou termine le processus \\
+Activité & Rectangle arrondi & Une tâche ou un sous-processus \\
+Passerelle & Losange & Un choix (exclusif), une séparation en parallèle,
+une jonction \\
+Flux de séquence & Flèche pleine & L'ordre des activités \\
+Flux de messages & Flèche en pointillé & Un échange entre deux acteurs \\
+Couloir & Bande horizontale & Le rôle ou l'organisation qui exécute les
+activités \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~16.1. Les éléments essentiels de
+BPMN~2.0}\end{center}
+
+\subsection{Un exemple}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    tache/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=1.8cm, minimum height=0.9cm, align=center,
+        font=\scriptsize\color{CouleurPrimaire}
+    },
+    evt/.style = {circle, draw=CouleurPrimaire, thick, minimum size=0.5cm},
+    evtfin/.style = {circle, draw=CouleurPrimaire, line width=2pt,
+        minimum size=0.5cm},
+    pass/.style = {diamond, draw=CouleurAccent, fill=CouleurAccent!15,
+        minimum size=0.8cm, font=\scriptsize\bfseries\color{CouleurPrimaire},
+        inner sep=0pt},
+    fleche/.style = {-{Stealth[length=4pt]}, thick, color=CouleurSecondaire},
+    couloir/.style = {font=\scriptsize\bfseries\color{CouleurPrimaire},
+        rotate=90, anchor=south}
+]
+% Couloirs
+\draw[CouleurPrimaire] (-0.6,0.9) rectangle (13.0,-1.1);
+\draw[CouleurPrimaire] (-0.6,-1.1) rectangle (13.0,-3.1);
+\node[anchor=north west, font=\tiny\bfseries\color{CouleurPrimaire}]
+    at (-0.6,0.9) {Centre de services (KRIBILOG)};
+\node[anchor=north west, font=\tiny\bfseries\color{CouleurPrimaire}]
+    at (-0.6,-1.1) {NETPORT SERVICES (infogérant)};
+% Centre de services
+\node[evt] (d) at (0.2,-0.1) {};
+\node[tache] (e) at (1.8,-0.1) {Enregistrer et prioriser};
+\node[pass] (p) at (3.7,-0.1) {X};
+\node[tache] (r1) at (5.5,-0.1) {Résoudre au niveau~1};
+\node[tache] (v) at (10.2,-0.1) {Vérifier avec l'utilisateur};
+\node[evtfin] (f) at (12.2,-0.1) {};
+% NETPORT
+\node[tache] (dg) at (5.5,-2.1) {Diagnostiquer};
+\node[tache] (r2) at (8.0,-2.1) {Résoudre ou contourner};
+% Flux
+\draw[fleche] (d) -- (e);
+\draw[fleche] (e) -- (p);
+\draw[fleche] (p) -- node[above, font=\tiny]{connu} (r1);
+\draw[fleche] (p) |- node[pos=0.2, right, font=\tiny]{inconnu} (dg);
+\draw[fleche] (dg) -- (r2);
+\draw[fleche] (r2) -| (v);
+\draw[fleche] (r1) -- (v);
+\draw[fleche] (v) -- (f);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~16.1. Processus de traitement d'un
+incident chez KRIBILOG (BPMN simplifié)}\end{center}
+\end{minipage}
+
+\medskip
+
+La figure fait apparaître ce que le texte des procédures masquait~: le
+passage d'un couloir à l'autre. C'est à ces frontières que se perdent les
+incidents. Chez KRIBILOG, la flèche de retour de NETPORT SERVICES vers la
+vérification n'existait pas~: l'infogérant clôturait lui-même les tickets
+(Chapitre~\ref{chap:itil-incidents}).
+
+\begin{boxalert}
+\textbf{Violation typique.} Une organisation modélise ses processus tels
+qu'ils \emph{devraient} être, à partir des référentiels, sans observer ce
+qui se passe réellement. Les schémas sont beaux, mais personne ne les
+applique.
+
+\smallskip
+\textbf{Règle~:} modéliser d'abord le processus \emph{tel qu'il est}, à
+partir d'entretiens et des traces de l'outil (principe « commencer là où
+l'on est », Chapitre~\ref{chap:itil-svs}), puis le processus cible, et
+mesurer l'écart.
+\end{boxalert}
+
+% ============================================================================
+\section{Responsabiliser : la Matrice RACI}
+\label{sec:c16-raci}
+% ============================================================================
+
+\subsection{Quatre rôles}
+
+\begin{boxdef}
+\termecle{Matrice RACI}\index{matrice RACI}~: tableau qui croise les
+activités d'un processus et les rôles de l'organisation, et indique pour
+chaque case le rôle tenu~:
+\begin{itemize}
+    \item \textbf{R} (\textit{Responsible})~: réalise l'activité~;
+    \item \textbf{A} (\textit{Accountable})~: en répond et l'approuve~;
+    \item \textbf{C} (\textit{Consulted})~: est consulté avant~;
+    \item \textbf{I} (\textit{Informed})~: est informé après.
+\end{itemize}
+\end{boxdef}
+
+COBIT~2019 fournit pour chaque pratique une matrice RACI type, établie
+avec des rôles génériques (Chapitre~\ref{chap:cobit-objectifs})~; il
+revient à chaque organisation de la traduire avec ses propres fonctions.
+
+\subsection{Cinq règles}
+
+\begin{enumerate}
+    \item \textbf{Un seul A par activité.} Deux personnes qui « répondent »
+          d'une même activité, c'est n'en avoir aucune.
+    \item \textbf{Au moins un R par activité.} Une activité sans exécutant
+          ne sera pas faite.
+    \item \textbf{Le A au bon niveau.} Celui qui répond doit avoir
+          l'autorité de décider et les moyens d'agir.
+    \item \textbf{Peu de C.} Trop de consultations ralentissent tout~;
+          consulter, c'est s'engager à attendre la réponse.
+    \item \textbf{Des noms de fonctions, pas de personnes.} La matrice
+          survit aux départs.
+\end{enumerate}
+
+\begin{boxscenario}{Opération NOUN. Qui autorise~?}
+\textbf{Faits.} Chez NOUN PAY, une nouvelle version du modèle de notation
+de crédit est préparée par l'équipe de science des données, testée par le
+directeur technique, déployée par l'équipe DevOps sur l'infrastructure du
+fournisseur de nuage. La fondatrice est « tenue au courant ». Le délégué à
+la protection des données n'est pas associé.
+
+\medskip
+\textbf{Matrice constatée.}
+
+\medskip
+\begin{tableaucours}{L{3.4cm}ccccc}{%
+    \tableauHeader{Activité} &
+    \tableauHeader{DG} &
+    \tableauHeader{Dir. tech.} &
+    \tableauHeader{Données} &
+    \tableauHeader{DevOps} &
+    \tableauHeader{DPD}
+}
+Préparer la version & I & A & R & · & · \\
+Tester & · & A/R & C & · & · \\
+Évaluer l'impact sur les clients & · & · & · & · & · \\
+Autoriser la mise en production & I & A & · & A & · \\
+Déployer & · & · & · & A/R & · \\
+\end{tableaucours}
+
+\medskip
+\textbf{Constatation.} L'activité « évaluer l'impact sur les clients » n'a
+ni R ni A. L'autorisation compte deux A. Le délégué à la protection des
+données n'apparaît nulle part.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Trois règles sur cinq sont violées.
+C'est l'explication directe de la demande de l'Autorité de protection des
+données (Chapitre~\ref{chap:droit})~: personne n'était chargé de vérifier
+qu'une nouvelle version ne pénalisait pas une catégorie de clients.
+\end{boxscenario}
+
+\begin{boxprocedure}
+\textbf{Une matrice RACI auditable.} Pour qu'une matrice RACI soit
+opposable, elle doit~:
+\begin{itemize}
+    \item porter sur des activités précises, rattachées à une pratique ou à
+          un objectif identifié~;
+    \item utiliser les fonctions réelles de l'organisation, telles qu'elles
+          figurent à l'organigramme~;
+    \item respecter les règles « un seul A » et « au moins un R »~;
+    \item être approuvée par le propriétaire du processus et datée~;
+    \item être cohérente avec les fiches de poste et les délégations de
+          pouvoir.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{COBIT, ITIL et ISO/IEC 20000-1}
+\label{sec:c16-correspondance}
+% ============================================================================
+
+\subsection{Pourquoi une correspondance}
+
+Une organisation qui utilise COBIT pour sa gouvernance, ITIL pour ses
+pratiques et vise l'ISO/IEC~20000-1 doit éviter de construire trois
+dispositifs parallèles. La correspondance permet de n'avoir qu'un
+processus, documenté une fois, qui répond aux trois référentiels.
+
+\begin{tableaucours}{L{3.0cm}L{4.6cm}L{4.6cm}}{%
+    \tableauHeader{COBIT 2019} &
+    \tableauHeader{Pratiques ITIL 4} &
+    \tableauHeader{ISO/IEC 20000-1:2018}
+}
+APO08 Relations & Gestion des relations & 8.3.2 Relations avec les
+clients \\
+APO09 Accords de service & Gestion des niveaux de service, du catalogue &
+8.3.3 Niveaux de service~; 8.2.4 Catalogue \\
+APO10 Fournisseurs & Gestion des fournisseurs & 8.3.4 Fournisseurs \\
+APO06 Budget et coûts & Gestion financière des services & 8.4.1
+Budgétisation et comptabilité \\
+BAI04 Disponibilité et capacité & Gestion de la disponibilité, de la
+capacité et des performances & 8.7.1 Disponibilité~; 8.4.3 Capacité \\
+BAI06 Changements & Habilitation des changements & 8.5.1 Changements \\
+BAI07 Transition & Mises en production, déploiements, validation et tests
+& 8.5.2 Conception et transition~; 8.5.3 Mises en production et
+déploiement \\
+BAI09 Actifs & Gestion des actifs informatiques & 8.2.5 Actifs \\
+BAI10 Configuration & Gestion de la configuration des services & 8.2.6
+Configuration \\
+DSS02 Demandes et incidents & Centre de services, incidents, demandes de
+service & 8.6.1 Incidents~; 8.6.2 Demandes de service \\
+DSS03 Problèmes & Gestion des problèmes & 8.6.3 Problèmes \\
+DSS04 Continuité & Gestion de la continuité des services & 8.7.2
+Continuité \\
+APO13, DSS05 Sécurité & Gestion de la sécurité de l'information & 8.7.3
+Sécurité de l'information \\
+MEA01 Performance & Mesure et compte rendu & 9.1 Surveillance et mesure \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~16.2. Correspondance entre COBIT~2019,
+ITIL~4 et l'ISO/IEC~20000-1:2018 (établie par nos soins~; numéros
+d'articles de la norme à vérifier dans son texte)}\end{center}
+
+\subsection{Les limites d'une correspondance}
+
+Une correspondance n'est jamais une équivalence. Trois précautions
+s'imposent.
+\begin{itemize}
+    \item \textbf{Les périmètres diffèrent.} L'objectif BAI07 de COBIT couvre
+          la conversion des données et la revue après mise en œuvre, que la
+          pratique ITIL de gestion des mises en production ne traite pas de
+          la même manière.
+    \item \textbf{Les natures diffèrent.} COBIT fixe un objectif, ITIL décrit
+          une pratique, la norme formule une exigence~: satisfaire l'une ne
+          garantit pas de satisfaire les autres.
+    \item \textbf{Les éditions changent.} Une correspondance se date et se
+          révise à chaque nouvelle édition d'un des référentiels.
+\end{itemize}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Construire un référentiel unique de processus}
+\begin{enumerate}
+    \item Partir des objectifs COBIT prioritaires
+          (Chapitre~\ref{chap:cobit-conception}).
+    \item Pour chacun, désigner le processus de l'organisation qui le
+          réalise, et la pratique ITIL qui guide sa conception.
+    \item Repérer les exigences de l'ISO/IEC~20000-1 si une certification
+          est visée, et les obligations légales (Chapitre~\ref{chap:droit}).
+    \item Documenter le processus une seule fois, avec un tableau de
+          correspondance en annexe.
+    \item Faire approuver l'ensemble par le comité stratégique des SI.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Mesurer : KPI, KGI et Tableau de Bord}
+\label{sec:c16-mesure}
+% ============================================================================
+
+\subsection{Deux familles d'indicateurs}
+
+\begin{boxdef}
+\termecle{Indicateur clé d'objectif}\index{indicateur clé d'objectif}
+(\textit{key goal indicator}, \sigle{KGI})~: indicateur qui dit si un
+objectif est atteint. Il mesure un résultat, après coup.
+
+\medskip
+\termecle{Indicateur clé de performance}\index{indicateur clé de
+performance} (\textit{key performance indicator}, \sigle{KPI})~:
+indicateur qui dit si un processus fonctionne bien et a des chances
+d'atteindre l'objectif. Il mesure une performance, en cours de route.
+\end{boxdef}
+
+Cette distinction, mise en avant par COBIT~4.1~\cite{itgi2007cobit41}, reste
+utile~: COBIT~2019 propose pour chaque objectif d'entreprise, chaque
+objectif d'alignement et chaque pratique des « exemples
+d'indicateurs », qui relèvent de l'une ou l'autre famille.
+
+\begin{tableaucours}{L{3.0cm}L{4.6cm}L{4.6cm}}{%
+    \tableauHeader{Niveau} &
+    \tableauHeader{Indicateur (KRIBILOG)} &
+    \tableauHeader{Destinataire}
+}
+Objectif d'entreprise (KGI) & Nombre de navires retardés par une panne du
+suivi & Conseil d'administration \\
+Objectif d'alignement (KGI) & Disponibilité de bout en bout du service de
+suivi & Comité stratégique des SI \\
+Processus (KPI) & Taux de réouverture des incidents~; âge moyen des
+problèmes ouverts & Responsable des services informatiques \\
+Activité (KPI) & Part des tickets enregistrés dans les 5~minutes &
+Responsable du centre de services \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~16.3. La cascade des indicateurs}\end{center}
+
+\subsection{Un bon indicateur}
+
+Un indicateur utile est \textbf{défini} (formule, source, fréquence),
+\textbf{assorti d'une cible}, \textbf{attribué} à un responsable,
+\textbf{difficile à manipuler} (accompagné de son indicateur de
+contrôle, Chapitre~\ref{chap:itil-incidents}) et \textbf{suivi d'action}~:
+un indicateur dont l'écart ne déclenche jamais rien est un indicateur
+inutile.
+
+\begin{boxobjet}{MEA01 · Gérer la surveillance de la performance et de la conformité}
+\textbf{Finalité~:} assurer la transparence de la performance et de la
+conformité, et piloter l'atteinte des objectifs.
+
+\textbf{Contenu (résumé)~:} fixer l'approche de surveillance, définir les
+cibles, collecter et traiter les données, analyser et rendre compte de la
+performance, assurer la mise en œuvre des actions correctives.
+
+\textbf{Sorties~:} tableau de bord, rapports de performance, plans d'action.
+
+\textbf{RACI (extrait, KRIBILOG)~:} \emph{A} au directeur général,
+\emph{R} au responsable des services informatiques et au responsable GRC,
+\emph{I} au conseil.
+
+\textbf{Indicateurs~:} part des indicateurs dotés d'une cible et d'un
+responsable~; délai entre l'écart constaté et l'action décidée.
+\end{boxobjet}
+{\small\itshape Résumé établi par nos soins à partir de
+COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+% ============================================================================
+\section{Propriétaires et Amélioration Continue}
+\label{sec:c16-proprietaires}
+% ============================================================================
+
+Un processus sans propriétaire se dégrade. Le propriétaire répond de
+quatre choses~: la conception du processus et sa documentation, la
+définition de ses indicateurs, sa performance dans toute l'organisation,
+et son amélioration. Il conduit, au moins une fois par an, une revue du
+processus~: indicateurs, incidents, constats d'audit, retours des
+utilisateurs, et alimente le registre des améliorations
+(Chapitre~\ref{chap:itil-svs}).
+
+\begin{boxmetier}{DSI}
+\textbf{Désigner les propriétaires de processus}
+\begin{enumerate}
+    \item Un propriétaire par processus prioritaire, de rang suffisant pour
+          imposer ses décisions aux équipes concernées.
+    \item Pour les processus qui traversent un fournisseur, un propriétaire
+          \emph{interne}~: on n'externalise pas la propriété d'un processus.
+    \item Une lettre de mission, qui précise les pouvoirs, les indicateurs et
+          le rythme de la revue.
+    \item Une présentation annuelle de chaque propriétaire au comité
+          stratégique des SI.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boiteRemarque}{Le processus n'est-il pas l'ennemi de l'agilité~?}
+Un processus lourd, imposé d'en haut et jamais révisé, l'est sans doute.
+Mais l'absence de processus n'est pas l'agilité~: c'est la dépendance aux
+personnes. Les organisations agiles ont des processus courts, visibles,
+automatisés quand c'est possible, et révisés souvent~; elles appliquent les
+principes d'ITIL « rester simple et pratique » et « progresser par
+itérations ». Le Chapitre~\ref{chap:agile-cloud} y reviendra.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Processus et pratique}~: la pratique décrit un domaine de
+          maîtrise, le processus l'enchaînement concret par lequel
+          l'organisation le réalise.
+    \item \textbf{BPMN} rend visibles les frontières entre acteurs, là où se
+          perdent les dossiers. Modéliser d'abord l'existant.
+    \item \textbf{RACI}~: un seul A, au moins un R, le A au bon niveau, peu
+          de C, des fonctions et non des personnes.
+    \item \textbf{La correspondance COBIT, ITIL, ISO/IEC~20000-1} permet un
+          seul processus pour trois référentiels~; ce n'est jamais une
+          équivalence.
+    \item \textbf{KGI et KPI}~: le premier dit si l'objectif est atteint, le
+          second si le processus a des chances de l'atteindre. Les
+          indicateurs se déclinent du conseil à l'activité.
+    \item \textbf{Un propriétaire par processus}, interne même quand le
+          processus traverse un fournisseur, qui en conduit la revue
+          annuelle.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.1. Corriger une matrice RACI \niveaubase}]
+Reprenez la matrice constatée de NOUN PAY (section~\ref{sec:c16-raci}).
+\begin{enumerate}[(a)]
+    \item Listez toutes les violations des cinq règles.
+    \item Proposez une matrice corrigée, en ajoutant les activités qui
+          manquent.
+    \item Indiquez qui doit approuver la matrice corrigée.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.2. Modéliser le processus de changement de l'ANPP \niveaumoyen}]
+Modélisez en BPMN le processus de changement normal de l'ANPP, depuis la
+demande d'une direction métier jusqu'à la clôture, avec quatre couloirs~:
+direction métier, division informatique, comité des changements,
+prestataire.
+\begin{enumerate}[(a)]
+    \item Faites figurer au moins une passerelle exclusive (autorisé ou
+          refusé) et un flux de messages.
+    \item Repérez les frontières où le dossier risque de se perdre.
+    \item Établissez la matrice RACI correspondante.
+    \item Rattachez chaque activité à une pratique de BAI06 et à l'article
+          correspondant de l'ISO/IEC~20000-1.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.3. Le tableau de bord de la BANQUE SANAGA \niveauexpert}]
+Construisez le tableau de bord de la gouvernance des SI de la BANQUE
+SANAGA pour l'année qui suit la panne.
+\begin{enumerate}[(a)]
+    \item Proposez deux KGI par niveau (objectifs d'entreprise prioritaires,
+          objectifs d'alignement) et deux KPI pour chacun des dix objectifs
+          prioritaires (Chapitre~\ref{chap:cobit-objectifs}).
+    \item Pour chaque indicateur, précisez la formule, la source, la
+          fréquence, la cible et le responsable.
+    \item Associez à chaque indicateur susceptible d'être manipulé son
+          indicateur de contrôle.
+    \item Indiquez ce qui sera présenté au conseil, au comité stratégique
+          des SI et au comité d'audit.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Le cours a désormais présenté toutes les pièces~: la
+gouvernance, COBIT, le cadre normatif et juridique, ITIL et les
+processus. Le Chapitre~\ref{chap:cas-integrateurs} les assemble sur les
+quatre cas fil rouge, en études de cas intégratrices.
+\end{boxinfo}

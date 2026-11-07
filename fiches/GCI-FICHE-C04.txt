@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C04
+Chapitre 4 : Panorama et articulation des référentiels
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Qu'est-ce qui caractérise une norme certifiable ?
+      a) Elle formule des exigences vérifiables par un organisme de certification accrédité
+      b) Elle donne des recommandations que l'organisation adapte librement
+      c) Elle est publiée par une association professionnelle
+      d) Elle est obligatoire par la loi
+
+ 2. Lequel de ces référentiels est un recueil de bonnes pratiques ?
+      a) ISO/IEC 27001
+      b) ISO/IEC 20000-1
+      c) ITIL
+      d) ISO 22301
+
+ 3. Peut-on certifier une entreprise COBIT ?
+      a) Oui, par l'ISACA
+      b) Oui, par un organisme accrédité ISO
+      c) Oui, mais seulement pour les banques
+      d) Non ; on peut en revanche évaluer la capacité de ses processus
+
+ 4. Par quelle norme une organisation fait-elle reconnaître par un tiers la qualité de sa gestion des services ?
+      a) ITIL 4
+      b) ISO/IEC 20000-1
+      c) ISO/IEC 38500
+      d) COBIT 2019
+
+ 5. Scénario. Un prestataire présente un certificat ISO/IEC 27001 dont le périmètre est un centre de données à Casablanca ; le service proposé à KRIBILOG serait exploité depuis Douala. Que prouve ce certificat pour ce service ?
+      a) Que le service sera sécurisé
+      b) Que KRIBILOG est certifiée
+      c) Rien directement, car le service n'entre pas dans le périmètre
+      d) Que le prestataire respecte le droit camerounais
+
+ 6. Selon l'article 11 de la loi n° 2010/012, que peut-on soumettre à autorisation ?
+      a) La fourniture au public de services d'audit de sécurité
+      b) La certification ISO des entreprises
+      c) L'achat de logiciels étrangers
+      d) La création d'un comité d'audit
+
+ 7. Quel est le rôle de COBIT sur la carte des référentiels ?
+      a) Un référentiel technique de sécurité
+      b) Un référentiel parapluie qui couvre la gouvernance et le management de bout en bout
+      c) Une méthode de gestion de projet
+      d) Une norme de continuité d'activité
+
+ 8. À qui s'adresse la norme ISO/IEC 38500 ?
+      a) Aux techniciens du centre de services
+      b) Aux auditeurs de certification
+      c) Aux développeurs
+      d) À l'organe de gouvernance (conseil, direction)
+
+ 9. Quand la troisième édition de l'ISO/IEC 38500 a-t-elle été publiée ?
+      a) Février 2024
+      b) Juin 2008
+      c) Mars 2015
+      d) Janvier 2019
+
+10. Sous quel titre le cadre COSO de gestion des risques a-t-il été refondu en 2017 ?
+      a) Internal Control - Integrated Framework
+      b) Enterprise Risk Management: Integrating with Strategy and Performance
+      c) Risk IT Framework
+      d) Guidance on Monitoring Internal Control
+
+11. Qui est aujourd'hui propriétaire d'ITIL ?
+      a) L'ISACA
+      b) L'ISO
+      c) PeopleCert
+      d) The Open Group
+
+12. Quelle version d'ITIL a introduit le cycle de vie des services ?
+      a) La version 2
+      b) ITIL 4
+      c) ITIL version 5
+      d) La version 3
+
+13. Combien de mesures de sécurité compte l'annexe A de l'ISO/IEC 27001 dans son édition 2022 ?
+      a) 93
+      b) 114
+      c) 40
+      d) 133
+
+14. Laquelle de ces normes n'est pas certifiable ?
+      a) ISO 22301
+      b) ISO/IEC 27001
+      c) ISO 31000
+      d) ISO/IEC 20000-1
+
+15. Quel est le cœur du référentiel TOGAF ?
+      a) Une matrice RACI
+      b) Une méthode de développement de l'architecture (ADM)
+      c) Un modèle de maturité
+      d) Une grille d'audit
+
+16. Où le CMMI est-il né ?
+      a) À l'université Carnegie Mellon
+      b) Au Project Management Institute
+      c) À l'administration britannique
+      d) À l'Organisation internationale de normalisation
+
+17. Quel est le référentiel principal pour conduire les projets ?
+      a) COSO
+      b) ISO/IEC 38500
+      c) TOGAF
+      d) PMBOK ou PRINCE2
+
+18. Quelle règle résume l'articulation des référentiels ?
+      a) Chaque référentiel couvre tout le domaine
+      b) ITIL fixe les objectifs, COBIT fournit les pratiques
+      c) COBIT fixe les objectifs, les référentiels spécialisés fournissent les pratiques
+      d) Les normes ISO remplacent COBIT et ITIL
+
+19. Scénario. Pourquoi la BANQUE SANAGA écarte-t-elle le programme CMMI proposé par un cabinet ?
+      a) Parce que le modèle de capacité de COBIT suffit et que la banque ne développe pas elle-même ses logiciels
+      b) Parce que CMMI est interdit par la COBAC
+      c) Parce que CMMI est réservé au secteur public
+      d) Parce que CMMI n'existe plus
+
+20. Quel objectif COBIT couvre le choix et l'articulation des référentiels retenus ?
+      a) APO12
+      b) APO01
+      c) MEA03
+      d) BAI11
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. ITIL et COBIT se contredisent, il faut donc choisir l'un ou l'autre.
+      Vrai / Faux
+
+22. Un certificat ne vaut que pour le périmètre qu'il désigne.
+      Vrai / Faux
+
+23. Un certificat ISO/IEC 27001 dispense une organisation des audits de sécurité prévus par la loi n° 2010/012.
+      Vrai / Faux
+
+24. COBIT est né en 1996 comme un référentiel de contrôle destiné aux auditeurs.
+      Vrai / Faux
+
+25. L'ISO/IEC 38500 décrit en détail les processus informatiques à mettre en place.
+      Vrai / Faux
+
+26. Les contrôles généraux informatiques font partie du contrôle interne au sens du COSO.
+      Vrai / Faux
+
+27. ITIL version 5 a été annoncée par PeopleCert en 2026, et ITIL 4 reste reconnu pendant la transition.
+      Vrai / Faux
+
+28. Le modèle de capacité de COBIT 2019 s'inspire directement du CMMI.
+      Vrai / Faux
+
+29. Une carte d'articulation se construit à partir de l'offre des cabinets de conseil.
+      Vrai / Faux
+
+30. Une politique rédigée sur une édition périmée d'une norme expose à des écarts lors de l'audit.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. COBIT et COSO sont des ______ de référence, et non des normes certifiables.
+
+32. Avant de se fier à un certificat, il faut toujours en lire le ______.
+
+33. COBIT est publié par l'association internationale ______.
+
+34. COBIT 2019 compte ______ objectifs de gouvernance et de management.
+
+35. Le modèle de l'ISO/IEC 38500 repose sur trois tâches : évaluer, diriger et ______.
+
+36. Le système de management de la sécurité de l'information est désigné par le sigle ______.
+
+37. La norme certifiable du management de la continuité d'activité est l'ISO ______.
+
+38. La description cohérente des processus, données, applications et technologies d'une organisation s'appelle l'architecture d'______.
+
+39. Le guide de gestion de projet publié par le Project Management Institute est désigné par le sigle ______.
+
+40. La carte d'articulation des référentiels comporte ______ niveaux : gouvernance, management, domaines spécialisés.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

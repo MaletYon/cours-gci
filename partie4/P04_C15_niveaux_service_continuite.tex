@@ -1,0 +1,590 @@
+% ============================================================================
+% Fichier  : partie4/P04_C15_niveaux_service_continuite.tex
+% Titre    : Niveaux de Service, Disponibilité, Continuité et Fournisseurs
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : ITIL 4 (sources publiques, notions reformulées) ; COBIT 2019,
+% fiches APO09, APO10 et DSS04 (dossier Normes) ; loi n° 2010/012, art. 26
+% (texte anglais officiel). Laboratoire associé : GCI-LAB-08 (disponibilité
+% mensuelle, pénalités en FCFA, RTO et RPO chez KRIBILOG).
+% ============================================================================
+
+\chapter{Niveaux de Service, Disponibilité, Continuité et Fournisseurs}
+\label{chap:itil-niveaux}
+\chaptermark{Niveaux de service et fournisseurs}
+
+\epigraph{%
+    « Un engagement que l'on ne mesure pas n'engage personne. »%
+}{Adage des acheteurs de services}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:itil-incidents} (incidents, priorités et
+    délais cibles) et du Chapitre~\ref{chap:itil-svs} (utilité et
+    garantie).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Rédiger un SLA, un OLA et un contrat de sous-traitance cohérents.
+    \item Calculer une disponibilité et les pénalités contractuelles en
+          FCFA.
+    \item Conduire une analyse d'impact sur l'activité et fixer RTO et RPO.
+    \item Piloter un fournisseur de services informatiques.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : que vaut une promesse de 99,5~\%~?}
+% ============================================================================
+
+Le contrat entre KRIBILOG SA et son infogérant NETPORT SERVICES tient en
+une ligne d'engagement~: « disponibilité des serveurs~: 99,5~\% ».
+L'exercice~12.3 a montré que cette promesse ne protège pas KRIBILOG.
+Mais combien vaut-elle exactement~? Combien d'heures de panne
+autorise-t-elle chaque mois~? Que rembourse-t-elle quand un navire attend
+à quai, à 12~millions FCFA de surestaries par jour~? Et que se passe-t-il si
+le centre de données de NETPORT SERVICES brûle~?
+
+Ce chapitre répond à ces questions. Il présente la gestion des niveaux de
+service (section~\ref{sec:c15-sla}), le calcul de la disponibilité
+(section~\ref{sec:c15-dispo}) et des pénalités (section~\ref{sec:c15-penalites}),
+la continuité de service (section~\ref{sec:c15-continuite}) et la gestion
+des fournisseurs (section~\ref{sec:c15-fournisseurs}). Le laboratoire
+GCI-LAB-08 en fait réaliser les calculs sur les données de KRIBILOG.
+
+\separateur
+
+% ============================================================================
+\section{Les Engagements de Service}
+\label{sec:c15-sla}
+% ============================================================================
+
+\subsection{Trois niveaux d'accord}
+
+\begin{boxdef}
+\termecle{Accord de niveau de service}\index{accord de niveau de service}
+(\textit{service level agreement}, \sigle{SLA})~: accord documenté entre un
+fournisseur de services et son client, qui précise le service fourni et
+les niveaux de service attendus.
+
+\medskip
+\termecle{Accord de niveau opérationnel}\index{accord de niveau
+opérationnel} (\textit{operational level agreement}, \sigle{OLA})~: accord
+entre le fournisseur et une autre équipe interne de la même organisation,
+qui soutient la fourniture du service.
+
+\medskip
+\termecle{Contrat de sous-traitance}\index{contrat de sous-traitance}
+(\textit{underpinning contract})~: contrat entre le fournisseur et un
+tiers extérieur dont il dépend pour fournir le service.
+\end{boxdef}
+{\small\itshape Notions reformulées d'après ITIL~4~\cite{axelos2019itil4}.}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[
+    acteur/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        text width=2.8cm, minimum height=1.0cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    accord/.style = {font=\scriptsize\bfseries\color{CouleurAccent}},
+    lien/.style = {{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick,
+        color=CouleurSecondaire}
+]
+\node[acteur] (cl) at (0,0)    {Armateur\\ (client)};
+\node[acteur] (kr) at (4.6,0)  {KRIBILOG\\ (fournisseur)};
+\node[acteur] (in) at (4.6,-2.2) {Équipe réseau\\ interne};
+\node[acteur] (np) at (10.0,0) {NETPORT SERVICES\\ (infogérant)};
+\draw[lien] (cl) -- node[above, accord]{SLA} (kr);
+\draw[lien] (kr) -- node[right, accord]{OLA} (in);
+\draw[lien] (kr) -- node[below, accord, align=center]{contrat de\\
+    sous-traitance} (np);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~15.1. SLA, OLA et contrat de
+sous-traitance du service de suivi des conteneurs}\end{center}
+\end{minipage}
+
+\medskip
+
+La règle de cohérence est simple~: \textbf{on ne peut pas promettre au
+client plus que ce que garantissent les accords qui soutiennent le
+service}. Si KRIBILOG promet à l'armateur un rétablissement en 4~heures,
+mais que le contrat de NETPORT SERVICES ne fixe aucun délai
+d'intervention, la promesse ne repose sur rien.
+
+\subsection{Rédiger un SLA utile}
+
+\begin{tableaucours}{L{3.2cm}L{4.6cm}L{4.4cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Contenu} &
+    \tableauHeader{Exemple KRIBILOG}
+}
+Description du service & Ce que le service permet au client
+d'obtenir (le résultat) & Localiser en temps réel les conteneurs de
+l'armateur \\
+Horaires de service & Périodes pendant lesquelles les engagements
+s'appliquent & 24~h/24, 7~j/7 \\
+Disponibilité & Part du temps de service où le service est utilisable &
+99,5~\% par mois \\
+Délais de rétablissement & Par priorité (Chapitre~\ref{chap:itil-incidents})
+& P1 en 4~heures, P2 en 8~heures \\
+Indicateur de résultat & Mesure ce que le client vit & Part des conteneurs
+localisés en moins de 5~minutes~: 99~\% \\
+Mesure et compte rendu & Source des données, fréquence & Rapport mensuel
+produit par KRIBILOG à partir de son outil \\
+Pénalités & Conséquences du non-respect & Section~\ref{sec:c15-penalites} \\
+Revue & Fréquence de révision de l'accord & Comité de service
+trimestriel \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.1. Les rubriques d'un accord de
+niveau de service}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Tous les indicateurs du rapport mensuel sont
+au vert, mais le client est mécontent. ITIL~4 appelle ce phénomène
+l'« effet pastèque »~: vert à l'extérieur, rouge à l'intérieur. Il naît
+d'engagements qui mesurent des livrables (serveurs disponibles) au lieu
+de résultats (conteneurs localisés).
+
+\smallskip
+\textbf{Règle~:} chaque SLA comporte au moins un indicateur de résultat,
+défini avec le client, et la satisfaction du client est mesurée à côté
+des indicateurs techniques.
+\end{boxalert}
+
+\begin{boxobjet}{APO09 · Gérer les accords de service}
+\textbf{Finalité~:} s'assurer que les services et les niveaux de service
+répondent aux besoins actuels et futurs de l'organisation.
+
+\textbf{Objectifs liés~:} EG01, EG08~; AG05.
+
+\textbf{Pratiques~:} APO09.01 identifier les services~; APO09.02
+cataloguer les services~; APO09.03 définir et préparer les accords de
+service~; APO09.04 surveiller les niveaux de service et en rendre
+compte~; APO09.05 revoir les accords de service et les contrats.
+
+\textbf{RACI (extrait, KRIBILOG)~:} APO09.03~: \emph{A} au directeur des
+opérations, \emph{R} au responsable des services informatiques, \emph{C}
+à l'armateur et à NETPORT SERVICES.
+
+\textbf{Indicateurs~:} part des services couverts par un SLA, part des
+engagements tenus, satisfaction des clients.
+\end{boxobjet}
+{\small\itshape Pratiques et objectifs liés traduits par nos soins à partir
+de COBIT~2019~\cite{isaca2018cobitobjectifs}~; finalité reformulée.}
+
+% ============================================================================
+\section{Calculer une Disponibilité}
+\label{sec:c15-dispo}
+% ============================================================================
+
+\subsection{La formule}
+
+\begin{boxdef}
+\termecle{Disponibilité}\index{disponibilité}~: aptitude d'un service à
+remplir sa fonction quand on en a besoin. Elle se mesure par
+\[
+    A = \frac{T_{\text{convenu}} - T_{\text{indisponible}}}{T_{\text{convenu}}}
+    \times 100,
+\]
+où $T_{\text{convenu}}$ est le temps de service convenu sur la période et
+$T_{\text{indisponible}}$ la durée cumulée des interruptions pendant ce
+temps.
+\end{boxdef}
+
+Sur un mois de 30~jours en service 24~h/24, le temps convenu est de
+720~heures. Une disponibilité de 99,5~\% autorise donc $0{,}005 \times 720
+= 3{,}6$~heures d'interruption par mois~; 99,9~\% en autorisent
+43~minutes~; 99,99~\%, un peu plus de 4~minutes.
+
+\begin{tableaucours}{L{3.0cm}L{4.6cm}L{4.6cm}}{%
+    \tableauHeader{Disponibilité} &
+    \tableauHeader{Interruption par mois (720 h)} &
+    \tableauHeader{Interruption par an (8~760 h)}
+}
+99~\% & 7,2 heures & 87,6 heures \\
+99,5~\% & 3,6 heures & 43,8 heures \\
+99,9~\% & 43 minutes & 8,8 heures \\
+99,99~\% & 4,3 minutes & 53 minutes \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.2. Ce que signifie un taux de
+disponibilité}\end{center}
+
+\subsection{Composants en série et en parallèle}
+
+Un service dépend de plusieurs composants. S'ils sont \textbf{en série}
+(il les faut tous), la disponibilité du service est le produit de leurs
+disponibilités~: $A = A_1 \times A_2 \times \cdots \times A_n$. S'ils sont
+\textbf{en parallèle} (un seul suffit, les autres sont des secours), la
+disponibilité est $A = 1 - (1-A_1)(1-A_2)\cdots(1-A_n)$.
+
+\begin{boxscenario}{Opération KRIBI. La disponibilité réelle du suivi}
+\textbf{Composants en série.} Serveur d'application (99,9~\%), base de
+données (99,8~\%), passerelle des balises (99,5~\%), réseau de
+l'opérateur mobile (99,0~\%).
+
+\medskip
+\textbf{Calcul.} $0{,}999 \times 0{,}998 \times 0{,}995 \times 0{,}990 =
+0{,}9821$, soit \textbf{98,21~\%}~: environ 12,9~heures d'interruption
+attendues par mois, alors que l'engagement de NETPORT SERVICES sur les
+seuls serveurs (99,5~\%) est tenu.
+
+\medskip
+\textbf{Avec un second opérateur mobile en secours.} Le réseau passe à
+$1 - (0{,}01 \times 0{,}01) = 0{,}9999$, et le service à $0{,}999 \times
+0{,}998 \times 0{,}995 \times 0{,}9999 = 0{,}9919$, soit 99,19~\%.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le maillon faible n'est pas le
+serveur, sur lequel porte le contrat, mais le réseau mobile, sur lequel
+il ne porte pas. Un SLA sur un composant ne garantit pas le service.
+\end{boxscenario}
+
+% ============================================================================
+\section{Les Pénalités}
+\label{sec:c15-penalites}
+% ============================================================================
+
+\subsection{Un mécanisme contractuel}
+
+Les pénalités (souvent appelées « crédits de service ») sanctionnent le
+non-respect des engagements. Elles ont trois fonctions~: inciter le
+fournisseur, compenser partiellement le client, et documenter les
+manquements. Elles ne compensent presque jamais le préjudice réel.
+
+\begin{boxscenario}{Opération KRIBI. Le calcul du mois de juin}
+\textbf{Clause du nouveau contrat.} Redevance mensuelle~: 25~millions
+FCFA. Engagement~: 99,5~\% de disponibilité du service de suivi, mesurée
+de bout en bout. Pénalité~: 4~\% de la redevance par tranche complète de
+0,1~point en dessous de l'engagement, plafonnée à 30~\%.
+
+\medskip
+\textbf{Faits du mois.} Trois interruptions de 2~heures, 4,5~heures et
+1,5~heure, soit 8~heures sur 720.
+
+\medskip
+\textbf{Calcul.} Disponibilité~: $(720-8)/720 = 98{,}89~\%$. Écart~: $99{,}5
+- 98{,}89 = 0{,}61$~point, soit 6~tranches complètes de 0,1~point.
+Pénalité~: $6 \times 4~\% = 24~\%$, sous le plafond, soit $0{,}24 \times 25 =
+6$~millions FCFA.
+
+\medskip
+\textbf{Mise en perspective.} L'interruption de 4,5~heures a immobilisé
+un navire une demi-journée~: environ 6~millions FCFA de surestaries à elle
+seule. La pénalité du mois couvre une seule interruption sur trois.
+\end{boxscenario}
+
+\begin{boiteRemarque}{Faut-il des pénalités plus lourdes~?}
+Pas nécessairement. Des pénalités très lourdes renchérissent le contrat,
+poussent le fournisseur à contester les mesures et ne remplacent pas un
+service fiable. La protection réelle du client vient d'ailleurs~: des
+engagements de résultat, une architecture redondante, un plan de
+continuité, un droit de résiliation en cas de manquements répétés et une
+supervision effective du fournisseur. La pénalité est un signal, pas une
+assurance.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{La Continuité de Service}
+\label{sec:c15-continuite}
+% ============================================================================
+
+\subsection{L'analyse d'impact sur l'activité}
+
+La continuité vise à maintenir les services à un niveau acceptable en cas
+de sinistre majeur~: incendie du centre de données, coupure prolongée
+d'électricité, cyberattaque destructrice. Elle commence par une analyse
+d'impact sur l'activité.
+
+\begin{boxdef}
+\termecle{Analyse d'impact sur l'activité}\index{analyse d'impact sur
+l'activité} (\textit{business impact analysis}, \sigle{BIA})~: analyse qui
+identifie les activités essentielles, mesure l'effet de leur interruption
+dans le temps, et en déduit les objectifs de reprise.
+
+\medskip
+\termecle{Durée maximale d'interruption admissible}\index{durée maximale
+d'interruption admissible} (\sigle{DMIA})~: durée au-delà de laquelle
+l'interruption d'une activité devient inacceptable pour l'organisation.
+
+\medskip
+\termecle{RTO}\index{RTO} (\textit{recovery time objective}, durée
+maximale de reprise)~: délai cible dans lequel le service doit être
+rétabli après un sinistre. Il doit être inférieur à la DMIA.
+
+\medskip
+\termecle{RPO}\index{RPO} (\textit{recovery point objective}, perte de
+données maximale admissible)~: quantité maximale de données, exprimée en
+durée, que l'on accepte de perdre. Un RPO de 15~minutes impose une
+réplication ou une sauvegarde au moins toutes les 15~minutes.
+\end{boxdef}
+
+\begin{tableaucours}{L{3.6cm}L{2.0cm}L{1.6cm}L{1.6cm}L{3.0cm}}{%
+    \tableauHeader{Service} &
+    \tableauHeader{DMIA} &
+    \tableauHeader{RTO} &
+    \tableauHeader{RPO} &
+    \tableauHeader{Dispositif}
+}
+Système central (SANAGA) & 8 heures & 4 h & 15 min & Site de secours
+répliqué \\
+Paie des fonctionnaires (ANPP) & 48 heures & 24 h & 1 h & Sauvegarde
+horaire, site de secours \\
+Suivi des conteneurs (KRIBILOG) & 4 heures & 2 h & 15 min & Réplication,
+second opérateur \\
+Messagerie (KRIBILOG) & 3 jours & 24 h & 24 h & Sauvegarde quotidienne \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.3. Objectifs de reprise de
+quelques services du cours}\end{center}
+
+\subsection{Le plan et ses tests}
+
+Le plan de continuité ne vaut que s'il est \emph{testé}. COBIT y consacre
+l'objectif DSS04~; la norme ISO~22301 en formule les exigences
+(Chapitre~\ref{chap:normes}).
+
+\begin{boxobjet}{DSS04 · Gérer la continuité}
+\textbf{Finalité~:} s'adapter rapidement, poursuivre les activités et
+maintenir la disponibilité des ressources et de l'information à un niveau
+acceptable en cas de perturbation majeure.
+
+\textbf{Objectifs liés~:} EG01, EG02, EG06, EG08~; AG05, AG07.
+
+\textbf{Pratiques~:} DSS04.01 définir la politique, les objectifs et le
+périmètre de la continuité~; DSS04.02 maintenir la résilience~; DSS04.03
+élaborer et mettre en œuvre la réponse~; DSS04.04 exercer, tester et revoir
+les plans~; DSS04.05 revoir, maintenir et améliorer les plans~; DSS04.06
+former~; DSS04.07 gérer les sauvegardes~; DSS04.08 conduire une revue après
+la reprise.
+
+\textbf{Indicateurs~:} part des services critiques dont le plan a été testé
+dans l'année~; écart entre RTO visé et durée de reprise constatée lors des
+tests.
+\end{boxobjet}
+{\small\itshape Finalité, objectifs liés et pratiques résumés et traduits
+par nos soins à partir de COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\begin{tableaucours}{L{3.4cm}L{4.6cm}L{4.2cm}}{%
+    \tableauHeader{Type de test} &
+    \tableauHeader{Déroulement} &
+    \tableauHeader{Ce qu'il prouve}
+}
+Exercice sur table & Les responsables déroulent le plan sur un scénario,
+autour d'une table & Que chacun connaît son rôle \\
+Simulation & Les équipes exécutent les procédures sans basculer
+réellement & Que les procédures sont praticables \\
+Bascule réelle & Le service est réellement repris sur le site de secours
+& Que le RTO et le RPO sont tenus \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.4. Types de tests de continuité}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} La BANQUE SANAGA disposait d'un plan de
+continuité rédigé en 2022. Il n'avait jamais été testé, et le site de
+secours qu'il désignait hébergeait encore l'ancienne version du système
+central. Le jour de la panne, personne n'a pensé à l'ouvrir.
+
+\smallskip
+\textbf{Règle~:} un plan de continuité se teste au moins une fois par an
+pour chaque service critique, et se met à jour à chaque changement majeur
+(Chapitre~\ref{chap:itil-changements}).
+\end{boxalert}
+
+% ============================================================================
+\section{Piloter les Fournisseurs}
+\label{sec:c15-fournisseurs}
+% ============================================================================
+
+\subsection{L'externalisation ne transfère pas la responsabilité}
+
+Le Chapitre~\ref{chap:defaillances} l'a montré avec TSB, le
+Chapitre~\ref{chap:normes} avec l'ISO/IEC~20000-1~: confier un service à
+un tiers ne décharge pas l'organisation de sa responsabilité. Le droit
+camerounais le dit aussi.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, article~26, alinéa~1} (extrait, version
+anglaise officielle)~:
+
+\medskip
+\textit{« Operators of information systems shall take every technical and
+administrative measure to ensure the security of services offered. To
+this end, they shall have standardized systems enabling them to at all
+times identify, assess, process or manage any risk relating to the
+security of the information systems of the services provided directly or
+indirectly. »}
+
+\medskip
+\textbf{Portée.} L'obligation de gérer les risques de sécurité porte sur
+les services fournis « directement ou indirectement ». Une organisation qui
+exploite ses systèmes par l'intermédiaire d'un infogérant reste tenue
+d'identifier, d'évaluer et de traiter les risques de sécurité de ces
+services~: elle doit donc s'en donner les moyens dans le contrat (droit
+d'audit, information sur les incidents, exigences de sécurité).
+\end{boxjuris}
+
+\subsection{Le cycle de la relation fournisseur}
+
+\begin{boxobjet}{APO10 · Gérer les fournisseurs}
+\textbf{Finalité~:} obtenir des fournisseurs les services convenus, en
+maîtrisant leurs risques, et en entretenant des relations efficaces.
+
+\textbf{Objectifs liés~:} EG01, EG08~; AG05.
+
+\textbf{Pratiques~:} APO10.01 identifier et évaluer les relations et les
+contrats~; APO10.02 sélectionner les fournisseurs~; APO10.03 gérer les
+relations et les contrats~; APO10.04 gérer les risques liés aux
+fournisseurs~; APO10.05 surveiller la performance et la conformité des
+fournisseurs.
+
+\textbf{RACI (extrait, KRIBILOG)~:} APO10.05~: \emph{A} au responsable des
+services informatiques, \emph{R} au gestionnaire du contrat, \emph{C} à la
+direction des achats et au RSSI.
+
+\textbf{Indicateurs~:} part des fournisseurs critiques évalués dans
+l'année, nombre de manquements contractuels, délai de traitement des
+écarts.
+\end{boxobjet}
+{\small\itshape Pratiques et objectifs liés traduits par nos soins à partir
+de COBIT~2019~\cite{isaca2018cobitobjectifs}~; finalité reformulée.}
+
+\subsection{Les clauses essentielles}
+
+\begin{boxprocedure}
+\textbf{Le contrat d'un fournisseur critique.} Pour qu'un auditeur puisse
+établir que l'organisation maîtrise un service externalisé, le contrat
+doit comporter au minimum~:
+\begin{itemize}
+    \item des engagements de service mesurables, dont au moins un
+          indicateur de résultat, et la méthode de mesure~;
+    \item des pénalités et un droit de résiliation pour manquements
+          répétés~;
+    \item l'obligation de signaler les incidents et les failles de sécurité
+          dans un délai fixé~;
+    \item un droit d'audit, par l'organisation ou par un tiers qu'elle
+          désigne~;
+    \item la localisation des données et les conditions de tout transfert
+          (loi n°~2024/017, Chapitre~\ref{chap:droit})~;
+    \item les conditions de la sous-traitance en cascade~;
+    \item un plan de continuité du fournisseur, testé~;
+    \item une clause de réversibilité~: restitution des données et
+          assistance au transfert vers un autre prestataire.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Le comité de service trimestriel avec NETPORT SERVICES}
+\begin{enumerate}
+    \item Revoir les indicateurs du trimestre, mesurés par KRIBILOG et non
+          par le seul fournisseur.
+    \item Examiner chaque incident P1 et P2, et les problèmes ouverts
+          imputables au fournisseur.
+    \item Arrêter les pénalités et les plans d'action.
+    \item Revoir les risques du fournisseur (dépendance à une personne,
+          santé financière, sous-traitants).
+    \item Consigner les décisions au procès-verbal, transmis au comité
+          stratégique des SI.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Auditer un fournisseur critique}
+\begin{enumerate}
+    \item Vérifier que le contrat contient les clauses essentielles
+          ci-dessus.
+    \item Recalculer, sur trois mois, la disponibilité et les pénalités à
+          partir des données de l'organisation, et les comparer au rapport
+          du fournisseur.
+    \item Vérifier que les pénalités dues ont été effectivement appliquées.
+    \item Vérifier le dernier test du plan de continuité du fournisseur.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{SLA, OLA, contrat de sous-traitance}~: on ne promet pas au
+          client plus que ce que garantissent les accords qui soutiennent le
+          service.
+    \item \textbf{Un SLA utile} mesure au moins un résultat~; sinon
+          apparaît l'effet pastèque.
+    \item \textbf{La disponibilité se calcule}~: 99,5~\% sur 720~heures
+          autorisent 3,6~heures d'interruption. En série, les
+          disponibilités se multiplient~; en parallèle, les secours se
+          composent.
+    \item \textbf{Les pénalités} sont un signal, pas une assurance~: elles
+          couvrent rarement le préjudice réel.
+    \item \textbf{La continuité} part de l'analyse d'impact (DMIA, RTO,
+          RPO) et ne vaut que si le plan est testé.
+    \item \textbf{L'externalisation ne transfère pas la responsabilité}~:
+          la loi n°~2010/012 vise les services fournis directement ou
+          indirectement. Le contrat doit donner les moyens du contrôle.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.1. Calculs de disponibilité \niveaubase}]
+\begin{enumerate}[(a)]
+    \item Combien d'heures d'interruption par mois de 30~jours autorise une
+          disponibilité de 99,8~\%~?
+    \item Un service a connu 5~heures d'interruption en avril (30~jours).
+          Quelle est sa disponibilité~?
+    \item Un service dépend de trois composants en série disponibles à
+          99,9~\%, 99,7~\% et 99,5~\%. Quelle est sa disponibilité~?
+    \item On double le composant le plus faible par un secours identique.
+          Quelle est la nouvelle disponibilité~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.2. Les pénalités de juillet \niveaumoyen}]
+Avec la clause du scénario de la section~\ref{sec:c15-penalites}, le mois
+de juillet (31~jours) a connu quatre interruptions de 3~heures,
+2~heures, 6~heures et 1~heure.
+\begin{enumerate}[(a)]
+    \item Calculez la disponibilité du mois.
+    \item Calculez la pénalité en FCFA.
+    \item NETPORT SERVICES conteste l'interruption de 6~heures, qu'elle
+          attribue à l'opérateur mobile. Que dit le contrat, et que
+          devrait-il dire~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.3. La continuité de l'ANPP \niveauexpert}]
+L'ANPP verse chaque mois les salaires de plus de 300~000 agents publics.
+\begin{enumerate}[(a)]
+    \item Conduisez une analyse d'impact simplifiée de ses trois services
+          principaux (paie, paiement des fournisseurs, portail
+          d'information), et fixez pour chacun DMIA, RTO et RPO.
+    \item Proposez un dispositif de continuité proportionné, et le programme
+          de tests de l'année.
+    \item Identifiez les clauses à imposer à l'hébergeur de l'agence.
+    \item Indiquez à quelle instance de gouvernance les résultats des tests
+          doivent être présentés, et pourquoi.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Les Chapitres~\ref{chap:itil-svs} à~\ref{chap:itil-niveaux}
+ont présenté les pratiques d'ITIL~4 une par une. Le
+Chapitre~\ref{chap:processus} apprend à les assembler~: modéliser un
+processus, en attribuer les responsabilités par une matrice RACI, le
+mesurer, et établir la correspondance entre COBIT, ITIL et
+l'ISO/IEC~20000-1.
+\end{boxinfo}

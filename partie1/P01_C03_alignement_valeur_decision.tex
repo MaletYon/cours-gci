@@ -1,0 +1,724 @@
+% ============================================================================
+% Fichier  : partie1/P01_C03_alignement_valeur_decision.tex
+% Titre    : Théories et Modèles : Alignement, Valeur et Décision
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Chapitre associé au laboratoire GCI-LAB-01 (arbitrage du portefeuille de
+% l'ANPP, opération MEFOU).
+% ============================================================================
+
+\chapter{Théories et Modèles : Alignement, Valeur et Décision}
+\label{chap:alignement}
+\chaptermark{Alignement, valeur et décision}
+
+\epigraph{%
+    « On voit l'ère de l'ordinateur partout, sauf dans les statistiques
+    de productivité. »%
+}{Robert \textsc{Solow}, prix Nobel d'économie, 1987 (notre traduction)}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:gouv-entreprise} (définition de travail
+    de la gouvernance des SI et ses trois finalités).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Appliquer le modèle d'alignement stratégique de Henderson et
+          Venkatraman.
+    \item Classer les droits de décision selon les archétypes de Weill et
+          Ross.
+    \item Expliquer les trois finalités~: réalisation des bénéfices,
+          optimisation des risques, optimisation des ressources.
+    \item Évaluer un investissement informatique (coût total de possession,
+          valeur actuelle nette, score multicritère).
+    \item Arbitrer un portefeuille de projets.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : 14 milliards pour quoi faire~?}
+% ============================================================================
+
+À l'ANPP (opération MEFOU, Chapitre~\ref{chap:gouv-entreprise}), le
+schéma directeur adopté en 2023 prévoyait neuf projets pour 14~milliards
+FCFA. À mi-parcours, trois projets ont consommé 71~\% du budget sans être
+achevés. Le nouveau président du conseil d'administration pose trois
+questions simples~: « Ces projets servaient-ils la mission de l'agence~?
+Qui les a choisis, et selon quels critères~? Combien rapportent-ils, ou
+combien de risques évitent-ils~? »
+
+Ces trois questions sont celles de ce chapitre. La première relève de
+l'\textbf{alignement stratégique} (section~\ref{sec:c03-alignement}). La
+deuxième relève des \textbf{droits de décision}
+(section~\ref{sec:c03-weill-ross}). La troisième relève de la
+\textbf{valeur}, que le chapitre définit (section~\ref{sec:c03-valeur}),
+mesure (section~\ref{sec:c03-evaluation}) et arbitre à l'échelle d'un
+portefeuille (section~\ref{sec:c03-portefeuille}). Le laboratoire GCI-LAB-01
+de NDAP SUKULU applique la démarche au portefeuille complet de l'ANPP.
+
+\separateur
+
+% ============================================================================
+\section{Le Paradoxe de la Productivité}
+\label{sec:c03-paradoxe}
+% ============================================================================
+
+La phrase de Solow, en épigraphe, a ouvert un long débat. Dans les années
+1980, les entreprises américaines investissent massivement dans
+l'informatique, sans que la productivité mesurée progresse en proportion.
+Les travaux ultérieurs ont largement nuancé ce constat~: les gains
+existent, mais ils sont inégaux, différés, et dépendent moins de la
+technologie elle-même que de la manière dont l'organisation la met en
+œuvre.
+
+Pour la gouvernance, la leçon est décisive~: \textbf{la valeur n'est pas
+dans la technologie, elle est dans son usage}. Deux organisations qui
+achètent le même logiciel n'en tirent pas la même valeur. Ce qui les
+distingue, c'est la manière dont elles choisissent leurs projets,
+transforment leurs processus et suivent les bénéfices. C'est précisément
+le champ de la gouvernance des SI.
+
+\begin{boxinfo}
+\textbf{Les quatre questions de Thorp.} John Thorp a résumé la
+gouvernance de la valeur en quatre questions~\cite{thorp1998paradox},
+reprises plus tard par le référentiel Val~IT de l'ISACA~:
+\emph{fait-on les bonnes choses~?} (la stratégie), \emph{les fait-on de la
+bonne manière~?} (l'architecture), \emph{les mène-t-on à bien~?} (la
+livraison), \emph{en tire-t-on les bénéfices~?} (la valeur). Les deux
+premières relèvent de la gouvernance, les deux dernières du management,
+sous le contrôle de la gouvernance.
+\end{boxinfo}
+
+% ============================================================================
+\section{Le Modèle d'Alignement Stratégique}
+\label{sec:c03-alignement}
+% ============================================================================
+
+\subsection{Quatre domaines, deux dimensions}
+
+Le modèle d'alignement stratégique (\textit{Strategic Alignment Model},
+\sigle{SAM}) de Henderson et Venkatraman~\cite{henderson1993alignment}
+reste le cadre de référence de l'alignement. Il distingue quatre domaines,
+organisés selon deux dimensions.
+
+\begin{itemize}
+    \item La dimension de l'\textbf{ajustement stratégique}
+          (\textit{strategic fit}) relie le niveau externe (la stratégie~:
+          sur quel marché, avec quelles compétences distinctives, avec
+          quelle gouvernance) et le niveau interne (l'infrastructure et les
+          processus qui la mettent en œuvre).
+    \item La dimension de l'\textbf{intégration fonctionnelle}
+          (\textit{functional integration}) relie le domaine de l'activité
+          et le domaine des technologies de l'information.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[
+    dom/.style = {
+        draw=CouleurBordDef, fill=CouleurDef, rounded corners=4pt,
+        text width=4.2cm, minimum height=1.3cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}
+    },
+    lien/.style = {{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick,
+        color=CouleurSecondaire}
+]
+\node[dom] (bs) at (0,2.6)   {Stratégie de l'organisation};
+\node[dom] (ts) at (7.6,2.6) {Stratégie des technologies\\ de l'information};
+\node[dom] (oi) at (0,0)     {Infrastructure et processus\\ de l'organisation};
+\node[dom] (ii) at (7.6,0)   {Infrastructure et processus\\ des SI};
+\draw[lien] (bs) -- node[above, font=\scriptsize\itshape, align=center]{intégration\\
+    fonctionnelle} (ts);
+\draw[lien] (oi) -- node[below, font=\scriptsize\itshape, align=center]{intégration\\
+    fonctionnelle} (ii);
+\draw[lien] (bs) -- node[left, font=\scriptsize\itshape, align=center]{ajustement\\
+    stratégique} (oi);
+\draw[lien] (ts) -- node[right, font=\scriptsize\itshape, align=center]{ajustement\\
+    stratégique} (ii);
+\node[font=\scriptsize\bfseries\color{CouleurAccent}, above=0.1cm of bs]
+    {Activité};
+\node[font=\scriptsize\bfseries\color{CouleurAccent}, above=0.1cm of ts]
+    {Technologies};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~3.1. Le modèle d'alignement
+stratégique (d'après Henderson et Venkatraman, 1993)}\end{center}
+
+\begin{boxdef}
+\termecle{Alignement stratégique}\index{alignement stratégique}
+(\textit{strategic alignment})~: degré de cohérence entre la stratégie de
+l'organisation, la stratégie des technologies de l'information et les
+infrastructures et processus qui les mettent en œuvre. Pour Henderson et
+Venkatraman, l'alignement n'est pas un état atteint une fois pour toutes,
+mais un processus continu d'adaptation.
+\end{boxdef}
+
+\subsection{Quatre perspectives d'alignement}
+
+Le modèle décrit quatre manières de parcourir les domaines, selon le point
+de départ et le point d'arrivée. Chacune correspond à un rôle différent
+de la direction générale et du DSI.
+
+\begin{tableaucours}{L{3.0cm}L{4.4cm}L{4.8cm}}{%
+    \tableauHeader{Perspective} &
+    \tableauHeader{Parcours} &
+    \tableauHeader{Exemple camerounais}
+}
+Exécution de la stratégie & Stratégie de l'organisation $\rightarrow$
+infrastructure de l'organisation $\rightarrow$ infrastructure des SI &
+L'ANPP doit payer tous les fournisseurs de l'État sous 30~jours~: elle
+réorganise ses circuits, puis outille la chaîne de paiement \\
+Transformation technologique & Stratégie de l'organisation $\rightarrow$
+stratégie des TI $\rightarrow$ infrastructure des SI & La BANQUE SANAGA
+veut conquérir les jeunes urbains~: elle choisit une stratégie mobile,
+puis la plateforme qui la porte \\
+Potentiel concurrentiel & Stratégie des TI $\rightarrow$ stratégie de
+l'organisation $\rightarrow$ infrastructure de l'organisation & NOUN PAY
+découvre que la notation par IA permet le microcrédit instantané~: elle
+redéfinit son offre \\
+Niveau de service & Stratégie des TI $\rightarrow$ infrastructure des SI
+$\rightarrow$ infrastructure de l'organisation & KRIBILOG fiabilise son
+suivi des conteneurs, ce qui permet aux équipes du port de réorganiser
+leurs rotations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.1. Les quatre perspectives
+d'alignement}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Un projet est lancé parce que « la
+technologie existe » ou parce qu'un autre organisme l'a adoptée, sans que
+personne n'ait identifié l'objectif de l'organisation qu'il sert. Le
+projet est livré, mais aucun processus ne change, et aucun bénéfice n'est
+mesuré.
+
+\smallskip
+\textbf{Règle~:} tout projet doit pouvoir être rattaché, par écrit, à un
+objectif de l'organisation et à l'une des quatre perspectives. Un projet
+qu'on ne peut rattacher à rien n'est pas aligné~: il doit être justifié
+autrement, ou abandonné.
+\end{boxalert}
+
+% ============================================================================
+\section{Qui Décide de Quoi : les Archétypes de Weill et Ross}
+\label{sec:c03-weill-ross}
+% ============================================================================
+
+\subsection{Cinq décisions}
+
+Weill et Ross~\cite{weill2004itgovernance} identifient cinq grandes
+catégories de décisions relatives aux technologies de l'information.
+Elles sont liées~: les principes encadrent les quatre autres.
+
+\begin{enumerate}
+    \item \textbf{Les principes}~: le rôle que les TI doivent jouer dans
+          l'organisation (réduire les coûts, soutenir la croissance,
+          transformer le métier).
+    \item \textbf{L'architecture}~: l'organisation logique des données, des
+          applications et de l'infrastructure, et les standards retenus.
+    \item \textbf{L'infrastructure}~: les services techniques partagés
+          (réseaux, centres de données, sécurité) et leur niveau.
+    \item \textbf{Les besoins applicatifs}~: les applications à acquérir ou
+          à développer pour les métiers.
+    \item \textbf{L'investissement et la priorisation}~: combien investir,
+          dans quoi, et dans quel ordre.
+\end{enumerate}
+
+\subsection{Six archétypes}
+
+Pour chaque décision, Weill et Ross se demandent \emph{qui} détient le
+droit de décider, et \emph{qui} est consulté avant. Ils distinguent six
+archétypes de gouvernance.
+
+\begin{tableaucours}{L{2.8cm}L{4.6cm}L{4.8cm}}{%
+    \tableauHeader{Archétype} &
+    \tableauHeader{Qui décide} &
+    \tableauHeader{Risque typique}
+}
+Monarchie métier & La direction générale ou un groupe de dirigeants des
+métiers & Décisions déconnectées des contraintes techniques \\
+Monarchie informatique & Les responsables informatiques & Décisions
+techniquement justes, mais sans adhésion des métiers \\
+Féodalité & Chaque direction métier pour son propre périmètre & Doublons,
+incompatibilités, coûts non mutualisés \\
+Fédéralisme & La direction générale et les métiers ensemble, avec ou sans
+l'informatique & Lenteur, compromis difficiles \\
+Duopole & L'informatique et un groupe de métiers & Dépend de la qualité
+de la relation bilatérale \\
+Anarchie & Chaque utilisateur ou petit groupe & Aucune cohérence, risques
+non maîtrisés \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.2. Les six archétypes de Weill et
+Ross}\end{center}
+
+\subsection{La matrice des droits de décision}
+
+L'outil le plus utile est la \termecle{matrice des droits de
+décision}\index{matrice des droits de décision}~: en lignes les
+archétypes, en colonnes les cinq décisions, et dans chaque case qui
+apporte un avis (\emph{consultation}) et qui tranche (\emph{décision}).
+Elle décrit la gouvernance telle qu'elle fonctionne réellement, et non
+telle qu'elle est écrite.
+
+\begin{boxscenario}{Opération MEFOU. Les droits de décision réels}
+L'entretien avec les responsables de l'ANPP fait apparaître la situation
+suivante.
+
+\medskip
+\begin{tableaucours}{L{3.6cm}L{4.0cm}L{4.4cm}}{%
+    \tableauHeader{Décision} &
+    \tableauHeader{Qui décide réellement} &
+    \tableauHeader{Archétype}
+}
+Principes & Personne (aucun document) & Absence de décision \\
+Architecture & Chaque prestataire, projet par projet & Anarchie \\
+Infrastructure & Cheffe de la division informatique & Monarchie
+informatique \\
+Besoins applicatifs & Chaque direction, avec son prestataire & Féodalité \\
+Investissement & Directeur général, à la demande de la tutelle &
+Monarchie métier \\
+\end{tableaucours}
+
+\medskip
+\textbf{Analyse} (confiance élevée). La décision la plus lourde,
+l'investissement, est prise par une seule personne, sans consultation de
+la division informatique ni critères écrits. Les besoins applicatifs sont
+définis direction par direction, ce qui explique que trois projets aient
+absorbé l'essentiel du budget sans cohérence d'ensemble. L'absence de
+principes rend tout arbitrage impossible~: il n'existe aucun critère pour
+dire non.
+\end{boxscenario}
+
+\begin{boiteRemarque}{Existe-t-il un bon archétype~?}
+Il n'existe pas d'archétype bon en soi. Weill et Ross observent que les
+organisations les plus performantes combinent des archétypes différents
+selon les décisions~: par exemple une monarchie informatique pour
+l'architecture et l'infrastructure, où l'expertise prime, et un
+fédéralisme ou un duopole pour les besoins applicatifs et
+l'investissement, où l'adhésion des métiers est indispensable. La seule
+configuration à proscrire est celle qui n'a pas été choisie~: la
+gouvernance de fait, qui s'installe faute de décision.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Les Trois Finalités de la Gouvernance}
+\label{sec:c03-valeur}
+% ============================================================================
+
+\subsection{Créer de la valeur}
+
+COBIT~2019 définit l'objectif de la gouvernance comme la \textbf{création
+de valeur}, qui résulte de l'équilibre entre trois
+finalités~\cite{isaca2018cobitintro}. La définition de travail du
+Chapitre~\ref{chap:gouv-entreprise} les reprend.
+
+\begin{boxdef}
+\termecle{Réalisation des bénéfices}\index{réalisation des bénéfices}
+(\textit{benefits realization})~: créer de la valeur pour l'organisation
+grâce aux technologies de l'information, en entretenant et en accroissant
+la valeur des investissements existants, et en éliminant les initiatives
+et les actifs qui n'en créent pas assez.
+
+\medskip
+\termecle{Optimisation des risques}\index{optimisation des risques}
+(\textit{risk optimization})~: traiter les risques liés à l'usage, à la
+propriété, à l'exploitation et à l'adoption des technologies de
+l'information, en les maintenant dans les limites de l'appétence au
+risque fixée par l'organe de gouvernance.
+
+\medskip
+\termecle{Optimisation des ressources}\index{optimisation des
+ressources} (\textit{resource optimization})~: s'assurer que les
+compétences et les ressources nécessaires (personnes, processus,
+technologies, données) sont disponibles, suffisantes et utilisées de
+manière efficace.
+\end{boxdef}
+
+Le mot clé est \textbf{équilibre}. Maximiser les bénéfices sans se soucier
+des risques conduit à l'opération SANAGA. Minimiser les risques sans se
+soucier des bénéfices conduit à l'immobilisme. Économiser les ressources
+sans se soucier des deux autres conduit à des systèmes vieillissants et
+fragiles.
+
+\subsection{Trois objectifs de gouvernance}
+
+À chaque finalité correspond un objectif du domaine de gouvernance de
+COBIT~2019. Ils seront étudiés au Chapitre~\ref{chap:cobit-objectifs}.
+
+\begin{tableaucours}{L{3.4cm}L{4.4cm}L{4.4cm}}{%
+    \tableauHeader{Finalité} &
+    \tableauHeader{Objectif COBIT 2019} &
+    \tableauHeader{Question au conseil}
+}
+Réalisation des bénéfices & EDM02 · Assurer la réalisation des bénéfices
+& Les investissements produisent-ils les bénéfices annoncés~? \\
+Optimisation des risques & EDM03 · Assurer l'optimisation des risques &
+Les risques sont-ils dans les limites que nous avons fixées~? \\
+Optimisation des ressources & EDM04 · Assurer l'optimisation des
+ressources & Avons-nous les compétences et les moyens de notre
+stratégie~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.3. Finalités et objectifs de
+gouvernance (intitulés traduits par nos soins)}\end{center}
+
+\begin{boxobjet}{EDM02 · Assurer la réalisation des bénéfices}
+\textbf{Finalité~:} obtenir la valeur optimale des initiatives, des
+services et des actifs informatiques, et une gestion des coûts efficace.
+
+\textbf{Pratiques~:} évaluer l'optimisation de la valeur~; diriger
+l'optimisation de la valeur (critères d'investissement, rôles)~;
+surveiller l'optimisation de la valeur (indicateurs, écarts).
+
+\textbf{Sorties~:} principes et critères d'investissement, retour sur
+le portefeuille, actions correctives.
+
+\textbf{RACI (extrait)~:} \emph{A} au conseil d'administration, \emph{R}
+au directeur général et au comité stratégique des SI, \emph{C} au
+directeur financier et au DSI.
+
+\textbf{Indicateurs~:} part des investissements dont les bénéfices sont
+suivis après la mise en service~; écart entre bénéfices annoncés et
+bénéfices constatés.
+\end{boxobjet}
+
+% ============================================================================
+\section{Évaluer un Investissement Informatique}
+\label{sec:c03-evaluation}
+% ============================================================================
+
+\subsection{Le coût total de possession}
+
+Le prix d'achat d'un logiciel n'est qu'une partie de son coût. Le
+\termecle{coût total de possession}\index{coût total de possession}
+(\textit{total cost of ownership}, \sigle{TCO}) additionne tous les coûts
+supportés sur la durée de vie de la solution~: acquisition, intégration,
+matériel, formation, exploitation, support et sortie.
+
+\begin{tableaucours}{L{8.6cm}r}{%
+    \tableauHeader{Poste (sur 5 ans)} &
+    \tableauHeader{Millions FCFA}
+}
+Licences (prix affiché par l'éditeur) & 300 \\
+Intégration et reprise des données & 250 \\
+Matériel et hébergement & 150 \\
+Formation des utilisateurs & 50 \\
+Exploitation interne (90 par an) & 450 \\
+Support et maintenance de l'éditeur (60 par an) & 300 \\
+\textbf{Coût total de possession} & \textbf{1~500} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.4. Coût total de possession d'un
+logiciel de gestion des paiements (exemple)}\end{center}
+
+Le coût total est cinq fois le prix affiché. C'est un ordre de grandeur
+fréquent, et l'une des raisons pour lesquelles les budgets des schémas
+directeurs dérapent~: ils ont été construits sur les prix d'acquisition.
+
+\subsection{La valeur actuelle nette}
+
+Un franc reçu dans quatre ans vaut moins qu'un franc dépensé aujourd'hui.
+La \termecle{valeur actuelle nette}\index{valeur actuelle nette}
+(\sigle{VAN}, \textit{net present value}) ramène tous les flux d'un projet
+à leur valeur d'aujourd'hui, au moyen d'un taux d'actualisation $r$~:
+\[
+    \mathrm{VAN} = -I_0 + \sum_{t=1}^{n} \frac{F_t}{(1+r)^t}
+\]
+où $I_0$ est l'investissement initial et $F_t$ le flux net (bénéfices
+moins coûts d'exploitation) de l'année~$t$. Un projet dont la VAN est
+positive crée de la valeur au taux retenu.
+
+Lorsque le flux annuel $F$ est constant, la somme se calcule avec le
+facteur d'annuité~:
+\[
+    \sum_{t=1}^{n} \frac{1}{(1+r)^t} = \frac{1-(1+r)^{-n}}{r},
+    \qquad \text{soit } 3{,}7908 \text{ pour } r=10~\% \text{ et } n=5.
+\]
+
+\begin{boxscenario}{Opération MEFOU. Trois projets à évaluer}
+L'ANPP retient un taux d'actualisation de 10~\% et un horizon de cinq ans.
+Trois projets sont en concurrence.
+
+\medskip
+\begin{tableaucours}{L{4.4cm}rrr}{%
+    \tableauHeader{Projet} &
+    \tableauHeader{$I_0$} &
+    \tableauHeader{$F$ annuel} &
+    \tableauHeader{VAN}
+}
+A. Paiement dématérialisé des fournisseurs & 1~200 & 450 & $+506$ \\
+B. Refonte du portail des ressources humaines & 800 & 180 & $-118$ \\
+C. Site de secours (continuité) & 600 & 120 & $-145$ \\
+\end{tableaucours}
+{\small Montants en millions FCFA.}
+
+\medskip
+\textbf{Calcul du projet A.} $450 \times 3{,}7908 = 1~705{,}9$~; VAN $=
+1~705{,}9 - 1~200 = 505{,}9$, soit environ $+506$~millions FCFA. Le délai
+de récupération est de $1~200 / 450 \approx 2{,}7$~ans, et le taux de
+rentabilité interne, pour lequel la VAN s'annule, est d'environ 25~\%.
+
+\medskip
+\textbf{Le cas du projet C.} Le site de secours ne produit aucune recette.
+Son flux annuel est une \emph{perte évitée}~: l'ANPP estime à 5~\% par an
+la probabilité d'un sinistre majeur sur son centre de données, pour une
+perte de 2~400~millions FCFA (pénalités de retard de paiement, reprise
+manuelle), soit une perte annuelle attendue de $0{,}05 \times 2~400 =
+120$~millions FCFA.
+\end{boxscenario}
+
+\subsection{Les limites de l'évaluation financière}
+
+Si l'ANPP ne retenait que la VAN, elle financerait le seul projet~A. Ce
+serait une erreur de gouvernance, pour trois raisons.
+\begin{itemize}
+    \item \textbf{Les risques se chiffrent mal.} La perte attendue du
+          projet~C repose sur une probabilité très incertaine. Une
+          variation de quelques points change le signe de la VAN.
+    \item \textbf{Certains projets sont obligatoires.} Une obligation
+          légale ou réglementaire ne se discute pas en VAN~: elle se
+          respecte, au moindre coût.
+    \item \textbf{L'alignement ne se chiffre pas.} Un projet peut avoir
+          une VAN modeste et être indispensable à la mission de
+          l'organisation.
+\end{itemize}
+
+\subsection{Le score multicritère}
+
+Pour dépasser ces limites, l'organe de gouvernance fixe à l'avance des
+critères pondérés, puis note chaque projet. Les poids traduisent ses
+priorités~: les fixer est une décision de gouvernance, qui ne doit pas
+être laissée à ceux qui proposent les projets.
+
+\begin{tableaucours}{L{3.8cm}crrr}{%
+    \tableauHeader{Critère} &
+    \tableauHeader{Poids} &
+    \tableauHeader{A} &
+    \tableauHeader{B} &
+    \tableauHeader{C}
+}
+Alignement sur la mission & 30~\% & 5 & 3 & 3 \\
+Valeur financière (VAN) & 25~\% & 5 & 2 & 1 \\
+Réduction des risques & 20~\% & 2 & 1 & 5 \\
+Obligation réglementaire & 15~\% & 3 & 1 & 4 \\
+Faisabilité & 10~\% & 4 & 5 & 3 \\
+\textbf{Score pondéré} & & \textbf{4,00} & \textbf{2,25} & \textbf{3,05} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.5. Score multicritère des trois
+projets de l'ANPP (notes de 1 à 5)}\end{center}
+
+Le calcul du projet~A est le suivant~: $0{,}30 \times 5 + 0{,}25 \times 5 +
+0{,}20 \times 2 + 0{,}15 \times 3 + 0{,}10 \times 4 = 4{,}00$. Avec une
+enveloppe de 1~900~millions FCFA, l'ANPP finance A et C (1~800~millions)
+et écarte B. Le site de secours, rejeté par la VAN seule, est retenu au
+titre des risques et de l'obligation de continuité du service public.
+
+\begin{boxprocedure}
+\textbf{Une décision d'investissement auditable.} Pour qu'un auditeur, ou
+la Chambre des comptes, puisse établir que le portefeuille a été arbitré,
+le dossier doit contenir~:
+\begin{itemize}
+    \item les critères et leurs poids, approuvés par l'organe de
+          gouvernance \emph{avant} l'examen des projets~;
+    \item pour chaque projet, un dossier d'investissement (objectif servi,
+          coût total de possession, bénéfices attendus et leur
+          responsable, risques)~;
+    \item la grille de notation, signée par ceux qui l'ont établie~;
+    \item le procès-verbal de la décision, y compris pour les projets
+          écartés~;
+    \item le plan de suivi des bénéfices après la mise en service.
+\end{itemize}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Arbitrer un Portefeuille}
+\label{sec:c03-portefeuille}
+% ============================================================================
+
+\subsection{Projet, programme, portefeuille}
+
+\begin{boxdef}
+\termecle{Portefeuille}\index{portefeuille} (\textit{portfolio})~:
+ensemble des projets, des programmes et des services informatiques d'une
+organisation, géré comme un tout pour maximiser la valeur obtenue sous
+contrainte de ressources et de risque. L'unité de décision de la
+gouvernance n'est pas le projet isolé, mais le portefeuille.
+\end{boxdef}
+
+Raisonner en portefeuille change la question posée. Il ne s'agit plus de
+savoir si un projet est bon, mais s'il est \emph{meilleur que les autres
+usages possibles des mêmes ressources}. C'est ce qui a manqué à l'ANPP~:
+chaque projet a été approuvé seul, sans jamais être comparé aux autres.
+
+\subsection{Équilibrer le portefeuille}
+
+Weill et Broadbent proposent de classer les investissements informatiques
+selon leur finalité~\cite{weill1998infrastructure}. Un portefeuille
+équilibré combine les quatre catégories, dans des proportions qui
+reflètent la stratégie.
+
+\begin{tableaucours}{L{2.8cm}L{4.6cm}L{4.8cm}}{%
+    \tableauHeader{Catégorie} &
+    \tableauHeader{Finalité} &
+    \tableauHeader{Exemple à l'ANPP}
+}
+Infrastructure & Fournir les services partagés sur lesquels tout repose &
+Réseau sécurisé entre l'agence et les trésoreries régionales \\
+Transactionnel & Réduire les coûts et automatiser les opérations
+répétitives & Paiement dématérialisé des fournisseurs (projet A) \\
+Informationnel & Mieux piloter, mieux contrôler & Tableau de bord des
+délais de paiement \\
+Stratégique & Changer la position ou la mission de l'organisation &
+Paiement des usagers par téléphone mobile \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.6. Les quatre catégories
+d'investissement (d'après Weill et Broadbent)}\end{center}
+
+\subsection{Le cadre de la gestion publique au Cameroun}
+
+Pour une administration ou un établissement public, l'arbitrage du
+portefeuille s'inscrit dans le cadre budgétaire de l'État.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2018/012} du 11~juillet~2018 portant régime financier
+de l'État et des autres entités publiques, article~69.}
+
+\medskip
+Selon la présentation qu'en fait le ministère des Finances~\cite{minfi2023regimefinancier},
+la loi organise le budget par programmes et institue un
+\emph{responsable de programme}, désigné par le ministre. Ce responsable
+formule le programme dans le \emph{Projet de performance annuel}
+(\sigle{PPA}), affecte les ressources en son sein, organise le dialogue
+de gestion et élabore le \emph{Rapport annuel de performance}
+(\sigle{RAP}). Il veille au respect des dispositifs de contrôle interne et
+de contrôle de gestion.
+
+\medskip
+\textbf{Portée.} La gestion publique camerounaise est désormais pilotée
+par la performance~: objectifs, indicateurs, compte rendu annuel. Un
+projet informatique public doit donc pouvoir être rattaché à un programme
+et à ses indicateurs de performance. C'est l'équivalent public de
+l'alignement stratégique, et un argument fort pour imposer, à l'ANPP
+comme ailleurs, des dossiers d'investissement et un suivi des bénéfices.
+\end{boxjuris}
+% A VERIFIER au Journal officiel : libellé exact de l'article 69 de la loi
+% n° 2018/012 (source utilisée : publication du MINFI, collection
+% « Les essentiels de la réforme »).
+
+\begin{boxmetier}{DSI}
+\textbf{Présenter un portefeuille au comité stratégique}
+\begin{enumerate}
+    \item Une page par projet~: objectif servi, perspective d'alignement,
+          coût total de possession, VAN ou perte évitée, risques, responsable
+          des bénéfices.
+    \item Une vue d'ensemble~: répartition du budget entre les quatre
+          catégories (Tableau~3.6) et comparaison avec la stratégie.
+    \item Le résultat de la grille multicritère, avec les poids approuvés
+          par le comité.
+    \item Une recommandation explicite~: financer, différer, arrêter.
+\end{enumerate}
+Le dernier point est le plus difficile, et le plus important~: proposer
+d'arrêter un projet en cours est souvent la meilleure décision de
+gouvernance qu'un DSI puisse provoquer.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Vérifier qu'un portefeuille est réellement arbitré}
+\begin{enumerate}
+    \item Demander les critères d'investissement, et vérifier leur date
+          d'approbation au regard des dates de décision des projets.
+    \item Prendre un échantillon de projets approuvés \emph{et} de projets
+          écartés~: une organisation qui n'a jamais écarté un projet
+          n'arbitre pas.
+    \item Pour les projets en service, demander le suivi des bénéfices
+          annoncés dans le dossier d'investissement.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{La valeur est dans l'usage}~: le paradoxe de la
+          productivité montre que la technologie seule ne crée pas de
+          valeur~; la manière de la choisir et de l'exploiter, si.
+    \item \textbf{L'alignement stratégique} relie quatre domaines (stratégie
+          et infrastructure, de l'activité et des TI). Il se parcourt selon
+          quatre perspectives, et c'est un processus continu.
+    \item \textbf{Les droits de décision} portent sur cinq décisions
+          (principes, architecture, infrastructure, besoins applicatifs,
+          investissement)~; six archétypes décrivent qui décide. Le pire
+          archétype est celui qu'on n'a pas choisi.
+    \item \textbf{Trois finalités en équilibre}~: réalisation des
+          bénéfices, optimisation des risques, optimisation des ressources
+          (EDM02, EDM03, EDM04).
+    \item \textbf{Évaluer}~: coût total de possession, VAN, délai de
+          récupération~; mais aussi perte évitée pour les projets de
+          risque, et score multicritère aux poids fixés par la gouvernance.
+    \item \textbf{Arbitrer un portefeuille}~: comparer les projets entre
+          eux, équilibrer les catégories, et savoir arrêter un projet.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.1. Calculer une VAN \niveaubase}]
+KRIBILOG SA envisage un logiciel de planification des quais~:
+investissement de 450~millions FCFA, gain net de 140~millions FCFA par an
+pendant cinq ans, taux d'actualisation de 12~\%.
+\begin{enumerate}[(a)]
+    \item Calculez le facteur d'annuité pour $r=12~\%$ et $n=5$.
+    \item Calculez la VAN du projet. Est-il créateur de valeur~?
+    \item Calculez son délai de récupération simple.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.2. La matrice de la BANQUE SANAGA \niveaumoyen}]
+À partir des faits du prologue (Chapitre~\ref{chap:prologue}), construisez
+la matrice des droits de décision de la BANQUE SANAGA pour le projet
+HORIZON.
+\begin{enumerate}[(a)]
+    \item Pour chacune des cinq décisions de Weill et Ross, indiquez qui
+          a réellement décidé et l'archétype correspondant.
+    \item Proposez la matrice cible, en justifiant l'archétype retenu pour
+          chaque décision.
+    \item Rédigez la constatation et l'analyse correspondantes, avec leur
+          niveau de confiance.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.3. Arbitrer sous contrainte \niveauexpert}]
+Le comité stratégique de l'ANPP révise ses poids~: l'obligation
+réglementaire passe à 25~\% et la valeur financière à 15~\%, les autres
+poids restant inchangés. Un quatrième projet~D (tableau de bord des
+délais de paiement, 300~millions FCFA) obtient les notes 4, 2, 2, 5, 5.
+\begin{enumerate}[(a)]
+    \item Recalculez les scores des projets A, B, C et D.
+    \item Avec une enveloppe de 1~900~millions FCFA, quel portefeuille
+          recommandez-vous~? Justifiez.
+    \item Le directeur général conteste le changement des poids, qui
+          « favorise » le projet~D. Qui doit trancher, et comment
+          l'auditeur saura-t-il que les poids n'ont pas été fixés après
+          coup pour justifier un choix déjà fait~?
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Ce chapitre a posé les modèles qui guident les
+décisions de gouvernance~: alignement, droits de décision, valeur. Pour
+les mettre en œuvre, les organisations s'appuient sur des référentiels.
+Le Chapitre~\ref{chap:referentiels} dresse le panorama de ces
+référentiels (COBIT, ITIL, ISO, COSO, TOGAF\ldots) et montre comment ils
+s'articulent.
+\end{boxinfo}

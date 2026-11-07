@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C09
+Chapitre 9 : Les normes internationales de la gouvernance et des services
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quel avantage principal la structure harmonisée des normes ISO de systèmes de management apporte-t-elle ?
+      a) Elle rend toutes les normes certifiables
+      b) Elle facilite la mise en place de systèmes intégrés
+      c) Elle remplace les exigences propres à chaque norme
+      d) Elle supprime l'audit interne
+
+ 2. Dans la structure harmonisée, à quel article chaque norme place-t-elle ses exigences propres ?
+      a) Article 4
+      b) Article 6
+      c) Article 8
+      d) Article 10
+
+ 3. Quel article de la structure harmonisée couvre l'audit interne et la revue de direction ?
+      a) Article 9
+      b) Article 5
+      c) Article 7
+      d) Article 10
+
+ 4. Dans quel article trouve-t-on l'engagement de la direction et la politique ?
+      a) Article 4
+      b) Article 7
+      c) Article 9
+      d) Article 5
+
+ 5. À qui l'ISO/IEC 38500 s'adresse-t-elle d'abord ?
+      a) Aux techniciens d'exploitation
+      b) À l'organe de gouvernance
+      c) Aux organismes de certification
+      d) Aux fournisseurs
+
+ 6. Quels sont les trois verbes du modèle de l'ISO/IEC 38500 ?
+      a) Planifier, réaliser, vérifier
+      b) Construire, exécuter, surveiller
+      c) Évaluer, diriger, surveiller
+      d) Identifier, analyser, traiter
+
+ 7. Combien de principes l'édition 2015 de l'ISO/IEC 38500 comptait-elle ?
+      a) Six
+      b) Onze
+      c) Cinq
+      d) Huit
+
+ 8. De quelle norme l'édition 2024 de l'ISO/IEC 38500 reprend-elle les principes ?
+      a) ISO 31000
+      b) ISO/IEC 27001
+      c) ISO 9001
+      d) ISO 37000
+
+ 9. Scénario. Dans la charte de l'ANPP, quelle règle traduit le principe « données et décisions » ?
+      a) Le conseil reçoit un dossier normalisé avant toute décision d'investissement
+      b) Tout projet est rattaché à un programme budgétaire
+      c) Le comité surveille les projets chaque trimestre
+      d) La DSI choisit seule les fournisseurs
+
+10. Quel article de l'ISO/IEC 20000-1:2018 regroupe incidents, demandes de service et problèmes ?
+      a) 8.3
+      b) 8.6
+      c) 8.2
+      d) 8.7
+
+11. Quel article de l'ISO/IEC 20000-1:2018 couvre disponibilité, continuité et sécurité de l'information ?
+      a) 8.4
+      b) 8.5
+      c) 8.7
+      d) 8.2
+
+12. Quelle répartition des rôles le cours retient-il entre ITIL, ISO/IEC 20000-1 et COBIT ?
+      a) COBIT dit comment, ITIL certifie, ISO relie à la gouvernance
+      b) ISO dit comment, COBIT certifie, ITIL relie
+      c) Les trois disent la même chose
+      d) ITIL dit comment, ISO/IEC 20000-1 ce qu'il faut démontrer, COBIT relie à la gouvernance
+
+13. Scénario. NETPORT SERVICES exploite le service de suivi des conteneurs de KRIBILOG. Qui reste responsable du service au regard de l'ISO/IEC 20000-1 ?
+      a) KRIBILOG, qui doit maîtriser les processus confiés à des tiers
+      b) NETPORT SERVICES seul
+      c) L'armateur client
+      d) L'organisme de certification
+
+14. Quel document liste les mesures de l'annexe A, retenues ou exclues, avec leur justification ?
+      a) La politique de sécurité
+      b) La déclaration d'applicabilité
+      c) Le registre des risques
+      d) Le rapport d'audit
+
+15. Combien de mesures l'annexe A de l'ISO/IEC 27001 compte-t-elle depuis l'édition 2022 ?
+      a) 114
+      b) 133
+      c) 93
+      d) 37
+
+16. Quelle norme précise la méthode d'appréciation des risques de sécurité de l'information ?
+      a) ISO/IEC 27005
+      b) ISO/IEC 27006
+      c) ISO/IEC 17021-1
+      d) ISO 37000
+
+17. Scénario. Pourquoi une certification ISO/IEC 27001 n'aurait-elle pas évité la panne de mars 2026 de la BANQUE SANAGA ?
+      a) Parce que la COBAC ne la reconnaît pas
+      b) Parce que la panne relevait de la gestion des changements, pas de la sécurité
+      c) Parce que la norme n'est pas certifiable
+      d) Parce que la banque n'a pas de système central
+
+18. Quels sont les trois éléments de l'ISO 31000 ?
+      a) Principes, cadre organisationnel, processus
+      b) Contexte, leadership, amélioration
+      c) Évaluer, diriger, surveiller
+      d) Identification, traitement, pilotage
+
+19. Combien de composantes compte le cadre COSO de management des risques de 2017 ?
+      a) Huit
+      b) Dix-sept
+      c) Vingt
+      d) Cinq
+
+20. Quelle norme fixe les exigences applicables aux organismes qui certifient des systèmes de management ?
+      a) ISO/IEC 27000
+      b) ISO 31000
+      c) ISO/IEC 17021-1
+      d) ISO/IEC 38500
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. L'ISO/IEC 38500 est une norme certifiable.
+      Vrai / Faux
+
+22. Le domaine EDM de COBIT s'inspire directement du modèle de l'ISO/IEC 38500.
+      Vrai / Faux
+
+23. Un SMSI certifié renseigne le conseil sur la valeur des investissements informatiques.
+      Vrai / Faux
+
+24. Il faut toujours vérifier l'édition en vigueur d'une norme dans le catalogue de l'ISO avant de s'y référer.
+      Vrai / Faux
+
+25. L'ISO 31000 est une norme certifiable.
+      Vrai / Faux
+
+26. Le registre des risques informatiques doit utiliser la même échelle que le registre des risques de l'organisation.
+      Vrai / Faux
+
+27. Le cadre COSO de contrôle interne de 2013 compte cinq composantes et 17 principes.
+      Vrai / Faux
+
+28. Un certificat délivré par un organisme non accrédité n'a qu'une valeur commerciale.
+      Vrai / Faux
+
+29. La conformité est un choix volontaire de l'organisation.
+      Vrai / Faux
+
+30. Une certification couvre toujours l'ensemble de l'organisation.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La structure commune des normes ISO de systèmes de management s'appelle la structure ______.
+
+32. L'article 10 de la structure harmonisée porte sur l'______.
+
+33. La troisième édition de l'ISO/IEC 38500 a été publiée en ______.
+
+34. L'ISO/IEC 20000-1 formule les exigences d'un système de management des ______.
+
+35. L'acronyme du système de management de la sécurité de l'information est ______.
+
+36. L'édition 2013 de l'annexe A comptait ______ mesures.
+
+37. Selon la règle d'articulation, le risque informatique est un risque de l'______.
+
+38. Le respect d'exigences obligatoires (lois, règlements, contrats) s'appelle la ______.
+
+39. Un cycle de certification de système de management dure ______ ans.
+
+40. Pour la sécurité de l'information, les exigences de l'ISO/IEC 17021-1 sont complétées par l'ISO/IEC ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

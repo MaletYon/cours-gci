@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C05
+Chapitre 5 : COBIT 2019 : principes et architecture
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. À quel public COBIT s'adressait-il lors de sa création en 1996 ?
+      a) Aux conseils d'administration
+      b) Aux développeurs
+      c) Aux auditeurs des systèmes d'information
+      d) Aux centres de services
+
+ 2. Combien de processus comptait COBIT 4.1, et en combien de domaines ?
+      a) 34 processus en quatre domaines
+      b) 40 objectifs en cinq domaines
+      c) 37 processus en cinq domaines
+      d) 26 processus en trois domaines
+
+ 3. Quels référentiels COBIT 5 a-t-il intégrés en 2012 ?
+      a) ITIL et ISO 20000
+      b) Val IT et Risk IT
+      c) COSO et ISO 31000
+      d) TOGAF et PMBOK
+
+ 4. Lequel de ces apports est propre à COBIT 2019 par rapport à COBIT 5 ?
+      a) La séparation entre gouvernance et management
+      b) L'intégration de Val IT
+      c) La notion de processus
+      d) Les facteurs de conception et les domaines d'intérêt
+
+ 5. Selon COBIT 2019, que fait COBIT au sujet des décisions informatiques ?
+      a) Il dit quelles décisions doivent être prises, comment et par qui
+      b) Il prescrit la meilleure stratégie informatique
+      c) Il fixe le bon niveau de dépense informatique
+      d) Il choisit l'architecture technique
+
+ 6. Combien de principes COBIT 2019 retient-il pour un système de gouvernance ?
+      a) Trois
+      b) Cinq
+      c) Six
+      d) Sept
+
+ 7. Que demande le principe du « système dynamique » ?
+      a) Que le système soit revu chaque fois qu'un facteur de conception change
+      b) Que les processus soient automatisés
+      c) Que le conseil se réunisse chaque mois
+      d) Que les indicateurs soient mis à jour en temps réel
+
+ 8. Scénario. L'application « SANAGA Mobile » a été conçue par le marketing, hors de la DSI. Quel principe d'un système de gouvernance a été méconnu ?
+      a) L'alignement sur les grandes normes
+      b) La couverture de bout en bout
+      c) Le modèle conceptuel
+      d) L'ouverture et la flexibilité
+
+ 9. Lequel de ces principes s'applique au cadre de gouvernance, et non au système ?
+      a) Approche globale
+      b) Création de valeur pour les parties prenantes
+      c) Couverture de bout en bout
+      d) Aligné sur les grandes normes
+
+10. Comment COBIT 5 appelait-il ce que COBIT 2019 nomme « composantes » ?
+      a) Les objectifs
+      b) Les domaines
+      c) Les facilitateurs (enablers)
+      d) Les pratiques
+
+11. Laquelle de ces composantes fait partie des sept composantes d'un système de gouvernance ?
+      a) Culture, éthique et comportement
+      b) Budget et trésorerie
+      c) Marketing et communication
+      d) Clients et fournisseurs
+
+12. Scénario. La BANQUE SANAGA avait une procédure de mise en production. Que lui manquait-il, selon la leçon des composantes ?
+      a) Un nouveau logiciel
+      b) Les autres composantes : structure, information fiable, culture, compétences
+      c) Une certification ISO
+      d) Un budget plus élevé
+
+13. Qu'est-ce qu'une variante de composante ?
+      a) Une composante supprimée
+      b) Une composante obligatoire
+      c) Une composante réservée aux PME
+      d) Une composante générique adaptée à un usage particulier
+
+14. Combien d'objectifs le domaine APO compte-t-il ?
+      a) 5
+      b) 11
+      c) 14
+      d) 6
+
+15. Quel domaine couvre l'exploitation et le soutien des services, y compris la sécurité ?
+      a) DSS
+      b) BAI
+      c) APO
+      d) MEA
+
+16. Qui répond des objectifs de gouvernance, selon COBIT 2019 ?
+      a) L'encadrement intermédiaire
+      b) Le conseil et la direction générale
+      c) Le centre de services
+      d) Les prestataires
+
+17. Quelle est la finalité de l'objectif EDM05 ?
+      a) Gérer les fournisseurs
+      b) Gérer la continuité
+      c) Associer les parties prenantes et leur rendre compte de façon transparente
+      d) Optimiser les ressources
+
+18. Lequel de ces exemples est un domaine d'intérêt cité par COBIT 2019 ?
+      a) La comptabilité générale
+      b) Les ressources humaines
+      c) Le marketing
+      d) DevOps
+
+19. Combien de facteurs de conception COBIT 2019 retient-il ?
+      a) Onze
+      b) Sept
+      c) Cinq
+      d) Quarante
+
+20. Quelle pièce un auditeur demande-t-il d'abord pour vérifier qu'une organisation utilise réellement COBIT ?
+      a) Le contrat de licence COBIT
+      b) Le certificat COBIT de l'organisation
+      c) Le document des objectifs prioritaires et la manière dont ils ont été choisis
+      d) La liste des formations suivies par le DSI
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Une organisation peut être « mise en conformité COBIT » et certifiée.
+      Vrai / Faux
+
+22. COBIT n'est pas un cadre d'organisation des processus métier.
+      Vrai / Faux
+
+23. COBIT 2019 aligne ses notions de capacité et de maturité sur le CMMI.
+      Vrai / Faux
+
+24. Le principe de couverture de bout en bout limite la gouvernance à la fonction informatique.
+      Vrai / Faux
+
+25. Un processus seul suffit à atteindre un objectif de gouvernance.
+      Vrai / Faux
+
+26. Les composantes génériques de COBIT doivent généralement être adaptées avant d'être mises en œuvre.
+      Vrai / Faux
+
+27. Le domaine EDM compte cinq objectifs de gouvernance.
+      Vrai / Faux
+
+28. Le domaine MEA couvre la conception et l'acquisition des solutions.
+      Vrai / Faux
+
+29. Le nombre de domaines d'intérêt de COBIT est limité à six.
+      Vrai / Faux
+
+30. Les facteurs de conception permettent d'intégrer des réalités locales, comme la dépendance aux intégrateurs, dans la conception du système.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. COBIT signifiait à l'origine Control ______ for Information and Related Technology.
+
+32. COBIT 5 comptait ______ processus.
+
+33. Le quatrième principe d'un système de gouvernance demande une gouvernance distincte du ______.
+
+34. Un cadre de gouvernance doit être fondé sur un modèle ______.
+
+35. Un système de gouvernance COBIT est construit à partir de ______ types de composantes.
+
+36. Le domaine qui couvre tout ce qui fait changer le système d'information porte le code ______.
+
+37. Le domaine MEA compte ______ objectifs.
+
+38. Le domaine de gouvernance de COBIT porte le code ______.
+
+39. Un thème de gouvernance traité par un ensemble d'objectifs et de composantes s'appelle un domaine d'______.
+
+40. Ce qui rend COBIT proportionné à chaque organisation, ce sont les facteurs de ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

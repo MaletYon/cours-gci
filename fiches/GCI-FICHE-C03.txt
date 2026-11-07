@@ -1,0 +1,233 @@
+NDAP SUKULU · GCI · fiche GCI-FICHE-C03
+Chapitre 3 : Théories et modèles : alignement, valeur et décision
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quelle leçon le chapitre tire-t-il du paradoxe de la productivité de Solow ?
+      a) L'informatique ne crée jamais de valeur
+      b) La valeur n'est pas dans la technologie, elle est dans son usage
+      c) Il faut investir davantage pour obtenir des gains
+      d) Seules les grandes entreprises profitent de l'informatique
+
+ 2. Laquelle des quatre questions de Thorp relève de la stratégie ?
+      a) Fait-on les bonnes choses ?
+      b) Les mène-t-on à bien ?
+      c) En tire-t-on les bénéfices ?
+      d) Les fait-on de la bonne manière ?
+
+ 3. Quels auteurs ont proposé en 1993 le modèle d'alignement stratégique (SAM) ?
+      a) Weill et Ross
+      b) Jensen et Meckling
+      c) Henderson et Venkatraman
+      d) Weill et Broadbent
+
+ 4. Quelle dimension du modèle relie le domaine de l'activité et celui des technologies de l'information ?
+      a) L'ajustement stratégique
+      b) La perspective de niveau de service
+      c) La transformation technologique
+      d) L'intégration fonctionnelle
+
+ 5. Scénario. NOUN PAY découvre qu'un modèle d'IA permet le microcrédit instantané et redéfinit son offre. Quelle perspective d'alignement illustre ce cas ?
+      a) L'exécution de la stratégie
+      b) Le potentiel concurrentiel
+      c) Le niveau de service
+      d) La transformation technologique
+
+ 6. Combien de catégories de décisions relatives aux TI Weill et Ross distinguent-ils ?
+      a) Trois
+      b) Quatre
+      c) Cinq
+      d) Six
+
+ 7. Dans quel archétype chaque direction métier décide-t-elle pour son propre périmètre ?
+      a) La féodalité
+      b) Le fédéralisme
+      c) Le duopole
+      d) La monarchie métier
+
+ 8. Scénario. À l'ANPP, l'architecture est décidée par chaque prestataire, projet par projet. De quel archétype s'agit-il ?
+      a) La monarchie informatique
+      b) Le fédéralisme
+      c) L'anarchie
+      d) Le duopole
+
+ 9. Selon le chapitre, quelle est la seule configuration de droits de décision à proscrire ?
+      a) La monarchie informatique
+      b) Le fédéralisme
+      c) Le duopole
+      d) Celle qui n'a pas été choisie, la gouvernance de fait
+
+10. Quel objectif COBIT de gouvernance correspond à la réalisation des bénéfices ?
+      a) EDM02
+      b) EDM03
+      c) EDM04
+      d) EDM05
+
+11. Que produit le fait de maximiser les bénéfices sans se soucier des risques ?
+      a) L'immobilisme
+      b) Des systèmes vieillissants
+      c) Des situations comme l'opération SANAGA
+      d) Une baisse des coûts
+
+12. Dans l'exemple du chapitre, combien de fois le coût total de possession dépasse-t-il le prix affiché des licences ?
+      a) Deux fois
+      b) Cinq fois
+      c) Dix fois
+      d) Il lui est égal
+
+13. Quelle est la valeur du facteur d'annuité pour un taux de 10 % sur 5 ans ?
+      a) 5,0000
+      b) 3,2000
+      c) 4,1000
+      d) 3,7908
+
+14. Scénario. Le projet A de l'ANPP coûte 1 200 M FCFA et rapporte 450 M FCFA par an pendant 5 ans, au taux de 10 %. Quelle est sa VAN ?
+      a) Environ +506 M FCFA
+      b) Environ +1 050 M FCFA
+      c) Environ -118 M FCFA
+      d) Environ +250 M FCFA
+
+15. Scénario. Comment le chapitre calcule-t-il le flux annuel du site de secours (projet C), qui ne produit aucune recette ?
+      a) On le fixe à zéro
+      b) On prend le coût d'exploitation annuel
+      c) Comme une perte évitée : probabilité du sinistre multipliée par la perte
+      d) On le fait estimer par le prestataire
+
+16. Qui doit fixer les poids des critères d'un score multicritère ?
+      a) Ceux qui proposent les projets
+      b) L'organe de gouvernance, avant l'examen des projets
+      c) Le prestataire retenu
+      d) Le DSI, après l'examen des projets
+
+17. Scénario. Avec une enveloppe de 1 900 M FCFA, quels projets l'ANPP finance-t-elle dans l'exemple du chapitre ?
+      a) A seul
+      b) A et B
+      c) B et C
+      d) A et C
+
+18. Selon Weill et Broadbent, quelle catégorie d'investissement vise à réduire les coûts et automatiser les opérations répétitives ?
+      a) Transactionnel
+      b) Infrastructure
+      c) Informationnel
+      d) Stratégique
+
+19. Quelle est l'unité de décision de la gouvernance des investissements informatiques ?
+      a) Le projet isolé
+      b) Le contrat fournisseur
+      c) Le portefeuille
+      d) La ligne budgétaire annuelle
+
+20. Selon la présentation du MINFI, que doit élaborer le responsable de programme institué par la loi n° 2018/012 ?
+      a) Le schéma directeur informatique
+      b) Le Projet de performance annuel et le Rapport annuel de performance
+      c) Le plan de continuité
+      d) La charte du comité d'audit
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Pour Henderson et Venkatraman, l'alignement est un état atteint une fois pour toutes.
+      Vrai / Faux
+
+22. Un projet qu'on ne peut rattacher à aucun objectif de l'organisation doit être justifié autrement, ou abandonné.
+      Vrai / Faux
+
+23. Selon Weill et Ross, les organisations les plus performantes combinent des archétypes différents selon les décisions.
+      Vrai / Faux
+
+24. La matrice des droits de décision décrit la gouvernance telle qu'elle est écrite, et non telle qu'elle fonctionne.
+      Vrai / Faux
+
+25. Le mot clé des trois finalités de la gouvernance est l'équilibre.
+      Vrai / Faux
+
+26. Un projet dont la VAN est positive crée de la valeur au taux d'actualisation retenu.
+      Vrai / Faux
+
+27. Si l'ANPP ne retenait que la VAN, elle ferait un choix de gouvernance satisfaisant.
+      Vrai / Faux
+
+28. Une obligation légale se discute en VAN comme n'importe quel autre projet.
+      Vrai / Faux
+
+29. Une organisation qui n'a jamais écarté un projet n'arbitre pas son portefeuille.
+      Vrai / Faux
+
+30. Proposer d'arrêter un projet en cours est toujours une erreur de gestion.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le prix Nobel qui a énoncé le paradoxe de la productivité en 1987 s'appelle Robert ______.
+
+32. Le modèle d'alignement stratégique est désigné par le sigle anglais ______.
+
+33. L'archétype où la direction générale et les métiers décident ensemble s'appelle le ______.
+
+34. Les trois finalités de la gouvernance sont la réalisation des bénéfices, l'optimisation des risques et l'optimisation des ______.
+
+35. Le coût total de possession est désigné par le sigle anglais ______.
+
+36. La valeur actuelle nette est désignée par le sigle ______.
+
+37. Le délai de récupération du projet A (1 200 M FCFA, 450 M FCFA par an) est d'environ ______ ans (une décimale).
+
+38. Dans l'exemple du chapitre, le critère d'alignement sur la mission pèse ______ % du score.
+
+39. La catégorie d'investissement qui vise à mieux piloter et mieux contrôler est la catégorie ______.
+
+40. Le régime financier de l'État camerounais est fixé par la loi n° 2018/______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

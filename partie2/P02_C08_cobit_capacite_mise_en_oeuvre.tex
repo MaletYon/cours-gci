@@ -1,0 +1,530 @@
+% ============================================================================
+% Fichier  : partie2/P02_C08_cobit_capacite_mise_en_oeuvre.tex
+% Titre    : Mesurer et Mettre en Œuvre : Capacité, Maturité et Feuille de Route
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Source : COBIT 2019 Framework: Introduction and Methodology, chapitres 6
+% et 8 (dossier Normes), paraphrasés. Laboratoire associé : GCI-LAB-04
+% (évaluation de capacité de DSS02 et BAI06).
+% ============================================================================
+
+\chapter{Mesurer et Mettre en Œuvre : Capacité, Maturité et Feuille de Route}
+\label{chap:cobit-capacite}
+\chaptermark{Capacité, maturité, mise en œuvre}
+
+\epigraph{%
+    « Ce qui ne se mesure pas ne s'améliore pas.\\
+    Ce qui se mesure mal s'améliore dans la mauvaise direction. »%
+}{Adage des praticiens de la qualité}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:cobit-conception} (facteurs de
+    conception et niveaux de capacité cibles).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Appliquer le modèle de capacité des processus (niveaux 0 à 5).
+    \item Distinguer capacité d'un processus et maturité d'un domaine.
+    \item Évaluer un niveau de capacité à partir de pièces justificatives.
+    \item Dérouler le cycle de mise en œuvre en sept phases.
+    \item Construire une feuille de route d'amélioration.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : où en sommes-nous vraiment~?}
+% ============================================================================
+
+Au Chapitre~\ref{chap:cobit-objectifs}, Mme~EKAMBI, directrice de l'audit
+interne de la BANQUE SANAGA, avait présenté au conseil un tableau de
+quarante cases « conforme / non conforme ». Au Chapitre~\ref{chap:cobit-conception},
+le comité stratégique a fixé, pour dix objectifs prioritaires, une
+capacité cible. Il reste à répondre à deux questions~: \emph{quelle est la
+capacité réelle de chaque processus aujourd'hui~?} et \emph{comment combler
+l'écart~?}
+
+La première question relève de la \textbf{mesure de la performance}
+(sections~\ref{sec:c08-principes} à~\ref{sec:c08-evaluer}). La seconde
+relève de la \textbf{mise en œuvre} (sections~\ref{sec:c08-phases}
+et~\ref{sec:c08-feuille}). Le laboratoire GCI-LAB-04 de NDAP SUKULU fait
+évaluer la capacité de deux processus de la banque à partir d'un dossier
+de pièces.
+
+\separateur
+
+% ============================================================================
+\section{Mesurer la Performance dans COBIT}
+\label{sec:c08-principes}
+% ============================================================================
+
+\subsection{Cinq principes}
+
+COBIT~2019 désigne par \emph{gestion de la performance} l'ensemble des
+méthodes qui disent dans quelle mesure le système de gouvernance et ses
+composantes fonctionnent, et comment les améliorer. Il fixe cinq
+principes à cette gestion~\cite{isaca2018cobitintro}~: elle doit être
+\textbf{simple} à comprendre et à utiliser~; \textbf{cohérente} avec le
+modèle conceptuel, et applicable à tous les types de composantes~;
+\textbf{fiable}, c'est-à-dire produire des résultats reproductibles et
+pertinents~; \textbf{flexible}, pour s'adapter aux priorités de chaque
+organisation~; et capable de soutenir \textbf{différents types
+d'évaluation}, de l'autoévaluation à l'audit formel.
+
+\subsection{Un modèle aligné sur CMMI}
+
+Le modèle de COBIT~2019 s'aligne largement sur la version~2.0 du CMMI et
+l'étend. Il repose sur deux notions~:
+\begin{itemize}
+    \item la \textbf{capacité}, qui se mesure \emph{processus par
+          processus}~: chaque activité d'un processus est rattachée à un
+          niveau de capacité~;
+    \item la \textbf{maturité}, qui se mesure \emph{domaine d'intérêt par
+          domaine d'intérêt}~: elle est atteinte quand tous les processus du
+          domaine atteignent le niveau de capacité requis.
+\end{itemize}
+
+\begin{boiteRemarque}{Et le modèle de COBIT~5~?}
+COBIT~5 mesurait la capacité selon la norme ISO/IEC~15504, devenue
+ISO/IEC~33000, dont les niveaux ont un sens assez différent. COBIT~2019
+lui substitue un modèle inspiré du CMMI. Les organisations qui veulent
+conserver l'approche ISO/IEC~33000 le peuvent~: COBIT~2019 précise que ses
+pratiques tiennent lieu de « pratiques de base » et ses flux d'information
+de « produits de travail ». Il faut seulement ne pas mélanger les deux
+échelles dans un même rapport.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Les Niveaux de Capacité}
+\label{sec:c08-niveaux}
+% ============================================================================
+
+\subsection{Six niveaux}
+
+\begin{boxdef}
+\termecle{Capacité d'un processus}\index{capacité d'un processus}
+(\textit{process capability})~: mesure de la manière dont un processus est
+mis en œuvre et fonctionne. COBIT~2019 la mesure sur une échelle de~0
+à~5.
+\end{boxdef}
+
+\begin{tableaucours}{cL{3.2cm}L{8.0cm}}{%
+    \tableauHeader{Niv.} &
+    \tableauHeader{Caractère} &
+    \tableauHeader{Description}
+}
+0 & Absence & Aucune capacité de base~; approche incomplète~; les pratiques
+ne sont pas, ou pas vraiment, mises en œuvre. \\
+1 & Initial, intuitif & Le processus atteint plus ou moins sa finalité, par
+un ensemble incomplet d'activités, peu organisé. \\
+2 & Réalisé & Le processus atteint sa finalité par un ensemble d'activités
+élémentaire, mais complet. \\
+3 & Défini & Le processus atteint sa finalité de manière beaucoup plus
+organisée, en s'appuyant sur des ressources de l'organisation~; il est
+généralement bien défini. \\
+4 & Mesuré & Le processus atteint sa finalité, il est bien défini, et sa
+performance est mesurée de manière quantitative. \\
+5 & Optimisé & Le processus est bien défini, sa performance est mesurée
+pour l'améliorer, et l'amélioration continue est recherchée. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.1. Les niveaux de capacité des
+processus (d'après COBIT~2019, notre traduction)}\end{center}
+
+\subsection{Des activités rattachées à des niveaux}
+
+Le guide des objectifs rattache chaque activité à un niveau de capacité.
+Dans la fiche DSS02, par exemple, les activités qui consistent à
+enregistrer, classer et prioriser les demandes et les incidents
+(pratique DSS02.02) relèvent du niveau~2~; celles qui définissent les
+schémas de classification et les règles d'escalade (DSS02.01) relèvent du
+niveau~3~; l'analyse des tendances et son utilisation pour l'amélioration
+continue (DSS02.07) relèvent des niveaux~4 et~5~\cite{isaca2018cobitobjectifs}.
+
+La progression est logique~: on commence par \emph{faire} (niveau~2),
+puis on \emph{standardise} (niveau~3), puis on \emph{mesure} (niveau~4),
+enfin on \emph{améliore} en continu (niveau~5).
+
+\begin{boxalert}
+\textbf{Violation typique.} Une organisation se déclare « au niveau~4 »
+parce qu'elle produit un tableau de bord mensuel sur ses incidents. Mais
+les incidents ne sont pas tous enregistrés, et chaque équipe les classe à
+sa façon~: le tableau de bord mesure un processus qui n'est ni complet
+(niveau~2) ni défini (niveau~3).
+
+\smallskip
+\textbf{Règle~:} un niveau ne s'acquiert que si les niveaux inférieurs
+sont atteints. Mesurer un processus qui n'est pas défini produit des
+chiffres, pas une capacité.
+\end{boxalert}
+
+% ============================================================================
+\section{Capacité et Maturité}
+\label{sec:c08-maturite}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Maturité}\index{maturité} (\textit{maturity})~: mesure de
+performance au niveau d'un domaine d'intérêt (un ensemble d'objectifs et
+de leurs composantes). Un domaine d'intérêt atteint un niveau de maturité
+donné lorsque \emph{tous} les processus qu'il contient atteignent ce
+niveau de capacité.
+\end{boxdef}
+
+\begin{tableaucours}{cL{3.0cm}L{8.2cm}}{%
+    \tableauHeader{Niv.} &
+    \tableauHeader{Maturité} &
+    \tableauHeader{Description}
+}
+0 & Incomplète & Le travail n'est pas forcément accompli. \\
+1 & Initiale & Le travail est accompli, mais l'objectif du domaine n'est pas
+pleinement atteint. \\
+2 & Gérée & Planification et mesure de la performance existent, mais pas
+encore de manière standardisée. \\
+3 & Définie & Des standards communs à toute l'organisation guident le
+travail. \\
+4 & Quantitative & L'organisation est pilotée par les données, avec une
+amélioration quantitative de la performance. \\
+5 & Optimisée & L'organisation est tournée vers l'amélioration continue. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.2. Les niveaux de maturité des
+domaines d'intérêt (d'après COBIT~2019, notre traduction)}\end{center}
+
+La règle d'agrégation est exigeante~: la maturité d'un domaine est celle
+de son processus le plus faible. Une banque dont neuf processus de
+sécurité sont au niveau~3 et le dixième au niveau~1 a une maturité de
+niveau~1 dans le domaine de la sécurité. C'est voulu~: une chaîne a la
+solidité de son maillon le plus faible.
+
+\subsection{Mesurer les autres composantes}
+
+COBIT~2019 reconnaît qu'il n'existe pas de méthode généralement admise
+pour évaluer les composantes autres que les processus, mais il propose des
+critères. Pour une structure organisationnelle, par exemple~: elle est
+formellement créée~; son mandat est clair et documenté~; ses règles de
+fonctionnement sont écrites~; elle se réunit comme prévu~; ses
+procès-verbaux existent et sont utiles~; ses droits de décision sont
+définis et respectés~; ses procédures d'escalade sont appliquées. Ces
+critères rejoignent l'exigence de contrôle « un comité qui fonctionne » du
+Chapitre~\ref{chap:gouv-entreprise}.
+
+% ============================================================================
+\section{Évaluer une Capacité}
+\label{sec:c08-evaluer}
+% ============================================================================
+
+\subsection{L'échelle de notation}
+
+Un niveau de capacité peut être atteint plus ou moins complètement.
+COBIT~2019 propose, pour les évaluations orientées vers l'amélioration,
+l'échelle suivante~\cite{isaca2018cobitintro}.
+
+\begin{tableaucours}{L{3.6cm}L{3.6cm}L{5.0cm}}{%
+    \tableauHeader{Note} &
+    \tableauHeader{Taux de réalisation} &
+    \tableauHeader{Lecture}
+}
+Complètement (\textit{Fully}, F) & Plus de 85~\% & Le niveau est acquis \\
+Largement (\textit{Largely}, L) & De 50 à 85~\% & Acquis, avec des
+faiblesses \\
+Partiellement (\textit{Partially}, P) & De 15 à 50~\% & Non acquis \\
+Pas (\textit{Not}, N) & Moins de 15~\% & Non acquis \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.3. L'échelle de notation des
+niveaux de capacité (d'après COBIT~2019)}\end{center}
+
+COBIT~2019 souligne que la note reste un jugement, qui doit être étayé par
+l'examen des composantes~: activités réalisées, pièces produites,
+structures en fonctionnement. Les méthodes formelles, qui débouchent sur
+une certification indépendante, peuvent préférer une notation binaire
+(atteint ou non).
+
+\subsection{La règle d'attribution du niveau}
+
+Le cours retient la règle usuelle des évaluations de processus, issue de
+la famille ISO/IEC~33000~: \textbf{un processus atteint le niveau~$n$ si
+ce niveau est noté au moins « largement » et si tous les niveaux
+inférieurs sont notés « complètement »}. Un niveau noté « largement » est
+donc acquis, mais il bloque l'accès au niveau suivant tant qu'il n'est pas
+porté à « complètement ».
+
+\subsection{Une évaluation pas à pas}
+
+\begin{boxscenario}{Opération SANAGA. La capacité de BAI06}
+L'auditrice interne, Mme~EKAMBI, évalue le processus BAI06 (gérer les
+changements informatiques), dont la cible est le niveau~3. Elle examine,
+pour chaque activité, les pièces de vingt changements tirés au hasard sur
+six mois. \textit{(Le nombre d'activités par niveau est simplifié pour
+l'exercice~; la fiche officielle BAI06 en donne la liste exacte.)}
+
+\medskip
+\begin{tableaucours}{cccccc}{%
+    \tableauHeader{Niveau} &
+    \tableauHeader{Activités} &
+    \tableauHeader{Réalisées} &
+    \tableauHeader{Taux} &
+    \tableauHeader{Note} &
+    \tableauHeader{Acquis~?}
+}
+2 & 10 & 6 & 60~\% & L & Oui \\
+3 & 8 & 2 & 25~\% & P & Non \\
+4 & 4 & 0 & 0~\% & N & Non \\
+\end{tableaucours}
+
+\medskip
+\textbf{Constatation.} Six activités de niveau~2 sur dix sont réalisées~:
+les demandes de changement sont enregistrées et évaluées, mais les
+changements d'urgence ne font l'objet d'aucune procédure, et
+l'autorisation n'est pas tracée pour les changements jugés mineurs. Deux
+activités de niveau~3 sur huit sont réalisées.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Capacité constatée~: \textbf{niveau~2,
+largement atteint}. L'écart avec la cible est d'un niveau. Pour progresser,
+il faut d'abord porter le niveau~2 à « complètement » (procédure
+d'urgence, traçabilité de toutes les autorisations), puis réaliser les
+activités de niveau~3.
+\end{boxscenario}
+
+\begin{boxprocedure}
+\textbf{Une évaluation de capacité opposable.} Pour qu'une évaluation de
+capacité puisse être présentée au conseil ou au régulateur, le dossier
+doit contenir~:
+\begin{itemize}
+    \item l'objectif évalué, l'édition de COBIT et l'échelle de notation
+          utilisées~;
+    \item le périmètre (entités, systèmes, période) et la méthode
+          d'échantillonnage~;
+    \item pour chaque activité, la pièce examinée et le constat
+          (réalisée ou non)~;
+    \item le taux et la note de chaque niveau, et la règle d'attribution
+          appliquée~;
+    \item la capacité constatée, la capacité cible et l'écart~;
+    \item la date, le nom de l'évaluateur et son indépendance par rapport
+          au processus évalué.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Conduire une évaluation de capacité}
+\begin{enumerate}
+    \item Partir de la fiche officielle de l'objectif~: lister ses
+          activités, niveau par niveau.
+    \item Pour chaque activité, définir la pièce qui prouve sa réalisation
+          (procès-verbal, ticket, journal, rapport).
+    \item Échantillonner~: une activité réalisée une fois n'est pas une
+          activité réalisée.
+    \item Noter chaque niveau sur l'échelle F, L, P, N, puis appliquer la
+          règle d'attribution.
+    \item Restituer à l'audité avant de conclure~: il peut détenir une pièce
+          que vous n'avez pas vue.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{La Mise en Œuvre en Sept Phases}
+\label{sec:c08-phases}
+% ============================================================================
+
+\subsection{Un programme, pas un projet}
+
+Le guide de mise en œuvre de COBIT~2019 part d'un constat~: beaucoup de
+démarches de gouvernance échouent parce qu'elles ne sont pas lancées et
+pilotées comme de véritables \emph{programmes}, parrainés par la direction
+générale, au périmètre maîtrisé et aux objectifs atteignables. Le but final
+n'est pas de terminer un projet, mais d'installer une pratique durable~:
+le programme se clôt quand l'amélioration de la gouvernance produit des
+bénéfices mesurables et fait partie du fonctionnement normal.
+
+\subsection{Sept phases, trois anneaux}
+
+La démarche comporte sept phases, chacune formulée comme une question.
+Chaque phase se lit sur trois anneaux~: le \emph{management du programme}
+(anneau extérieur), l'\emph{accompagnement du changement} (anneau
+intermédiaire) et le \emph{cycle d'amélioration continue} (anneau
+intérieur)~\cite{isaca2018cobitintro}.
+
+\begin{tableaucours}{L{3.3cm}L{2.9cm}L{2.9cm}L{3.1cm}}{%
+    \tableauHeader{Phase} &
+    \tableauHeader{Programme} &
+    \tableauHeader{Changement} &
+    \tableauHeader{Amélioration}
+}
+1. Quels sont les moteurs~? & Lancer le programme & Créer le désir de
+changer & Reconnaître la nécessité d'agir \\
+2. Où en sommes-nous~? & Définir problèmes et opportunités & Former
+l'équipe de mise en œuvre & Évaluer l'état actuel \\
+3. Où voulons-nous aller~? & Définir la feuille de route & Communiquer le
+résultat visé & Définir l'état cible \\
+4. Que faut-il faire~? & Planifier le programme & Identifier les acteurs &
+Construire les améliorations \\
+5. Comment y arriver~? & Exécuter le plan & Mettre en service et utiliser
+& Mettre en œuvre les améliorations \\
+6. Y sommes-nous arrivés~? & Réaliser les bénéfices & Ancrer les nouvelles
+pratiques & Exploiter et mesurer \\
+7. Comment garder l'élan~? & Examiner l'efficacité & Pérenniser &
+Surveiller et évaluer \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.4. La feuille de route de mise en
+œuvre de COBIT~2019 (d'après ISACA, notre traduction)}\end{center}
+
+\subsection{Le lien avec la conception}
+
+Les deux démarches s'emboîtent. La conception du système de gouvernance
+(Chapitre~\ref{chap:cobit-conception}) nourrit les trois premières phases
+de la mise en œuvre~: la compréhension du contexte alimente la phase~1,
+la détermination et l'affinage du périmètre alimentent la phase~2, et la
+conclusion de la conception fixe l'état cible de la phase~3. Les
+évaluations de capacité, enfin, mesurent l'état actuel en phase~2 et les
+progrès en phase~6.
+
+% ============================================================================
+\section{Construire une Feuille de Route}
+\label{sec:c08-feuille}
+% ============================================================================
+
+\subsection{De l'écart au plan}
+
+La phase~3 compare l'état cible et l'état actuel, puis cherche des
+solutions. COBIT recommande de distinguer les \emph{gains rapides} des
+chantiers de long terme, de donner la priorité aux actions faciles et à
+fort bénéfice, et de découper les chantiers longs en étapes maîtrisables.
+
+\begin{boxscenario}{Opération SANAGA. La feuille de route à dix-huit mois}
+Mme~EKAMBI reprend son tableau sur ces bases. Il ne compte plus quarante
+cases rouges, mais une ligne par objectif prioritaire. Voici les sept
+objectifs du profil de conception (Chapitre~\ref{chap:cobit-conception})~;
+EDM01, DSS02 et MEA03 suivent le même format.
+
+\medskip
+\begin{tableaucours}{L{1.5cm}cccL{6.2cm}}{%
+    \tableauHeader{Objectif} &
+    \tableauHeader{Constatée} &
+    \tableauHeader{Cible} &
+    \tableauHeader{Écart} &
+    \tableauHeader{Première action}
+}
+DSS04 & 1 & 4 & 3 & Tester le plan de continuité du système central
+(gain rapide~: 3~mois) \\
+EDM03 & 1 & 4 & 3 & Faire approuver l'appétence au risque par le conseil \\
+APO12 & 2 & 4 & 2 & Registre des risques SI relié au registre de la banque \\
+BAI06 & 2 & 3 & 1 & Procédure des changements d'urgence (gain rapide) \\
+APO10 & 1 & 3 & 2 & Renégocier le contrat de DIGICORE AFRIQUE \\
+BAI07 & 1 & 3 & 2 & Recette et retour arrière obligatoires avant bascule \\
+MEA02 & 2 & 3 & 1 & Suivi trimestriel des recommandations au comité
+d'audit \\
+\end{tableaucours}
+
+\medskip
+\textbf{Échelonnement.} Mois 1 à 3~: gains rapides (DSS04, BAI06, MEA02).
+Mois 4 à 12~: chantiers de fond (EDM03, APO12, APO10, BAI07). Mois 13 à
+18~: mesure des progrès (phase~6) et nouvelle évaluation de capacité.
+\end{boxscenario}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Piloter la feuille de route}
+\begin{enumerate}
+    \item Donner à chaque ligne un propriétaire, une échéance et un
+          indicateur de progrès.
+    \item Rendre compte chaque trimestre au comité stratégique des SI, et
+          chaque semestre au conseil.
+    \item Réévaluer la capacité des objectifs traités à mi-parcours, par une
+          personne indépendante du processus.
+    \item Mettre à jour la conception (Chapitre~\ref{chap:cobit-conception})
+          si un facteur change~: c'est le principe du système dynamique.
+\end{enumerate}
+\end{boxmetier}
+
+\begin{boiteRemarque}{Viser le niveau~5 partout~?}
+Rien ne serait plus coûteux, ni plus inutile. Le niveau~5 suppose une
+amélioration continue fondée sur des mesures quantitatives~: il se
+justifie pour quelques processus réellement critiques, rarement plus. Pour
+la plupart des organisations camerounaises, atteindre durablement le
+niveau~3 sur les objectifs prioritaires serait déjà un progrès décisif~:
+des processus définis, appliqués partout, qui ne dépendent plus de la
+bonne volonté d'une personne. La gouvernance, ici encore, est affaire de
+proportion.
+\end{boiteRemarque}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Capacité et maturité}~: la capacité se mesure processus
+          par processus (0 à 5)~; la maturité se mesure par domaine
+          d'intérêt, et vaut celle du processus le plus faible.
+    \item \textbf{Six niveaux}~: absence, initial, réalisé, défini, mesuré,
+          optimisé. On fait, on standardise, on mesure, on améliore.
+    \item \textbf{Des activités rattachées à des niveaux}~: c'est ce qui rend
+          la mesure objective, à condition de l'étayer par des pièces.
+    \item \textbf{Quatre notes}~: complètement (plus de 85~\%), largement
+          (50 à 85~\%), partiellement (15 à 50~\%), pas (moins de 15~\%).
+          Un niveau ne s'acquiert que si les niveaux inférieurs sont
+          complètement atteints.
+    \item \textbf{Sept phases, trois anneaux}~: programme, changement,
+          amélioration continue. La gouvernance s'installe par un
+          programme, pas par un projet.
+    \item \textbf{La feuille de route} part des écarts entre capacité
+          constatée et cible, commence par des gains rapides, et se pilote
+          devant le comité stratégique.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.1. Noter un niveau \niveaubase}]
+Pour chacun des cas suivants, donnez la note (F, L, P ou N) du niveau
+concerné, puis la capacité du processus.
+\begin{enumerate}[(a)]
+    \item Niveau~2~: 9 activités sur 10 réalisées~; niveau~3~: 3 sur 6.
+    \item Niveau~2~: 7 activités sur 10 réalisées~; niveau~3~: 6 sur 6.
+    \item Niveau~2~: 1 activité sur 10 réalisée.
+    \item Niveau~2~: 12 sur 12~; niveau~3~: 8 sur 9~; niveau~4~: 1 sur 5.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.2. La maturité de la continuité \niveaumoyen}]
+Le domaine d'intérêt « continuité » de KRIBILOG SA regroupe quatre
+processus. Leurs capacités constatées sont~: DSS04 niveau~2, BAI04
+niveau~3, DSS01 niveau~3, APO10 niveau~1.
+\begin{enumerate}[(a)]
+    \item Quelle est la maturité du domaine~? Justifiez.
+    \item Le directeur général affirme que « la continuité est au niveau~3
+          en moyenne ». Que lui répondez-vous~?
+    \item Quelle action aurait le plus d'effet sur la maturité du domaine~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.3. La feuille de route de l'ANPP \niveauexpert}]
+À partir des capacités cibles calculées à l'Exercice~7.2, et des capacités
+constatées suivantes~: EDM02 niveau~0, APO05 niveau~1, APO10 niveau~1,
+BAI11 niveau~2, DSS04 niveau~1.
+\begin{enumerate}[(a)]
+    \item Construisez le tableau des écarts.
+    \item Identifiez deux gains rapides et deux chantiers de long terme.
+    \item Organisez la feuille de route selon les sept phases, en précisant
+          pour chaque phase une action sur chacun des trois anneaux.
+    \item Indiquez comment la feuille de route s'inscrit dans le budget
+          programme de l'agence (Chapitre~\ref{chap:alignement}).
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~\ref{part:cobit} a construit, avec COBIT~2019,
+un système de gouvernance mesuré et une feuille de route. La
+Partie~\ref{part:normatif} replace ce système dans son cadre normatif et
+juridique. Le Chapitre~\ref{chap:normes} présente les normes
+internationales de la gouvernance et des services (ISO/IEC~38500,
+ISO/IEC~20000-1, ISO/IEC~27001, ISO~31000, COSO).
+\end{boxinfo}

@@ -1,0 +1,697 @@
+% ============================================================================
+% Fichier  : partie0/P00_trois_jours_sans_banque.tex
+% Titre    : Prologue -- Trois Jours sans Banque : quand Personne n'a Décidé
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+
+\chapter[Prologue : Trois Jours sans Banque]{Prologue : Trois Jours sans Banque, quand Personne n'a Décidé}
+\label{chap:prologue}
+\chaptermark{Prologue}
+
+\epigraph{%
+    « Une panne se répare en quelques heures.\\
+    Une décision que personne n'a prise se paie pendant des années. »%
+}{Thierry Minka, auditeur des systèmes d'information}
+
+\niveauChapitre{Introductif}{%
+    Aucun prérequis. Ce prologue se lit avant d'ouvrir le moindre
+    référentiel~: il ne suppose aucune connaissance de COBIT ni d'ITIL.%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Reconstituer la chronologie d'une défaillance informatique majeure
+          (opération SANAGA).
+    \item Distinguer une cause technique d'une cause de gouvernance.
+    \item Poser les trois questions réflexes~: qui décide, qui exécute, qui
+          rend compte.
+    \item Distinguer gouvernance et management des systèmes d'information.
+    \item Identifier les parties prenantes qui demandent des comptes
+          (conseil d'administration, régulateur, clients).
+    \item Situer COBIT et ITIL dans la réponse à la défaillance.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Avant de commencer : une panne qui n'était pas technique}
+% ============================================================================
+
+Douala, lundi 9~mars~2026, 7~h~30. Les 38~agences de la BANQUE
+SANAGA\footnote{La BANQUE SANAGA, ses dirigeants, ses prestataires, les
+dates et les montants de ce cas sont fictifs. Les mécanismes de
+gouvernance, les référentiels et les textes cités sont exacts.} ouvrent
+leurs portes. Aucun guichet ne fonctionne. Les écrans affichent un message
+d'erreur du nouveau système bancaire central, mis en service pendant le
+week-end. Les distributeurs automatiques passent en mode dégradé, les
+virements et les paiements par carte sont bloqués. À Yaoundé, à Bafoussam,
+à Garoua, les files d'attente s'allongent devant des agences qui ne peuvent
+ni verser ni retirer.
+
+La paralysie dure \textbf{trois jours}. Le service ne revient complètement
+que le jeudi 12~mars au matin. Le coût, chiffré plus tard par la direction
+financière, atteint \textbf{1,9~milliard de francs CFA}. Le 16~mars, la
+Commission bancaire de l'Afrique centrale (\sigle{COBAC}) demande à la banque
+un rapport circonstancié sous trente jours.
+
+\medskip
+
+Le conseil d'administration réunit une séance extraordinaire. Le directeur
+général, M.~FOTSO, ouvre la séance par une phrase qui résume ce que chacun
+pense alors~: « Le prestataire nous a livré un logiciel défaillant. » Le
+rapport d'enquête interne, remis trois semaines plus tard, dit tout autre
+chose.
+
+\begin{boxalert}
+\textbf{Ce que révèle l'enquête.} Le logiciel n'était pas en cause. Il
+avait été recetté à 63~\% seulement quand la date de bascule a été
+maintenue. La date elle-même avait été fixée pour coïncider avec le
+lancement commercial d'une offre mobile, déjà annoncée à la presse. Le
+comité de pilotage du projet ne s'était plus réuni depuis quatre mois.
+Aucun comité n'avait autorisé la mise en production. Aucun retour arrière
+n'avait été testé, et la conversion des données de l'ancien système était
+irréversible. Le contrat de l'intégrateur ne prévoyait aucune pénalité. Un
+rapport d'audit interne avait signalé ces faiblesses cinq mois plus tôt~:
+ses recommandations étaient restées « en cours ».
+
+\smallskip
+Chacune de ces défaillances est une \textbf{décision} qui n'a pas été
+prise, ou qui a été prise par la mauvaise personne, sans trace écrite et
+sans que personne en rende compte.
+\end{boxalert}
+
+\medskip
+
+Ce prologue n'enseigne ni COBIT ni ITIL. Ces référentiels occupent les
+chapitres qui suivent. Il enseigne \textbf{le réflexe fondateur de la
+discipline}~: devant toute défaillance d'un système d'information, chercher
+la décision derrière l'incident. Une panne se répare. Une organisation qui
+ne sait pas qui décide reproduira la même panne.
+
+\separateur
+
+% ============================================================================
+\section{Chronologie de la Défaillance}
+\label{sec:pro-chronologie}
+% ============================================================================
+
+\subsection{Reconstituer avant de juger}
+
+La première tâche de quiconque analyse une défaillance (le DSI qui rédige le
+rapport au régulateur, l'auditeur mandaté par le conseil, le responsable des
+risques) est de \textbf{reconstituer la chronologie}. Elle fixe les faits
+avant toute interprétation. Elle se construit à partir de pièces~:
+procès-verbaux, courriels, tickets, journaux d'exploitation, contrats.
+
+\begin{boxdef}
+\termecle{Chronologie de défaillance}\index{chronologie de défaillance}
+(\textit{incident timeline})~: suite datée des faits, des décisions et des
+absences de décision qui ont précédé, accompagné et suivi une défaillance.
+Chaque entrée est rattachée à une pièce justificative.
+\end{boxdef}
+
+\begin{tableaucours}{L{2.6cm}L{6.4cm}L{3.2cm}}{%
+    \tableauHeader{Date} &
+    \tableauHeader{Fait établi} &
+    \tableauHeader{Pièce}
+}
+Juin 2025 & Le conseil d'administration approuve le projet HORIZON
+(remplacement du système bancaire central), budget de 3,2~milliards FCFA.
+Intégrateur retenu~: DIGICORE AFRIQUE. & Procès-verbal du conseil \\
+Oct. 2025 & L'audit interne signale l'absence de procédure de gestion des
+changements et de plan de continuité testé. Recommandations notées « en
+cours ». & Rapport d'audit n°~2025-07 \\
+Nov. 2025 & Dernière réunion du comité de pilotage du projet. & Compte rendu \\
+Janv. 2026 & Le directeur général fixe la bascule au week-end du 7--8~mars,
+date du lancement de l'offre « SANAGA Mobile ». & Courriel du DG \\
+20 févr. 2026 & Recette à 63~\% des scénarios. La DSI demande un report par
+note interne. Aucune réponse écrite. & Note de la DSI \\
+7 mars, 22 h & Début de la migration. & Journal d'exploitation \\
+8 mars, 14 h & Conversion des comptes~: écarts de solde sur 11~\% des
+comptes. Le retour à l'ancien système n'est plus possible. & Journal
+d'exploitation \\
+9 mars, 7 h 30 & Ouverture des agences~: système indisponible. & Tickets
+du centre de services \\
+12 mars, 8 h & Retour complet du service. & Journal d'exploitation \\
+16 mars & La COBAC demande un rapport circonstancié sous 30~jours. &
+Lettre de la COBAC \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.1. Chronologie de l'opération SANAGA}\end{center}
+
+\subsection{Constatation et analyse}
+
+Une chronologie ne contient que des \textbf{constatations}~: des faits
+vérifiables, rattachés à une pièce. L'interprétation vient ensuite, dans une
+partie distincte, et elle s'accompagne d'un niveau de confiance. Mélanger
+les deux est l'erreur la plus fréquente des rapports de défaillance, et la
+plus facile à exploiter par celui qui veut contester le rapport.
+
+\begin{boxalert}
+\textbf{Violation typique.} Le premier projet de rapport de la BANQUE
+SANAGA écrit~: « Le prestataire a livré un logiciel non conforme, ce qui a
+provoqué la panne. » La phrase mêle un fait non établi (la non-conformité)
+et une causalité non démontrée. DIGICORE AFRIQUE produit aussitôt le
+procès-verbal de recette, qui montre que la banque a elle-même décidé de
+basculer avec 37~\% des scénarios non testés.
+
+\smallskip
+\textbf{Règle~:} écrire d'abord la constatation (« La recette couvrait
+63~\% des scénarios le 20~février~; la bascule a eu lieu le 7~mars »), puis
+l'analyse, avec son niveau de confiance (« Il est très probable que les
+écarts de solde proviennent de scénarios de conversion non testés »).
+\end{boxalert}
+
+% ============================================================================
+\section{Cause Technique, Cause de Gouvernance}
+\label{sec:pro-causes}
+% ============================================================================
+
+\subsection{Deux niveaux d'explication}
+
+Toute défaillance d'un système d'information s'explique à deux niveaux. Le
+\textbf{niveau technique} répond à la question \emph{comment}~: quel
+composant a cédé, quelle donnée a été corrompue. Le \textbf{niveau de la
+gouvernance} répond à la question \emph{pourquoi cela a été possible}~:
+quelle décision, quel contrôle, quelle responsabilité a manqué.
+
+\begin{boxdef}
+\termecle{Défaillance de gouvernance}\index{défaillance de gouvernance}
+(\textit{governance failure})~: absence, inadéquation ou contournement d'un
+mécanisme de décision, de contrôle ou de reddition de comptes, qui permet
+qu'un risque connu ou connaissable se réalise.
+\end{boxdef}
+
+\begin{tableaucours}{L{5.6cm}L{6.6cm}}{%
+    \tableauHeader{Cause technique (comment~?)} &
+    \tableauHeader{Cause de gouvernance (pourquoi était-ce possible~?)}
+}
+Écarts de solde lors de la conversion des comptes & Bascule maintenue avec
+une recette incomplète, sans décision formelle d'acceptation du risque \\
+Retour arrière impossible & Aucun plan de retour arrière exigé ni testé
+avant l'autorisation de mise en production \\
+Indisponibilité prolongée & Aucun plan de continuité testé, malgré la
+recommandation de l'audit interne \\
+Intervention lente de l'intégrateur & Contrat sans engagement de niveau de
+service ni pénalité \\
+Communication de crise improvisée & Aucun rôle de crise défini, aucune
+information préalable du conseil sur le risque du projet \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.2. Les deux niveaux d'explication de l'opération SANAGA}\end{center}
+
+\subsection{Remonter de l'incident à la décision}
+
+Une méthode simple permet de passer d'un niveau à l'autre~: demander
+« pourquoi~? » jusqu'à atteindre une décision, ou une absence de décision.
+Appliquée à la BANQUE SANAGA, elle donne~:
+
+\begin{enumerate}
+    \item \emph{Pourquoi les agences étaient-elles paralysées~?} Parce que
+          le nouveau système produisait des soldes erronés.
+    \item \emph{Pourquoi les soldes étaient-ils erronés~?} Parce que des
+          scénarios de conversion n'avaient pas été testés.
+    \item \emph{Pourquoi a-t-on basculé sans les tester~?} Parce que la date
+          était fixée par le lancement commercial.
+    \item \emph{Pourquoi la date l'a-t-elle emporté sur la recette~?} Parce
+          que personne n'avait l'autorité, ni l'obligation, d'arbitrer entre
+          le risque technique et l'enjeu commercial.
+\end{enumerate}
+
+La quatrième réponse n'est plus technique. Elle décrit une
+\textbf{organisation}~: elle sera au cœur des Parties~\ref{part:fondements}
+et~\ref{part:cobit} du cours.
+
+\begin{boxinfo}
+\textbf{La règle d'or~:} une analyse de défaillance est terminée quand elle
+a atteint une décision, ou une absence de décision, et qu'elle a nommé le
+rôle qui aurait dû la prendre. Tant qu'elle s'arrête à un composant, elle
+n'a expliqué que la moitié de l'incident.
+\end{boxinfo}
+
+% ============================================================================
+\section{Les Trois Questions Réflexes}
+\label{sec:pro-trois-questions}
+% ============================================================================
+
+\subsection{Décider, exécuter, rendre compte}
+
+Devant tout projet, tout changement ou toute défaillance d'un système
+d'information, trois questions suffisent à révéler l'état de la gouvernance.
+
+\begin{enumerate}
+    \item \textbf{Qui décide~?} Quelle instance ou quelle personne avait
+          l'autorité de trancher, et l'a-t-elle fait, par écrit~?
+    \item \textbf{Qui exécute~?} Qui a mis en œuvre la décision, avec quels
+          moyens, et selon quelle procédure~?
+    \item \textbf{Qui rend compte~?} Qui doit expliquer le résultat, à qui,
+          et sur la base de quelles informations~?
+\end{enumerate}
+
+\begin{boxdef}
+\termecle{Droits de décision}\index{droits de décision} (\textit{decision
+rights})~: répartition formelle, entre les instances et les personnes d'une
+organisation, du pouvoir de décider sur une question donnée. Weill et Ross
+en font le cœur de la gouvernance des SI~\cite{weill2004itgovernance}.
+
+\medskip
+\termecle{Redevabilité}\index{redevabilité} (\textit{accountability})~:
+obligation, pour celui qui a reçu une responsabilité, d'en rendre compte à
+l'instance qui la lui a confiée, et d'en assumer les conséquences.
+\end{boxdef}
+
+\subsection{Application à la BANQUE SANAGA}
+
+\begin{tableaucours}{L{3.4cm}L{2.9cm}L{3.1cm}L{2.6cm}}{%
+    \tableauHeader{Décision} &
+    \tableauHeader{Prise par} &
+    \tableauHeader{Aurait dû l'être par} &
+    \tableauHeader{Trace écrite}
+}
+Date de bascule & Directeur général seul & Comité de pilotage, sur avis de
+la DSI & Courriel \\
+Bascule avec recette incomplète & Personne (statu quo) & Comité de
+pilotage, avec acceptation formelle du risque & Aucune \\
+Autorisation de mise en production & Personne & Comité des changements &
+Aucune \\
+Suite des recommandations d'audit & Personne & Direction générale, suivie
+par le comité d'audit & « En cours » \\
+Information du conseil sur le risque & Personne & Directeur général &
+Aucune \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.3. Les droits de décision dans l'opération SANAGA}\end{center}
+
+Le tableau parle de lui-même. Sur cinq décisions critiques, une seule a été
+prise, par une personne seule, sans l'avis de ceux qui portaient le risque.
+Les quatre autres n'ont été prises par personne. C'est la signature d'une
+organisation sans gouvernance des SI~: non pas des dirigeants incompétents,
+mais une absence de règles sur \emph{qui décide de quoi}.
+
+\begin{boxmetier}{DSI}
+\textbf{Protéger la décision, pas seulement le système}
+\begin{enumerate}
+    \item Tout désaccord sur un risque majeur (date, périmètre, recette) se
+          formule \textbf{par écrit}, adressé à l'instance qui a le droit de
+          décider, et non au seul supérieur hiérarchique.
+    \item La note expose les faits (taux de recette, scénarios non testés),
+          le risque (ce qui peut arriver, son coût estimé) et les options
+          (reporter, réduire le périmètre, accepter le risque).
+    \item Elle demande une \textbf{décision explicite}~: le silence n'est
+          pas une décision.
+    \item Le DSI conserve la note et la réponse, ou l'absence de réponse,
+          dans le dossier du projet.
+\end{enumerate}
+La note du 20~février de la DSI de la BANQUE SANAGA était juste sur le fond.
+Elle a échoué sur la forme~: adressée au seul directeur général, elle ne
+demandait aucune décision et n'a jamais atteint le comité de pilotage.
+\end{boxmetier}
+
+% ============================================================================
+\section{Gouvernance et Management}
+\label{sec:pro-gouv-management}
+% ============================================================================
+
+\subsection{Une distinction fondatrice}
+
+Les trois questions réflexes font apparaître deux familles d'activités. Les
+unes fixent la direction et contrôlent le résultat~; les autres
+réalisent. COBIT~2019 en fait une distinction structurante, chacune
+relevant d'activités, de structures et de finalités
+différentes~\cite{isaca2018cobitintro}.
+
+\begin{boxdef}
+\termecle{Gouvernance des SI}\index{gouvernance des SI} (\textit{governance
+of enterprise I\&T})~: ensemble des activités par lesquelles l'organe de
+gouvernance \emph{évalue} les besoins des parties prenantes pour fixer des
+objectifs équilibrés, \emph{dirige} par la priorisation et la décision, et
+\emph{surveille} la performance et la conformité au regard de cette
+direction. Elle relève, dans la plupart des organisations, du conseil
+d'administration.
+
+\medskip
+\termecle{Management des SI}\index{management des SI} (\textit{management
+of enterprise I\&T})~: ensemble des activités qui \emph{planifient},
+\emph{bâtissent}, \emph{exploitent} et \emph{surveillent} les systèmes
+d'information, conformément à la direction fixée par la gouvernance. Il
+relève de la direction générale.
+\end{boxdef}
+
+\begin{tableaucours}{L{3.0cm}L{4.6cm}L{4.6cm}}{%
+    \tableauHeader{Critère} &
+    \tableauHeader{Gouvernance} &
+    \tableauHeader{Management}
+}
+Question & Fait-on les bonnes choses~? & Fait-on bien les choses~? \\
+Responsable & Conseil d'administration et ses comités & Direction générale,
+DSI, responsables opérationnels \\
+Verbes (COBIT) & Évaluer, diriger, surveiller & Planifier, bâtir,
+exploiter, surveiller \\
+Horizon & Stratégique, pluriannuel & Opérationnel, annuel et quotidien \\
+Exemple SANAGA & Décider si le lancement commercial justifie le risque de
+bascule & Conduire la recette, préparer le retour arrière \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.4. Gouvernance et management des SI}\end{center}
+
+\begin{boiteRemarque}{Le DSI gouverne-t-il~?}
+La question revient à chaque promotion, et la réponse est nuancée. Le DSI
+\emph{participe} à la gouvernance~: il éclaire le conseil, propose des
+arbitrages, alerte sur les risques. Mais il n'en est pas l'organe. Un DSI
+qui décide seul de la stratégie numérique gouverne par défaut, faute
+d'instance compétente. Un conseil qui délègue tout au DSI renonce à sa
+propre responsabilité. Le Chapitre~\ref{chap:gouv-entreprise} reprendra
+cette question à partir de la théorie de l'agence.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Ceux qui Demandent des Comptes}
+\label{sec:pro-parties-prenantes}
+% ============================================================================
+
+\subsection{Les parties prenantes de la BANQUE SANAGA}
+
+Une défaillance majeure fait apparaître, d'un coup, tous ceux à qui
+l'organisation doit des comptes. Chacun pose une question différente et
+attend une réponse documentée.
+
+\begin{tableaucours}{L{3.6cm}L{4.4cm}L{4.2cm}}{%
+    \tableauHeader{Partie prenante} &
+    \tableauHeader{Sa question} &
+    \tableauHeader{Ce qu'elle exige}
+}
+Conseil d'administration & Pourquoi n'avons-nous pas été informés du
+risque~? & Un rapport sur les causes et la responsabilité de chacun \\
+Actionnaires & Combien cela coûte-t-il, et cela peut-il se reproduire~? &
+Le chiffrage des pertes et un plan d'action \\
+COBAC & Le contrôle interne de la banque fonctionne-t-il~? & Un rapport
+circonstancié sous 30~jours \\
+Clients et commerçants & Nos opérations sont-elles justes~? & La
+correction des soldes et une indemnisation \\
+Commissaire aux comptes & Les comptes de l'exercice restent-ils
+fiables~? & La preuve de l'exactitude des soldes convertis \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.5. Les parties prenantes et leurs exigences}\end{center}
+
+\subsection{Le coût d'une décision manquée}
+
+Le chiffrage de la direction financière donne la mesure de l'enjeu.
+
+\begin{tableaucours}{p{8.2cm}r}{%
+    \tableauHeader{Poste} &
+    \tableauHeader{Montant (millions FCFA)}
+}
+Commissions et frais non perçus pendant trois jours & 410 \\
+Indemnisation des clients et des commerçants & 380 \\
+Prestations d'urgence et heures supplémentaires & 260 \\
+Retraits hors ligne au-delà du solde, non recouvrés & 330 \\
+Correction des données et audit externe imposé & 520 \\
+\textbf{Total} & \textbf{1~900} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.6. Coût de l'opération SANAGA}\end{center}
+
+Le report de la bascule de six semaines, demandé par la DSI, aurait coûté
+selon le même service environ 85~millions FCFA (prolongation de
+l'intégrateur et décalage de la campagne commerciale). Le rapport entre les
+deux montants, plus de vingt pour un, est l'argument que la gouvernance
+aurait dû voir avant la bascule, et qu'elle n'a vu qu'après.
+
+\subsection{Le cadre légal camerounais}
+
+La défaillance de la BANQUE SANAGA ne relève pas seulement de la
+réglementation bancaire. La loi camerounaise sur la cybersécurité soumet
+les systèmes d'information à des obligations d'audit.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012} du 21~décembre~2010 relative à la
+cybersécurité et la cybercriminalité au Cameroun, article~32} (version
+anglaise officielle)~:
+
+\medskip
+\textit{« (1) Electronic communication networks and information systems
+shall be subject to a regime of compulsory and periodic auditing of their
+security systems by the Agency. (2) Security audit and severity scale
+rating shall be undertaken each year or as required by the prevailing
+circumstances. »}
+
+\medskip
+Soit, en substance~: les réseaux de communications électroniques et les
+systèmes d'information sont soumis à un audit obligatoire et périodique de
+leur sécurité par l'Agence (l'\sigle{ANTIC}), conduit chaque année ou
+selon les circonstances. L'article~13 de la même loi soumet en outre les
+systèmes d'information des opérateurs à un audit de sécurité obligatoire,
+dont les modalités sont fixées par voie réglementaire.
+
+\medskip
+\textbf{Portée.} La loi fait de l'audit des systèmes d'information une
+obligation, et non une bonne pratique facultative. Le
+Chapitre~\ref{chap:droit} précisera son champ d'application exact, ses
+textes d'application et son articulation avec la réglementation de la
+COBAC sur le contrôle interne des établissements de crédit, ainsi qu'avec
+le droit OHADA de la responsabilité des dirigeants.
+\end{boxjuris}
+
+% ============================================================================
+\section{Ce que COBIT et ITIL Auraient Changé}
+\label{sec:pro-cobit-itil}
+% ============================================================================
+
+\subsection{Deux référentiels, deux niveaux}
+
+Les deux référentiels au programme de ce cours répondent chacun à un niveau
+d'explication de la défaillance. \textbf{COBIT~2019} (Partie~\ref{part:cobit})
+organise la gouvernance et le management de l'ensemble des systèmes
+d'information~: qui décide, selon quels objectifs, avec quels contrôles.
+\textbf{ITIL~4} (Partie~\ref{part:pratique}) organise la gestion des
+services informatiques au quotidien~: comment autoriser un changement,
+traiter un incident, tenir un engagement de service. COBIT dit \emph{ce qui
+doit être maîtrisé}~; ITIL décrit en détail \emph{comment le faire} pour
+les services.
+
+\begin{tableaucours}{L{4.2cm}L{4.2cm}L{3.8cm}}{%
+    \tableauHeader{Défaillance SANAGA} &
+    \tableauHeader{Objectif COBIT 2019} &
+    \tableauHeader{Pratique ITIL 4}
+}
+Aucune instance n'arbitre le risque du projet & EDM01, EDM03 (cadre de
+gouvernance, optimisation des risques) & · \\
+Comité de pilotage en sommeil & BAI01, BAI11 (programmes, projets) &
+Gestion de projet \\
+Mise en production non autorisée, sans retour arrière & BAI06, BAI07
+(changements, acceptation et transition) & Habilitation des changements,
+gestion des mises en production \\
+Contrat sans engagement de service & APO09, APO10 (accords de service,
+fournisseurs) & Gestion des niveaux de service, gestion des
+fournisseurs \\
+Aucun plan de continuité testé & DSS04 (continuité) & Gestion de la
+continuité de service \\
+Recommandations d'audit sans suite & MEA02 (système de contrôle
+interne) & · \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.7. Défaillances SANAGA, objectifs COBIT et
+pratiques ITIL (intitulés traduits par nos soins)}\end{center}
+
+\subsection{Un exemple~: la gestion des changements}
+
+La mise en production du nouveau système était un \termecle{changement}
+\index{changement} au sens des deux référentiels~: une modification d'un
+élément du système d'information susceptible d'affecter les services.
+COBIT en fait un objectif de management, que le cours présentera toujours
+sous la même forme.
+
+\begin{boxobjet}{BAI06 · Gérer les changements informatiques}
+\textbf{Finalité~:} permettre des changements rapides et fiables, en
+limitant le risque d'affecter la stabilité ou l'intégrité de
+l'environnement modifié.
+
+\textbf{Pratiques clés~:} évaluer, prioriser et autoriser les demandes de
+changement~; gérer les changements d'urgence~; suivre l'état des
+changements et en rendre compte~; clore et documenter les changements.
+
+\textbf{Entrées et sorties~:} demande de changement, évaluation d'impact et
+de risque, plan de retour arrière~; décision d'autorisation, calendrier des
+changements, rapport de clôture.
+
+\textbf{RACI (extrait)~:} autorisation d'un changement majeur~:
+\emph{A} au comité des changements, \emph{R} au responsable du changement,
+\emph{C} aux métiers concernés et au RSSI, \emph{I} au centre de services.
+
+\textbf{Indicateurs~:} taux de changements en échec, nombre de changements
+non autorisés, part des changements majeurs dotés d'un retour arrière
+testé.
+\end{boxobjet}
+
+\begin{boxprocedure}
+\textbf{Mise en production d'un changement majeur.} Pour qu'un auditeur
+puisse établir que le changement était maîtrisé, le dossier doit contenir~:
+\begin{itemize}
+    \item le procès-verbal de recette, avec le taux de couverture des
+          scénarios et la liste des anomalies ouvertes~;
+    \item l'évaluation du risque et la décision écrite d'acceptation des
+          risques résiduels, signée par l'instance compétente~;
+    \item le plan de retour arrière et la preuve qu'il a été testé~;
+    \item le procès-verbal d'autorisation du comité des changements, daté
+          et antérieur à la mise en production~;
+    \item le rapport de clôture, avec les incidents survenus.
+\end{itemize}
+Dans l'opération SANAGA, seule la première pièce existait.
+\end{boxprocedure}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Les cinq pièces à demander après une défaillance majeure}
+\begin{enumerate}
+    \item Les procès-verbaux des instances de gouvernance (conseil, comité
+          d'audit, comité de pilotage) sur la période du projet.
+    \item Le dossier du changement (voir l'exigence de contrôle ci-dessus).
+    \item Les contrats avec les prestataires et leurs annexes de niveau de
+          service.
+    \item Le plan de continuité et les comptes rendus de ses derniers
+          tests.
+    \item Le suivi des recommandations d'audit antérieures, avec leurs
+          dates d'échéance et leurs responsables.
+\end{enumerate}
+L'absence d'une pièce est elle-même une constatation~: elle se consigne
+comme telle.
+\end{boxmetier}
+
+% ============================================================================
+\section{Retour sur la BANQUE SANAGA : ce qui Aurait Dû se Passer}
+\label{sec:pro-retour-sanaga}
+% ============================================================================
+
+Voici la même bascule, conduite cette fois par une organisation gouvernée.
+
+\begin{boxscenario}{Opération SANAGA. La bascule gouvernée}
+\begin{enumerate}
+    \item \textbf{Juin 2025.} En approuvant le projet HORIZON, le conseil
+          d'administration fixe ses règles~: un comité de pilotage mensuel
+          présidé par le directeur général adjoint, un point de risque
+          trimestriel au comité d'audit, et l'obligation d'une décision
+          formelle avant toute bascule.
+    \item \textbf{Octobre 2025.} Les recommandations de l'audit interne sur
+          la gestion des changements et la continuité reçoivent chacune un
+          responsable et une échéance. Le comité d'audit en suit l'avancement.
+    \item \textbf{20 février 2026.} La note de la DSI (recette à 63~\%) est
+          inscrite à l'ordre du jour du comité de pilotage. Le comité
+          compare le coût d'un report (85~millions FCFA) et le risque d'une
+          bascule prématurée.
+    \item \textbf{Décision.} Le comité reporte la bascule de six semaines et
+          dissocie le lancement de « SANAGA Mobile », qui démarre sur
+          l'ancien système. La décision est consignée au procès-verbal.
+    \item \textbf{Avril 2026.} Recette à 98~\%, retour arrière testé à
+          blanc, comité des changements réuni. Le contrat de DIGICORE
+          AFRIQUE a été amendé~: présence sur site pendant la bascule et
+          pénalités de retard d'intervention.
+    \item \textbf{Bascule.} Un écart de solde est détecté le dimanche à
+          15~h. Le retour arrière est déclenché à 16~h. Les agences ouvrent
+          le lundi sur l'ancien système. La bascule réussit deux semaines
+          plus tard.
+\end{enumerate}
+\textbf{Résultat~:} le même incident technique s'est produit. Il est resté
+un incident d'exploitation, sans conséquence pour les clients, au lieu de
+devenir une crise à 1,9~milliard FCFA.
+\end{boxscenario}
+
+Le point essentiel est là~: \textbf{la gouvernance n'empêche pas les
+incidents techniques}. Elle fait en sorte qu'ils soient anticipés, décidés
+et contenus. La suite du cours donne les outils pour construire une telle
+organisation.
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce prologue~:}
+
+\begin{itemize}
+    \item \textbf{Une défaillance a deux niveaux}~: la cause technique dit
+          comment le système a cédé, la cause de gouvernance dit pourquoi
+          c'était possible. Une analyse qui s'arrête au composant est
+          incomplète.
+    \item \textbf{La chronologie d'abord}~: on reconstitue les faits à partir
+          de pièces, et on sépare toujours la constatation de l'analyse.
+    \item \textbf{Trois questions réflexes}~: qui décide, qui exécute, qui
+          rend compte. Une décision sans trace écrite, ou prise par
+          personne, est un signal d'alerte.
+    \item \textbf{Gouvernance et management sont distincts}~: la gouvernance
+          évalue, dirige et surveille~; le management planifie, bâtit,
+          exploite et surveille.
+    \item \textbf{Les parties prenantes demandent des comptes}~: conseil,
+          actionnaires, régulateur, clients, commissaire aux comptes. Au
+          Cameroun, la loi n°~2010/012 fait de l'audit des systèmes
+          d'information une obligation.
+    \item \textbf{COBIT et ITIL se complètent}~: COBIT organise ce qui doit
+          être maîtrisé à l'échelle de l'organisation, ITIL décrit comment
+          gérer les services au quotidien.
+    \item \textbf{La gouvernance n'empêche pas l'incident}~: elle le rend
+          anticipé, décidé et contenu.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.1. Technique ou gouvernance~? \niveaubase}]
+Pour chacun des constats suivants, relevés dans d'autres organisations,
+indiquez s'il s'agit d'une cause technique ou d'une cause de gouvernance,
+et justifiez en une phrase.
+\begin{enumerate}[(a)]
+    \item Le disque d'un serveur de messagerie tombe en panne.
+    \item Aucune sauvegarde de ce serveur n'avait été vérifiée depuis
+          deux ans, sans que personne en soit chargé.
+    \item Un administrateur applique un correctif un vendredi soir sans
+          prévenir personne, conformément à l'usage du service.
+    \item Le budget de renouvellement du matériel a été supprimé par le
+          directeur financier sans consulter la DSI.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.2. Les droits de décision de KRIBILOG \niveaumoyen}]
+La société KRIBILOG SA, opérateur logistique à Kribi et à Douala, change
+d'infogérant en trois semaines, sur décision de son directeur des achats,
+pour une économie annuelle de 48~millions FCFA. Le responsable des services
+informatiques l'apprend par le nouveau prestataire. Deux mois plus tard, le
+logiciel de suivi des conteneurs connaît trois arrêts majeurs.
+\begin{enumerate}[(a)]
+    \item Construisez, sur le modèle du Tableau~P.3, le tableau des
+          décisions critiques de ce changement de prestataire.
+    \item Pour chaque décision, indiquez qui l'a prise, qui aurait dû la
+          prendre, et quelle trace écrite devrait exister.
+    \item Rédigez la constatation que l'auditeur SI consignerait, puis son
+          analyse, avec un niveau de confiance.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.3. Le rapport à la COBAC \niveauexpert}]
+Vous êtes responsable GRC de la BANQUE SANAGA. Le directeur général vous
+confie la rédaction du rapport circonstancié demandé par la COBAC.
+\begin{enumerate}[(a)]
+    \item Proposez le plan du rapport, en séparant la chronologie, les
+          constatations, l'analyse des causes et le plan d'action.
+    \item Le directeur général vous demande d'écrire que la panne est due
+          au seul prestataire. Expliquez, pièces à l'appui, pourquoi cette
+          affirmation ne résisterait pas à l'examen du régulateur.
+    \item Pour chacune des six défaillances du Tableau~P.7, proposez une
+          mesure corrective, son responsable et son échéance.
+    \item Quelle place donnez-vous, dans ce rapport, à la recommandation de
+          l'audit interne d'octobre~2025 restée sans suite~? Justifiez.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{La suite du cours.} Ce prologue a posé le réflexe fondateur~:
+chercher la décision derrière l'incident. La Partie~\ref{part:fondements}
+donne à ce réflexe ses fondements, en commençant par la gouvernance
+d'entreprise et la théorie de l'agence (Chapitre~\ref{chap:gouv-entreprise}).
+La Partie~\ref{part:cobit} construit avec COBIT~2019 le système de
+gouvernance qui a manqué à la BANQUE SANAGA, et la
+Partie~\ref{part:pratique} en organise, avec ITIL~4, la pratique
+quotidienne.
+\end{boxinfo}

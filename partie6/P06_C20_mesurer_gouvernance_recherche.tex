@@ -1,0 +1,443 @@
+% ============================================================================
+% Fichier  : partie6/P06_C20_mesurer_gouvernance_recherche.tex
+% Titre    : Mesurer la Gouvernance des SI : État de la Recherche
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Chapitre de recherche. Les références citées sont des publications
+% académiques identifiées ; leurs résultats sont résumés, non reproduits.
+% Les chiffres repris d'une étude sont attribués à leurs auteurs.
+% ============================================================================
+
+\chapter{Mesurer la Gouvernance des SI : État de la Recherche}
+\label{chap:recherche-mesure}
+\chaptermark{État de la recherche}
+
+\epigraph{%
+    « Ce qui compte ne peut pas toujours être compté,\\
+    et ce qui peut être compté ne compte pas toujours. »%
+}{Maxime attribuée, sous diverses formes, à plusieurs auteurs}
+
+\niveauChapitre{Recherche}{%
+    Maîtrise du Chapitre~\ref{chap:cobit-capacite} (capacité et maturité)
+    et du Chapitre~\ref{chap:alignement} (alignement et valeur).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Synthétiser les travaux de référence sur la gouvernance des SI.
+    \item Discuter la validité des modèles de maturité.
+    \item Lire de façon critique une étude empirique.
+    \item Formuler une question de recherche sur la gouvernance des SI en
+          Afrique centrale.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : la gouvernance des SI sert-elle à quelque chose~?}
+% ============================================================================
+
+Tout ce cours repose sur une conviction~: une meilleure gouvernance des SI
+produit de meilleurs résultats. Le praticien l'admet volontiers~; le
+chercheur demande des preuves. Qu'entend-on par « meilleure
+gouvernance »~? Comment la mesure-t-on~? Et si l'on observe que les
+organisations bien gouvernées réussissent mieux, est-ce la gouvernance qui
+produit le succès, ou le succès qui permet de financer la gouvernance~?
+
+La Partie~\ref{part:recherche}, qui s'ouvre ici, prend ce recul. Ce
+chapitre présente les grandes étapes de la recherche
+(section~\ref{sec:c20-courants}), ce qu'elle a établi
+(section~\ref{sec:c20-resultats}), le débat sur les modèles de maturité
+(section~\ref{sec:c20-maturite}), une méthode de lecture critique
+(section~\ref{sec:c20-lecture}), puis les pistes de recherche ouvertes en
+Afrique centrale (section~\ref{sec:c20-afrique}). Il s'adresse en
+particulier aux étudiants qui préparent un mémoire.
+
+\begin{boxinfo}
+\textbf{Règle de lecture.} Les travaux cités dans ce chapitre sont des
+publications académiques identifiées dans la bibliographie. Leurs
+résultats sont résumés et attribués à leurs auteurs. Un résumé n'est pas
+une lecture~: avant de citer une étude dans un mémoire, lisez-la.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Trois Courants de Recherche}
+\label{sec:c20-courants}
+% ============================================================================
+
+\subsection{Les structures de décision}
+
+Le premier courant s'est demandé \emph{où} se prennent les décisions
+informatiques. Dans les années 1990, la recherche oppose les modèles
+centralisés, décentralisés et fédéraux. Sambamurthy et Zmud montrent que
+le bon arrangement dépend de plusieurs facteurs de contingence qui
+agissent ensemble~: la taille, la stratégie, la structure de
+l'organisation~\cite{sambamurthy1999arrangements}. Weill et Ross
+prolongent ce travail avec les archétypes et la matrice des droits de
+décision (Chapitre~\ref{chap:alignement})~\cite{weill2004itgovernance}.
+
+\subsection{Les mécanismes}
+
+Le deuxième courant passe de la question « qui décide~? » à la question
+« par quels moyens~? ». Peterson distingue les structures, les processus
+et les capacités relationnelles~\cite{peterson2004crafting}~; De Haes et
+Van Grembergen reprennent et outillent cette distinction en structures,
+processus et mécanismes relationnels (Chapitre~\ref{chap:gouv-entreprise}),
+et étudient leur effet sur l'alignement~\cite{dehaes2009exploratory,dehaes2015egit}.
+
+\subsection{L'effet sur la performance}
+
+Le troisième courant cherche à établir le lien entre gouvernance des SI,
+alignement et performance de l'organisation. Brown et Grant en ont dressé
+une revue structurante au milieu des années 2000~\cite{brown2005framing}.
+Les études quantitatives se sont depuis multipliées, avec des méthodes de
+plus en plus exigeantes, comme celle de Wu, Straub et Liang, qui croise
+les réponses de dirigeants métiers et de responsables informatiques des
+mêmes entreprises~\cite{wu2015mechanisms}.
+
+\begin{tableaucours}{L{2.6cm}L{4.8cm}L{4.8cm}}{%
+    \tableauHeader{Courant} &
+    \tableauHeader{Question} &
+    \tableauHeader{Travaux de référence}
+}
+Structures & Où se prennent les décisions~? & Sambamurthy et Zmud (1999)~;
+Weill et Ross (2004) \\
+Mécanismes & Par quels moyens la gouvernance s'exerce-t-elle~? & Peterson
+(2004)~; De Haes et Van Grembergen (2009, 2015) \\
+Performance & La gouvernance améliore-t-elle les résultats~? & Brown et
+Grant (2005)~; Wu, Straub et Liang (2015) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.1. Trois courants de la recherche
+sur la gouvernance des SI}\end{center}
+
+% ============================================================================
+\section{Ce que la Recherche a Établi}
+\label{sec:c20-resultats}
+% ============================================================================
+
+\subsection{Des résultats convergents}
+
+Avec les précautions qui s'imposent, trois résultats reviennent avec
+régularité dans la littérature.
+
+\begin{enumerate}
+    \item \textbf{La gouvernance compte.} Weill et Ross ont rapporté, sur
+          un large échantillon d'entreprises, que celles dont la
+          gouvernance des SI était la plus efficace obtenaient, à
+          stratégie comparable, une rentabilité nettement supérieure à
+          celles dont la gouvernance était la plus faible, de l'ordre de
+          20~\% selon leurs mesures~\cite{weill2004itgovernance}.
+    \item \textbf{Les mécanismes relationnels comptent autant que les
+          structures.} Plusieurs études observent qu'à structures égales,
+          ce sont la compréhension mutuelle et la collaboration entre
+          métiers et informatique qui font la différence
+          (Chapitre~\ref{chap:cas-integrateurs}~: le cas de la BANQUE SANAGA un an
+          après).
+    \item \textbf{L'effet passe par l'alignement.} La gouvernance agit sur
+          la performance surtout par l'intermédiaire de l'alignement
+          stratégique~: elle aide à faire les bons choix plus qu'elle ne
+          produit directement des résultats~\cite{wu2015mechanisms}.
+\end{enumerate}
+
+\subsection{Ce qui reste débattu}
+
+\begin{tableaucours}{L{4.6cm}L{7.6cm}}{%
+    \tableauHeader{Question} &
+    \tableauHeader{État du débat}
+}
+Le sens de la causalité & Les organisations performantes ont-elles une
+bonne gouvernance parce qu'elles en ont les moyens~? Les études
+transversales ne permettent pas de trancher. \\
+La mesure de la gouvernance & Elle repose souvent sur l'autoévaluation
+d'un seul répondant, ce qui fragilise les résultats. \\
+La transposition des résultats & La plupart des études portent sur des
+organisations d'Amérique du Nord, d'Europe et d'Asie~; leur validité
+ailleurs n'est pas démontrée. \\
+L'effet des référentiels & L'adoption de COBIT ou d'ITIL est fréquente,
+mais leur effet propre, toutes choses égales par ailleurs, reste mal
+établi. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.2. Questions débattues}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Un mémoire affirme que « COBIT améliore la
+performance des entreprises de 20~\% », en citant Weill et Ross. Or Weill
+et Ross n'étudient pas COBIT, et leur écart de rentabilité est une
+association mesurée sur leur échantillon, pas un effet causal
+transposable.
+
+\smallskip
+\textbf{Règle~:} citer un résultat, c'est citer aussi ce qu'il mesure, sur
+quel échantillon, et avec quelle méthode.
+\end{boxalert}
+
+% ============================================================================
+\section{Le Débat sur les Modèles de Maturité}
+\label{sec:c20-maturite}
+% ============================================================================
+
+\subsection{Un succès considérable}
+
+Depuis le modèle de maturité du logiciel de l'université Carnegie Mellon,
+les modèles de maturité se sont multipliés~: COBIT en utilise un depuis
+sa version~3, et le modèle de capacité de COBIT~2019 s'inspire du CMMI
+(Chapitre~\ref{chap:cobit-capacite}). Leur succès tient à leur
+simplicité~: une échelle de 0 à~5, que tout dirigeant comprend.
+
+\subsection{Quatre critiques}
+
+La recherche en a pourtant relevé les limites~\cite{becker2009maturity,poppelbuss2011maturity}.
+
+\begin{enumerate}
+    \item \textbf{La linéarité.} Les modèles supposent un chemin unique,
+          du niveau~1 au niveau~5. Or une organisation peut avoir de bonnes
+          raisons de ne pas viser le niveau~5, ou de progresser autrement.
+    \item \textbf{Le fondement théorique.} Beaucoup de modèles sont construits
+          à partir de l'expérience de leurs auteurs, sans validation
+          empirique de leurs niveaux ni de leurs critères.
+    \item \textbf{La fiabilité de la mesure.} Deux évaluateurs n'attribuent
+          pas toujours le même niveau au même processus, surtout en
+          autoévaluation.
+    \item \textbf{Le lien avec la performance.} Qu'un niveau de maturité plus
+          élevé produise de meilleurs résultats est postulé plus souvent que
+          démontré. Certaines études l'observent~\cite{simonsson2010maturity},
+          d'autres non, et le lien dépend du contexte.
+\end{enumerate}
+
+\begin{boiteRemarque}{Faut-il renoncer aux modèles de maturité~?}
+Non, mais il faut les utiliser pour ce qu'ils sont~: des outils de
+\emph{diagnostic} et de \emph{dialogue}, pas des instruments de mesure
+scientifique. COBIT~2019 en tient compte de deux manières, déjà vues dans
+ce cours~: il fait dépendre la capacité \emph{cible} des facteurs de
+conception, ce qui répond à la critique de la linéarité
+(Chapitre~\ref{chap:cobit-conception}), et il rattache chaque niveau à des
+activités précises, ce qui améliore la fiabilité de l'évaluation
+(Chapitre~\ref{chap:cobit-capacite}). Pöppelbuß et Röglinger ont proposé des
+principes de conception qui permettent de juger si un modèle de maturité
+est utile~\cite{poppelbuss2011maturity}.
+\end{boiteRemarque}
+
+% ============================================================================
+\section{Lire une Étude Empirique}
+\label{sec:c20-lecture}
+% ============================================================================
+
+\subsection{Une grille de lecture}
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Questions à se poser}
+}
+Question et théorie & Quelle question précise~? Quelle théorie justifie
+les hypothèses (agence, alignement, contingence)~? \\
+Échantillon & Combien d'organisations, de quels pays, secteurs, tailles~?
+Comment ont-elles été choisies~? \\
+Mesures & Comment la gouvernance et la performance sont-elles mesurées~?
+Par qui~? Les échelles sont-elles validées~? \\
+Biais de méthode & Le même répondant décrit-il à la fois la gouvernance et
+la performance~? \\
+Causalité & L'étude est-elle transversale (une seule date) ou
+longitudinale~? Peut-elle établir le sens de l'effet~? \\
+Généralisation & Les résultats valent-ils au-delà de l'échantillon~? Pour
+une organisation camerounaise~? \\
+Statut & Article évalué par des pairs, communication, prépublication,
+rapport de cabinet~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.3. Grille de lecture critique d'une
+étude empirique}\end{center}
+
+\subsection{Le statut des sources}
+
+\begin{boxdef}
+\termecle{Évaluation par les pairs}\index{évaluation par les pairs}
+(\textit{peer review})~: examen d'un article par des chercheurs
+indépendants avant sa publication dans une revue ou des actes de
+conférence. Elle ne garantit pas que les résultats sont justes, mais
+qu'ils ont été soumis à une critique méthodologique.
+
+\medskip
+\termecle{Prépublication}\index{prépublication} (\textit{preprint})~:
+version d'un travail rendue publique avant son évaluation par les pairs.
+Elle doit être citée comme telle.
+\end{boxdef}
+
+Les enquêtes des cabinets de conseil et des éditeurs de logiciels sont
+utiles pour connaître les pratiques, mais elles poursuivent souvent un
+objectif commercial et publient rarement leur méthode. Elles se citent
+avec cette réserve.
+
+\begin{boxscenario}{Exercice de lecture. Une étude fictive}
+\textbf{Résumé.} « Une enquête menée auprès de 85~DSI d'entreprises
+camerounaises montre que les entreprises qui ont adopté COBIT ont une
+satisfaction client supérieure de 15~\% à celles qui ne l'ont pas adopté
+($p < 0{,}05$). »
+
+\medskip
+\textbf{Lecture critique.} L'échantillon est-il représentatif (85~DSI
+volontaires, sans doute les plus sensibles au sujet)~? La satisfaction
+client est-elle mesurée auprès des clients, ou estimée par le DSI~? Les
+entreprises qui adoptent COBIT sont-elles plus grandes, plus riches, mieux
+organisées par ailleurs~? Une différence statistiquement significative
+n'est pas une preuve d'effet. Conclusion~: résultat intéressant, à
+présenter comme une association observée sur un échantillon de
+convenance.
+\end{boxscenario}
+
+% ============================================================================
+\section{Des Pistes de Recherche en Afrique Centrale}
+\label{sec:c20-afrique}
+% ============================================================================
+
+\subsection{Un champ peu exploré}
+
+La recherche publiée sur la gouvernance des SI porte majoritairement sur
+des organisations des pays industrialisés. Les travaux consacrés à
+l'Afrique centrale restent peu nombreux, alors que le contexte y présente
+des caractéristiques propres~: concentration du pouvoir de décision,
+tutelle publique, dépendance aux intégrateurs étrangers, régulation
+récente, contraintes d'infrastructure (Chapitre~\ref{chap:gouv-entreprise}).
+C'est une raison suffisante pour que les mémoires et les thèses s'en
+emparent.
+
+\subsection{Des questions possibles}
+
+\begin{tableaucours}{L{5.6cm}L{3.2cm}L{3.4cm}}{%
+    \tableauHeader{Question} &
+    \tableauHeader{Méthode adaptée} &
+    \tableauHeader{Terrain}
+}
+Comment les droits de décision informatiques se répartissent-ils dans
+les établissements publics camerounais~? & Études de cas multiples & Trois
+à cinq établissements \\
+Les comités stratégiques des SI créés après une crise fonctionnent-ils
+réellement~? & Étude longitudinale & Une banque, sur trois ans \\
+Quels facteurs de conception COBIT pèsent le plus dans les organisations
+de la zone CEMAC~? & Enquête par questionnaire & Banques et assurances \\
+Comment adapter un modèle de capacité aux PME camerounaises~? &
+Recherche orientée conception~\cite{hevner2004design} & PME de Douala et
+Yaoundé \\
+L'entrée en vigueur de la loi n°~2024/017 modifie-t-elle la gouvernance
+des données~? & Études de cas avant et après & Entreprises de paiement
+mobile \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.4. Exemples de questions de
+recherche}\end{center}
+
+\subsection{Les méthodes}
+
+\begin{itemize}
+    \item \textbf{L'étude de cas} convient aux questions « comment~? » et
+          « pourquoi~? » dans des contextes peu connus~; elle exige un
+          accès de confiance au terrain et une rigueur dans la collecte des
+          preuves.
+    \item \textbf{L'enquête par questionnaire} permet de mesurer des
+          associations~; elle exige des échelles validées et un échantillon
+          suffisant, souvent difficile à réunir.
+    \item \textbf{La recherche orientée conception} construit un artefact
+          (un modèle, une méthode, un outil) et l'évalue en situation~; elle
+          convient bien aux praticiens qui préparent un mémoire
+          professionnel~\cite{hevner2004design}.
+\end{itemize}
+
+\begin{boxprocedure}
+\textbf{Un projet de mémoire recevable.} Le projet présenté au directeur
+de mémoire comporte~:
+\begin{itemize}
+    \item une question de recherche précise, et sa justification au regard
+          de la littérature~;
+    \item le cadre théorique mobilisé~;
+    \item la méthode, le terrain et l'accès obtenu (accord écrit de
+          l'organisation)~;
+    \item les règles de confidentialité et d'anonymisation des données
+          recueillies~;
+    \item le calendrier et les livrables~;
+    \item une bibliographie d'au moins quinze références, dont une majorité
+          évaluées par les pairs.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Faire de sa pratique un terrain de recherche}
+\begin{enumerate}
+    \item Les missions d'audit produisent des données rares sur la
+          gouvernance réelle des organisations~: écarts, causes,
+          capacités.
+    \item Elles ne peuvent servir à la recherche qu'avec l'accord des
+          organisations et une anonymisation rigoureuse, dans le respect de
+          la confidentialité (Chapitre~\ref{chap:audit}).
+    \item Agrégées sur plusieurs missions, elles permettent de répondre à
+          des questions qu'aucune enquête par questionnaire n'atteint.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Trois courants}~: les structures de décision, les
+          mécanismes, l'effet sur la performance.
+    \item \textbf{Des résultats convergents}~: la gouvernance compte, les
+          mécanismes relationnels comptent autant que les structures, et
+          l'effet passe par l'alignement.
+    \item \textbf{Des questions ouvertes}~: le sens de la causalité, la
+          fiabilité des mesures, la transposition des résultats, l'effet
+          propre des référentiels.
+    \item \textbf{Les modèles de maturité} sont des outils de diagnostic et
+          de dialogue, pas des instruments scientifiques~: linéarité,
+          fondement, fiabilité et lien avec la performance sont discutés.
+    \item \textbf{Lire une étude}, c'est en examiner l'échantillon, les
+          mesures, les biais, la causalité et le statut.
+    \item \textbf{L'Afrique centrale} est un terrain peu exploré, qui
+          appelle études de cas, enquêtes et recherche orientée conception.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.1. Association ou causalité~? \niveaubase}]
+Pour chacune des affirmations suivantes, indiquez si elle décrit une
+association ou un effet causal, et ce qu'il faudrait pour établir la
+causalité.
+\begin{enumerate}[(a)]
+    \item « Les banques dotées d'un comité stratégique des SI ont moins
+          d'incidents majeurs. »
+    \item « Après la création de son comité, la BANQUE SANAGA a réduit ses
+          incidents majeurs de moitié. »
+    \item « Les entreprises certifiées ISO/IEC~27001 subissent moins de
+          fuites de données. »
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.2. Lire un article \niveaumoyen}]
+Choisissez l'un des articles cités dans ce chapitre et appliquez-lui la
+grille du Tableau~20.3. Rédigez une note de lecture de deux pages~:
+question, théorie, méthode, résultats, limites, intérêt pour une
+organisation camerounaise.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.3. Un projet de mémoire \niveauexpert}]
+Rédigez un projet de mémoire sur l'une des questions du Tableau~20.4, ou
+sur une question de votre choix, en respectant l'exigence de contrôle de
+la section~\ref{sec:c20-afrique}. Justifiez en particulier le choix de la
+méthode et la manière d'obtenir l'accès au terrain.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Ce chapitre a présenté l'état de la recherche et les
+questions qu'elle laisse ouvertes. Le Chapitre~\ref{chap:contributions}
+présente des contributions et des pistes de recherche propres à
+l'auteur et à son laboratoire.
+\end{boxinfo}

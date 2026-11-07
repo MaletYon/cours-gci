@@ -1,0 +1,663 @@
+% ============================================================================
+% Fichier  : partie3/P03_C10_cadre_juridique_cameroun_afrique.tex
+% Titre    : Cadre Juridique et Réglementaire Camerounais et Africain
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Chapitre juridique. Sources et degré de vérification :
+%  - Loi n° 2010/012 : texte officiel anglais consulté (sections citées
+%    textuellement).
+%  - Règlement COBAC R-2016/04 : articles 1 et 2 relevés sur une base
+%    réglementaire en ligne ; à collationner avec la version officielle.
+%  - Loi n° 2024/017 : présentations publiées (presse spécialisée) ; aucun
+%    article cité textuellement. A VERIFIER au JO.
+%  - AUSCGIE (OHADA) : numéros d'articles d'après la doctrine et la
+%    brochure OHADA de 2014 ; aucun article cité textuellement.
+%  - Convention de Malabo : entrée en vigueur vérifiée ; statut du Cameroun
+%    non établi.
+% ============================================================================
+
+\chapter{Cadre Juridique et Réglementaire Camerounais et Africain}
+\label{chap:droit}
+\chaptermark{Cadre juridique camerounais et africain}
+
+\epigraph{%
+    « Nul n'est censé ignorer la loi, pas même le DSI. »%
+}{Adage revisité}
+
+\niveauChapitre{Fondamental}{%
+    Maîtrise du Chapitre~\ref{chap:normes} (normes, certification,
+    conformité).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Identifier les obligations des lois n°~2010/012 et 2010/013 qui
+          touchent la gouvernance des SI.
+    \item Exposer le rôle de l'ANTIC et des autres régulateurs (ART,
+          COBAC).
+    \item Appliquer les exigences de la loi de 2024 sur les données
+          personnelles à un système d'information.
+    \item Situer les responsabilités des dirigeants dans le droit OHADA.
+    \item Identifier les obligations de contrôle interne et de risque
+          opérationnel des banques en zone CEMAC.
+    \item Situer la Convention de Malabo.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : quelles obligations ont été méconnues~?}
+% ============================================================================
+
+Trois semaines après la panne, le conseil d'administration de la BANQUE
+SANAGA reçoit une note de son avocat. Elle commence ainsi~: « La banque
+risque d'avoir à répondre de ses manquements devant trois autorités au
+moins~: la COBAC, au titre du contrôle interne~; l'ANTIC, au titre de la
+sécurité de ses systèmes d'information~; et, le cas échéant, les
+juridictions, au titre de la responsabilité de ses dirigeants. » À
+Bafoussam, NOUN PAY reçoit au même moment une demande d'information de
+l'Autorité de protection des données à caractère personnel sur son
+modèle de notation.
+
+Ce chapitre dresse la carte de ces obligations. Il suit l'ordre du
+modèle~: le fait, la règle, le texte, l'analyse. Il présente d'abord le
+panorama des textes (section~\ref{sec:c10-panorama}), puis la loi sur la
+cybersécurité (section~\ref{sec:c10-2010-012}), les régulateurs
+(section~\ref{sec:c10-regulateurs}), les données personnelles
+(section~\ref{sec:c10-donnees}), la réglementation bancaire
+(section~\ref{sec:c10-cobac}), le droit des sociétés
+(section~\ref{sec:c10-ohada}) et le cadre africain
+(section~\ref{sec:c10-afrique}). Il se termine par les erreurs de
+qualification les plus fréquentes (section~\ref{sec:c10-erreurs}).
+
+\begin{boxalert}
+\textbf{Règle de lecture.} Ce chapitre cite textuellement les seuls
+articles dont le texte a pu être vérifié. Pour les autres, il en décrit la
+substance d'après des sources secondaires identifiées, sans guillemets.
+Avant tout usage professionnel (avis juridique, rapport au régulateur),
+reportez-vous au texte publié au Journal officiel.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Panorama des Textes}
+\label{sec:c10-panorama}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{3.8cm}L{2.4cm}L{2.4cm}}{%
+    \tableauHeader{Texte} &
+    \tableauHeader{Objet} &
+    \tableauHeader{Autorité} &
+    \tableauHeader{Cas du cours}
+}
+Loi n°~2010/012 du 21~décembre~2010 & Cybersécurité et cybercriminalité
+& ANTIC & Tous \\
+Loi n°~2010/013 du 21~décembre~2010, modifiée en 2015 & Communications
+électroniques & ART, MINPOSTEL & NOUN PAY \\
+Loi n°~2024/017 du 23~décembre~2024 & Protection des données à caractère
+personnel & Autorité de protection des données & NOUN PAY, SANAGA \\
+Règlement COBAC R-2016/04 & Contrôle interne des établissements de crédit
+& COBAC & SANAGA \\
+Acte uniforme OHADA (révisé en 2014) & Sociétés commerciales,
+responsabilité des dirigeants & Juridictions & SANAGA, KRIBILOG \\
+Lois n°~2017/010 et 2017/011 & Établissements et entreprises publics &
+Tutelle & ANPP \\
+Loi n°~2018/012 & Régime financier de l'État & MINFI, Chambre des comptes &
+ANPP \\
+Convention de Malabo (2014) & Cybersécurité et données personnelles en
+Afrique & Union africaine & · \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~10.1. Les principaux textes
+applicables à la gouvernance des SI au Cameroun}\end{center}
+
+% ============================================================================
+\section{La Loi sur la Cybersécurité}
+\label{sec:c10-2010-012}
+% ============================================================================
+
+\subsection{L'ANTIC, régulateur de la sécurité}
+
+La loi n°~2010/012 confie la régulation de la sécurité électronique à
+l'Agence nationale des technologies de l'information et de la
+communication (\sigle{ANTIC}), instituée par la loi sur les
+communications électroniques~\cite{loi2010012}.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, article~7, alinéa~2} (version anglaise
+officielle)~:
+
+\medskip
+\textit{« The Agency \textelp{} shall be responsible for the regulation,
+control and monitoring of activities related to the security of
+electronic communication networks, information systems, and electronic
+certification on behalf of the State. »}
+
+\medskip
+Soit~: l'Agence est chargée, pour le compte de l'État, de la régulation,
+du contrôle et du suivi des activités liées à la sécurité des réseaux de
+communications électroniques, des systèmes d'information et de la
+certification électronique. Parmi ses missions, la loi énumère notamment
+le contrôle des activités de sécurité des systèmes d'information,
+la régularité et l'efficacité des audits de sécurité, et la veille sur
+les risques informatiques et la cybercriminalité.
+\end{boxjuris}
+
+\subsection{Les obligations des exploitants de systèmes d'information}
+
+La loi impose aux exploitants de systèmes d'information
+(\textit{operators of information systems}) un ensemble d'obligations qui
+recoupent directement plusieurs objectifs de COBIT.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, article~26, alinéa~1}~:
+
+\medskip
+\textit{« Operators of information systems shall take every technical and
+administrative measure to ensure the security of services offered. To
+this end, they shall have standardized systems enabling them to at all
+times identify, assess, process or manage any risk relating to the
+security of the information systems of the services provided directly or
+indirectly. »}
+
+\medskip
+\textbf{Article~29, alinéa~1}~: \textit{« Operators of information systems
+shall be bound to conserve the connection and traffic data of their
+information systems for a period of 10 (ten) years. »}
+
+\medskip
+\textbf{Article~30, alinéa~1}~: \textit{« Operators of information systems
+shall assess and revise their security systems and, where necessary, make
+the appropriate modifications to their security practices, measures and
+techniques according to technological change. »}
+
+\medskip
+\textbf{Analyse.} L'article~26 impose plus qu'une sécurité technique~: il
+exige des \emph{dispositifs normalisés} permettant d'identifier, d'évaluer
+et de traiter en permanence les risques de sécurité. C'est, en termes de
+gouvernance, l'exigence d'un processus de gestion des risques (APO12) et
+d'un système de management de la sécurité (APO13), dont l'ISO/IEC~27001
+fournit précisément le modèle. L'article~30 consacre l'amélioration
+continue. L'article~29 impose une durée de conservation des données de
+connexion et de trafic de dix ans, qui pèse sur l'architecture et le
+budget de stockage.
+\end{boxjuris}
+
+\begin{tableaucours}{L{2.4cm}L{5.4cm}L{4.4cm}}{%
+    \tableauHeader{Article} &
+    \tableauHeader{Obligation} &
+    \tableauHeader{Objectifs COBIT concernés}
+}
+13 et 32 & Audit de sécurité obligatoire et périodique & MEA03, MEA04 \\
+26 & Mesures de sécurité, dispositifs normalisés de gestion des risques &
+APO12, APO13, DSS05 \\
+29 & Conservation des données de connexion et de trafic pendant dix ans &
+APO14, DSS01, DSS05 \\
+30 & Évaluation et révision des dispositifs de sécurité & APO13, MEA01 \\
+31 & Disponibilité des contenus et des données & DSS04, BAI04 \\
+42 & Confidentialité des informations acheminées & DSS05, APO14 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~10.2. Obligations de la loi
+n°~2010/012 et objectifs COBIT correspondants}\end{center}
+
+\subsection{Les sanctions et la responsabilité des personnes morales}
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, article~64, alinéas~1 à~3}~:
+
+\medskip
+\textit{« (1) Corporate bodies shall be criminally liable for offences
+committed on their account by their management structures. (2) The
+criminal liability of corporate bodies shall not preclude that of natural
+persons who commit such offences or are accomplices. (3) The penalties to
+be meted out on defaulting corporate bodies shall be fines of from
+5~000~000 (five million) to 50~000~000 (fifty million) CFA francs. »}
+
+\medskip
+\textbf{Analyse.} La personne morale répond pénalement des infractions
+commises pour son compte par ses organes de direction, sans que cela
+exonère les personnes physiques. L'article prévoit en outre des peines
+complémentaires (dissolution, interdiction d'activité, fermeture
+d'établissement) dans les cas les plus graves. L'article~63 punit par
+ailleurs d'emprisonnement et d'amende le dirigeant de droit ou de fait de
+certains prestataires (fournisseurs d'accès et d'hébergement) qui ne
+conserve pas les données exigées par les articles~25 et~29. La
+gouvernance des SI n'est donc pas qu'une question de performance~: elle
+engage la responsabilité pénale de l'organisation et, dans certains cas,
+celle de ses dirigeants.
+\end{boxjuris}
+
+\begin{boxmetier}{DSI}
+\textbf{La conservation des données pendant dix ans}
+\begin{enumerate}
+    \item Établir si l'organisation est « exploitant de système
+          d'information » au sens de la loi~: une banque, un opérateur, une
+          administration le sont presque toujours.
+    \item Recenser les données de connexion et de trafic produites
+          (journaux d'accès, journaux réseau, traces des applications).
+    \item Définir l'architecture de conservation~: durée, intégrité (les
+          journaux ne doivent pas pouvoir être modifiés), confidentialité,
+          coût sur dix ans.
+    \item Concilier cette obligation avec le principe de limitation de la
+          conservation des données personnelles (section~\ref{sec:c10-donnees})~:
+          les deux textes doivent être lus ensemble, avec un avis
+          juridique.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Les Régulateurs}
+\label{sec:c10-regulateurs}
+% ============================================================================
+
+La gouvernance des SI d'une organisation camerounaise s'exerce sous le
+regard de plusieurs autorités, qu'il faut savoir distinguer.
+
+\begin{tableaucours}{L{2.6cm}L{4.6cm}L{5.0cm}}{%
+    \tableauHeader{Autorité} &
+    \tableauHeader{Fondement} &
+    \tableauHeader{Ce qui intéresse la gouvernance des SI}
+}
+MINPOSTEL & Ministère chargé des télécommunications & Politique du
+secteur~; destinataire des rapports d'audit de sécurité (loi
+n°~2010/012, art.~32) \\
+ANTIC & Lois n°~2010/012 et 2010/013 & Sécurité des systèmes
+d'information, audits, certification électronique, veille \\
+ART & Loi n°~2010/013 modifiée & Régulation des communications
+électroniques et des opérateurs \\
+Autorité de protection des données & Loi n°~2024/017 & Traitements de
+données personnelles, plaintes, sanctions \\
+COBAC & Réglementation bancaire de la CEMAC & Contrôle interne et risques
+des établissements de crédit, dont le risque informatique \\
+Chambre des comptes & Contrôle des finances publiques & Audit des
+établissements et entreprises publics, y compris de leurs SI \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~10.3. Les autorités de la gouvernance
+des SI au Cameroun}\end{center}
+
+La loi n°~2010/013 régit les communications électroniques~; elle a été
+modifiée et complétée par la loi n°~2015/006 du 20~avril~2015. Elle
+institue l'Agence de régulation des télécommunications (\sigle{ART}) et
+l'ANTIC. Ses dispositions intéressent surtout les opérateurs et les
+fournisseurs de services de communications électroniques~: une
+entreprise de paiement mobile comme NOUN PAY, qui s'appuie sur les
+réseaux des opérateurs, doit en connaître les grandes règles. Le recueil
+des textes publié par l'ART en donne la version consolidée.
+
+% ============================================================================
+\section{La Protection des Données Personnelles}
+\label{sec:c10-donnees}
+% ============================================================================
+
+\subsection{De la loi de 2010 à la loi de 2024}
+
+La loi n°~2010/012 posait déjà un principe général.
+
+\begin{boxjuris}
+\textbf{\loicam{n°~2010/012}, articles~41 et~42}~:
+
+\medskip
+\textit{« 41. Every individual shall have the right to the protection of
+their privacy. \textelp{} 42. The confidentiality of information
+channelled through electronic communication and information systems
+networks, including traffic data, shall be ensured by operators of
+electronic communication and networks information systems. »}
+
+\medskip
+\textbf{Portée.} Ces articles affirment le droit au respect de la vie
+privée et l'obligation de confidentialité des exploitants. Ils ne
+constituaient pas, à eux seuls, un régime complet de protection des
+données personnelles~: c'est l'objet de la loi de 2024.
+\end{boxjuris}
+
+\subsection{La loi n° 2024/017}
+
+La loi n°~2024/017 du 23~décembre~2024 relative à la protection des
+données à caractère personnel a doté le Cameroun d'un régime complet.
+D'après les présentations publiées~\cite{cio2026donnees}, elle a accordé
+aux organisations un délai de dix-huit mois pour se mettre en conformité,
+et s'applique pleinement depuis le 23~juin~2026. Elle institue une
+Autorité de protection des données à caractère personnel, organisme
+public indépendant, encadre strictement le transfert des données hors du
+territoire national, consacre une part importante de ses dispositions aux
+obligations des responsables du traitement et de leurs sous-traitants,
+et prévoit des sanctions pénales.
+
+\begin{boxalert}
+\textbf{À vérifier avant usage.} Les numéros d'articles, les définitions
+exactes (responsable du traitement, sous-traitant, données sensibles),
+les conditions du transfert des données hors du Cameroun et l'éventuelle
+obligation de désigner un délégué à la protection des données doivent
+être lus dans le texte publié et ses décrets d'application. Les
+présentations disponibles divergent sur certains de ces points.
+\end{boxalert}
+
+\subsection{Ce que la loi change pour la gouvernance des SI}
+
+Quelle que soit la lettre exacte de ses articles, une loi de protection
+des données de cette génération a des conséquences directes sur la
+gouvernance des SI~:
+\begin{itemize}
+    \item \textbf{un inventaire des traitements}~: savoir quelles données
+          personnelles sont traitées, pourquoi, où et par qui (APO14)~;
+    \item \textbf{la sécurité des traitements}~: mesures techniques et
+          organisationnelles proportionnées aux risques (APO13, DSS05)~;
+    \item \textbf{la maîtrise des sous-traitants}~: un hébergeur ou un
+          fournisseur de nuage traite les données pour le compte de
+          l'organisation, qui en reste responsable (APO10)~;
+    \item \textbf{la localisation des données}~: tout transfert hors du
+          territoire doit être examiné au regard de la loi (BAI03, APO10)~;
+    \item \textbf{la conformité démontrable}~: registres, analyses
+          d'impact, preuves (MEA03).
+\end{itemize}
+
+\begin{boxscenario}{Opération NOUN. La demande de l'Autorité}
+\textbf{Faits.} L'Autorité de protection des données demande à NOUN PAY~:
+la liste des données utilisées par son modèle de notation de crédit, le
+lieu où elles sont hébergées, la base juridique du traitement, et la
+manière dont un client refusé peut contester la décision.
+
+\medskip
+\textbf{Constatation.} NOUN PAY ne dispose d'aucun inventaire de ses
+traitements. Ses données sont hébergées dans un centre de données situé
+hors d'Afrique, en vertu d'un contrat type du fournisseur. Aucune
+procédure ne permet à un client de contester un refus.
+
+\medskip
+\textbf{Analyse} (confiance moyenne, sous réserve de la lecture du texte
+de la loi). Trois manquements probables~: l'absence d'inventaire, un
+transfert hors du territoire non examiné au regard de la loi, et
+l'absence de recours contre une décision automatisée. Le
+Chapitre~\ref{chap:donnees-ia} reprendra le cas sous l'angle de la
+gouvernance de l'intelligence artificielle.
+\end{boxscenario}
+
+% ============================================================================
+\section{La Réglementation Bancaire de la CEMAC}
+\label{sec:c10-cobac}
+% ============================================================================
+
+\subsection{Le règlement COBAC R-2016/04}
+
+Les établissements de crédit de la zone CEMAC sont soumis à la
+réglementation de la Commission bancaire de l'Afrique centrale. Le
+règlement COBAC R-2016/04, relatif au contrôle interne dans les
+établissements de crédit et les holdings financières, est le texte de
+référence pour la gouvernance des SI d'une banque~\cite{cobac2016r04}.
+
+\begin{boxjuris}
+\textbf{Règlement COBAC R-2016/04, articles~1 et~2} (texte relevé sur une
+base réglementaire en ligne)~:
+
+\medskip
+Article~1~: \textit{« Le présent règlement fixe les exigences minimales
+relatives au système de contrôle interne que les établissements assujettis
+doivent mettre en œuvre. »}
+
+\medskip
+Article~2, définition du risque opérationnel~: \textit{« risque de pertes
+résultant de l'inadéquation ou de la défaillance des processus internes,
+des personnes et des systèmes, ou d'évènements externes. »} Le même
+article précise que ce risque inclut le risque juridique, et exclut les
+risques stratégiques et de réputation.
+
+\medskip
+\textbf{Analyse.} La défaillance d'un système informatique est, par
+définition, un risque opérationnel au sens du règlement. La panne de la
+BANQUE SANAGA relève donc du dispositif de contrôle interne exigé par la
+COBAC, et non d'un simple incident technique. Selon les présentations du
+règlement, celui-ci impose en outre un dispositif d'identification, de
+mesure et de surveillance de chaque risque, appuyé sur une cartographie
+des risques, et compte un système de traitement de l'information parmi
+les composantes du dispositif de contrôle interne.
+\end{boxjuris}
+% A COLLATIONNER avec la version officielle publiée par le SG-COBAC
+% (sgcobac.org) : texte exact des articles 1 et 2, contenu des articles 3,
+% 10 et 12.
+
+\subsection{Ce que cela implique}
+
+\begin{boxmetier}{Responsable GRC}
+\textbf{Rédiger la partie SI du rapport à la COBAC}
+\begin{enumerate}
+    \item Qualifier la panne~: incident de risque opérationnel, avec sa
+          chronologie et son coût (Chapitre~\ref{chap:prologue}).
+    \item Situer la défaillance dans le dispositif de contrôle interne~:
+          quels contrôles existaient, lesquels n'ont pas fonctionné.
+    \item Relier le risque informatique à la cartographie des risques de la
+          banque, avec l'échelle commune (Chapitre~\ref{chap:normes}).
+    \item Présenter le plan d'action, objectif par objectif, à partir de la
+          feuille de route COBIT (Chapitre~\ref{chap:cobit-capacite}).
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{Le Droit des Sociétés OHADA}
+\label{sec:c10-ohada}
+% ============================================================================
+
+\subsection{La responsabilité des dirigeants}
+
+L'Acte uniforme OHADA relatif au droit des sociétés commerciales et du
+groupement d'intérêt économique, révisé le 30~janvier~2014~\cite{ohada2014auscgie},
+organise la responsabilité civile des dirigeants sociaux. Selon la
+doctrine, ses articles~161 et suivants posent le régime général~: le
+dirigeant répond des fautes qu'il commet dans l'exercice de ses
+fonctions, individuellement ou solidairement selon sa participation, et
+peut être poursuivi par la société (action sociale) ou par les tiers
+lésés. Pour la société anonyme, l'article~740 rend les administrateurs
+responsables, individuellement ou solidairement, envers la société ou
+envers les tiers.
+
+\begin{boiteRemarque}{Un défaut de gouvernance des SI peut-il être une faute de gestion~?}
+La question n'a pas, à notre connaissance, été tranchée par une
+jurisprudence publiée en zone OHADA. Mais le raisonnement est
+accessible~: si une banque soumise à des obligations précises (contrôle
+interne, sécurité des systèmes) subit une perte majeure parce que ses
+dirigeants ont maintenu une bascule malgré une alerte écrite, sans
+décision formelle d'acceptation du risque, la qualification de faute de
+gestion pourra être discutée. La trace écrite des décisions
+(Chapitre~\ref{chap:prologue}) n'est donc pas une formalité~: elle est la
+première défense d'un dirigeant diligent, et la première pièce d'un
+dossier contre un dirigeant négligent.
+\end{boiteRemarque}
+
+\subsection{Le comité d'audit et le contrôle interne}
+
+Le Chapitre~\ref{chap:gouv-entreprise} a présenté l'article~829-1 de l'Acte
+uniforme révisé, qui rend le comité d'audit obligatoire dans les sociétés
+cotées et le charge du suivi de l'efficacité des systèmes de contrôle
+interne et de gestion des risques. Pour les entreprises et
+établissements publics, les lois n°~2017/010 et 2017/011 et leur décret
+d'application organisent le conseil d'administration et la tutelle~: la
+gouvernance des SI de l'ANPP doit s'inscrire dans ce cadre, et dans celui
+du régime financier de l'État (Chapitre~\ref{chap:alignement}).
+
+% ============================================================================
+\section{Le Cadre Africain}
+\label{sec:c10-afrique}
+% ============================================================================
+
+\subsection{La Convention de Malabo}
+
+La Convention de l'Union africaine sur la cybersécurité et la protection
+des données à caractère personnel, adoptée à Malabo le 27~juin~2014, est
+entrée en vigueur le 8~juin~2023, trente jours après le dépôt du
+quinzième instrument de ratification. Elle couvre trois domaines~: les
+transactions électroniques, la protection des données personnelles, et
+la cybersécurité et la lutte contre la cybercriminalité. Elle oblige les
+États parties à se doter d'une législation et d'autorités dans ces
+domaines.
+
+\begin{boxalert}
+\textbf{À vérifier.} Nous n'avons pas trouvé de source établissant que le
+Cameroun a ratifié la Convention de Malabo. Avant de l'invoquer comme
+source de droit applicable au Cameroun, consultez la liste officielle des
+signatures et ratifications tenue par l'Union africaine. Elle reste en
+tout état de cause une référence de politique publique pour le
+continent.
+\end{boxalert}
+
+\subsection{Une dynamique continentale}
+
+Le Cameroun n'est pas seul. Plusieurs États africains se sont dotés de
+lois de protection des données personnelles depuis la fin des années
+2000, par exemple le Sénégal (loi n°~2008-12 du 25~janvier~2008) ou la
+Côte d'Ivoire (loi n°~2013-450 du 19~juin~2013). Pour une organisation qui
+opère dans plusieurs pays de la sous-région, comme une banque de la zone
+CEMAC ou une entreprise de paiement mobile, la gouvernance des SI doit
+tenir un registre des obligations pays par pays.
+
+% ============================================================================
+\section{Les Erreurs de Qualification}
+\label{sec:c10-erreurs}
+% ============================================================================
+
+\begin{tableaucours}{L{4.6cm}L{7.6cm}}{%
+    \tableauHeader{Erreur} &
+    \tableauHeader{Pourquoi c'est une erreur}
+}
+« La panne est un incident technique, pas un sujet réglementaire. » & Pour
+une banque, la défaillance d'un système est un risque opérationnel au sens
+du règlement COBAC R-2016/04. \\
+« Nous sommes certifiés ISO~27001, l'audit de l'ANTIC est inutile. » & La
+certification est volontaire~; l'audit prévu par la loi n°~2010/012 est
+obligatoire. \\
+« Nos données sont chez un prestataire, c'est lui le responsable. » &
+L'externalisation ne transfère pas la responsabilité du traitement ni
+celle de la sécurité (loi n°~2010/012, art.~26~; loi n°~2024/017). \\
+« Nos serveurs sont à l'étranger, la loi camerounaise ne s'applique
+pas. » & Le transfert hors du territoire est précisément encadré par la
+loi n°~2024/017. \\
+« Seule la société est poursuivie, pas ses dirigeants. » & La
+responsabilité de la personne morale n'exclut pas celle des personnes
+physiques (loi n°~2010/012, art.~64~; AUSCGIE). \\
+« La Convention de Malabo s'applique directement. » & Son applicabilité
+au Cameroun suppose une ratification qui reste à établir. \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~10.4. Erreurs de qualification
+fréquentes}\end{center}
+
+\begin{boxprocedure}
+\textbf{Le registre des obligations légales.} Pour démontrer la
+conformité (objectif MEA03), l'organisation tient un registre qui, pour
+chaque obligation, indique~:
+\begin{itemize}
+    \item le texte et l'article, avec la date de la version consultée~;
+    \item l'obligation, reformulée en termes opérationnels~;
+    \item le processus et le propriétaire qui la mettent en œuvre~;
+    \item la preuve de conformité (document, enregistrement, rapport
+          d'audit)~;
+    \item la date de la dernière vérification et son résultat.
+\end{itemize}
+Le registre est revu au moins une fois par an, et à chaque nouveau texte.
+\end{boxprocedure}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Auditer la conformité légale d'un SI}
+\begin{enumerate}
+    \item Demander le registre des obligations, et vérifier qu'il couvre au
+          moins les textes du Tableau~10.1 applicables à l'organisation.
+    \item Pour un échantillon d'obligations, demander la preuve de
+          conformité.
+    \item Vérifier la conservation des journaux (durée, intégrité) au
+          regard de l'article~29 de la loi n°~2010/012.
+    \item Vérifier que les contrats des sous-traitants traitent de la
+          sécurité, de la localisation des données et de l'audit.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{La loi n°~2010/012} confie la sécurité électronique à
+          l'ANTIC et impose aux exploitants de systèmes d'information des
+          mesures de sécurité et des dispositifs normalisés de gestion des
+          risques (art.~26), la conservation des données de connexion
+          pendant dix ans (art.~29), la révision des dispositifs (art.~30)
+          et des audits obligatoires (art.~13 et~32).
+    \item \textbf{La responsabilité est pénale aussi}~: la personne morale
+          répond des infractions commises par ses organes, sans exonérer
+          les personnes physiques (art.~64).
+    \item \textbf{La loi n°~2024/017}, applicable depuis juin~2026, organise
+          la protection des données personnelles et crée une autorité
+          dédiée~: inventaire, sécurité, sous-traitants, localisation,
+          preuve.
+    \item \textbf{Pour les banques}, la défaillance d'un système est un
+          risque opérationnel au sens du règlement COBAC R-2016/04.
+    \item \textbf{Le droit OHADA} organise la responsabilité civile des
+          dirigeants et le comité d'audit des sociétés cotées~: la trace
+          écrite des décisions est la première défense.
+    \item \textbf{La Convention de Malabo} est en vigueur depuis 2023~;
+          son applicabilité au Cameroun est à vérifier.
+    \item \textbf{Ne citer que ce qu'on a vérifié}~: un rapport au
+          régulateur se fonde sur le texte publié, pas sur un résumé.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.1. Qui est compétent~? \niveaubase}]
+Pour chacune des situations suivantes, indiquez l'autorité principalement
+compétente (Tableau~10.3) et le texte en cause.
+\begin{enumerate}[(a)]
+    \item Une banque n'a pas fait réaliser l'audit de sécurité de ses
+          systèmes depuis trois ans.
+    \item Un client de NOUN PAY conteste l'usage de ses données par le
+          modèle de notation.
+    \item Le dispositif de contrôle interne d'une banque n'a pas détecté
+          une migration non autorisée.
+    \item Un établissement public a acquis un logiciel hors de tout
+          programme budgétaire.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.2. Le registre de KRIBILOG \niveaumoyen}]
+KRIBILOG SA exploite un système de suivi des conteneurs qui enregistre les
+données des chauffeurs (nom, numéro de permis, téléphone) et les journaux
+d'accès des clients au portail web. L'exploitation est confiée à NETPORT
+SERVICES, qui héberge une partie des données à l'étranger.
+\begin{enumerate}[(a)]
+    \item Établissez les cinq premières lignes du registre des obligations
+          légales de KRIBILOG, sur le modèle de l'exigence de contrôle de
+          la section~\ref{sec:c10-erreurs}.
+    \item Pour chacune, indiquez si le texte a pu être vérifié, et sinon,
+          où le vérifier.
+    \item Quelles clauses faut-il ajouter au contrat de NETPORT SERVICES~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.3. La note au conseil de la BANQUE SANAGA \niveauexpert}]
+Rédigez, à l'attention du conseil d'administration, la note juridique
+évoquée en ouverture du chapitre.
+\begin{enumerate}[(a)]
+    \item Qualifiez la panne au regard du règlement COBAC R-2016/04 et de la
+          loi n°~2010/012, en citant uniquement les articles vérifiés.
+    \item Identifiez les obligations probablement méconnues, en séparant
+          constatations et analyses, et en donnant un niveau de confiance.
+    \item Discutez l'exposition éventuelle des dirigeants au regard du
+          droit OHADA, en signalant ce qui reste incertain.
+    \item Proposez trois mesures immédiates pour réduire le risque
+          juridique de la banque.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} Les obligations ne valent que si quelqu'un vérifie
+qu'elles sont tenues. Le Chapitre~\ref{chap:audit} présente l'audit, le
+contrôle et l'assurance de la gouvernance des SI~: le modèle des trois
+lignes, les normes de l'audit interne, l'audit public selon l'INTOSAI, et
+le test des contrôles généraux informatiques.
+\end{boxinfo}

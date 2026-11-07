@@ -1,0 +1,577 @@
+% ============================================================================
+% Fichier  : partie4/P04_C13_incidents_problemes_demandes.tex
+% Titre    : Centre de Services, Incidents, Problèmes et Demandes
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 1.0 -- octobre 2026
+% ============================================================================
+% Sources : ITIL 4 (sources publiques, définitions reformulées) ; COBIT 2019,
+% fiches DSS02 et DSS03 (dossier Normes). Laboratoire associé : GCI-LAB-06
+% (priorisation de tickets, MTTR, taux de réouverture, chez KRIBILOG).
+% ============================================================================
+
+\chapter{Centre de Services, Incidents, Problèmes et Demandes}
+\label{chap:itil-incidents}
+\chaptermark{Incidents, problèmes et demandes}
+
+\epigraph{%
+    « Réparer vite, c'est bien.\\
+    Ne plus avoir à réparer, c'est mieux. »%
+}{Adage des équipes de support}
+
+\niveauChapitre{Intermédiaire}{%
+    Maîtrise du Chapitre~\ref{chap:itil-svs} (concepts et système de valeur
+    d'ITIL~4).%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Organiser un centre de services.
+    \item Prioriser un incident avec une matrice impact $\times$ urgence.
+    \item Distinguer incident, problème, erreur connue et demande de
+          service.
+    \item Calculer les indicateurs (MTTR, taux de résolution au premier
+          contact).
+    \item Conduire une analyse de cause racine.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : pourquoi les mêmes pannes reviennent-elles~?}
+% ============================================================================
+
+Le Chapitre~\ref{chap:itil-svs} a montré que le flux de valeur
+« conteneur bloqué » de KRIBILOG SA s'arrête au contournement~: le
+ticket est clos, la cause demeure, et le blocage revient. Avec
+4~800~tickets par mois et 30~\% de réouvertures, le centre de services
+est saturé, et M.~MBARGA, responsable des services informatiques, ne sait
+plus par quoi commencer.
+
+Ce chapitre présente les quatre pratiques qui forment le cœur de
+l'exploitation quotidienne~: le centre de services
+(section~\ref{sec:c13-desk}), la gestion des incidents
+(section~\ref{sec:c13-incidents}), celle des demandes de service
+(section~\ref{sec:c13-demandes}) et celle des problèmes
+(section~\ref{sec:c13-problemes}). Il apprend à mesurer leur performance
+(section~\ref{sec:c13-mesure}) et à les relier à la gouvernance
+(section~\ref{sec:c13-gouvernance}). Le laboratoire GCI-LAB-06 fait
+prioriser et analyser vingt tickets réels de KRIBILOG.
+
+\separateur
+
+% ============================================================================
+\section{Quatre Notions à ne pas Confondre}
+\label{sec:c13-notions}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Incident}\index{incident}~: interruption non planifiée d'un
+service, ou dégradation de sa qualité.
+
+\medskip
+\termecle{Problème}\index{problème}~: cause, réelle ou potentielle, d'un ou
+de plusieurs incidents.
+
+\medskip
+\termecle{Erreur connue}\index{erreur connue} (\textit{known error})~:
+problème qui a été analysé, dont la cause est identifiée, mais qui n'est
+pas encore résolu.
+
+\medskip
+\termecle{Solution de contournement}\index{solution de contournement}
+(\textit{workaround})~: moyen de réduire ou d'éliminer l'effet d'un
+incident ou d'un problème, sans en traiter la cause.
+
+\medskip
+\termecle{Demande de service}\index{demande de service} (\textit{service
+request})~: demande d'un utilisateur portant sur une prestation déjà
+prévue dans le service (un accès, une information, un équipement).
+\end{boxdef}
+{\small\itshape Définitions reformulées d'après ITIL~4~\cite{axelos2019itil4}.}
+
+\begin{tableaucours}{L{3.6cm}L{4.6cm}L{4.0cm}}{%
+    \tableauHeader{Situation} &
+    \tableauHeader{Qualification} &
+    \tableauHeader{Pratique}
+}
+Le logiciel de suivi ne répond plus & Incident & Gestion des incidents \\
+Le logiciel perd la position des conteneurs chaque fois que la balise
+change de réseau & Problème, puis erreur connue une fois la cause
+établie & Gestion des problèmes \\
+On relance la synchronisation à la main & Solution de contournement &
+Incidents et problèmes \\
+Un nouvel agent demande un accès au portail & Demande de service & Gestion
+des demandes de service \\
+Un agent demande une nouvelle fonction du logiciel & Ni incident ni demande~:
+demande de changement & Habilitation des changements
+(Chapitre~\ref{chap:itil-changements}) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.1. Qualifier une situation}\end{center}
+
+La confusion la plus coûteuse est celle de l'incident et du problème. Le
+centre de services de KRIBILOG traite chaque blocage comme un incident
+isolé~: il rétablit le service, et le blocage revient. Ce qui manque n'est
+pas la réactivité, c'est la \emph{gestion des problèmes}.
+
+% ============================================================================
+\section{Le Centre de Services}
+\label{sec:c13-desk}
+% ============================================================================
+
+\subsection{Le point d'entrée unique}
+
+Le \termecle{centre de services}\index{centre de services} (\textit{service
+desk}) est le point de contact entre le fournisseur et les utilisateurs
+du service. Il reçoit les signalements d'incidents et les demandes, les
+enregistre, les qualifie, les résout lorsqu'il le peut, et les oriente
+sinon. ITIL~4 insiste sur sa dimension humaine~: il est la vitrine du
+service, et c'est par lui que l'utilisateur perçoit la valeur.
+
+\subsection{Organiser le centre de services}
+
+\begin{tableaucours}{L{3.4cm}L{8.8cm}}{%
+    \tableauHeader{Choix} &
+    \tableauHeader{Options et critères}
+}
+Canaux & Téléphone, courriel, portail en libre-service, messagerie
+instantanée~; au port, le téléphone et la messagerie mobile restent
+indispensables \\
+Localisation & Centralisé (un seul site), local (près des utilisateurs),
+virtuel (équipes réparties, un outil commun) \\
+Horaires & Aligner sur l'activité~: le port de Kribi travaille 24~h/24,
+le centre de services doit le faire aussi pour les incidents prioritaires \\
+Niveaux & Niveau 1 (centre de services), niveau 2 (support spécialisé),
+niveau 3 (éditeur, infogérant) \\
+Compétences & Écoute, connaissance du métier des utilisateurs, maîtrise
+de l'outil et de la base de connaissances \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.2. Les choix d'organisation d'un
+centre de services}\end{center}
+
+\begin{boxmetier}{Responsable des services IT}
+\textbf{Désengorger le centre de services de KRIBILOG}
+\begin{enumerate}
+    \item Analyser la répartition des tickets~: 20~\% sont des
+          réinitialisations de mot de passe, automatisables par un portail
+          en libre-service.
+    \item Créer une base de connaissances pour les vingt incidents les plus
+          fréquents, avec leur contournement.
+    \item Définir des modèles de demandes (accès, équipements) avec leur
+          circuit d'approbation.
+    \item Exiger, par avenant, que NETPORT SERVICES enregistre toutes ses
+          interventions dans l'outil de KRIBILOG.
+    \item Nommer un responsable de la gestion des problèmes, distinct du
+          responsable du centre de services.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{La Gestion des Incidents}
+\label{sec:c13-incidents}
+% ============================================================================
+
+\subsection{Le cycle d'un incident}
+
+La gestion des incidents a pour but de \emph{rétablir le service le plus
+vite possible} et de limiter l'effet de l'incident sur l'activité. Son
+cycle comprend l'enregistrement, la classification, la priorisation, le
+diagnostic, l'escalade éventuelle, la résolution, puis la clôture après
+vérification auprès de l'utilisateur. Ce sont les pratiques DSS02.02 à
+DSS02.06 de COBIT (Chapitre~\ref{chap:cobit-objectifs}).
+
+\subsection{La matrice de priorité}
+
+La priorité d'un incident combine deux critères~:
+l'\termecle{impact}\index{impact} (l'étendue des effets sur l'activité~:
+combien d'utilisateurs, quels processus) et
+l'\termecle{urgence}\index{urgence} (la vitesse à laquelle l'effet
+s'aggrave). La priorité fixe l'ordre de traitement et le délai cible de
+résolution.
+
+\begin{tableaucours}{L{2.6cm}ccc}{%
+    \tableauHeader{Impact} &
+    \tableauHeader{Urgence élevée} &
+    \tableauHeader{Urgence moyenne} &
+    \tableauHeader{Urgence faible}
+}
+Élevé & P1 & P2 & P3 \\
+Moyen & P2 & P3 & P4 \\
+Faible & P3 & P4 & P5 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.3. Matrice de priorité impact
+$\times$ urgence (exemple)}\end{center}
+
+\begin{tableaucours}{cL{6.0cm}L{4.0cm}}{%
+    \tableauHeader{Priorité} &
+    \tableauHeader{Exemple à KRIBILOG} &
+    \tableauHeader{Délai cible de résolution}
+}
+P1 & Logiciel de suivi indisponible pour tout le port, navire à quai & 4
+heures \\
+P2 & Suivi indisponible sur un terminal, chargement en cours & 8 heures \\
+P3 & Lenteur générale du logiciel & 24 heures \\
+P4 & Imprimante d'un bureau en panne & 72 heures \\
+P5 & Erreur d'affichage sans effet sur le travail & 5 jours ouvrés \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.4. Priorités et délais cibles
+(convention retenue par KRIBILOG)}\end{center}
+
+Les délais cibles ne sont pas fixés par ITIL~: ils relèvent des
+engagements de service convenus avec les métiers
+(Chapitre~\ref{chap:itil-niveaux}). Ce que la gouvernance exige, c'est
+qu'ils soient \emph{écrits, connus et mesurés}.
+
+\subsection{L'incident majeur}
+
+Un \termecle{incident majeur}\index{incident majeur} est un incident dont
+l'impact sur l'activité exige une réponse dépassant le traitement
+ordinaire~: une coordination dédiée, une communication spécifique, une
+escalade immédiate. La panne de la BANQUE SANAGA
+(Chapitre~\ref{chap:prologue}) en est l'exemple type.
+
+\begin{boxprocedure}
+\textbf{Le dossier d'incident majeur.} Pour qu'un incident majeur puisse
+être analysé, présenté au comité de direction ou au régulateur, le
+dossier doit contenir~:
+\begin{itemize}
+    \item l'heure de détection, l'heure de déclaration en incident majeur
+          et le nom de la personne qui l'a déclaré~;
+    \item la chronologie des actions, avec leurs auteurs~;
+    \item les communications émises (destinataires, heures, contenu)~;
+    \item l'heure du rétablissement et la vérification auprès des
+          utilisateurs~;
+    \item la revue post-incident, avec l'ouverture d'un problème et les
+          actions décidées.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{DSI}
+\textbf{Les trois premières heures d'un incident majeur}
+\begin{enumerate}
+    \item Désigner immédiatement un responsable de l'incident, seul habilité
+          à coordonner, distinct de ceux qui réparent.
+    \item Informer la direction générale dans l'heure, avec un point de
+          situation régulier, même sans nouvelle.
+    \item Décider, à une heure fixée à l'avance, du recours au plan de
+          continuité si le service n'est pas rétabli
+          (Chapitre~\ref{chap:itil-niveaux}).
+    \item Consigner chaque décision~: c'est la chronologie dont le
+          régulateur demandera la copie.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\section{La Gestion des Demandes de Service}
+\label{sec:c13-demandes}
+% ============================================================================
+
+Les demandes de service sont prévisibles~: elles se standardisent. ITIL~4
+recommande de définir pour chaque type de demande un modèle (contenu,
+circuit d'approbation, délai) et d'offrir autant que possible un
+libre-service. La pratique DSS02.03 de COBIT exige de vérifier le droit du
+demandeur, d'obtenir les approbations nécessaires et de satisfaire la
+demande selon la procédure prévue.
+
+\begin{boxalert}
+\textbf{Violation typique.} À l'ANPP, les demandes d'accès au système de
+paiement sont traitées par courriel, sans vérification du droit du
+demandeur ni approbation de son responsable. Le Chapitre~\ref{chap:audit}
+a montré la conséquence~: des comptes ouverts sans justification, et
+jamais fermés.
+
+\smallskip
+\textbf{Règle~:} toute demande d'accès suit un modèle qui impose
+l'approbation du responsable du demandeur et du propriétaire de
+l'application, et laisse une trace dans l'outil.
+\end{boxalert}
+
+% ============================================================================
+\section{La Gestion des Problèmes}
+\label{sec:c13-problemes}
+% ============================================================================
+
+\subsection{Trois phases}
+
+La gestion des problèmes vise à réduire la probabilité et l'effet des
+incidents, en identifiant leurs causes et en gérant les contournements et
+les erreurs connues. ITIL~4 la décrit en trois phases~:
+\begin{itemize}
+    \item l'\textbf{identification des problèmes}~: analyse des tendances
+          des incidents, des incidents majeurs, des informations des
+          fournisseurs~;
+    \item le \textbf{contrôle des problèmes}~: analyse de la cause,
+          documentation des contournements et des erreurs connues~;
+    \item le \textbf{contrôle des erreurs}~: suivi des erreurs connues
+          jusqu'à leur correction, souvent par un changement.
+\end{itemize}
+
+\begin{boxobjet}{DSS03 · Gérer les problèmes}
+\textbf{Description~:} identifier et classer les problèmes et leurs causes
+racines~; les résoudre à temps pour éviter la répétition des incidents~;
+formuler des recommandations d'amélioration.
+
+\textbf{Finalité~:} accroître la disponibilité, améliorer les niveaux de
+service, réduire les coûts et accroître la satisfaction des clients, en
+réduisant le nombre de problèmes d'exploitation.
+
+\textbf{Objectifs liés~:} EG01, EG08~; AG05.
+
+\textbf{Pratiques~:} DSS03.01 identifier et classer les problèmes~;
+DSS03.02 analyser et diagnostiquer~; DSS03.03 enregistrer les erreurs
+connues~; DSS03.04 résoudre et clore les problèmes~; DSS03.05 conduire une
+gestion proactive des problèmes.
+
+\textbf{RACI (extrait, KRIBILOG)~:} DSS03.02~: \emph{A} au responsable des
+services informatiques, \emph{R} au responsable des problèmes, \emph{C} à
+l'éditeur et à NETPORT SERVICES.
+
+\textbf{Indicateurs~:} nombre de problèmes ouverts et leur âge, part des
+incidents liés à une erreur connue, nombre d'incidents évités.
+\end{boxobjet}
+{\small\itshape Description, finalité, objectifs liés et pratiques résumés
+et traduits par nos soins à partir de COBIT~2019~\cite{isaca2018cobitobjectifs}.}
+
+\subsection{L'analyse de cause racine}
+
+\begin{tableaucours}{L{3.2cm}L{4.8cm}L{4.2cm}}{%
+    \tableauHeader{Technique} &
+    \tableauHeader{Principe} &
+    \tableauHeader{Usage}
+}
+Les cinq pourquoi & Demander « pourquoi~? » jusqu'à la cause (prologue,
+section~\ref{sec:pro-causes}) & Causes simples, enchaînées \\
+Diagramme d'Ishikawa & Classer les causes possibles par familles
+(méthodes, matériel, personnes, environnement\ldots) & Causes multiples \\
+Analyse de Pareto & Classer les catégories d'incidents par fréquence & Choisir
+les problèmes à traiter en premier \\
+Analyse chronologique & Reconstituer la suite des événements & Incidents
+majeurs \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.5. Techniques d'analyse de cause}\end{center}
+
+\begin{boxscenario}{Opération KRIBI. Le Pareto des tickets}
+\textbf{Faits.} Sur les 4~800~tickets du mois, la répartition est la
+suivante~: suivi des conteneurs 1~920 (40~\%), mots de passe 960 (20~\%),
+réseau 720 (15~\%), imprimantes 480 (10~\%), divers 720 (15~\%).
+
+\medskip
+\textbf{Analyse de Pareto.} Deux catégories, suivi des conteneurs et mots
+de passe, représentent 60~\% des tickets. La seconde se traite par le
+libre-service. La première justifie l'ouverture d'un problème.
+
+\medskip
+\textbf{Cinq pourquoi sur le suivi des conteneurs.} Pourquoi le conteneur
+disparaît-il~? Parce que sa position n'est plus mise à jour. Pourquoi~?
+Parce que la balise perd la connexion en changeant de réseau mobile entre
+le port et l'entrepôt. Pourquoi le logiciel ne la retrouve-t-il pas~?
+Parce que la reconnexion n'est pas prévue dans la version installée.
+Pourquoi n'a-t-elle pas été corrigée~? Parce que l'éditeur a livré le
+correctif il y a six mois, et qu'aucune demande de changement n'a été
+ouverte pour l'installer.
+
+\medskip
+\textbf{Conclusion.} Erreur connue, contournement documenté (relance
+manuelle), correction disponible~: le problème se résout par un
+changement (Chapitre~\ref{chap:itil-changements}). Cause de gouvernance~:
+personne n'était chargé de suivre les correctifs de l'éditeur.
+\end{boxscenario}
+
+% ============================================================================
+\section{Mesurer la Performance}
+\label{sec:c13-mesure}
+% ============================================================================
+
+\subsection{Les indicateurs}
+
+\begin{tableaucours}{L{3.6cm}L{5.0cm}L{3.6cm}}{%
+    \tableauHeader{Indicateur} &
+    \tableauHeader{Calcul} &
+    \tableauHeader{Ce qu'il révèle}
+}
+Délai moyen de résolution (\sigle{MTTR}) & Somme des durées de résolution
+/ nombre d'incidents résolus & Rapidité du rétablissement \\
+Résolution au premier contact & Incidents résolus par le niveau~1 sans
+escalade / incidents reçus & Efficacité du centre de services \\
+Taux de réouverture & Incidents rouverts / incidents clos & Qualité de la
+résolution \\
+Respect des délais cibles & Incidents résolus dans le délai de leur
+priorité / incidents résolus & Tenue des engagements \\
+Âge des problèmes ouverts & Durée depuis l'ouverture & Capacité à traiter
+les causes \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.6. Indicateurs de la gestion des
+incidents et des problèmes}\end{center}
+
+\subsection{Un calcul pas à pas}
+
+\begin{boxscenario}{Opération KRIBI. Huit tickets}
+\begin{tableaucours}{ccccc}{%
+    \tableauHeader{Ticket} &
+    \tableauHeader{Priorité} &
+    \tableauHeader{Durée (h)} &
+    \tableauHeader{Niveau 1~?} &
+    \tableauHeader{Rouvert~?}
+}
+T1 & P3 & 2 & Oui & Non \\
+T2 & P2 & 5 & Non & Oui \\
+T3 & P3 & 26 & Non & Non \\
+T4 & P4 & 1 & Oui & Non \\
+T5 & P1 & 49 & Non & Oui \\
+T6 & P2 & 3 & Non & Non \\
+T7 & P3 & 8 & Non & Oui \\
+T8 & P4 & 30 & Non & Non \\
+\end{tableaucours}
+
+\medskip
+\textbf{Calculs.} MTTR $= (2+5+26+1+49+3+8+30)/8 = 124/8 = 15{,}5$~heures.
+Résolution au premier contact~: $2/8 = 25~\%$. Taux de réouverture~:
+$3/8 = 37{,}5~\%$. Respect des délais cibles (Tableau~13.4)~: T3 (26~h
+pour P3, cible 24~h) et T5 (49~h pour P1, cible 4~h) sont hors délai, soit
+$6/8 = 75~\%$ dans les délais.
+
+\medskip
+\textbf{Lecture.} Le MTTR moyen masque l'essentiel~: l'incident P1, le plus
+grave, a duré douze fois son délai cible. Un indicateur moyen ne remplace
+jamais l'examen des incidents prioritaires.
+\end{boxscenario}
+
+\begin{boxalert}
+\textbf{Violation typique.} Pour améliorer son taux de résolution,
+l'infogérant clôt les tickets dès qu'une solution de contournement est
+appliquée, sans vérifier auprès de l'utilisateur. Les indicateurs
+s'améliorent, le service se dégrade.
+
+\smallskip
+\textbf{Règle~:} tout indicateur doit être accompagné de son indicateur
+de contrôle (le taux de réouverture pour le taux de résolution), et la
+clôture d'un incident exige la confirmation de l'utilisateur
+(DSS02.06).
+\end{boxalert}
+
+% ============================================================================
+\section{Le Lien avec la Gouvernance}
+\label{sec:c13-gouvernance}
+% ============================================================================
+
+Les incidents et les problèmes relèvent du management, mais ils
+intéressent la gouvernance par trois voies.
+\begin{itemize}
+    \item \textbf{L'information du conseil}~: les incidents majeurs et les
+          tendances doivent remonter au comité des risques ou au comité
+          stratégique des SI. Le conseil de la BANQUE SANAGA n'avait reçu
+          aucun rapport d'incident en 2025.
+    \item \textbf{Le risque}~: un problème non résolu est un risque connu
+          et accepté de fait~; il doit figurer au registre des risques
+          (APO12) et être accepté explicitement s'il n'est pas traité.
+    \item \textbf{Les fournisseurs}~: les incidents imputables à un
+          prestataire alimentent sa supervision (APO10) et les pénalités
+          prévues au contrat (Chapitre~\ref{chap:itil-niveaux}).
+\end{itemize}
+
+\begin{boxmetier}{Auditeur SI}
+\textbf{Auditer la gestion des incidents et des problèmes}
+\begin{enumerate}
+    \item Extraire de l'outil tous les tickets de la période, avec la
+          lettre de transmission prévue par le GUID~5100
+          (Chapitre~\ref{chap:audit}).
+    \item Vérifier sur un échantillon la cohérence de la priorité avec la
+          matrice, et le respect des délais cibles.
+    \item Rapprocher les tickets rouverts des problèmes ouverts~: une
+          catégorie très rouverte sans problème ouvert est un constat.
+    \item Vérifier que les incidents majeurs ont donné lieu à une revue
+          post-incident.
+\end{enumerate}
+\end{boxmetier}
+
+% ============================================================================
+\separateur
+% ============================================================================
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Quatre notions}~: l'incident est une interruption, le
+          problème sa cause, l'erreur connue une cause identifiée non
+          corrigée, la demande de service une prestation prévue.
+    \item \textbf{Le centre de services} est le point d'entrée unique et la
+          vitrine du service~; il se désengorge par le libre-service, la
+          base de connaissances et les modèles de demandes.
+    \item \textbf{La priorité} combine impact et urgence~; les délais cibles
+          relèvent des engagements de service et doivent être écrits.
+    \item \textbf{L'incident majeur} exige un responsable dédié, une
+          communication réglée et un dossier complet.
+    \item \textbf{La gestion des problèmes} (DSS03) traite les causes~:
+          identification, contrôle des problèmes, contrôle des erreurs.
+          Sans elle, les mêmes incidents reviennent.
+    \item \textbf{Mesurer}~: MTTR, résolution au premier contact, taux de
+          réouverture, respect des délais. Une moyenne ne remplace pas
+          l'examen des incidents prioritaires.
+\end{itemize}
+\end{boxresume}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.1. Qualifier et prioriser \niveaubase}]
+Qualifiez chacune des situations suivantes (incident, problème, demande de
+service, demande de changement), puis donnez la priorité des incidents
+selon la matrice du Tableau~13.3.
+\begin{enumerate}[(a)]
+    \item Le portail de paiement de l'ANPP est inaccessible la veille de la
+          paie des fonctionnaires.
+    \item Un agent de la BANQUE SANAGA demande l'installation d'un logiciel
+          de bureautique.
+    \item Les distributeurs d'une agence de Garoua tombent en panne chaque
+          soir vers 22~heures.
+    \item Le directeur financier de KRIBILOG ne peut pas imprimer un
+          rapport non urgent.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.2. Calculer les indicateurs \niveaumoyen}]
+Le centre de services de la BANQUE SANAGA a traité dix incidents dans la
+journée, avec les durées de résolution suivantes (en heures)~: 1, 3, 2,
+12, 4, 1, 6, 30, 2, 9. Les incidents de 1~heure et le premier incident de
+2~heures ont été résolus au premier contact. Deux incidents ont été
+rouverts.
+\begin{enumerate}[(a)]
+    \item Calculez le MTTR, le taux de résolution au premier contact et le
+          taux de réouverture.
+    \item L'incident de 30~heures était un P1 (cible~: 4~heures). Que
+          concluez-vous sur la pertinence du MTTR comme indicateur unique~?
+    \item Proposez un tableau de bord de quatre indicateurs pour le comité
+          de direction.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.3. La revue post-incident de la BANQUE SANAGA \niveauexpert}]
+Conduisez la revue post-incident de la panne de mars~2026
+(Chapitre~\ref{chap:prologue}).
+\begin{enumerate}[(a)]
+    \item Reconstituez la chronologie de l'incident majeur, et indiquez les
+          pièces qui manquent au dossier (exigence de contrôle de la
+          section~\ref{sec:c13-incidents}).
+    \item Ouvrez le problème correspondant et conduisez une analyse
+          d'Ishikawa des causes.
+    \item Distinguez les actions qui relèvent de la gestion des problèmes,
+          de la gestion des changements et de la gouvernance.
+    \item Rédigez la partie « incidents » du rapport trimestriel au comité
+          des risques.
+\end{enumerate}
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Transition.} À KRIBILOG comme à la BANQUE SANAGA, la résolution des
+problèmes passe par un changement~: l'installation d'un correctif, la
+bascule d'un système. Le Chapitre~\ref{chap:itil-changements} présente
+l'habilitation des changements, la gestion des mises en production et la
+gestion de la configuration.
+\end{boxinfo}
