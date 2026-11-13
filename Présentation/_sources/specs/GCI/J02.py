@@ -140,7 +140,7 @@ SPEC = [
         {"head": "La compétence numérique des conseils", "text": "Peu d'administrateurs ont l'expérience des SI : la **formation** des administrateurs est un mécanisme de premier ordre."},
     ]},
     {"k": "scenario", "title": "Une agence sans comité stratégique", "label": "Opération MEFOU · l'ANPP", "text": [
-        "L'**AGENCE NATIONALE DES PAIEMENTS PUBLICS** (ANPP), établissement public à Yaoundé, gère le paiement dématérialisé des salaires et des fournisseurs de l'État.",
+        "L'**AGENCE NATIONALE DE PAIEMENT DES PRESTATIONS PUBLIQUES** (ANPP), établissement public à Yaoundé, gère le paiement dématérialisé des salaires et des fournisseurs de l'État.",
         "Son schéma directeur, adopté en 2023 pour **14 milliards FCFA**, comprend neuf projets. Le conseil se réunit deux fois par an et consacre en moyenne **vingt minutes** au numérique. Aucun comité ne suit le schéma directeur ; les projets sont lancés sur décision du DG, souvent à la demande du ministère de tutelle.",
         "**Constatation.** À mi-parcours, trois projets ont consommé **71 %** du budget et aucun n'est achevé. Le conseil l'apprend par la question d'un administrateur représentant le ministère des Finances.",
     ], "notes": "Ce cas revient au chapitre C03 (arbitrage du portefeuille, LAB-01) et au chapitre C11 (audit de la Chambre des comptes)."},
